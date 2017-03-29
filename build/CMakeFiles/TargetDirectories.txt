@@ -1,0 +1,13 @@
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/edit_cache.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/package_source.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/rebuild_cache.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog-po-update.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/install/local.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi_Languages.zip.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/package.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog-i18n.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog-pot-update.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/install.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/install/strip.dir
+/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/list_install_components.dir
