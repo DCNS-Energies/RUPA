@@ -39,9 +39,11 @@ public:
 
     void OnLeftDown( wxMouseEvent& event );
     void OnDoubleClick( wxMouseEvent& event );
-    void OnConfiguration( wxCommandEvent& event );
-    void OnReset( wxCommandEvent& event );
-    void OnCampagne( wxCommandEvent& event );
+    //void OnConfiguration( wxCommandEvent& event );
+    //void OnReset( wxCommandEvent& event );
+    void OnNewCampaign( wxCommandEvent& event );
+    void OnDeleteCampaign( wxCommandEvent& event );
+    void OnManageCampaign( wxCommandEvent& event );
     void OnClose( wxCommandEvent& event ) { Hide(); }
 
 private:

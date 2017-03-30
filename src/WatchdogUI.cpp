@@ -11,6 +11,8 @@
 
 WatchdogDialogBase::WatchdogDialogBase( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
+    wxStaticBoxSizer* sbSizer41;
+    wxStaticBoxSizer* sbSizer42;
 	this->SetSizeHints( wxSize( -1,-1 ), wxSize( -1,-1 ) );
 	
 	wxFlexGridSizer* fgSizer8;
@@ -19,22 +21,35 @@ WatchdogDialogBase::WatchdogDialogBase( wxWindow* parent, wxWindowID id, const w
 	fgSizer8->SetFlexibleDirection( wxBOTH );
 	fgSizer8->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_ALL );
 	
-	m_lStatus = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_NO_HEADER|wxLC_REPORT );
+	m_lStatus = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize,/* wxLC_NO_HEADER|wxLC_REPORT */ wxLC_REPORT|wxLC_SINGLE_SEL);
+	m_lCurrentCampaign = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_NO_HEADER|wxLC_REPORT /* wxLC_REPORT|wxLC_SINGLE_SEL*/);
+	m_lFinishedCampaign = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_NO_HEADER|wxLC_REPORT  /*wxLC_REPORT|wxLC_SINGLE_SEL*/);
+//	m_lAlarms = new wxListCtrl( sbSi, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT|wxLC_SINGLE_SEL );
 	fgSizer8->Add( m_lStatus, 1, wxALL|wxEXPAND, 5 );
+	//sbSizer41 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Current Campaign") ), wxVERTICAL );
+	fgSizer8->Add( m_lCurrentCampaign, 1, wxALL|wxEXPAND, 5 );
+	//sbSizer42 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Finished Campaign") ), wxVERTICAL );
+	fgSizer8->Add( m_lFinishedCampaign, 1, wxALL|wxEXPAND, 5 );
 	
 	wxFlexGridSizer* fgSizer71;
 	fgSizer71 = new wxFlexGridSizer( 0, 4, 0, 0 );
 	fgSizer71->SetFlexibleDirection( wxHORIZONTAL );
 	fgSizer71->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
-	m_bConfiguration = new wxButton( this, wxID_ANY, _("Configuration"), wxDefaultPosition, wxDefaultSize, 0 );
-	fgSizer71->Add( m_bConfiguration, 0, wxALL, 5 );
+	//m_bConfiguration = new wxButton( this, wxID_ANY, _("Configuration"), wxDefaultPosition, wxDefaultSize, 0 );
+	//fgSizer71->Add( m_bConfiguration, 0, wxALL, 5 );
 
-	m_bCampagne = new wxButton( this, wxID_ANY, _("Campagne"), wxDefaultPosition, wxDefaultSize, 0 );
-	fgSizer71->Add( m_bCampagne, 0, wxALL, 5 );
+	m_bNewCampaign = new wxButton( this, wxID_ANY, _("New Campaign"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer71->Add( m_bNewCampaign, 0, wxALL, 5 );
 	
-	m_bReset = new wxButton( this, wxID_ANY, _("Reset"), wxDefaultPosition, wxDefaultSize, 0 );
-	fgSizer71->Add( m_bReset, 0, wxALL, 5 );
+	m_bDeleteCampaign = new wxButton( this, wxID_ANY, _("Delete Campaign"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer71->Add( m_bDeleteCampaign, 0, wxALL, 5 );
+	
+	m_bManageCampaign = new wxButton( this, wxID_ANY, _("Manage Campaign"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer71->Add( m_bManageCampaign, 0, wxALL, 5 );
+	
+	//m_bReset = new wxButton( this, wxID_ANY, _("Reset"), wxDefaultPosition, wxDefaultSize, 0 );
+	//fgSizer71->Add( m_bReset, 0, wxALL, 5 );
 	
 	m_bClose = new wxButton( this, wxID_ANY, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
 	fgSizer71->Add( m_bClose, 0, wxALL, 5 );
@@ -52,9 +67,12 @@ WatchdogDialogBase::WatchdogDialogBase( wxWindow* parent, wxWindowID id, const w
 	// Connect Events
 	m_lStatus->Connect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( WatchdogDialogBase::OnDoubleClick ), NULL, this );
 	m_lStatus->Connect( wxEVT_LEFT_DOWN, wxMouseEventHandler( WatchdogDialogBase::OnLeftDown ), NULL, this );
-	m_bConfiguration->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnConfiguration ), NULL, this );
-	m_bCampagne->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnCampagne ), NULL, this );
-	m_bReset->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnReset ), NULL, this );
+	//m_lAlarms->Connect( wxEVT_COMMAND_LIST_ITEM_DESELECTED, wxListEventHandler( ConfigurationDialogBase::AlarmSelected ), NULL, this );
+//	m_bConfiguration->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnConfiguration ), NULL, this );
+	m_bNewCampaign->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnNewCampaign ), NULL, this );
+	m_bDeleteCampaign->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnDeleteCampaign ), NULL, this );
+	m_bManageCampaign->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnManageCampaign ), NULL, this );
+//	m_bReset->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnReset ), NULL, this );
 	m_bClose->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnClose ), NULL, this );
 }
 
@@ -63,9 +81,11 @@ WatchdogDialogBase::~WatchdogDialogBase()
 	// Disconnect Events
 	m_lStatus->Disconnect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( WatchdogDialogBase::OnDoubleClick ), NULL, this );
 	m_lStatus->Disconnect( wxEVT_LEFT_DOWN, wxMouseEventHandler( WatchdogDialogBase::OnLeftDown ), NULL, this );
-	m_bConfiguration->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnConfiguration ), NULL, this );
-	m_bReset->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnReset ), NULL, this );
-	m_bCampagne->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnCampagne ), NULL, this );
+//	m_bConfiguration->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnConfiguration ), NULL, this );
+//	m_bReset->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnReset ), NULL, this );
+	m_bNewCampaign->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnNewCampaign ), NULL, this );
+	m_bDeleteCampaign->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnDeleteCampaign ), NULL, this );
+	m_bManageCampaign->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnManageCampaign ), NULL, this );
 	m_bClose->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( WatchdogDialogBase::OnClose ), NULL, this );
 	
 }

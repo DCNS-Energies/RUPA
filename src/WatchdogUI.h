@@ -51,17 +51,23 @@ class WatchdogDialogBase : public wxDialog
 	
 	protected:
 		wxListCtrl* m_lStatus;
-		wxButton* m_bConfiguration;
-		wxButton* m_bCampagne;
-		wxButton* m_bReset;
+		wxListCtrl* m_lCurrentCampaign;
+		wxListCtrl* m_lFinishedCampaign;
+		//wxButton* m_bConfiguration;
+		wxButton* m_bNewCampaign;
+		wxButton* m_bDeleteCampaign;
+		wxButton* m_bManageCampaign;
+		//wxButton* m_bReset;
 		wxButton* m_bClose;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnDoubleClick( wxMouseEvent& event ) { event.Skip(); }
 		virtual void OnLeftDown( wxMouseEvent& event ) { event.Skip(); }
-		virtual void OnConfiguration( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnReset( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnCampagne( wxCommandEvent& event ) { event.Skip(); }
+		//virtual void OnConfiguration( wxCommandEvent& event ) { event.Skip(); }
+		//virtual void OnReset( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnNewCampaign( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnDeleteCampaign( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnManageCampaign( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnClose( wxCommandEvent& event ) { event.Skip(); }
 		
 	

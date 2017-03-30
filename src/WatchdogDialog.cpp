@@ -94,6 +94,8 @@ WatchdogDialog::WatchdogDialog( watchdog_pi &_watchdog_pi, wxWindow* parent)
     wxFileConfig *pConf = GetOCPNConfigObject();
 
     pConf->SetPath ( _T( "/Settings/Watchdog" ) );
+    int enabled = pConf->Read ( _T ( "Enabled" ), 1L );
+    m_watchdog_pi.m_iEnableType = enabled;
 
 #ifdef __WXGTK__
     Move(0, 0);        // workaround for gtk autocentre dialog behavior
@@ -106,8 +108,31 @@ WatchdogDialog::WatchdogDialog( watchdog_pi &_watchdog_pi, wxWindow* parent)
     m_lStatus->AssignImageList(imglist, wxIMAGE_LIST_SMALL);
 
     m_lStatus->InsertColumn(ALARM_ENABLED, _T("X"));
-    m_lStatus->InsertColumn(ALARM_TYPE, _("Type"));
-    m_lStatus->InsertColumn(ALARM_STATUS, _("Status"));
+  /*  m_lStatus->InsertColumn(ALARM_TYPE, _T("Beacon's name"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Campaign's name"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Geographical area"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Installation\ndate +h UTC"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Transpondeur\nvoltage"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Installation\ncoordinate"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Depth"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Recovery date\nexpected"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Recovery\ndate +h UTC"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Transpondeur\nvoltage"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Recovery\ncoordinate"));*/
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Recovery\ncoordinate"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Transpondeur\nvoltage"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Recovery\ndate +h UTC"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Recovery date\nexpected"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Depth"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Installation\ncoordinate"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Transpondeur\nvoltage"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Installation\ndate +h UTC"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Geographical area"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Campaign's name"));
+    m_lStatus->InsertColumn(ALARM_TYPE, _T("Beacon's name"));
+    //m_lStatus->InsertColumn(ALARM_TYPE, _("Type"));
+    //m_lStatus->InsertColumn(ALARM_TYPE, _(""));
+    //m_lStatus->InsertColumn(ALARM_TYPE, _("Type"));
     m_lStatus->SetColumnWidth(ALARM_ENABLED, wxLIST_AUTOSIZE);
     m_lStatus->SetColumnWidth(ALARM_TYPE, wxLIST_AUTOSIZE);
     m_lStatus->SetColumnWidth(ALARM_STATUS, wxLIST_AUTOSIZE);
@@ -198,22 +223,35 @@ void WatchdogDialog::OnDoubleClick( wxMouseEvent& event )
         dlg.Save();
 }
 
-void WatchdogDialog::OnConfiguration( wxCommandEvent& event )
-{
+//void WatchdogDialog::OnConfiguration( wxCommandEvent& event )
+//{
     //m_watchdog_pi.ShowConfigurationDialog( this );
     //EditAlarmDialog dlg(this, ANCHOR);
     //g_watchdog_pi->m_ConfigurationDialog->OnNewAlarm( event );
     //m_watchdog_pi.m_ConfigurationDialog->OnNewAlarm( event );
 
-}
+//}
 
-void WatchdogDialog::OnReset( wxCommandEvent& event )
+//void WatchdogDialog::OnReset( wxCommandEvent& event )
+//{
+//    Alarm::ResetAll();
+//    UpdateAlarms();
+//}
+
+void WatchdogDialog::OnNewCampaign( wxCommandEvent& event )
 {
-    Alarm::ResetAll();
-    UpdateAlarms();
+    //std::cout<<g_watchdog_pi->m_iEnableType<<"\n";
+    g_watchdog_pi->m_ConfigurationDialog->OnNewAlarm( event );
 }
 
-void WatchdogDialog::OnCampagne( wxCommandEvent& event )
+void WatchdogDialog::OnDeleteCampaign( wxCommandEvent& event )
+{
+    //std::cout<<g_watchdog_pi->m_iEnableType<<"\n";
+    //g_watchdog_pi->m_ConfigurationDialog->OnNewAlarm( event );
+    m_watchdog_pi.ShowConfigurationDialog( this );
+}
+
+void WatchdogDialog::OnManageCampaign( wxCommandEvent& event )
 {
     //std::cout<<g_watchdog_pi->m_iEnableType<<"\n";
     g_watchdog_pi->m_ConfigurationDialog->OnNewAlarm( event );
