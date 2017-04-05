@@ -349,6 +349,330 @@ src/NewAlarmDialog.cpp.s:
 	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.s
 .PHONY : src/NewAlarmDialog.cpp.s
 
+src/RUPAUI.o: src/RUPAUI.cpp.o
+
+.PHONY : src/RUPAUI.o
+
+# target to build an object file
+src/RUPAUI.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o
+.PHONY : src/RUPAUI.cpp.o
+
+src/RUPAUI.i: src/RUPAUI.cpp.i
+
+.PHONY : src/RUPAUI.i
+
+# target to preprocess a source file
+src/RUPAUI.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.i
+.PHONY : src/RUPAUI.cpp.i
+
+src/RUPAUI.s: src/RUPAUI.cpp.s
+
+.PHONY : src/RUPAUI.s
+
+# target to generate assembly for a file
+src/RUPAUI.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.s
+.PHONY : src/RUPAUI.cpp.s
+
+src/RUPA_Automatic_Burst.o: src/RUPA_Automatic_Burst.cpp.o
+
+.PHONY : src/RUPA_Automatic_Burst.o
+
+# target to build an object file
+src/RUPA_Automatic_Burst.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o
+.PHONY : src/RUPA_Automatic_Burst.cpp.o
+
+src/RUPA_Automatic_Burst.i: src/RUPA_Automatic_Burst.cpp.i
+
+.PHONY : src/RUPA_Automatic_Burst.i
+
+# target to preprocess a source file
+src/RUPA_Automatic_Burst.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.i
+.PHONY : src/RUPA_Automatic_Burst.cpp.i
+
+src/RUPA_Automatic_Burst.s: src/RUPA_Automatic_Burst.cpp.s
+
+.PHONY : src/RUPA_Automatic_Burst.s
+
+# target to generate assembly for a file
+src/RUPA_Automatic_Burst.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.s
+.PHONY : src/RUPA_Automatic_Burst.cpp.s
+
+src/RUPA_Burst_Editing.o: src/RUPA_Burst_Editing.cpp.o
+
+.PHONY : src/RUPA_Burst_Editing.o
+
+# target to build an object file
+src/RUPA_Burst_Editing.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o
+.PHONY : src/RUPA_Burst_Editing.cpp.o
+
+src/RUPA_Burst_Editing.i: src/RUPA_Burst_Editing.cpp.i
+
+.PHONY : src/RUPA_Burst_Editing.i
+
+# target to preprocess a source file
+src/RUPA_Burst_Editing.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.i
+.PHONY : src/RUPA_Burst_Editing.cpp.i
+
+src/RUPA_Burst_Editing.s: src/RUPA_Burst_Editing.cpp.s
+
+.PHONY : src/RUPA_Burst_Editing.s
+
+# target to generate assembly for a file
+src/RUPA_Burst_Editing.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.s
+.PHONY : src/RUPA_Burst_Editing.cpp.s
+
+src/RUPA_Campaign.o: src/RUPA_Campaign.cpp.o
+
+.PHONY : src/RUPA_Campaign.o
+
+# target to build an object file
+src/RUPA_Campaign.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o
+.PHONY : src/RUPA_Campaign.cpp.o
+
+src/RUPA_Campaign.i: src/RUPA_Campaign.cpp.i
+
+.PHONY : src/RUPA_Campaign.i
+
+# target to preprocess a source file
+src/RUPA_Campaign.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.i
+.PHONY : src/RUPA_Campaign.cpp.i
+
+src/RUPA_Campaign.s: src/RUPA_Campaign.cpp.s
+
+.PHONY : src/RUPA_Campaign.s
+
+# target to generate assembly for a file
+src/RUPA_Campaign.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.s
+.PHONY : src/RUPA_Campaign.cpp.s
+
+src/RUPA_Change_Validation_State.o: src/RUPA_Change_Validation_State.cpp.o
+
+.PHONY : src/RUPA_Change_Validation_State.o
+
+# target to build an object file
+src/RUPA_Change_Validation_State.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o
+.PHONY : src/RUPA_Change_Validation_State.cpp.o
+
+src/RUPA_Change_Validation_State.i: src/RUPA_Change_Validation_State.cpp.i
+
+.PHONY : src/RUPA_Change_Validation_State.i
+
+# target to preprocess a source file
+src/RUPA_Change_Validation_State.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.i
+.PHONY : src/RUPA_Change_Validation_State.cpp.i
+
+src/RUPA_Change_Validation_State.s: src/RUPA_Change_Validation_State.cpp.s
+
+.PHONY : src/RUPA_Change_Validation_State.s
+
+# target to generate assembly for a file
+src/RUPA_Change_Validation_State.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.s
+.PHONY : src/RUPA_Change_Validation_State.cpp.s
+
+src/RUPA_Manage_Campaign.o: src/RUPA_Manage_Campaign.cpp.o
+
+.PHONY : src/RUPA_Manage_Campaign.o
+
+# target to build an object file
+src/RUPA_Manage_Campaign.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o
+.PHONY : src/RUPA_Manage_Campaign.cpp.o
+
+src/RUPA_Manage_Campaign.i: src/RUPA_Manage_Campaign.cpp.i
+
+.PHONY : src/RUPA_Manage_Campaign.i
+
+# target to preprocess a source file
+src/RUPA_Manage_Campaign.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.i
+.PHONY : src/RUPA_Manage_Campaign.cpp.i
+
+src/RUPA_Manage_Campaign.s: src/RUPA_Manage_Campaign.cpp.s
+
+.PHONY : src/RUPA_Manage_Campaign.s
+
+# target to generate assembly for a file
+src/RUPA_Manage_Campaign.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.s
+.PHONY : src/RUPA_Manage_Campaign.cpp.s
+
+src/RUPA_New_Campaign.o: src/RUPA_New_Campaign.cpp.o
+
+.PHONY : src/RUPA_New_Campaign.o
+
+# target to build an object file
+src/RUPA_New_Campaign.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o
+.PHONY : src/RUPA_New_Campaign.cpp.o
+
+src/RUPA_New_Campaign.i: src/RUPA_New_Campaign.cpp.i
+
+.PHONY : src/RUPA_New_Campaign.i
+
+# target to preprocess a source file
+src/RUPA_New_Campaign.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.i
+.PHONY : src/RUPA_New_Campaign.cpp.i
+
+src/RUPA_New_Campaign.s: src/RUPA_New_Campaign.cpp.s
+
+.PHONY : src/RUPA_New_Campaign.s
+
+# target to generate assembly for a file
+src/RUPA_New_Campaign.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.s
+.PHONY : src/RUPA_New_Campaign.cpp.s
+
+src/RUPA_Semi_Automatic_Burst.o: src/RUPA_Semi_Automatic_Burst.cpp.o
+
+.PHONY : src/RUPA_Semi_Automatic_Burst.o
+
+# target to build an object file
+src/RUPA_Semi_Automatic_Burst.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o
+.PHONY : src/RUPA_Semi_Automatic_Burst.cpp.o
+
+src/RUPA_Semi_Automatic_Burst.i: src/RUPA_Semi_Automatic_Burst.cpp.i
+
+.PHONY : src/RUPA_Semi_Automatic_Burst.i
+
+# target to preprocess a source file
+src/RUPA_Semi_Automatic_Burst.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.i
+.PHONY : src/RUPA_Semi_Automatic_Burst.cpp.i
+
+src/RUPA_Semi_Automatic_Burst.s: src/RUPA_Semi_Automatic_Burst.cpp.s
+
+.PHONY : src/RUPA_Semi_Automatic_Burst.s
+
+# target to generate assembly for a file
+src/RUPA_Semi_Automatic_Burst.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.s
+.PHONY : src/RUPA_Semi_Automatic_Burst.cpp.s
+
+src/RUPA_Utility.o: src/RUPA_Utility.cpp.o
+
+.PHONY : src/RUPA_Utility.o
+
+# target to build an object file
+src/RUPA_Utility.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o
+.PHONY : src/RUPA_Utility.cpp.o
+
+src/RUPA_Utility.i: src/RUPA_Utility.cpp.i
+
+.PHONY : src/RUPA_Utility.i
+
+# target to preprocess a source file
+src/RUPA_Utility.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.i
+.PHONY : src/RUPA_Utility.cpp.i
+
+src/RUPA_Utility.s: src/RUPA_Utility.cpp.s
+
+.PHONY : src/RUPA_Utility.s
+
+# target to generate assembly for a file
+src/RUPA_Utility.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.s
+.PHONY : src/RUPA_Utility.cpp.s
+
+src/RUPA_Warning_Delete_Burst.o: src/RUPA_Warning_Delete_Burst.cpp.o
+
+.PHONY : src/RUPA_Warning_Delete_Burst.o
+
+# target to build an object file
+src/RUPA_Warning_Delete_Burst.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o
+.PHONY : src/RUPA_Warning_Delete_Burst.cpp.o
+
+src/RUPA_Warning_Delete_Burst.i: src/RUPA_Warning_Delete_Burst.cpp.i
+
+.PHONY : src/RUPA_Warning_Delete_Burst.i
+
+# target to preprocess a source file
+src/RUPA_Warning_Delete_Burst.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.i
+.PHONY : src/RUPA_Warning_Delete_Burst.cpp.i
+
+src/RUPA_Warning_Delete_Burst.s: src/RUPA_Warning_Delete_Burst.cpp.s
+
+.PHONY : src/RUPA_Warning_Delete_Burst.s
+
+# target to generate assembly for a file
+src/RUPA_Warning_Delete_Burst.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.s
+.PHONY : src/RUPA_Warning_Delete_Burst.cpp.s
+
+src/RUPA_Warning_Delete_Campaign.o: src/RUPA_Warning_Delete_Campaign.cpp.o
+
+.PHONY : src/RUPA_Warning_Delete_Campaign.o
+
+# target to build an object file
+src/RUPA_Warning_Delete_Campaign.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o
+.PHONY : src/RUPA_Warning_Delete_Campaign.cpp.o
+
+src/RUPA_Warning_Delete_Campaign.i: src/RUPA_Warning_Delete_Campaign.cpp.i
+
+.PHONY : src/RUPA_Warning_Delete_Campaign.i
+
+# target to preprocess a source file
+src/RUPA_Warning_Delete_Campaign.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.i
+.PHONY : src/RUPA_Warning_Delete_Campaign.cpp.i
+
+src/RUPA_Warning_Delete_Campaign.s: src/RUPA_Warning_Delete_Campaign.cpp.s
+
+.PHONY : src/RUPA_Warning_Delete_Campaign.s
+
+# target to generate assembly for a file
+src/RUPA_Warning_Delete_Campaign.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.s
+.PHONY : src/RUPA_Warning_Delete_Campaign.cpp.s
+
+src/RUPA_Warning_Delete_Measurement.o: src/RUPA_Warning_Delete_Measurement.cpp.o
+
+.PHONY : src/RUPA_Warning_Delete_Measurement.o
+
+# target to build an object file
+src/RUPA_Warning_Delete_Measurement.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o
+.PHONY : src/RUPA_Warning_Delete_Measurement.cpp.o
+
+src/RUPA_Warning_Delete_Measurement.i: src/RUPA_Warning_Delete_Measurement.cpp.i
+
+.PHONY : src/RUPA_Warning_Delete_Measurement.i
+
+# target to preprocess a source file
+src/RUPA_Warning_Delete_Measurement.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.i
+.PHONY : src/RUPA_Warning_Delete_Measurement.cpp.i
+
+src/RUPA_Warning_Delete_Measurement.s: src/RUPA_Warning_Delete_Measurement.cpp.s
+
+.PHONY : src/RUPA_Warning_Delete_Measurement.s
+
+# target to generate assembly for a file
+src/RUPA_Warning_Delete_Measurement.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.s
+.PHONY : src/RUPA_Warning_Delete_Measurement.cpp.s
+
 src/TexFont.o: src/TexFont.cpp.o
 
 .PHONY : src/TexFont.o
@@ -650,6 +974,42 @@ help:
 	@echo "... src/NewAlarmDialog.o"
 	@echo "... src/NewAlarmDialog.i"
 	@echo "... src/NewAlarmDialog.s"
+	@echo "... src/RUPAUI.o"
+	@echo "... src/RUPAUI.i"
+	@echo "... src/RUPAUI.s"
+	@echo "... src/RUPA_Automatic_Burst.o"
+	@echo "... src/RUPA_Automatic_Burst.i"
+	@echo "... src/RUPA_Automatic_Burst.s"
+	@echo "... src/RUPA_Burst_Editing.o"
+	@echo "... src/RUPA_Burst_Editing.i"
+	@echo "... src/RUPA_Burst_Editing.s"
+	@echo "... src/RUPA_Campaign.o"
+	@echo "... src/RUPA_Campaign.i"
+	@echo "... src/RUPA_Campaign.s"
+	@echo "... src/RUPA_Change_Validation_State.o"
+	@echo "... src/RUPA_Change_Validation_State.i"
+	@echo "... src/RUPA_Change_Validation_State.s"
+	@echo "... src/RUPA_Manage_Campaign.o"
+	@echo "... src/RUPA_Manage_Campaign.i"
+	@echo "... src/RUPA_Manage_Campaign.s"
+	@echo "... src/RUPA_New_Campaign.o"
+	@echo "... src/RUPA_New_Campaign.i"
+	@echo "... src/RUPA_New_Campaign.s"
+	@echo "... src/RUPA_Semi_Automatic_Burst.o"
+	@echo "... src/RUPA_Semi_Automatic_Burst.i"
+	@echo "... src/RUPA_Semi_Automatic_Burst.s"
+	@echo "... src/RUPA_Utility.o"
+	@echo "... src/RUPA_Utility.i"
+	@echo "... src/RUPA_Utility.s"
+	@echo "... src/RUPA_Warning_Delete_Burst.o"
+	@echo "... src/RUPA_Warning_Delete_Burst.i"
+	@echo "... src/RUPA_Warning_Delete_Burst.s"
+	@echo "... src/RUPA_Warning_Delete_Campaign.o"
+	@echo "... src/RUPA_Warning_Delete_Campaign.i"
+	@echo "... src/RUPA_Warning_Delete_Campaign.s"
+	@echo "... src/RUPA_Warning_Delete_Measurement.o"
+	@echo "... src/RUPA_Warning_Delete_Measurement.i"
+	@echo "... src/RUPA_Warning_Delete_Measurement.s"
 	@echo "... src/TexFont.o"
 	@echo "... src/TexFont.i"
 	@echo "... src/TexFont.s"

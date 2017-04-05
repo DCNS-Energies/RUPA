@@ -27,8 +27,8 @@ INCLUDE("cmake/PluginConfigure.cmake")
 
 SET(SRC_WATCHDOG
             src/watchdog_pi.cpp
-            src/watchdog_pi.cpp
-            src/WatchdogDialog.cpp
+	    #src/watchdog_pi.cpp
+	    src/WatchdogDialog.cpp
             src/WatchdogPropertiesDialog.cpp
             src/ConfigurationDialog.cpp
             src/NewAlarmDialog.cpp
@@ -39,6 +39,19 @@ SET(SRC_WATCHDOG
             src/ODAPI.h
             src/wddc.cpp
             src/TexFont.cpp
+	    src/RUPA_Automatic_Burst.cpp
+	    src/RUPA_Burst_Editing.cpp
+	    src/RUPA_Campaign.cpp
+	    src/RUPA_Change_Validation_State.cpp
+	    src/RUPA_Manage_Campaign.cpp
+	    src/RUPA_New_Campaign.cpp
+	    src/RUPA_Semi_Automatic_Burst.cpp
+	    src/RUPAUI.cpp
+	    src/RUPA_Warning_Delete_Burst.cpp
+	    src/RUPA_Warning_Delete_Campaign.cpp
+	    src/RUPA_Warning_Delete_Measurement.cpp
+	    src/RUPA_Utility.cpp
+
 	)
 
 IF(WIN32)

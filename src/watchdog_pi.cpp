@@ -33,6 +33,7 @@
 
 #include "watchdog_pi.h"
 #include "WatchdogDialog.h"
+//#include "RUPA_Campaign.h"
 //#include "ConfigurationDialog.h"
 #include "WatchdogPropertiesDialog.h"
 #include "icons.h"
@@ -95,7 +96,7 @@ extern "C" DECL_EXP void destroy_pi(opencpn_plugin* p)
 //    Watchdog PlugIn Implementation
 //
 //-----------------------------------------------------------------------------
-watchdog_pi *g_watchdog_pi = NULL;
+watchdog_pi *g_watchdog_pi = NULL;//g for global
 
 watchdog_pi::watchdog_pi(void *ppimgr)
     : opencpn_plugin_110(ppimgr)
@@ -145,15 +146,16 @@ int watchdog_pi::Init(void)
         (_T(""), _img_watchdog, _img_watchdog, wxITEM_NORMAL,
          _("Watchdog"), _T(""), NULL, WATCHDOG_TOOL_POSITION, 0, this);
     
-    m_WatchdogDialog = NULL;
-    m_ConfigurationDialog = NULL;
-    //m_AnchorAlarm = NULL;
-    m_PropertiesDialog = NULL;
+    m_WatchdogDialog 		= NULL;
+    t_Campaign 			= NULL;
+    m_ConfigurationDialog 	= NULL;
+    //m_AnchorAlarm 		  = NULL;
+    m_PropertiesDialog 		= NULL;
     m_Timer.Connect(wxEVT_TIMER, wxTimerEventHandler
                     ( watchdog_pi::OnTimer ), NULL, this);
     m_Timer.Start(3000);
     
-    if(!m_WatchdogDialog)
+   /* if(!m_WatchdogDialog)
     {
         m_WatchdogDialog = new WatchdogDialog(*this, GetOCPNCanvasWindow());
         m_ConfigurationDialog = new ConfigurationDialog(*this, m_WatchdogDialog);
@@ -163,7 +165,19 @@ int watchdog_pi::Init(void)
         icon.CopyFromBitmap(*_img_watchdog);
         m_WatchdogDialog->SetIcon(icon);
         m_ConfigurationDialog->SetIcon(icon);
+    }*/
+    if(!t_Campaign)
+    {
+        t_Campaign = new RUPA_Campaign(*this, GetOCPNCanvasWindow());
+        //m_ConfigurationDialog = new ConfigurationDialog(*this, m_WatchdogDialog);
+	//m_ConfigurationDialog->OnNewAlarm( event );
+        
+        wxIcon icon;
+        icon.CopyFromBitmap(*_img_watchdog);
+        t_Campaign->SetIcon(icon);
+        //m_ConfigurationDialog->SetIcon(icon);
     }
+    t_b_Campaign_Shown = false;
     m_bWatchdogDialogShown = false;
 
     return (WANTS_OVERLAY_CALLBACK |
@@ -283,7 +297,7 @@ void watchdog_pi::RearrangeWindow()
 
 void watchdog_pi::OnToolbarToolCallback(int id)
 {
-    if(!m_WatchdogDialog)
+  /*  if(!m_WatchdogDialog)
     {
         m_WatchdogDialog = new WatchdogDialog(*this, GetOCPNCanvasWindow());
         m_ConfigurationDialog = new ConfigurationDialog(*this, m_WatchdogDialog);
@@ -303,6 +317,30 @@ void watchdog_pi::OnToolbarToolCallback(int id)
     wxPoint p = m_WatchdogDialog->GetPosition();
     m_WatchdogDialog->Move(0, 0);        // workaround for gtk autocentre dialog behavior
     m_WatchdogDialog->Move(p);
+    */
+    
+    
+    if(!t_Campaign)
+    {
+        t_Campaign = new RUPA_Campaign(*this, GetOCPNCanvasWindow());
+        //m_ConfigurationDialog = new ConfigurationDialog(*this, m_WatchdogDialog);
+        wxIcon icon;
+        icon.CopyFromBitmap(*_img_watchdog);
+        t_Campaign->SetIcon(icon);
+        //m_ConfigurationDialog->SetIcon(icon);
+    }
+
+	
+    t_Campaign->Show(!t_Campaign->IsShown());
+    if(t_Campaign->IsShown()) {
+        t_b_Campaign_Shown = true;
+        //m_WatchdogDialog->UpdateAlarms();
+    }
+
+    wxPoint p = t_Campaign->GetPosition();
+    t_Campaign->Move(0, 0);        // workaround for gtk autocentre dialog behavior
+    t_Campaign->Move(p);
+
 }
 
 void watchdog_pi::OnContextMenuItemCallback(int id)

@@ -95,11 +95,13 @@ double heading_resolve(double degrees);
 
 #include "Alarm.h"
 #include "ConfigurationDialog.h"
+#include "RUPA_Campaign.h"
 
 class wdDC;
 class WatchdogDialog;
 class ConfigurationDialog;
 class WatchdogPropertiesDialog;
+class Campaign;
 
 enum {
     ID_ALARM_NEVER = 0,
@@ -142,6 +144,7 @@ public:
 
 //    Other public methods
       void OnWatchdogDialogClose();
+      void OnCampaignClose();
       void ShowConfigurationDialog( wxWindow* );
       static wxString StandardPath();
 
@@ -154,6 +157,10 @@ public:
       wxDateTime m_LastFixTime;
       wxDateTime m_cursor_time;
       WatchdogDialog   *m_WatchdogDialog;
+
+
+      RUPA_Campaign   *t_Campaign;//t like Tristan because it's my name and I don't undersatand why it should be a 'm'
+      bool      t_b_Campaign_Shown;//b like boolean
       
       int       m_iEnableType;
       bool      m_bWatchdogDialogShown;
