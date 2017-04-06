@@ -75,25 +75,31 @@ void Set_Col_Campaign(wxListCtrl * l)
 {
  
     
-    l->InsertColumn(ALARM_ENABLED, _T("X"));
-    l->InsertColumn(ALARM_TYPE, _T("Beacon's name"));
-    l->InsertColumn(ALARM_TYPE, _T("Campaign's name"));
-    l->InsertColumn(ALARM_TYPE, _T("Geographical area"));
-    l->InsertColumn(ALARM_TYPE, _T("Installation\ndate +h UTC"));
-    l->InsertColumn(ALARM_TYPE, _T("Transpondeur\nvoltage"));
-    l->InsertColumn(ALARM_TYPE, _T("Installation\ncoordinate"));
-    l->InsertColumn(ALARM_TYPE, _T("Depth"));
-    l->InsertColumn(ALARM_TYPE, _T("Recovery date\nexpected"));
-    l->InsertColumn(ALARM_TYPE, _T("Recovery\ndate +h UTC"));
-    l->InsertColumn(ALARM_TYPE, _T("Transpondeur\nvoltage"));
-    l->InsertColumn(ALARM_TYPE, _T("Recovery\ncoordinate"));
+    l->InsertColumn(0, ("X"));
+    l->InsertColumn(1, ("Geographical area"));
+    l->InsertColumn(2, ("Campaign's name"));
+    l->InsertColumn(3, ("Structure's name"));
+    l->InsertColumn(4, ("Devices"));
+    l->InsertColumn(5, ("Transponder's\nAddress"));
+    l->InsertColumn(6, ("Depth"));
+    l->InsertColumn(7, ("Latitude"));
+    l->InsertColumn(8, ("Longitude"));
+    l->InsertColumn(9, ("Installation\ndate +h UTC"));
+    l->InsertColumn(10, ("Recovery\ndate +h UTC"));
+    l->InsertColumn(11, ("Latitude"));
+    l->InsertColumn(12, ("Longitude"));
 
-    l->SetColumnWidth(ALARM_ENABLED, wxLIST_AUTOSIZE);
+
+    /*l->SetColumnWidth(ALARM_ENABLED, wxLIST_AUTOSIZE);
     //l->SetRowHeight(ALARM_ENABLED, wxLIST_AUTOSIZE);
     l->SetColumnWidth(ALARM_TYPE, wxLIST_AUTOSIZE);
     //l->SetColumnHeight(ALARM_TYPE, wxLIST_AUTOSIZE);
     l->SetColumnWidth(ALARM_STATUS, wxLIST_AUTOSIZE);
-    //l->SetColumnHeight(ALARM_STATUS, wxLIST_AUTOSIZE);
+    //l->SetColumnHeight(ALARM_STATUS, wxLIST_AUTOSIZE);*/
+    for(int i=0; i<13; i++)
+    {
+	l->SetColumnWidth(i, wxLIST_AUTOSIZE);
+    }
 
 }
 RUPA_Campaign::RUPA_Campaign( watchdog_pi &_watchdog_pi, wxWindow* parent ):
@@ -188,6 +194,7 @@ void RUPA_Campaign::On_Delete_Campaign( wxCommandEvent& event )
 void RUPA_Campaign::On_Manage_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_Manage_Campaign
+    this->Show(!this->IsShown());
     t_Manage_Campaign = new RUPA_Manage_Campaign(this);
     RUPA_Utils_Pos(t_Manage_Campaign);
    }

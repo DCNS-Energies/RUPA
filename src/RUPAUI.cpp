@@ -334,10 +334,10 @@ Manage_Campaign::Manage_Campaign( wxWindow* parent, wxWindowID id, const wxStrin
 	Manage_Campaign_Installation_Buttons->Add( Manage_Campaign_Installation_Delete_Burst_Button1, 0, wxALL|wxEXPAND, 5 );
 	
 	
-	Manage_Campaign_Installation_Table_Layout->Add( Manage_Campaign_Installation_Buttons, 1, wxEXPAND, 5 );
+	Manage_Campaign_Installation_Table_Layout->Add( Manage_Campaign_Installation_Buttons, 1, wxALL|wxEXPAND, 5 );
 	
 	
-	Manage_Campaign_Installation_Layout->Add( Manage_Campaign_Installation_Table_Layout, 1, wxALL|wxSHAPED, 5 );
+	Manage_Campaign_Installation_Layout->Add( Manage_Campaign_Installation_Table_Layout, 1, wxALL|wxEXPAND, 5 );
 	
 	wxFlexGridSizer* Manage_Campaign_Installation_Validation_Layout;
 	Manage_Campaign_Installation_Validation_Layout = new wxFlexGridSizer( 0, 3, 0, 0 );
@@ -461,8 +461,8 @@ Manage_Campaign::Manage_Campaign( wxWindow* parent, wxWindowID id, const wxStrin
 	
 	bSizer25->Add( fgSizer62, 1, wxEXPAND, 5 );
 	
-	m_listCtrl9 = new wxListCtrl( Manage_Campaign_Recovery_Tab, wxID_ANY, wxDefaultPosition, wxSize( -1,100 ), wxLC_EDIT_LABELS|wxLC_REPORT );
-	bSizer25->Add( m_listCtrl9, 0, wxALL, 5 );
+	Recovery_Transponder_Caracteristics = new wxListCtrl( Manage_Campaign_Recovery_Tab, wxID_ANY, wxDefaultPosition, wxSize( -1,100 ), wxLC_EDIT_LABELS|wxLC_REPORT );
+	bSizer25->Add( Recovery_Transponder_Caracteristics, 0, wxALL, 5 );
 	
 	
 	Manage_Campaign_Recovery_Layout->Add( bSizer25, 1, wxEXPAND, 5 );
@@ -486,11 +486,11 @@ Manage_Campaign::Manage_Campaign( wxWindow* parent, wxWindowID id, const wxStrin
 	Manage_Campaign_Recovery_Table_Layout->SetFlexibleDirection( wxBOTH );
 	Manage_Campaign_Recovery_Table_Layout->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
-	Campaign_Recovery_Table = new wxListCtrl( Manage_Campaign_Recovery_Tab, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_HRULES|wxLC_REPORT|wxLC_SINGLE_SEL|wxLC_VRULES );
-	Campaign_Recovery_Table->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOWTEXT ) );
-	Campaign_Recovery_Table->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
+	Manage_Campaign_Recovery_Table = new wxListCtrl( Manage_Campaign_Recovery_Tab, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_HRULES|wxLC_REPORT|wxLC_SINGLE_SEL|wxLC_VRULES );
+	Manage_Campaign_Recovery_Table->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOWTEXT ) );
+	Manage_Campaign_Recovery_Table->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 	
-	Manage_Campaign_Recovery_Table_Layout->Add( Campaign_Recovery_Table, 0, wxALL|wxEXPAND, 5 );
+	Manage_Campaign_Recovery_Table_Layout->Add( Manage_Campaign_Recovery_Table, 0, wxALL|wxEXPAND, 5 );
 	
 	wxBoxSizer* Manage_Campaign_Recovery_Buttons;
 	Manage_Campaign_Recovery_Buttons = new wxBoxSizer( wxVERTICAL );
@@ -505,10 +505,10 @@ Manage_Campaign::Manage_Campaign( wxWindow* parent, wxWindowID id, const wxStrin
 	Manage_Campaign_Recovery_Buttons->Add( Manage_Campaign_Recovery_Delete_Burst_Button, 0, wxALL|wxEXPAND, 5 );
 	
 	
-	Manage_Campaign_Recovery_Table_Layout->Add( Manage_Campaign_Recovery_Buttons, 1, wxEXPAND, 5 );
+	Manage_Campaign_Recovery_Table_Layout->Add( Manage_Campaign_Recovery_Buttons, 1, wxALL|wxEXPAND, 5 );
 	
 	
-	Manage_Campaign_Recovery_Layout->Add( Manage_Campaign_Recovery_Table_Layout, 1, wxALL|wxSHAPED, 5 );
+	Manage_Campaign_Recovery_Layout->Add( Manage_Campaign_Recovery_Table_Layout, 1, wxALL|wxEXPAND, 5 );
 	
 	wxFlexGridSizer* Manage_Campaign_Recovery_Validation_Layout;
 	Manage_Campaign_Recovery_Validation_Layout = new wxFlexGridSizer( 0, 3, 0, 0 );
@@ -636,8 +636,8 @@ Manage_Campaign::Manage_Campaign( wxWindow* parent, wxWindowID id, const wxStrin
 	Manage_Campaign_Installation_Set_Position_Manually_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Set_Position_Button ), NULL, this );
 	Manage_Campaign_Launch_Auto_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Launch_Auto_Burst ), NULL, this );
 	Manage_Campaign_Launch_Semi_Auto_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Launch_Semin_Auto_Burst ), NULL, this );
-	Campaign_Recovery_Table->Connect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Manage_Campaign::OnDoubleClick ), NULL, this );
-	Campaign_Recovery_Table->Connect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Manage_Campaign::OnLeftDown ), NULL, this );
+	Manage_Campaign_Recovery_Table->Connect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Manage_Campaign::OnDoubleClick ), NULL, this );
+	Manage_Campaign_Recovery_Table->Connect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Manage_Campaign::OnLeftDown ), NULL, this );
 	Manage_Campaign_Recovery_Enter_Burst_Manually_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Enter_Burst_Manually ), NULL, this );
 	Manage_Campaign_Recovery_Edit_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Edit_Burst ), NULL, this );
 	Manage_Campaign_Recovery_Delete_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Delete_Burst ), NULL, this );
@@ -662,8 +662,8 @@ Manage_Campaign::~Manage_Campaign()
 	Manage_Campaign_Installation_Set_Position_Manually_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Set_Position_Button ), NULL, this );
 	Manage_Campaign_Launch_Auto_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Launch_Auto_Burst ), NULL, this );
 	Manage_Campaign_Launch_Semi_Auto_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Launch_Semin_Auto_Burst ), NULL, this );
-	Campaign_Recovery_Table->Disconnect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Manage_Campaign::OnDoubleClick ), NULL, this );
-	Campaign_Recovery_Table->Disconnect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Manage_Campaign::OnLeftDown ), NULL, this );
+	Manage_Campaign_Recovery_Table->Disconnect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Manage_Campaign::OnDoubleClick ), NULL, this );
+	Manage_Campaign_Recovery_Table->Disconnect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Manage_Campaign::OnLeftDown ), NULL, this );
 	Manage_Campaign_Recovery_Enter_Burst_Manually_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Enter_Burst_Manually ), NULL, this );
 	Manage_Campaign_Recovery_Edit_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Edit_Burst ), NULL, this );
 	Manage_Campaign_Recovery_Delete_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Delete_Burst ), NULL, this );

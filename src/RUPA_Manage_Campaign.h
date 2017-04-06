@@ -40,6 +40,7 @@ class RUPA_Manage_Campaign : public Manage_Campaign
 		RUPA_Burst_Editing * t_Burst_Editing;
 		RUPA_Warning_Delete_Burst * t_Warning_Delete_Burst;
 		RUPA_Change_Validation_State * t_Change_Validation_State;
+		wxWindow* parent;
 
 
 	public:

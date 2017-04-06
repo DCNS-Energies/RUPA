@@ -173,10 +173,10 @@ class Manage_Campaign : public wxDialog
 		wxPanel* Manage_Campaign_Recovery_Tab;
 		wxTextCtrl* Recovery_Transponder_Count;
 		wxStaticText* m_staticText762;
-		wxListCtrl* m_listCtrl9;
+		wxListCtrl* Recovery_Transponder_Caracteristics;
 		wxButton* Manage_Campaign_Launch_Auto_Burst_Button1;
 		wxButton* Manage_Campaign_Launch_Semi_Auto_Burst_Button1;
-		wxListCtrl* Campaign_Recovery_Table;
+		wxListCtrl* Manage_Campaign_Recovery_Table;
 		wxButton* Manage_Campaign_Recovery_Enter_Burst_Manually_Button;
 		wxButton* Manage_Campaign_Recovery_Edit_Burst_Button;
 		wxButton* Manage_Campaign_Recovery_Delete_Burst_Button;
