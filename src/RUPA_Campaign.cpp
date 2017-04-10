@@ -80,14 +80,7 @@ void Set_Col_Campaign(wxListCtrl * l)
     l->InsertColumn(2, ("Campaign's name"));
     l->InsertColumn(3, ("Structure's name"));
     l->InsertColumn(4, ("Devices"));
-    l->InsertColumn(5, ("Transponder's\nAddress"));
-    l->InsertColumn(6, ("Depth"));
-    l->InsertColumn(7, ("Latitude"));
-    l->InsertColumn(8, ("Longitude"));
-    l->InsertColumn(9, ("Installation\ndate +h UTC"));
-    l->InsertColumn(10, ("Recovery\ndate +h UTC"));
-    l->InsertColumn(11, ("Latitude"));
-    l->InsertColumn(12, ("Longitude"));
+
 
 
     /*l->SetColumnWidth(ALARM_ENABLED, wxLIST_AUTOSIZE);
@@ -96,7 +89,7 @@ void Set_Col_Campaign(wxListCtrl * l)
     //l->SetColumnHeight(ALARM_TYPE, wxLIST_AUTOSIZE);
     l->SetColumnWidth(ALARM_STATUS, wxLIST_AUTOSIZE);
     //l->SetColumnHeight(ALARM_STATUS, wxLIST_AUTOSIZE);*/
-    for(int i=0; i<13; i++)
+    for(int i=0; i<5; i++)
     {
 	l->SetColumnWidth(i, wxLIST_AUTOSIZE);
     }

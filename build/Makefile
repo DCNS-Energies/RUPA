@@ -511,6 +511,33 @@ src/RUPA_Manage_Campaign.cpp.s:
 	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.s
 .PHONY : src/RUPA_Manage_Campaign.cpp.s
 
+src/RUPA_Manage_Structure.o: src/RUPA_Manage_Structure.cpp.o
+
+.PHONY : src/RUPA_Manage_Structure.o
+
+# target to build an object file
+src/RUPA_Manage_Structure.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o
+.PHONY : src/RUPA_Manage_Structure.cpp.o
+
+src/RUPA_Manage_Structure.i: src/RUPA_Manage_Structure.cpp.i
+
+.PHONY : src/RUPA_Manage_Structure.i
+
+# target to preprocess a source file
+src/RUPA_Manage_Structure.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.i
+.PHONY : src/RUPA_Manage_Structure.cpp.i
+
+src/RUPA_Manage_Structure.s: src/RUPA_Manage_Structure.cpp.s
+
+.PHONY : src/RUPA_Manage_Structure.s
+
+# target to generate assembly for a file
+src/RUPA_Manage_Structure.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.s
+.PHONY : src/RUPA_Manage_Structure.cpp.s
+
 src/RUPA_New_Campaign.o: src/RUPA_New_Campaign.cpp.o
 
 .PHONY : src/RUPA_New_Campaign.o
@@ -992,6 +1019,9 @@ help:
 	@echo "... src/RUPA_Manage_Campaign.o"
 	@echo "... src/RUPA_Manage_Campaign.i"
 	@echo "... src/RUPA_Manage_Campaign.s"
+	@echo "... src/RUPA_Manage_Structure.o"
+	@echo "... src/RUPA_Manage_Structure.i"
+	@echo "... src/RUPA_Manage_Structure.s"
 	@echo "... src/RUPA_New_Campaign.o"
 	@echo "... src/RUPA_New_Campaign.i"
 	@echo "... src/RUPA_New_Campaign.s"

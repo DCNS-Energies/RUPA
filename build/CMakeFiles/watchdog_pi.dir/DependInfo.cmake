@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Campaign.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Change_Validation_State.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Campaign.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o"
+  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_New_Campaign.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o"

@@ -609,9 +609,33 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o.provides: CMakeFiles/watchdog_
 CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o
 
 
+CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
+CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o: ../src/RUPA_Manage_Structure.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp
+
+CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp > CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.i
+
+CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp -o CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.s
+
+CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.requires:
+
+.PHONY : CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.requires
+
+CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.requires
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.provides.build
+.PHONY : CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.provides
+
+CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o
+
+
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o: ../src/tinyxml/tinyxml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxml.cpp
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.i: cmake_force
@@ -635,7 +659,7 @@ CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o: ../src/tinyxml/tinyxmlparser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxmlparser.cpp
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.i: cmake_force
@@ -659,7 +683,7 @@ CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o.provides.build: CMake
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o: ../src/tinyxml/tinyxmlerror.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxmlerror.cpp
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.i: cmake_force
@@ -706,6 +730,7 @@ watchdog_pi_OBJECTS = \
 "CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o" \
+"CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"
@@ -736,6 +761,7 @@ libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o
+libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o
@@ -743,7 +769,7 @@ libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/build.make
 libwatchdog_pi.so: /usr/lib/x86_64-linux-gnu/libbz2.so
 libwatchdog_pi.so: /usr/lib/x86_64-linux-gnu/libz.so
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX shared library libwatchdog_pi.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX shared library libwatchdog_pi.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/watchdog_pi.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -774,6 +800,7 @@ CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/RUPA_Warning
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o.requires
+CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o.requires

@@ -22,6 +22,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o"
+  "CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"

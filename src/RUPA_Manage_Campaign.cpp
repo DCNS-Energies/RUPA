@@ -1,44 +1,30 @@
 #include "RUPA_Manage_Campaign.h"
 
 
-enum AlarmStatus { ALARM_ENABLED, ALARM_TYPE, ALARM_STATUS };
 
-void Set_Col_Transponder(wxListCtrl * l)
+
+
+void Set_Col_Structures(wxListCtrl * l)
 {
  
     
-    l->InsertColumn(0, ("Address"));
-    l->InsertColumn(1, ("Frequency"));
-    l->InsertColumn(2, ("Voltage"));
-    l->InsertColumn(3, ("Serial Number"));
+    l->InsertColumn(0, ("Devices"));
+    l->InsertColumn(1, ("Transponder's\nAdresses used"));
+    l->InsertColumn(2, ("Depth"));
+    l->InsertColumn(3, ("Latitude"));
+    l->InsertColumn(4, ("Longitude"));
+    l->InsertColumn(5, ("Installation\nDate UTC"));
+    l->InsertColumn(6, ("Recovery\nDate UTC"));
+    l->InsertColumn(7, ("Latitude"));
+    l->InsertColumn(8, ("Longitude"));
 
 
-    for(int i=0; i<13; i++)
+    for(int i=0; i<9; i++)
     {
 	l->SetColumnWidth(i, wxLIST_AUTOSIZE);
     }
 }
 
-void Set_Col_Burst(wxListCtrl * l)
-{
- 
-    
-    l->InsertColumn(0, ("X"));
-    l->InsertColumn(1, ("Burst N°"));
-    l->InsertColumn(2, ("Mode"));
-    l->InsertColumn(3, ("Pings\ncount"));
-    l->InsertColumn(4, ("% Pings\nreceived"));
-    l->InsertColumn(5, ("Starting\nTime"));
-    l->InsertColumn(6, ("Burst Duration"));
-
-
-
-
-    for(int i=0; i<13; i++)
-    {
-	l->SetColumnWidth(i, wxLIST_AUTOSIZE);
-    }
-}
 
 
 
@@ -48,27 +34,33 @@ Manage_Campaign( parent )
 {
 
     this->parent = parent;
-    Set_Col_Transponder(Installation_Transponder_Caracteristics);
-    Set_Col_Transponder(Recovery_Transponder_Caracteristics);
-    Set_Col_Burst(Manage_Campaign_Installation_Table);
-    Set_Col_Burst(Manage_Campaign_Recovery_Table);
+    Set_Col_Structures(Manage_Campaign_Deployed_Table);
+    Set_Col_Structures(Manage_Campaign_Recovered_Table);
 }
 
-void RUPA_Manage_Campaign::On_Launch_Auto_Burst( wxCommandEvent& event )
+void RUPA_Manage_Campaign::On_Import_Structure( wxCommandEvent& event )
 {
-// TODO: Implement On_Launch_Auto_Burst
-    
-    this->Show(!this->IsShown());
-    t_Automatic_Burst = new RUPA_Automatic_Burst(this);
-    RUPA_Utils_Pos(t_Automatic_Burst);
+// TODO: Implement On_Import_Structure
 }
 
-void RUPA_Manage_Campaign::On_Launch_Semi_Auto_Burst( wxCommandEvent& event )
+void RUPA_Manage_Campaign::On_Export_Structure( wxCommandEvent& event )
 {
-// TODO: Implement On_Launch_Semi_Auto_Burst
-    this->Show(!this->IsShown());
-    t_Semi_Automatic_Burst = new RUPA_Semi_Automatic_Burst(this);
-    RUPA_Utils_Pos(t_Semi_Automatic_Burst);
+// TODO: Implement On_Export_Structure
+}
+
+void RUPA_Manage_Campaign::On_Display_All_Structures( wxCommandEvent& event )
+{
+// TODO: Implement On_Display_All_Structures
+}
+
+void RUPA_Manage_Campaign::On_Display_Current_Structures( wxCommandEvent& event )
+{
+// TODO: Implement On_Display_Current_Structures
+}
+
+void RUPA_Manage_Campaign::On_Display_Recovered_Structures( wxCommandEvent& event )
+{
+// TODO: Implement On_Display_Recovered_Structures
 }
 
 void RUPA_Manage_Campaign::OnDoubleClick( wxMouseEvent& event )
@@ -81,62 +73,34 @@ void RUPA_Manage_Campaign::OnLeftDown( wxMouseEvent& event )
 // TODO: Implement OnLeftDown
 }
 
-void RUPA_Manage_Campaign::On_Enter_Burst_Manually( wxCommandEvent& event )
+void RUPA_Manage_Campaign::On_New_Structure( wxCommandEvent& event )
 {
-// TODO: Implement On_Enter_Burst_Manually
+// TODO: Implement On_New_Structure
+    this->On_Manage_Structure(event);
 }
 
-void RUPA_Manage_Campaign::On_Edit_burst( wxCommandEvent& event )
+void RUPA_Manage_Campaign::On_Delete_Structure( wxCommandEvent& event )
 {
-// TODO: Implement On_Edit_burst
-    t_Burst_Editing = new RUPA_Burst_Editing(this);
-    RUPA_Utils_Pos(t_Burst_Editing);
-}
-
-void RUPA_Manage_Campaign::On_Delete_Burst( wxCommandEvent& event )
-{
-// TODO: Implement On_Delete_Burst
-    t_Warning_Delete_Burst = new RUPA_Warning_Delete_Burst(this);
-    RUPA_Utils_Pos(t_Warning_Delete_Burst);
-}
-
-void RUPA_Manage_Campaign::On_Force_Validation( wxCommandEvent& event )
-{
-// TODO: Implement On_Force_Validation
-    t_Change_Validation_State = new RUPA_Change_Validation_State(this);
-    RUPA_Utils_Pos(t_Change_Validation_State);
-}
-
-void RUPA_Manage_Campaign::On_Force_Invalidation( wxCommandEvent& event )
-{
-// TODO: Implement On_Force_Invalidation
-    t_Change_Validation_State = new RUPA_Change_Validation_State(this);
-    RUPA_Utils_Pos(t_Change_Validation_State);
-}
-
-void RUPA_Manage_Campaign::On_Set_Position_Button( wxCommandEvent& event )
-{
-// TODO: Implement On_Set_Position_Button
-
-}
-
-void RUPA_Manage_Campaign::On_Launch_Semin_Auto_Burst( wxCommandEvent& event )
-{
-// TODO: Implement On_Launch_Semin_Auto_Burst
+// TODO: Implement On_Delete_Structure
+   /* this->Show(!this->IsShown());
     t_Semi_Automatic_Burst = new RUPA_Semi_Automatic_Burst(this);
-    RUPA_Utils_Pos(t_Semi_Automatic_Burst);
+    RUPA_Utils_Pos(t_Semi_Automatic_Burst);*/
 }
 
-void RUPA_Manage_Campaign::On_Edit_Burst( wxCommandEvent& event )
+void RUPA_Manage_Campaign::On_Manage_Structure( wxCommandEvent& event )
 {
-// TODO: Implement On_Edit_Burst
-    t_Burst_Editing = new RUPA_Burst_Editing(this);
-    RUPA_Utils_Pos(t_Burst_Editing);
+// TODO: Implement On_Manage_Structure
+    this->Show(!this->IsShown());
+    t_Manage_Structure = new RUPA_Manage_Structure(this);
+    RUPA_Utils_Pos(t_Manage_Structure);
 }
 
-void RUPA_Manage_Campaign::On_Close( wxCommandEvent& event )
+void RUPA_Manage_Campaign::On_Close_Manage_Campaign( wxCommandEvent& event )
 {
-// TODO: Implement On_Close
+// TODO: Implement On_Close_Manage_Campaign
     parent->Show(!parent->IsShown());
     this->Destroy();
 }
+
+
+

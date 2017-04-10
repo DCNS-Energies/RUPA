@@ -51,6 +51,9 @@ SET(SRC_WATCHDOG
 	    src/RUPA_Warning_Delete_Campaign.cpp
 	    src/RUPA_Warning_Delete_Measurement.cpp
 	    src/RUPA_Utility.cpp
+	    src/RUPA_Manage_Structure.cpp
+	    #	    /usr/local/include
+	    #/usr/local/include/cppconn
 
 	)
 

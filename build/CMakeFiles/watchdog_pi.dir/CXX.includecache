@@ -293,6 +293,16 @@ RUPA_Manage_Campaign.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Campaign.h
 RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
+RUPA_Manage_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
+
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp
+RUPA_Manage_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
+
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
+RUPAUI.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
 RUPA_Automatic_Burst.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Automatic_Burst.h
 RUPA_Semi_Automatic_Burst.h

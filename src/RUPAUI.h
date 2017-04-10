@@ -32,8 +32,8 @@
 #include <wx/statline.h>
 
 #include "wxWTranslateCatalog.h"
-
 #include "RUPA_Utility.h"
+
 ///////////////////////////////////////////////////////////////////////////
 
 
@@ -79,6 +79,51 @@ class Campaign : public wxDialog
 		
 		Campaign( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Campaign"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 800,415 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
 		~Campaign();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class Manage_Campaign
+///////////////////////////////////////////////////////////////////////////////
+class Manage_Campaign : public wxDialog 
+{
+	private:
+	
+	protected:
+		wxToolBar* Manage_Campaign_Toolbar;
+		wxToolBarToolBase* Manage_Campaign_Import_Tool; 
+		wxToolBarToolBase* Manage_Campaign_Export_Tool; 
+		wxToolBarToolBase* Manage_Campaign_Display_All_Tool; 
+		wxToolBarToolBase* Manage_Campaign_Display_Current_Tool; 
+		wxToolBarToolBase* Manage_Campaign_Display_Finished_Tool; 
+		wxNotebook* Manage_Campaign_Tabs_Layout;
+		wxPanel* Manage_Campaign_Deployed_Tab;
+		wxListCtrl* Manage_Campaign_Deployed_Table;
+		wxPanel* Manage_Campaign_Recovered_Tab;
+		wxListCtrl* Manage_Campaign_Recovered_Table;
+		wxButton* Manage_Campaign_New_Button;
+		wxButton* Manage_Campaign_Delete_Button;
+		wxButton* Manage_Campaign_Manage_Button;
+		wxButton* Manage_Campaign_Close_Button;
+		
+		// Virtual event handlers, overide them in your derived class
+		virtual void On_Import_Structure( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Export_Structure( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Display_All_Structures( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Display_Current_Structures( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Display_Recovered_Structures( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnDoubleClick( wxMouseEvent& event ) { event.Skip(); }
+		virtual void OnLeftDown( wxMouseEvent& event ) { event.Skip(); }
+		virtual void On_New_Structure( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Delete_Structure( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Manage_Structure( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Close_Manage_Campaign( wxCommandEvent& event ) { event.Skip(); }
+		
+	
+	public:
+		
+		Manage_Campaign( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Campaign"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 700,350 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
+		~Manage_Campaign();
 	
 };
 
@@ -139,60 +184,60 @@ class New_Campaign : public wxDialog
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Class Manage_Campaign
+/// Class Manage_Structure
 ///////////////////////////////////////////////////////////////////////////////
-class Manage_Campaign : public wxDialog 
+class Manage_Structure : public wxDialog 
 {
 	private:
 	
 	protected:
-		wxNotebook* Manage_Campaign_Tabs_Layout;
-		wxPanel* Manage_Campaign_Installation_Tab;
-		wxTextCtrl* Installation_Transponder_Count;
+		wxNotebook* Manage_Strucure_Tabs_Layout;
+		wxPanel* Manage_Structure_Deployment_Tab;
+		wxTextCtrl* Deployment_Transponder_Count;
 		wxStaticText* m_staticText7621;
-		wxListCtrl* Installation_Transponder_Caracteristics;
-		wxButton* Manage_Campaign_Launch_Auto_Burst_Button;
-		wxButton* Manage_Campaign_Launch_Semi_Auto_Burst_Button;
-		wxListCtrl* Manage_Campaign_Installation_Table;
-		wxButton* Manage_Campaign_Installation_Enter_Burst_Manually_Button1;
-		wxButton* Manage_Campaign_Installation_Edit_Burst_Button1;
-		wxButton* Manage_Campaign_Installation_Delete_Burst_Button1;
-		wxGauge* Manage_Campaign_Installation_Gauge_LED_Validation;
-		wxStaticText* Manage_Campaign_Installation_Validation_Text;
-		wxButton* Manage_Campaign_Installation_Validation_Force_Validation_Buttons;
-		wxButton* Manage_Campaign_Installation_Validation_Force_Invalidation_Buttons;
+		wxListCtrl* Deployment_Transponder_Caracteristics;
+		wxButton* Manage_Structure_Launch_Auto_Burst_Button;
+		wxButton* Manage_Structure_Launch_Semi_Auto_Burst_Button;
+		wxListCtrl* Manage_Structure_Deployment_Table;
+		wxButton* Manage_Structure_Deployment_Enter_Burst_Manually_Button1;
+		wxButton* Manage_Structure_Deployment_Edit_Burst_Button1;
+		wxButton* Manage_Structure_Deployment_Delete_Burst_Button1;
+		wxGauge* Manage_Structure_Deployment_Gauge_LED_Validation;
+		wxStaticText* Manage_Structure_Deployment_Validation_Text;
+		wxButton* Manage_Structure_Deployment_Validation_Force_Validation_Buttons;
+		wxButton* Manage_Structure_Deployment_Validation_Force_Invalidation_Buttons;
 		wxStaticText* m_staticText761;
 		wxStaticText* m_staticText791;
-		wxTextCtrl* Installation_Lon_Box;
+		wxTextCtrl* Deployment_Lat_Box;
 		wxStaticText* m_staticText781;
-		wxTextCtrl* Installation_Lat_Box;
+		wxTextCtrl* Deployment_Lon_Box;
 		wxStaticText* m_staticText771;
-		wxTextCtrl* Installation_Approximation_Radius_Box;
+		wxTextCtrl* Deployment_Approximation_Radius_Box;
 		wxStaticText* m_staticText801;
-		wxButton* Manage_Campaign_Installation_Set_Position_Manually_Button;
-		wxPanel* Manage_Campaign_Recovery_Tab;
+		wxButton* Manage_Structure_Deployment_Set_Position_Manually_Button;
+		wxPanel* Manage_Structure_Recovery_Tab;
 		wxTextCtrl* Recovery_Transponder_Count;
 		wxStaticText* m_staticText762;
 		wxListCtrl* Recovery_Transponder_Caracteristics;
-		wxButton* Manage_Campaign_Launch_Auto_Burst_Button1;
-		wxButton* Manage_Campaign_Launch_Semi_Auto_Burst_Button1;
-		wxListCtrl* Manage_Campaign_Recovery_Table;
-		wxButton* Manage_Campaign_Recovery_Enter_Burst_Manually_Button;
-		wxButton* Manage_Campaign_Recovery_Edit_Burst_Button;
-		wxButton* Manage_Campaign_Recovery_Delete_Burst_Button;
-		wxGauge* Manage_Campaign_Recovery_Gauge_LED_Validation;
+		wxButton* Manage_Structure_Launch_Auto_Burst_Button1;
+		wxButton* Manage_Structure_Launch_Semi_Auto_Burst_Button1;
+		wxListCtrl* Manage_Structure_Recovery_Table;
+		wxButton* Manage_Structure_Recovery_Enter_Burst_Manually_Button;
+		wxButton* Manage_Structure_Recovery_Edit_Burst_Button;
+		wxButton* Manage_Structure_Recovery_Delete_Burst_Button;
+		wxGauge* Manage_Structure_Recovery_Gauge_LED_Validation;
 		wxStaticText* m_staticText70;
-		wxButton* Manage_Campaign_Recovery_Validation_Force_Validation_Buttons;
-		wxButton* Manage_Campaign_Recovery_Invalidation_Force_Validation_Buttons;
+		wxButton* Manage_Structure_Recovery_Validation_Force_Validation_Buttons;
+		wxButton* Manage_Structure_Recovery_Invalidation_Force_Validation_Buttons;
 		wxStaticText* m_staticText76;
 		wxStaticText* m_staticText79;
-		wxTextCtrl* Recover_Lon_Box;
-		wxStaticText* m_staticText78;
 		wxTextCtrl* Recovery_Lat_Box;
+		wxStaticText* m_staticText78;
+		wxTextCtrl* Recovery_Lon_Box;
 		wxStaticText* m_staticText77;
 		wxTextCtrl* Recovery_Approximation_Radius_Box;
 		wxStaticText* m_staticText80;
-		wxButton* Manage_Campaign_Recovery_Set_Position_Manually_Button;
+		wxButton* Manage_Structure_Recovery_Set_Position_Manually_Button;
 		wxButton* Close_Button;
 		
 		// Virtual event handlers, overide them in your derived class
@@ -213,8 +258,8 @@ class Manage_Campaign : public wxDialog
 	
 	public:
 		
-		Manage_Campaign( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Campaign"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 560,772 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
-		~Manage_Campaign();
+		Manage_Structure( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Structure"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 560,772 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
+		~Manage_Structure();
 	
 };
 
