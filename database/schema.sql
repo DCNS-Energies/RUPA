@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS Campaign (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     viewable BOOLEAN NOT NULL DEFAULT 1,
+    location TEXT,
     geographical_area LONGTEXT,
     campaign_name TEXT,
     finished boolean NOT NULL DEFAULT 0,

@@ -3,7 +3,7 @@
 ## Copyright:   
 ## License:     GPLv3+
 ##---------------------------------------------------------------------------
-
+TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} mysqlcppconn)
 IF(NOT APPLE)
   TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} ${wxWidgets_LIBRARIES} ${EXTRA_LIBS} )
 ENDIF(NOT APPLE)

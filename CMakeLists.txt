@@ -24,6 +24,9 @@ SET(VERSION_DATE ${PLUGIN_VERSION_DATE})
 SET(PLUGIN_VERSION "${PLUGIN_VERSION_MAJOR}.${PLUGIN_VERSION_MINOR}.${PLUGIN_VERSION_PATCH}" )
 
 INCLUDE("cmake/PluginConfigure.cmake")
+#INCLUDE_DIRECTORIES(. "/usr/include/cppconn")
+#LINK_DIRECTORIES("/usr/lib/" "mysqlcppconn")
+#TARGET_LINK_LIBRARIES(watchdog_pi mysqlcppconn)
 
 SET(SRC_WATCHDOG
             src/watchdog_pi.cpp
@@ -89,3 +92,5 @@ ADD_DEFINITIONS(-DTIXML_USE_STL)
 INCLUDE("cmake/PluginInstall.cmake")
 INCLUDE("cmake/PluginLocalization.cmake")
 INCLUDE("cmake/PluginPackage.cmake")
+#INCLUDE("/usr/local/include")
+#INCLUDE("/usr/local/include/cppconn")

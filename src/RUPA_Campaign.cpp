@@ -172,7 +172,7 @@ void RUPA_Campaign::OnLeftDown( wxMouseEvent& event )
 void RUPA_Campaign::On_New_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_New_Campaign
-    t_New_Campaign = new RUPA_New_Campaign(this);
+    t_New_Campaign = new RUPA_New_Campaign(this, this);
     RUPA_Utils_Pos(t_New_Campaign);
 
 }
@@ -187,7 +187,7 @@ void RUPA_Campaign::On_Delete_Campaign( wxCommandEvent& event )
 void RUPA_Campaign::On_Manage_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_Manage_Campaign
-    this->Show(!this->IsShown());
+this->Show(!this->IsShown());
     t_Manage_Campaign = new RUPA_Manage_Campaign(this);
     RUPA_Utils_Pos(t_Manage_Campaign);
    }

@@ -3,6 +3,7 @@
 //Here are some usefull little snippets, just
 //to avoid typind or reading boring code
 
+
 #ifndef __RUPA_UTILS_H__
 #define __RUPA_UTILS_H__
 
@@ -31,7 +32,25 @@
 
 #include "wxWTranslateCatalog.h"
 
+#include "mysql_connection.h"
 
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
+
+#include <string>
+#include <sstream>
+
+class watchdog_pi;
+//#include "RUPA_Campaign.h"
+
+
+#define HOST "localhost"
+#define USER ""
+#define PASS ""
+#define DB "rupa"
 void RUPA_Utils_Pos(wxWindow *w);
 
 

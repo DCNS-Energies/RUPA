@@ -321,6 +321,8 @@ RUPA_New_Campaign.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_New_Campaign.h
 RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
+RUPA_Campaign.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Campaign.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.cpp
 RUPA_Semi_Automatic_Burst.h
@@ -381,6 +383,22 @@ wx/statline.h
 -
 wxWTranslateCatalog.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
+mysql_connection.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/mysql_connection.h
+cppconn/driver.h
+-
+cppconn/exception.h
+-
+cppconn/resultset.h
+-
+cppconn/statement.h
+-
+cppconn/prepared_statement.h
+-
+string
+-
+sstream
+-
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.cpp
 RUPA_Warning_Delete_Burst.h

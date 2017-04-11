@@ -2596,9 +2596,18 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o: /usr/include/wx-3.0/
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o: /usr/lib/x86_64-linux-gnu/wx/include/gtk2-unicode-3.0/wx/setup.h
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPAUI.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Automatic_Burst.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Burst_Editing.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Campaign.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Change_Validation_State.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Manage_Campaign.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Manage_Structure.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_New_Campaign.cpp
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_New_Campaign.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Semi_Automatic_Burst.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Utility.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Warning_Delete_Burst.h
+CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_Warning_Delete_Campaign.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/wxWTranslateCatalog.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: /usr/include/wx-3.0/wx/accel.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: /usr/include/wx-3.0/wx/access.h

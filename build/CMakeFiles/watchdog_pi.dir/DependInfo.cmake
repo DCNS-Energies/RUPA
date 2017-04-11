@@ -47,6 +47,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../src"
+  "../."
+  "/usr/include/cppconn"
   "/usr/lib/x86_64-linux-gnu/wx/include/gtk2-unicode-3.0"
   "/usr/include/wx-3.0"
   "../src/tinyxml"
