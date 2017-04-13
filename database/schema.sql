@@ -1,7 +1,6 @@
 CREATE TABLE IF NOT EXISTS Campaign (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     viewable BOOLEAN NOT NULL DEFAULT 1,
-    location TEXT,
     geographical_area LONGTEXT,
     campaign_name TEXT,
     finished boolean NOT NULL DEFAULT 0,
@@ -14,6 +13,7 @@ CREATE TABLE IF NOT EXISTS Structure (
     campaign INT UNSIGNED NOT NULL,
     viewable BOOLEAN NOT NULL DEFAULT 1,
     devices LONGTEXT,
+    transponders INT,
     structure_depth DOUBLE,
     PRIMARY KEY (id),
     CONSTRAINT fk_campaign_id
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS Transponder (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     structure INT UNSIGNED NOT NULL,
     viewable BOOLEAN NOT NULL DEFAULT 1,
-    serial_number BIGINT,
+    serial_number TEXT,
     address INT NOT NULL DEFAULT 000,
     frequency INT NOT NULL DEFAULT 1,
     deployment_voltage DOUBLE,

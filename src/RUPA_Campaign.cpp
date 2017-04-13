@@ -81,14 +81,6 @@ void Set_Col_Campaign(wxListCtrl * l)
     l->InsertColumn(3, ("Structure's name"));
     l->InsertColumn(4, ("Devices"));
 
-
-
-    /*l->SetColumnWidth(ALARM_ENABLED, wxLIST_AUTOSIZE);
-    //l->SetRowHeight(ALARM_ENABLED, wxLIST_AUTOSIZE);
-    l->SetColumnWidth(ALARM_TYPE, wxLIST_AUTOSIZE);
-    //l->SetColumnHeight(ALARM_TYPE, wxLIST_AUTOSIZE);
-    l->SetColumnWidth(ALARM_STATUS, wxLIST_AUTOSIZE);
-    //l->SetColumnHeight(ALARM_STATUS, wxLIST_AUTOSIZE);*/
     for(int i=0; i<5; i++)
     {
 	l->SetColumnWidth(i, wxLIST_AUTOSIZE);
@@ -196,4 +188,8 @@ this->Show(!this->IsShown());
 void RUPA_Campaign::On_Close( wxCommandEvent& event )
 {
     this->Show(!this->IsShown());
+}
+
+void RUPA_Campaign::Print_Campaigns_In_Table()
+{
 }

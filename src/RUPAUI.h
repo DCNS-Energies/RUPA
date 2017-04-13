@@ -28,11 +28,10 @@
 #include <wx/dialog.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/gauge.h>
 #include <wx/statline.h>
+#include <wx/gauge.h>
 
 #include "wxWTranslateCatalog.h"
-#include "RUPA_Utility.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -105,6 +104,7 @@ class Manage_Campaign : public wxDialog
 		wxButton* Manage_Campaign_Delete_Button;
 		wxButton* Manage_Campaign_Manage_Button;
 		wxButton* Manage_Campaign_Close_Button;
+		wxButton* Manage_Campaign_Finish_Button;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void On_Import_Structure( wxCommandEvent& event ) { event.Skip(); }
@@ -112,17 +112,16 @@ class Manage_Campaign : public wxDialog
 		virtual void On_Display_All_Structures( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Display_Current_Structures( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Display_Recovered_Structures( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnDoubleClick( wxMouseEvent& event ) { event.Skip(); }
-		virtual void OnLeftDown( wxMouseEvent& event ) { event.Skip(); }
 		virtual void On_New_Structure( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Delete_Structure( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Manage_Structure( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Close_Manage_Campaign( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Finish_Campaign( wxCommandEvent& event ) { event.Skip(); }
 		
 	
 	public:
 		
-		Manage_Campaign( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Campaign"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 700,350 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
+		Manage_Campaign( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Campaign"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
 		~Manage_Campaign();
 	
 };
@@ -161,11 +160,11 @@ class New_Campaign : public wxDialog
 	
 	protected:
 		wxStaticText* New_Compaign_Beacon_Name_Label;
-		wxTextCtrl* New_Compaign_Beacon_Name_Inbox;
+		wxTextCtrl* New_Campaign_Beacon_Name_Inbox;
 		wxStaticText* New_Campaign_Name_Inbox_Label;
 		wxTextCtrl* New_Campaign_Name_Inbox;
 		wxStaticText* New_Compaign_Geographical_Area_Label;
-		wxTextCtrl* New_Compaign_Geographical_Area_Inbox;
+		wxTextCtrl* New_Campaign_Geographical_Area_Inbox;
 		wxButton* New_Compaign_Install_Later_Button;
 		wxButton* New_Compaign_Install_Now_Button;
 		wxButton* New_Campaign_Cancel_Button;
@@ -195,7 +194,12 @@ class Manage_Structure : public wxDialog
 		wxPanel* Manage_Structure_Deployment_Tab;
 		wxTextCtrl* Deployment_Transponder_Count;
 		wxStaticText* m_staticText7621;
+		wxStaticLine* m_staticline2;
+		wxButton* Deployment_Set_Depth_Button;
 		wxListCtrl* Deployment_Transponder_Caracteristics;
+		wxButton* Add_Transponder_Button;
+		wxButton* Edit_Transponder_Button;
+		wxButton* Remove_Transponder_Button;
 		wxButton* Manage_Structure_Launch_Auto_Burst_Button;
 		wxButton* Manage_Structure_Launch_Semi_Auto_Burst_Button;
 		wxListCtrl* Manage_Structure_Deployment_Table;
@@ -218,6 +222,8 @@ class Manage_Structure : public wxDialog
 		wxPanel* Manage_Structure_Recovery_Tab;
 		wxTextCtrl* Recovery_Transponder_Count;
 		wxStaticText* m_staticText762;
+		wxStaticLine* m_staticline3;
+		wxButton* Recovery_Set_Depth_Button;
 		wxListCtrl* Recovery_Transponder_Caracteristics;
 		wxButton* Manage_Structure_Launch_Auto_Burst_Button1;
 		wxButton* Manage_Structure_Launch_Semi_Auto_Burst_Button1;
@@ -241,10 +247,11 @@ class Manage_Structure : public wxDialog
 		wxButton* Close_Button;
 		
 		// Virtual event handlers, overide them in your derived class
+		virtual void On_Add_Transponder( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Edit_Transponder( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Remove_Transponder( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Launch_Auto_Burst( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Launch_Semi_Auto_Burst( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnDoubleClick( wxMouseEvent& event ) { event.Skip(); }
-		virtual void OnLeftDown( wxMouseEvent& event ) { event.Skip(); }
 		virtual void On_Enter_Burst_Manually( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Edit_burst( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Delete_Burst( wxCommandEvent& event ) { event.Skip(); }
@@ -258,8 +265,37 @@ class Manage_Structure : public wxDialog
 	
 	public:
 		
-		Manage_Structure( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Structure"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 560,772 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
+		Manage_Structure( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Structure"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 560,674 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
 		~Manage_Structure();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class Manage_Transponder
+///////////////////////////////////////////////////////////////////////////////
+class Manage_Transponder : public wxDialog 
+{
+	private:
+	
+	protected:
+		wxStaticText* m_staticText33;
+		wxTextCtrl* Transponder_Address_Inbox;
+		wxStaticText* m_staticText331;
+		wxTextCtrl* Transponder_Frequency_Inbox;
+		wxStaticText* m_staticText332;
+		wxTextCtrl* Transponder_Serial_Number_Inbox;
+		wxButton* Ok_Transponder_Edition;
+		wxButton* m_button56;
+		
+		// Virtual event handlers, overide them in your derived class
+		virtual void On_Accept_Transponder_Edit( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Cancel_Transponder_Edit( wxCommandEvent& event ) { event.Skip(); }
+		
+	
+	public:
+		
+		Manage_Transponder( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Transponder"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE ); 
+		~Manage_Transponder();
 	
 };
 

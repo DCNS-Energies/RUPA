@@ -538,6 +538,33 @@ src/RUPA_Manage_Structure.cpp.s:
 	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.s
 .PHONY : src/RUPA_Manage_Structure.cpp.s
 
+src/RUPA_Manage_Transponder.o: src/RUPA_Manage_Transponder.cpp.o
+
+.PHONY : src/RUPA_Manage_Transponder.o
+
+# target to build an object file
+src/RUPA_Manage_Transponder.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o
+.PHONY : src/RUPA_Manage_Transponder.cpp.o
+
+src/RUPA_Manage_Transponder.i: src/RUPA_Manage_Transponder.cpp.i
+
+.PHONY : src/RUPA_Manage_Transponder.i
+
+# target to preprocess a source file
+src/RUPA_Manage_Transponder.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.i
+.PHONY : src/RUPA_Manage_Transponder.cpp.i
+
+src/RUPA_Manage_Transponder.s: src/RUPA_Manage_Transponder.cpp.s
+
+.PHONY : src/RUPA_Manage_Transponder.s
+
+# target to generate assembly for a file
+src/RUPA_Manage_Transponder.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.s
+.PHONY : src/RUPA_Manage_Transponder.cpp.s
+
 src/RUPA_New_Campaign.o: src/RUPA_New_Campaign.cpp.o
 
 .PHONY : src/RUPA_New_Campaign.o
@@ -1022,6 +1049,9 @@ help:
 	@echo "... src/RUPA_Manage_Structure.o"
 	@echo "... src/RUPA_Manage_Structure.i"
 	@echo "... src/RUPA_Manage_Structure.s"
+	@echo "... src/RUPA_Manage_Transponder.o"
+	@echo "... src/RUPA_Manage_Transponder.i"
+	@echo "... src/RUPA_Manage_Transponder.s"
 	@echo "... src/RUPA_New_Campaign.o"
 	@echo "... src/RUPA_New_Campaign.i"
 	@echo "... src/RUPA_New_Campaign.s"

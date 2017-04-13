@@ -96,6 +96,7 @@ double heading_resolve(double degrees);
 #include "Alarm.h"
 #include "ConfigurationDialog.h"
 #include "RUPA_Campaign.h"
+#include "RUPA_Utility.h"
 
 class wdDC;
 class WatchdogDialog;

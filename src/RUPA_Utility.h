@@ -52,6 +52,9 @@ class watchdog_pi;
 #define PASS ""
 #define DB "rupa"
 void RUPA_Utils_Pos(wxWindow *w);
+void RUPA_Utils_Print_SQL_Error(sql::SQLException &e);
+
+
 
 
 #endif

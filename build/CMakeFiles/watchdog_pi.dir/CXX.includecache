@@ -237,14 +237,12 @@ wx/stattext.h
 -
 wx/textctrl.h
 -
-wx/gauge.h
--
 wx/statline.h
+-
+wx/gauge.h
 -
 wxWTranslateCatalog.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
-RUPA_Utility.h
-/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Automatic_Burst.cpp
 RUPA_Automatic_Burst.h
@@ -253,6 +251,8 @@ RUPA_Automatic_Burst.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Automatic_Burst.h
 RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Burst_Editing.cpp
 RUPA_Burst_Editing.h
@@ -277,6 +277,8 @@ RUPA_New_Campaign.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_New_Campaign.h
 RUPA_Warning_Delete_Campaign.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Change_Validation_State.cpp
 RUPA_Change_Validation_State.h
@@ -313,6 +315,24 @@ RUPA_Change_Validation_State.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Change_Validation_State.h
 RUPA_Warning_Delete_Burst.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
+RUPA_Manage_Transponder.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.h
+RUPA_Manage_Campaign.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Campaign.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
+
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.cpp
+RUPA_Manage_Transponder.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.h
+
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.h
+RUPAUI.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
+RUPA_Manage_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_New_Campaign.cpp
 RUPA_New_Campaign.h
@@ -323,6 +343,8 @@ RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
 RUPA_Campaign.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Campaign.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.cpp
 RUPA_Semi_Automatic_Burst.h
@@ -331,6 +353,8 @@ RUPA_Semi_Automatic_Burst.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.h
 RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.cpp
 RUPA_Utility.h
@@ -633,6 +657,8 @@ ConfigurationDialog.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/ConfigurationDialog.h
 RUPA_Campaign.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Campaign.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.cpp
 wx/wxprec.h
