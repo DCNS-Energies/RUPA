@@ -619,6 +619,33 @@ src/RUPA_Semi_Automatic_Burst.cpp.s:
 	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.s
 .PHONY : src/RUPA_Semi_Automatic_Burst.cpp.s
 
+src/RUPA_Setup_Structure.o: src/RUPA_Setup_Structure.cpp.o
+
+.PHONY : src/RUPA_Setup_Structure.o
+
+# target to build an object file
+src/RUPA_Setup_Structure.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o
+.PHONY : src/RUPA_Setup_Structure.cpp.o
+
+src/RUPA_Setup_Structure.i: src/RUPA_Setup_Structure.cpp.i
+
+.PHONY : src/RUPA_Setup_Structure.i
+
+# target to preprocess a source file
+src/RUPA_Setup_Structure.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.i
+.PHONY : src/RUPA_Setup_Structure.cpp.i
+
+src/RUPA_Setup_Structure.s: src/RUPA_Setup_Structure.cpp.s
+
+.PHONY : src/RUPA_Setup_Structure.s
+
+# target to generate assembly for a file
+src/RUPA_Setup_Structure.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.s
+.PHONY : src/RUPA_Setup_Structure.cpp.s
+
 src/RUPA_Utility.o: src/RUPA_Utility.cpp.o
 
 .PHONY : src/RUPA_Utility.o
@@ -1058,6 +1085,9 @@ help:
 	@echo "... src/RUPA_Semi_Automatic_Burst.o"
 	@echo "... src/RUPA_Semi_Automatic_Burst.i"
 	@echo "... src/RUPA_Semi_Automatic_Burst.s"
+	@echo "... src/RUPA_Setup_Structure.o"
+	@echo "... src/RUPA_Setup_Structure.i"
+	@echo "... src/RUPA_Setup_Structure.s"
 	@echo "... src/RUPA_Utility.o"
 	@echo "... src/RUPA_Utility.i"
 	@echo "... src/RUPA_Utility.s"

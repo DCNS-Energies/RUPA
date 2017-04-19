@@ -44,7 +44,7 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	Campaign_Current_Table = new wxListCtrl( Campaign_Current_Tab, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_HRULES|wxLC_REPORT|wxLC_SINGLE_SEL|wxLC_VRULES );
 	Campaign_Current_Table->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_INFOBK ) );
 	
-	Campaign_Current_Table_Layout->Add( Campaign_Current_Table, 0, wxALL|wxEXPAND, 5 );
+	Campaign_Current_Table_Layout->Add( Campaign_Current_Table, 0, wxALIGN_BOTTOM|wxALL|wxEXPAND|wxSHAPED, 5 );
 	
 	
 	Campaign_Current_Tab->SetSizer( Campaign_Current_Table_Layout );
@@ -61,7 +61,7 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	Campaign_Finished_Table->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOWTEXT ) );
 	Campaign_Finished_Table->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 	
-	Campaign_Finished_Table_Layout->Add( Campaign_Finished_Table, 1, wxALL|wxEXPAND, 5 );
+	Campaign_Finished_Table_Layout->Add( Campaign_Finished_Table, 1, wxALIGN_BOTTOM|wxALL|wxEXPAND|wxSHAPED, 5 );
 	
 	
 	Campaign_Finished_Tab->SetSizer( Campaign_Finished_Table_Layout );
@@ -69,7 +69,7 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	Campaign_Finished_Table_Layout->Fit( Campaign_Finished_Tab );
 	Campaign_Tabs_Layout->AddPage( Campaign_Finished_Tab, _("Finished Campaign"), false );
 	
-	Campaign_Layout->Add( Campaign_Tabs_Layout, 1, wxEXPAND | wxALL, 5 );
+	Campaign_Layout->Add( Campaign_Tabs_Layout, 1, wxALL|wxEXPAND, 5 );
 	
 	wxFlexGridSizer* Campaign_Buttons_Layout;
 	Campaign_Buttons_Layout = new wxFlexGridSizer( 0, 5, 0, 0 );
@@ -89,7 +89,7 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	Campaign_Buttons_Layout->Add( Campaign_Close_Button, 0, wxALL, 5 );
 	
 	
-	Campaign_Layout->Add( Campaign_Buttons_Layout, 0, wxEXPAND, 5 );
+	Campaign_Layout->Add( Campaign_Buttons_Layout, 0, wxALIGN_BOTTOM|wxSHAPED, 5 );
 	
 	
 	this->SetSizer( Campaign_Layout );
@@ -103,10 +103,6 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	this->Connect( Campaign_Display_All_Tool->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Campaign::On_Display_All ) );
 	this->Connect( Campaign_Display_Current_Tool->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Campaign::On_Display_Current ) );
 	this->Connect( Campaign_Display_Finished_Tool->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Campaign::On_Display_Finished ) );
-	Campaign_Current_Table->Connect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Campaign::OnDoubleClick ), NULL, this );
-	Campaign_Current_Table->Connect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Campaign::OnLeftDown ), NULL, this );
-	Campaign_Finished_Table->Connect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Campaign::OnDoubleClick ), NULL, this );
-	Campaign_Finished_Table->Connect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Campaign::OnLeftDown ), NULL, this );
 	Campaign_New_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_New_Campaign ), NULL, this );
 	Campaign_Delete_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Delete_Campaign ), NULL, this );
 	Campaign_Manage_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Manage_Campaign ), NULL, this );
@@ -121,10 +117,6 @@ Campaign::~Campaign()
 	this->Disconnect( Campaign_Display_All_Tool->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Campaign::On_Display_All ) );
 	this->Disconnect( Campaign_Display_Current_Tool->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Campaign::On_Display_Current ) );
 	this->Disconnect( Campaign_Display_Finished_Tool->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Campaign::On_Display_Finished ) );
-	Campaign_Current_Table->Disconnect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Campaign::OnDoubleClick ), NULL, this );
-	Campaign_Current_Table->Disconnect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Campaign::OnLeftDown ), NULL, this );
-	Campaign_Finished_Table->Disconnect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( Campaign::OnDoubleClick ), NULL, this );
-	Campaign_Finished_Table->Disconnect( wxEVT_LEFT_DOWN, wxMouseEventHandler( Campaign::OnLeftDown ), NULL, this );
 	Campaign_New_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_New_Campaign ), NULL, this );
 	Campaign_Delete_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Delete_Campaign ), NULL, this );
 	Campaign_Manage_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Manage_Campaign ), NULL, this );
@@ -399,18 +391,8 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	fgSizer621->SetFlexibleDirection( wxBOTH );
 	fgSizer621->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
-	Deployment_Transponder_Count = new wxTextCtrl( Manage_Structure_Deployment_Tab, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER|wxTE_READONLY );
-	fgSizer621->Add( Deployment_Transponder_Count, 0, wxALL, 5 );
-	
-	m_staticText7621 = new wxStaticText( Manage_Structure_Deployment_Tab, wxID_ANY, _("Transponders"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText7621->Wrap( -1 );
-	fgSizer621->Add( m_staticText7621, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-	
-	m_staticline2 = new wxStaticLine( Manage_Structure_Deployment_Tab, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_VERTICAL );
-	fgSizer621->Add( m_staticline2, 0, wxALL|wxEXPAND, 5 );
-	
-	Deployment_Set_Depth_Button = new wxButton( Manage_Structure_Deployment_Tab, wxID_ANY, _("Set Depth"), wxDefaultPosition, wxDefaultSize, 0 );
-	fgSizer621->Add( Deployment_Set_Depth_Button, 0, wxALL|wxEXPAND, 5 );
+	Deployment_General_Settings_Button = new wxButton( Manage_Structure_Deployment_Tab, wxID_ANY, _("Set Up General Settings Of Structure"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer621->Add( Deployment_General_Settings_Button, 0, wxALL|wxEXPAND, 5 );
 	
 	
 	Manage_Structure_Installation_Layout->Add( fgSizer621, 1, wxEXPAND, 5 );
@@ -446,11 +428,11 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	Manage_Structure_Installation_Launch_Buttons_Layout->SetFlexibleDirection( wxBOTH );
 	Manage_Structure_Installation_Launch_Buttons_Layout->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
-	Manage_Structure_Launch_Auto_Burst_Button = new wxButton( Manage_Structure_Deployment_Tab, wxID_ANY, _("Laucnh Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
-	Manage_Structure_Installation_Launch_Buttons_Layout->Add( Manage_Structure_Launch_Auto_Burst_Button, 0, wxALL, 5 );
+	Manage_Structure_Deployment_Launch_Auto_Burst_Button = new wxButton( Manage_Structure_Deployment_Tab, wxID_ANY, _("Laucnh Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
+	Manage_Structure_Installation_Launch_Buttons_Layout->Add( Manage_Structure_Deployment_Launch_Auto_Burst_Button, 0, wxALL, 5 );
 	
-	Manage_Structure_Launch_Semi_Auto_Burst_Button = new wxButton( Manage_Structure_Deployment_Tab, wxID_ANY, _("Launch Semi Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
-	Manage_Structure_Installation_Launch_Buttons_Layout->Add( Manage_Structure_Launch_Semi_Auto_Burst_Button, 0, wxALL, 5 );
+	Manage_Structure_Deployment_Launch_Semi_Auto_Burst_Button = new wxButton( Manage_Structure_Deployment_Tab, wxID_ANY, _("Launch Semi Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
+	Manage_Structure_Installation_Launch_Buttons_Layout->Add( Manage_Structure_Deployment_Launch_Semi_Auto_Burst_Button, 0, wxALL, 5 );
 	
 	
 	Manage_Structure_Installation_Layout->Add( Manage_Structure_Installation_Launch_Buttons_Layout, 1, wxSHAPED, 5 );
@@ -592,18 +574,8 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	fgSizer62->SetFlexibleDirection( wxBOTH );
 	fgSizer62->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
-	Recovery_Transponder_Count = new wxTextCtrl( Manage_Structure_Recovery_Tab, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
-	fgSizer62->Add( Recovery_Transponder_Count, 0, wxALL, 5 );
-	
-	m_staticText762 = new wxStaticText( Manage_Structure_Recovery_Tab, wxID_ANY, _("Transponders"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText762->Wrap( -1 );
-	fgSizer62->Add( m_staticText762, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-	
-	m_staticline3 = new wxStaticLine( Manage_Structure_Recovery_Tab, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_VERTICAL );
-	fgSizer62->Add( m_staticline3, 0, wxEXPAND | wxALL, 5 );
-	
-	Recovery_Set_Depth_Button = new wxButton( Manage_Structure_Recovery_Tab, wxID_ANY, _("Set Depth"), wxDefaultPosition, wxDefaultSize, 0 );
-	fgSizer62->Add( Recovery_Set_Depth_Button, 0, wxALL, 5 );
+	Recovery_General_Settings_Button = new wxButton( Manage_Structure_Recovery_Tab, wxID_ANY, _("Set Up General Settings Of Structure"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer62->Add( Recovery_General_Settings_Button, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
 	
 	Manage_Structure_Recovery_Layout->Add( fgSizer62, 1, wxEXPAND, 5 );
@@ -616,11 +588,11 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	Manage_Strucure_Recovery_Launch_Buttons_Layout->SetFlexibleDirection( wxBOTH );
 	Manage_Strucure_Recovery_Launch_Buttons_Layout->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
-	Manage_Structure_Launch_Auto_Burst_Button1 = new wxButton( Manage_Structure_Recovery_Tab, wxID_ANY, _("Laucnh Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
-	Manage_Strucure_Recovery_Launch_Buttons_Layout->Add( Manage_Structure_Launch_Auto_Burst_Button1, 0, wxALL, 5 );
+	Manage_Structure_Recovery_Launch_Auto_Burst_Button1 = new wxButton( Manage_Structure_Recovery_Tab, wxID_ANY, _("Laucnh Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
+	Manage_Strucure_Recovery_Launch_Buttons_Layout->Add( Manage_Structure_Recovery_Launch_Auto_Burst_Button1, 0, wxALL, 5 );
 	
-	Manage_Structure_Launch_Semi_Auto_Burst_Button1 = new wxButton( Manage_Structure_Recovery_Tab, wxID_ANY, _("Launch Semi Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
-	Manage_Strucure_Recovery_Launch_Buttons_Layout->Add( Manage_Structure_Launch_Semi_Auto_Burst_Button1, 0, wxALL, 5 );
+	Manage_Structure_Recovery_Launch_Semi_Auto_Burst_Button1 = new wxButton( Manage_Structure_Recovery_Tab, wxID_ANY, _("Launch Semi Auto Burst"), wxDefaultPosition, wxDefaultSize, 0 );
+	Manage_Strucure_Recovery_Launch_Buttons_Layout->Add( Manage_Structure_Recovery_Launch_Semi_Auto_Burst_Button1, 0, wxALL, 5 );
 	
 	
 	Manage_Structure_Recovery_Layout->Add( Manage_Strucure_Recovery_Launch_Buttons_Layout, 1, wxSHAPED, 5 );
@@ -768,21 +740,23 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	this->Centre( wxBOTH );
 	
 	// Connect Events
+	Deployment_General_Settings_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Structure_General_Settings_Button ), NULL, this );
 	Add_Transponder_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Add_Transponder ), NULL, this );
 	Edit_Transponder_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Transponder ), NULL, this );
 	Remove_Transponder_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Remove_Transponder ), NULL, this );
-	Manage_Structure_Launch_Auto_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst ), NULL, this );
-	Manage_Structure_Launch_Semi_Auto_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semi_Auto_Burst ), NULL, this );
+	Manage_Structure_Deployment_Launch_Auto_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst_Deployment ), NULL, this );
+	Manage_Structure_Deployment_Launch_Semi_Auto_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semi_Auto_Burst_Deployment ), NULL, this );
 	Manage_Structure_Deployment_Enter_Burst_Manually_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Enter_Burst_Manually ), NULL, this );
-	Manage_Structure_Deployment_Edit_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_burst ), NULL, this );
+	Manage_Structure_Deployment_Edit_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Burst_Deployment ), NULL, this );
 	Manage_Structure_Deployment_Delete_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Delete_Burst ), NULL, this );
 	Manage_Structure_Deployment_Validation_Force_Validation_Buttons->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Validation ), NULL, this );
 	Manage_Structure_Deployment_Validation_Force_Invalidation_Buttons->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Invalidation ), NULL, this );
 	Manage_Structure_Deployment_Set_Position_Manually_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Set_Position_Button ), NULL, this );
-	Manage_Structure_Launch_Auto_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst ), NULL, this );
-	Manage_Structure_Launch_Semi_Auto_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semin_Auto_Burst ), NULL, this );
+	Recovery_General_Settings_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Structure_General_Settings ), NULL, this );
+	Manage_Structure_Recovery_Launch_Auto_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst_Recovery ), NULL, this );
+	Manage_Structure_Recovery_Launch_Semi_Auto_Burst_Button1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semi_Auto_Burst_Recovery ), NULL, this );
 	Manage_Structure_Recovery_Enter_Burst_Manually_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Enter_Burst_Manually ), NULL, this );
-	Manage_Structure_Recovery_Edit_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Burst ), NULL, this );
+	Manage_Structure_Recovery_Edit_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Burst_Recovery ), NULL, this );
 	Manage_Structure_Recovery_Delete_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Delete_Burst ), NULL, this );
 	Manage_Structure_Recovery_Validation_Force_Validation_Buttons->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Validation ), NULL, this );
 	Manage_Structure_Recovery_Invalidation_Force_Validation_Buttons->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Invalidation ), NULL, this );
@@ -793,26 +767,114 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 Manage_Structure::~Manage_Structure()
 {
 	// Disconnect Events
+	Deployment_General_Settings_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Structure_General_Settings_Button ), NULL, this );
 	Add_Transponder_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Add_Transponder ), NULL, this );
 	Edit_Transponder_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Transponder ), NULL, this );
 	Remove_Transponder_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Remove_Transponder ), NULL, this );
-	Manage_Structure_Launch_Auto_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst ), NULL, this );
-	Manage_Structure_Launch_Semi_Auto_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semi_Auto_Burst ), NULL, this );
+	Manage_Structure_Deployment_Launch_Auto_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst_Deployment ), NULL, this );
+	Manage_Structure_Deployment_Launch_Semi_Auto_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semi_Auto_Burst_Deployment ), NULL, this );
 	Manage_Structure_Deployment_Enter_Burst_Manually_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Enter_Burst_Manually ), NULL, this );
-	Manage_Structure_Deployment_Edit_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_burst ), NULL, this );
+	Manage_Structure_Deployment_Edit_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Burst_Deployment ), NULL, this );
 	Manage_Structure_Deployment_Delete_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Delete_Burst ), NULL, this );
 	Manage_Structure_Deployment_Validation_Force_Validation_Buttons->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Validation ), NULL, this );
 	Manage_Structure_Deployment_Validation_Force_Invalidation_Buttons->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Invalidation ), NULL, this );
 	Manage_Structure_Deployment_Set_Position_Manually_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Set_Position_Button ), NULL, this );
-	Manage_Structure_Launch_Auto_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst ), NULL, this );
-	Manage_Structure_Launch_Semi_Auto_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semin_Auto_Burst ), NULL, this );
+	Recovery_General_Settings_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Structure_General_Settings ), NULL, this );
+	Manage_Structure_Recovery_Launch_Auto_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Auto_Burst_Recovery ), NULL, this );
+	Manage_Structure_Recovery_Launch_Semi_Auto_Burst_Button1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Launch_Semi_Auto_Burst_Recovery ), NULL, this );
 	Manage_Structure_Recovery_Enter_Burst_Manually_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Enter_Burst_Manually ), NULL, this );
-	Manage_Structure_Recovery_Edit_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Burst ), NULL, this );
+	Manage_Structure_Recovery_Edit_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Edit_Burst_Recovery ), NULL, this );
 	Manage_Structure_Recovery_Delete_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Delete_Burst ), NULL, this );
 	Manage_Structure_Recovery_Validation_Force_Validation_Buttons->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Validation ), NULL, this );
 	Manage_Structure_Recovery_Invalidation_Force_Validation_Buttons->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Force_Invalidation ), NULL, this );
 	Manage_Structure_Recovery_Set_Position_Manually_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Set_Position_Button ), NULL, this );
 	Close_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Structure::On_Close ), NULL, this );
+	
+}
+
+Setup_Structure::Setup_Structure( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+	
+	wxBoxSizer* bSizer26;
+	bSizer26 = new wxBoxSizer( wxVERTICAL );
+	
+	wxFlexGridSizer* fgSizer49;
+	fgSizer49 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer49->SetFlexibleDirection( wxBOTH );
+	fgSizer49->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText40 = new wxStaticText( this, wxID_ANY, _("Location Name : "), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText40->Wrap( -1 );
+	fgSizer49->Add( m_staticText40, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxALL, 5 );
+	
+	Structure_Location_Name_Inbox = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer49->Add( Structure_Location_Name_Inbox, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	
+	bSizer26->Add( fgSizer49, 1, wxALIGN_RIGHT, 5 );
+	
+	wxFlexGridSizer* fgSizer50;
+	fgSizer50 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer50->SetFlexibleDirection( wxBOTH );
+	fgSizer50->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText401 = new wxStaticText( this, wxID_ANY, _("Depth in meters: "), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText401->Wrap( -1 );
+	fgSizer50->Add( m_staticText401, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxALL, 5 );
+	
+	Structure_Depth_Inbox = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer50->Add( Structure_Depth_Inbox, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	
+	bSizer26->Add( fgSizer50, 1, wxALIGN_RIGHT, 5 );
+	
+	wxFlexGridSizer* fgSizer51;
+	fgSizer51 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer51->SetFlexibleDirection( wxBOTH );
+	fgSizer51->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText4011 = new wxStaticText( this, wxID_ANY, _("Devices : "), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText4011->Wrap( -1 );
+	fgSizer51->Add( m_staticText4011, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxALL, 5 );
+	
+	Structure_Devices_Inbox = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE );
+	fgSizer51->Add( Structure_Devices_Inbox, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	
+	bSizer26->Add( fgSizer51, 1, wxALIGN_RIGHT|wxEXPAND|wxSHAPED, 5 );
+	
+	wxFlexGridSizer* fgSizer48;
+	fgSizer48 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer48->SetFlexibleDirection( wxBOTH );
+	fgSizer48->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	Ok_Change_Settings_Button = new wxButton( this, wxID_ANY, _("Ok"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer48->Add( Ok_Change_Settings_Button, 0, wxALL, 5 );
+	
+	Cancel_Change_Settings_Button = new wxButton( this, wxID_ANY, _("Cancel"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer48->Add( Cancel_Change_Settings_Button, 0, wxALL, 5 );
+	
+	
+	bSizer26->Add( fgSizer48, 1, wxALIGN_CENTER_HORIZONTAL, 5 );
+	
+	
+	this->SetSizer( bSizer26 );
+	this->Layout();
+	bSizer26->Fit( this );
+	
+	this->Centre( wxBOTH );
+	
+	// Connect Events
+	Ok_Change_Settings_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Setup_Structure::On_Set_Structure_Settings_Ok ), NULL, this );
+	Cancel_Change_Settings_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Setup_Structure::On_Set_Structure_Settings_Cancel ), NULL, this );
+}
+
+Setup_Structure::~Setup_Structure()
+{
+	// Disconnect Events
+	Ok_Change_Settings_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Setup_Structure::On_Set_Structure_Settings_Ok ), NULL, this );
+	Cancel_Change_Settings_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Setup_Structure::On_Set_Structure_Settings_Cancel ), NULL, this );
 	
 }
 

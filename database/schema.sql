@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS Structure (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     campaign INT UNSIGNED NOT NULL,
     viewable BOOLEAN NOT NULL DEFAULT 1,
+    location_name TEXT,
     devices LONGTEXT,
     transponders INT,
     structure_depth DOUBLE,
@@ -19,6 +20,7 @@ CREATE TABLE IF NOT EXISTS Structure (
     CONSTRAINT fk_campaign_id
 	FOREIGN KEY (campaign)
 	REFERENCES Campaign(id)
+	ON DELETE CASCADE
     );
 
 
@@ -35,6 +37,7 @@ CREATE TABLE IF NOT EXISTS Transponder (
     CONSTRAINT fk_structure_id
 	FOREIGN KEY (structure)
 	REFERENCES Structure(id)
+	ON DELETE CASCADE
     );
 
 
@@ -48,9 +51,10 @@ CREATE TABLE IF NOT EXISTS Operation (
     operation_date DATETIME,
     approximation DOUBLE,
     PRIMARY KEY (id),
-    CONSTRAINT fk_structure_id
+    CONSTRAINT fk_structure_id_op
 	FOREIGN KEY (structure)
 	REFERENCES Structure(id)
+	ON DELETE CASCADE
     );
 
 
@@ -65,25 +69,27 @@ CREATE TABLE IF NOT EXISTS Burst (
     CONSTRAINT fk_operation_id
 	FOREIGN KEY (operation)
 	REFERENCES Operation(id)
+	ON DELETE CASCADE
     );
 
 
 CREATE TABLE IF NOT EXISTS Measurement (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     burst INT UNSIGNED NOT NULL,
     viewable BOOLEAN NOT NULL DEFAULT 1,
-    latitude TEXT,
-    longitude TEXT,
+    latitude DOUBLE,
+    longitude DOUBLE,
     id_transponder INT UNSIGNED NOT NULL DEFAULT 0,
     message TEXT,
     rs232_command TEXT,
-    emission_date DATETIME,
-    receipt_date DATETIME,
+    emission_date DATETIME(3) DEFAULT NOW(3),
+    receipt_date DATETIME(3),
     value TEXT,
     PRIMARY KEY (id),
     CONSTRAINT fk_burst_id
 	FOREIGN KEY (burst)
 	REFERENCES Burst(id)
+	ON DELETE CASCADE
     );
 
 

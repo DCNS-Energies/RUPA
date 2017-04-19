@@ -102,7 +102,7 @@ class wdDC;
 class WatchdogDialog;
 class ConfigurationDialog;
 class WatchdogPropertiesDialog;
-class Campaign;
+class RUPA_Campaign;
 
 enum {
     ID_ALARM_NEVER = 0,

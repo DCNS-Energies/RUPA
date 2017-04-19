@@ -28,8 +28,8 @@
 #include <wx/dialog.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/statline.h>
 #include <wx/gauge.h>
+#include <wx/statline.h>
 
 #include "wxWTranslateCatalog.h"
 
@@ -66,8 +66,6 @@ class Campaign : public wxDialog
 		virtual void On_Display_All( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Display_Current( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Display_Finished( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnDoubleClick( wxMouseEvent& event ) { event.Skip(); }
-		virtual void OnLeftDown( wxMouseEvent& event ) { event.Skip(); }
 		virtual void On_New_Campaign( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Delete_Campaign( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Manage_Campaign( wxCommandEvent& event ) { event.Skip(); }
@@ -192,16 +190,13 @@ class Manage_Structure : public wxDialog
 	protected:
 		wxNotebook* Manage_Strucure_Tabs_Layout;
 		wxPanel* Manage_Structure_Deployment_Tab;
-		wxTextCtrl* Deployment_Transponder_Count;
-		wxStaticText* m_staticText7621;
-		wxStaticLine* m_staticline2;
-		wxButton* Deployment_Set_Depth_Button;
+		wxButton* Deployment_General_Settings_Button;
 		wxListCtrl* Deployment_Transponder_Caracteristics;
 		wxButton* Add_Transponder_Button;
 		wxButton* Edit_Transponder_Button;
 		wxButton* Remove_Transponder_Button;
-		wxButton* Manage_Structure_Launch_Auto_Burst_Button;
-		wxButton* Manage_Structure_Launch_Semi_Auto_Burst_Button;
+		wxButton* Manage_Structure_Deployment_Launch_Auto_Burst_Button;
+		wxButton* Manage_Structure_Deployment_Launch_Semi_Auto_Burst_Button;
 		wxListCtrl* Manage_Structure_Deployment_Table;
 		wxButton* Manage_Structure_Deployment_Enter_Burst_Manually_Button1;
 		wxButton* Manage_Structure_Deployment_Edit_Burst_Button1;
@@ -220,13 +215,10 @@ class Manage_Structure : public wxDialog
 		wxStaticText* m_staticText801;
 		wxButton* Manage_Structure_Deployment_Set_Position_Manually_Button;
 		wxPanel* Manage_Structure_Recovery_Tab;
-		wxTextCtrl* Recovery_Transponder_Count;
-		wxStaticText* m_staticText762;
-		wxStaticLine* m_staticline3;
-		wxButton* Recovery_Set_Depth_Button;
+		wxButton* Recovery_General_Settings_Button;
 		wxListCtrl* Recovery_Transponder_Caracteristics;
-		wxButton* Manage_Structure_Launch_Auto_Burst_Button1;
-		wxButton* Manage_Structure_Launch_Semi_Auto_Burst_Button1;
+		wxButton* Manage_Structure_Recovery_Launch_Auto_Burst_Button1;
+		wxButton* Manage_Structure_Recovery_Launch_Semi_Auto_Burst_Button1;
 		wxListCtrl* Manage_Structure_Recovery_Table;
 		wxButton* Manage_Structure_Recovery_Enter_Burst_Manually_Button;
 		wxButton* Manage_Structure_Recovery_Edit_Burst_Button;
@@ -247,19 +239,22 @@ class Manage_Structure : public wxDialog
 		wxButton* Close_Button;
 		
 		// Virtual event handlers, overide them in your derived class
+		virtual void On_Structure_General_Settings_Button( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Add_Transponder( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Edit_Transponder( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Remove_Transponder( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Launch_Auto_Burst( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Launch_Semi_Auto_Burst( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Launch_Auto_Burst_Deployment( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Launch_Semi_Auto_Burst_Deployment( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Enter_Burst_Manually( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Edit_burst( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Edit_Burst_Deployment( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Delete_Burst( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Force_Validation( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Force_Invalidation( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Set_Position_Button( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Launch_Semin_Auto_Burst( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Edit_Burst( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Structure_General_Settings( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Launch_Auto_Burst_Recovery( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Launch_Semi_Auto_Burst_Recovery( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Edit_Burst_Recovery( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Close( wxCommandEvent& event ) { event.Skip(); }
 		
 	
@@ -267,6 +262,35 @@ class Manage_Structure : public wxDialog
 		
 		Manage_Structure( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Structure"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 560,674 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
 		~Manage_Structure();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class Setup_Structure
+///////////////////////////////////////////////////////////////////////////////
+class Setup_Structure : public wxDialog 
+{
+	private:
+	
+	protected:
+		wxStaticText* m_staticText40;
+		wxTextCtrl* Structure_Location_Name_Inbox;
+		wxStaticText* m_staticText401;
+		wxTextCtrl* Structure_Depth_Inbox;
+		wxStaticText* m_staticText4011;
+		wxTextCtrl* Structure_Devices_Inbox;
+		wxButton* Ok_Change_Settings_Button;
+		wxButton* Cancel_Change_Settings_Button;
+		
+		// Virtual event handlers, overide them in your derived class
+		virtual void On_Set_Structure_Settings_Ok( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Set_Structure_Settings_Cancel( wxCommandEvent& event ) { event.Skip(); }
+		
+	
+	public:
+		
+		Setup_Structure( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Set up Structure"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE ); 
+		~Setup_Structure();
 	
 };
 

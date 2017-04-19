@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_New_Campaign.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o"
+  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Setup_Structure.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o"

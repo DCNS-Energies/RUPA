@@ -1,6 +1,6 @@
 #include "RUPA_Automatic_Burst.h"
 
-RUPA_Automatic_Burst::RUPA_Automatic_Burst( wxWindow* parent )
+RUPA_Automatic_Burst::RUPA_Automatic_Burst( wxWindow* parent, bool Recovery )
 :
 Automatic_Burst( parent )
 {

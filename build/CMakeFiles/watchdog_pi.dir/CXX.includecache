@@ -237,9 +237,9 @@ wx/stattext.h
 -
 wx/textctrl.h
 -
-wx/statline.h
--
 wx/gauge.h
+-
+wx/statline.h
 -
 wxWTranslateCatalog.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
@@ -261,6 +261,10 @@ RUPA_Burst_Editing.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Burst_Editing.h
 RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
+RUPA_Utility.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
+RUPA_Manage_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Campaign.cpp
 RUPA_Campaign.h
@@ -297,6 +301,8 @@ RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
 RUPA_Manage_Structure.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
+RUPA_Campaign.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Campaign.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp
 RUPA_Manage_Structure.h
@@ -321,6 +327,8 @@ RUPA_Manage_Campaign.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Campaign.h
 RUPA_Utility.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
+RUPA_Setup_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Setup_Structure.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.cpp
 RUPA_Manage_Transponder.h
@@ -355,6 +363,20 @@ RUPAUI.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
 RUPA_Utility.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
+watchdog_pi.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+RUPA_Manage_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
+
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Setup_Structure.cpp
+RUPA_Setup_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Setup_Structure.h
+
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Setup_Structure.h
+RUPAUI.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.h
+RUPA_Manage_Structure.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
 
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.cpp
 RUPA_Utility.h

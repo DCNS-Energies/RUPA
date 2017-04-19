@@ -20,7 +20,7 @@ class RUPA_Automatic_Burst : public Automatic_Burst
 		wxWindow* parent;
 	public:
 		/** Constructor */
-		RUPA_Automatic_Burst( wxWindow* parent );
+		RUPA_Automatic_Burst( wxWindow* parent , bool Recovery);
 	//// end generated class members
 
 

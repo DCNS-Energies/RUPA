@@ -56,8 +56,7 @@ SET(SRC_WATCHDOG
 	    src/RUPA_Utility.cpp
 	    src/RUPA_Manage_Structure.cpp
 	    src/RUPA_Manage_Transponder.cpp
-	    #	    /usr/local/include
-	    #/usr/local/include/cppconn
+	    src/RUPA_Setup_Structure.cpp
 
 	)
 

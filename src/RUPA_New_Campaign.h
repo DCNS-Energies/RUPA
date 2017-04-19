@@ -26,8 +26,10 @@ class RUPA_New_Campaign : public New_Campaign
 	sql::Connection *con;
 	sql::Statement *stmt;
 	sql::PreparedStatement *prep_stmt;
+	sql::ResultSet *res;
 	wxWindow* parent;
 	RUPA_Campaign * l_Campaign;
+	long int New_Campaign_Id;
 
 
 
