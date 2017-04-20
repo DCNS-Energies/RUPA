@@ -266,6 +266,7 @@ void RUPA_Campaign::On_Manage_Campaign( wxCommandEvent& event  )
 
 void RUPA_Campaign::On_Close( wxCommandEvent& event )
 {
+
     this->Show(!this->IsShown());
 }
 
@@ -317,3 +318,63 @@ void RUPA_Campaign::Refresh_Campaigns_Tables()
     this->Print_Campaigns_In_Table(Campaign_Current_Table, CURRENT);
     this->Print_Campaigns_In_Table(Campaign_Finished_Table, FINISHED);
 }
+
+void RUPA_Campaign::RenderAll(wdDC &dc, PlugIn_ViewPort &vp)
+{
+    PlugIn_Position_Fix_Ex lastfix = g_watchdog_pi->LastFix();
+ /*   for(unsigned int i=0; i<s_Alarms.size(); i++)
+        if(s_Alarms[i]->m_bgfxEnabled)
+            s_Alarms[i]->Render(dc, vp);*/
+    try
+    {
+	driver = get_driver_instance();
+	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
+	con->setSchema(DB);
+	stmt = con->createStatement();
+	prep_stmt = con->prepareStatement("SELECT * FROM Measurement WHERE message='Range' AND NOT value='FAIL'");
+	res = prep_stmt->executeQuery();
+	wxPoint center;
+	dc.SetPen(wxPen(*wxRED, 1));
+	dc.SetBrush(*wxTRANSPARENT_BRUSH);
+	//res->next();
+	while(res->next())
+	{
+	    GetCanvasPixLL(&vp, &center, res->getDouble("latitude"), res->getDouble("longitude"));
+	    dc.DrawCircle( center.x, center.y, /*atoi(res->getString("value")*/res->getInt("value")*vp.view_scale_ppm*1060/704);//hard values come from testing and using OpenCPN measurement tool
+
+	}
+    }catch(sql::SQLException &e)
+    {
+	RUPA_Utils_Print_SQL_Error(e);
+    }
+    delete con;
+    delete stmt;
+    delete res;
+
+}
+
+/*void RUPA_Campaign::Render(wdDC &dc, PlugIn_ViewPort &vp) {
+        PlugIn_Position_Fix_Ex lastfix = g_watchdog_pi->LastFix();
+        if(isnan(m_crossinglat1))
+            return;
+
+        wxPoint r1, r2, r3, r4;
+        GetCanvasPixLL(&vp, &r1, lastfix.Lat, lastfix.Lon);
+        GetCanvasPixLL(&vp, &r2, m_crossinglat1, m_crossinglon1);
+        GetCanvasPixLL(&vp, &r3, m_crossinglat2, m_crossinglon2);
+        r4.x = (r2.x+r3.x)/2, r4.y = (r2.y+r3.y)/2;
+        
+        dc.SetPen(wxPen(wxColour(255, 255, 0), 2));
+        dc.DrawLine( r1.x, r1.y, r4.x, r4.y );
+        
+        if(m_bFired)
+            dc.SetPen(wxPen(*wxRED, 3));
+        else
+            dc.SetPen(wxPen(*wxGREEN, 3));
+
+        dc.DrawCircle( r4.x, r4.y, hypot(r2.x-r3.x, r2.y-r3.y) / 2 );
+    }*/
+
+
+
+

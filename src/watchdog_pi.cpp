@@ -365,14 +365,18 @@ bool watchdog_pi::RenderGLOverlay(wxGLContext *pcontext, PlugIn_ViewPort *vp)
 
 void watchdog_pi::Render(wdDC &dc, PlugIn_ViewPort &vp)
 {
-    if((!m_WatchdogDialog || !m_WatchdogDialog->IsShown()) && (m_iEnableType == ID_ALARM_NEVER || m_iEnableType == ID_ALARM_VISIBLE))
+   /* if((!m_WatchdogDialog || !m_WatchdogDialog->IsShown()) && (m_iEnableType == ID_ALARM_NEVER || m_iEnableType == ID_ALARM_VISIBLE))
         return;
     if(m_iEnableType == ID_ALARM_VISIBLE && !m_bWatchdogDialogShown)
         return;
     if(m_iEnableType == ID_ALARM_ONCE && !m_bWatchdogDialogShown)
-        return;
+        return;*/
 
-    Alarm::RenderAll(dc, vp);
+
+    if(!t_Campaign){return;}
+    //Alarm::RenderAll(dc, vp);
+    //RUPA_Campaign::RenderAll(dc, vp);
+    t_Campaign->RenderAll(dc, vp);
 }
 
 void watchdog_pi::OnTimer( wxTimerEvent & )

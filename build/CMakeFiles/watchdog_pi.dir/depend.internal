@@ -330,12 +330,14 @@ CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogDialog.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -630,11 +632,13 @@ CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxJSON/json_defs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxJSON/jsonreader.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxJSON/jsonval.h
@@ -933,11 +937,13 @@ CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -1590,11 +1596,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -1887,11 +1895,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -2364,11 +2374,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -2661,11 +2673,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -2958,11 +2972,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -3255,11 +3271,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -3552,11 +3570,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -3849,11 +3869,13 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/msvcdefs.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
@@ -5110,6 +5132,7 @@ CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogDialog.cpp
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogDialog.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.h
@@ -5117,6 +5140,7 @@ CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/ocpn_plugin.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/version.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+ /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.h
  /home/jack/Tristan/sandbox/watchdog_pi-master/src/wxWTranslateCatalog.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
