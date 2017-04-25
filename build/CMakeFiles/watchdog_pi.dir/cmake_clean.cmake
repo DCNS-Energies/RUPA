@@ -25,6 +25,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o"
+  "CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o"
   "CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"

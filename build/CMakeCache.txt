@@ -189,6 +189,9 @@ CPACK_SOURCE_TZ:BOOL=ON
 //Enable to build ZIP source packages
 CPACK_SOURCE_ZIP:BOOL=OFF
 
+//Path to a library.
+FTD2XX_LOCATION:FILEPATH=FTD2XX_LOCATION-NOTFOUND
+
 //Path to a program.
 GETTEXT_MSGFMT_EXECUTABLE:FILEPATH=/usr/bin/msgfmt
 
@@ -238,7 +241,7 @@ _filename:FILEPATH=/usr/include/wx-3.0/wx/version.h
 watchdog_pi_BINARY_DIR:STATIC=/home/jack/Tristan/sandbox/watchdog_pi-master/build
 
 //Dependencies for the target
-watchdog_pi_LIB_DEPENDS:STATIC=general;mysqlcppconn;general;-L/usr/lib/x86_64-linux-gnu;general;-pthread;general;-lwx_baseu-3.0;general;-lwx_gtk2u_core-3.0;general;-lwx_baseu_net-3.0;general;-lwx_baseu_xml-3.0;general;-lwx_gtk2u_html-3.0;general;-lwx_gtk2u_adv-3.0;general;/usr/lib/x86_64-linux-gnu/libbz2.so;general;/usr/lib/x86_64-linux-gnu/libz.so;
+watchdog_pi_LIB_DEPENDS:STATIC=general;mysqlcppconn;general;ftd2xx;general;pthread;general;dl;general;rt;general;-L/usr/lib/x86_64-linux-gnu;general;-pthread;general;-lwx_baseu-3.0;general;-lwx_gtk2u_core-3.0;general;-lwx_baseu_net-3.0;general;-lwx_baseu_xml-3.0;general;-lwx_gtk2u_html-3.0;general;-lwx_gtk2u_adv-3.0;general;/usr/lib/x86_64-linux-gnu/libbz2.so;general;/usr/lib/x86_64-linux-gnu/libz.so;
 
 //Value Computed by CMake
 watchdog_pi_SOURCE_DIR:STATIC=/home/jack/Tristan/sandbox/watchdog_pi-master
@@ -307,6 +310,8 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Path to cache edit program executable.
+CMAKE_EDIT_COMMAND:INTERNAL=/usr/bin/cmake-gui
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS

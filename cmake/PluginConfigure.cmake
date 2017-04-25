@@ -62,6 +62,11 @@ FIND_PACKAGE(wxWidgets REQUIRED)
 #FIND_PACKAGE(mysqlcppconn REQUIRED)
 INCLUDE_DIRECTORIES(. "/usr/include/cppconn")
 LINK_DIRECTORIES("/usr/lib" "mysqlcppconn")
+
+INCLUDE_DIRECTORIES(. "/usr/include/libftd2xx")
+LINK_DIRECTORIES("/usr/lib" "ftd2xx")
+#INCLUDE_DIRECTORIES(. "/usr/include/libftd2xx")
+LINK_DIRECTORIES("/usr/lib" "windows")
 IF(MSYS)
 # this is just a hack. I think the bug is in FindwxWidgets.cmake
 STRING( REGEX REPLACE "/usr/local" "\\\\;C:/MinGW/msys/1.0/usr/local" wxWidgets_INCLUDE_DIRS ${wxWidgets_INCLUDE_DIRS} )

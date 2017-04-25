@@ -88,6 +88,9 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	Campaign_Close_Button = new wxButton( this, wxID_ANY, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
 	Campaign_Buttons_Layout->Add( Campaign_Close_Button, 0, wxALL, 5 );
 	
+	Chamge_Campaign_State_Button = new wxButton( this, wxID_ANY, _("(Un)Finish campaign"), wxDefaultPosition, wxDefaultSize, 0 );
+	Campaign_Buttons_Layout->Add( Chamge_Campaign_State_Button, 0, wxALL, 5 );
+	
 	
 	Campaign_Layout->Add( Campaign_Buttons_Layout, 0, wxALIGN_BOTTOM|wxSHAPED, 5 );
 	
@@ -107,6 +110,7 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	Campaign_Delete_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Delete_Campaign ), NULL, this );
 	Campaign_Manage_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Manage_Campaign ), NULL, this );
 	Campaign_Close_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Close ), NULL, this );
+	Chamge_Campaign_State_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Change_Campaign_State ), NULL, this );
 }
 
 Campaign::~Campaign()
@@ -121,6 +125,7 @@ Campaign::~Campaign()
 	Campaign_Delete_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Delete_Campaign ), NULL, this );
 	Campaign_Manage_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Manage_Campaign ), NULL, this );
 	Campaign_Close_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Close ), NULL, this );
+	Chamge_Campaign_State_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Change_Campaign_State ), NULL, this );
 	
 }
 
@@ -1068,7 +1073,7 @@ Semi_Automatic_Burst::Semi_Automatic_Burst( wxWindow* parent, wxWindowID id, con
 	bSizer20->Add( m_staticText72, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
 	Semi_Automatic_Last_Value_Box = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
-	bSizer20->Add( Semi_Automatic_Last_Value_Box, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	bSizer20->Add( Semi_Automatic_Last_Value_Box, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 5 );
 	
 	m_staticline2 = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
 	bSizer20->Add( m_staticline2, 0, wxEXPAND | wxALL, 5 );

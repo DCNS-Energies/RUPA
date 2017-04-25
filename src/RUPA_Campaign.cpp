@@ -230,31 +230,39 @@ void RUPA_Campaign::On_Manage_Campaign( wxCommandEvent& event  )
 // TODO: Implement On_Manage_Campaign
     this->Show(!this->IsShown());
     long Item_Index = -1;
+    int sel = Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
+    wxListCtrl* Table;
+    Table = sel == 0 ? Campaign_Current_Table : Campaign_Finished_Table;
     //New_Campaign_Id = 0;
     if(New_Campaign_Id==0)
     {
-	while((Item_Index = Campaign_Current_Table->GetNextItem(Item_Index,
+	while((Item_Index = Table->GetNextItem(Item_Index,
 			wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
-	{
-	    try
+	{	
+	    if(Item_Index>=0)
 	    {
-		driver = get_driver_instance();
-		con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-		con->setSchema(DB);
-		stmt = con->createStatement();
-		prep_stmt = con->prepareStatement("SELECT * FROM Campaign LIMIT ?,1");
-		prep_stmt->setInt(1, Item_Index);
-		res = prep_stmt->executeQuery();
-		res->next();
-	    }catch(sql::SQLException &e)
-	    {
-		RUPA_Utils_Print_SQL_Error(e);
-	    }
 
+		try
+		{
+		    driver = get_driver_instance();
+		    con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
+		    con->setSchema(DB);
+		    stmt = con->createStatement();
+		    prep_stmt = con->prepareStatement("SELECT * FROM Campaign LIMIT ?,1");
+		    prep_stmt->setInt(1, Item_Index);
+		    res = prep_stmt->executeQuery();
+		    res->next();
+		}catch(sql::SQLException &e)
+		{
+		    RUPA_Utils_Print_SQL_Error(e);
+		}
+
+	    
+		t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, res->getInt("id"));
+		delete prep_stmt;
+		delete res;
+	    }
 	}
-	t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, res->getInt("id"));
-    delete prep_stmt;
-    delete res;
     }else
     {
 	t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, New_Campaign_Id);
@@ -331,7 +339,7 @@ void RUPA_Campaign::RenderAll(wdDC &dc, PlugIn_ViewPort &vp)
 	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
 	con->setSchema(DB);
 	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Measurement WHERE message='Range' AND NOT value='FAIL'");
+	prep_stmt = con->prepareStatement("SELECT * FROM Measurement WHERE message='Range' AND NOT value='Fail'");
 	res = prep_stmt->executeQuery();
 	wxPoint center;
 	dc.SetPen(wxPen(*wxRED, 1));
@@ -353,27 +361,46 @@ void RUPA_Campaign::RenderAll(wdDC &dc, PlugIn_ViewPort &vp)
 
 }
 
-/*void RUPA_Campaign::Render(wdDC &dc, PlugIn_ViewPort &vp) {
-        PlugIn_Position_Fix_Ex lastfix = g_watchdog_pi->LastFix();
-        if(isnan(m_crossinglat1))
-            return;
+void RUPA_Campaign::On_Change_Campaign_State( wxCommandEvent& event )
+{
+    long Item_Index = -1;
+    int sel = Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
+    wxListCtrl* Table;
+    Table = sel == 0 ? Campaign_Current_Table : Campaign_Finished_Table;
+    while((Item_Index = Table->GetNextItem(Item_Index,
+		    wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
+    {
+	if(Item_Index>=0)
+	{
+	    try
+	    {
+		driver = get_driver_instance();
+		con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
+		con->setSchema(DB);
+		stmt = con->createStatement();
+		prep_stmt = con->prepareStatement("SELECT * FROM Campaign WHERE finished = ? LIMIT ?,1");
+		prep_stmt->setInt(1, sel);
+		prep_stmt->setInt(2, Item_Index);
+		res = prep_stmt->executeQuery();
+		res->next();
+		prep_stmt = con->prepareStatement("UPDATE Campaign SET finished = 1-finished WHERE id =?");
+		prep_stmt->setInt(1, res->getInt("id"));
+		prep_stmt->execute();
+		delete prep_stmt;
+		delete res;
+	    }catch(sql::SQLException &e)
+	    {
+		RUPA_Utils_Print_SQL_Error(e);
+	    }
+	}
+	/*else
+	{
+	}*/
+    }
+    Refresh_Campaigns_Tables();
+}
 
-        wxPoint r1, r2, r3, r4;
-        GetCanvasPixLL(&vp, &r1, lastfix.Lat, lastfix.Lon);
-        GetCanvasPixLL(&vp, &r2, m_crossinglat1, m_crossinglon1);
-        GetCanvasPixLL(&vp, &r3, m_crossinglat2, m_crossinglon2);
-        r4.x = (r2.x+r3.x)/2, r4.y = (r2.y+r3.y)/2;
-        
-        dc.SetPen(wxPen(wxColour(255, 255, 0), 2));
-        dc.DrawLine( r1.x, r1.y, r4.x, r4.y );
-        
-        if(m_bFired)
-            dc.SetPen(wxPen(*wxRED, 3));
-        else
-            dc.SetPen(wxPen(*wxGREEN, 3));
 
-        dc.DrawCircle( r4.x, r4.y, hypot(r2.x-r3.x, r2.y-r3.y) / 2 );
-    }*/
 
 
 

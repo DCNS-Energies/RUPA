@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+.././ftd2xx.h
+windows.h
+-
+WinTypes.h
+.././WinTypes.h
+
 ../include/GL/gl.h
 gl_mangle.h
 ../include/GL/gl_mangle.h
@@ -99,6 +105,10 @@ wx/choice.h
 -
 wxWTranslateCatalog.h
 ../src/wxWTranslateCatalog.h
+
+../src/WinTypes.h
+pthread.h
+-
 
 ../src/wxWTranslateCatalog.h
 
@@ -358,6 +368,22 @@ RUPA_Campaign.h
 RUPA_Utility.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_RS232.cpp
+RUPA_RS232.h
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_RS232.h
+
+/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_RS232.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+ftd2xx.h
+-
+
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.cpp
 RUPA_Semi_Automatic_Burst.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.h
@@ -369,6 +395,16 @@ RUPA_Utility.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.h
 watchdog_pi.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/watchdog_pi.h
+stdio.h
+-
+stdlib.h
+-
+string
+-
+unistd.h
+-
+ftd2xx.h
+-
 RUPA_Manage_Structure.h
 /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.h
 

@@ -57,6 +57,7 @@ SET(SRC_WATCHDOG
 	    src/RUPA_Manage_Structure.cpp
 	    src/RUPA_Manage_Transponder.cpp
 	    src/RUPA_Setup_Structure.cpp
+	    src/RUPA_RS232.cpp
 
 	)
 
@@ -85,12 +86,15 @@ ELSE(TINYXML_FOUND)
             src/tinyxml/tinyxmlparser.cpp
             src/tinyxml/tinyxmlerror.cpp
  )
- ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_WATCHDOG} ${SRC_JSON} ${SRC_LTINYXML})
+ INCLUDE_DIRECTORIES(/usr/local/lib/libftd2xx.so)
+ ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_WATCHDOG} ${SRC_JSON} ${SRC_LTINYXML} )
+ #LINK_DIRECTORIES(/usr/local/lib/libftd2xx.so)
 ENDIF(TINYXML_FOUND)
 ADD_DEFINITIONS(-DTIXML_USE_STL)
 
 INCLUDE("cmake/PluginInstall.cmake")
 INCLUDE("cmake/PluginLocalization.cmake")
 INCLUDE("cmake/PluginPackage.cmake")
+#ADD_LIBRARY(
 #INCLUDE("/usr/local/include")
 #INCLUDE("/usr/local/include/cppconn")

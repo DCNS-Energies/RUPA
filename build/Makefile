@@ -58,8 +58,8 @@ CMAKE_BINARY_DIR = /home/jack/Tristan/sandbox/watchdog_pi-master/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -592,6 +592,33 @@ src/RUPA_New_Campaign.cpp.s:
 	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.s
 .PHONY : src/RUPA_New_Campaign.cpp.s
 
+src/RUPA_RS232.o: src/RUPA_RS232.cpp.o
+
+.PHONY : src/RUPA_RS232.o
+
+# target to build an object file
+src/RUPA_RS232.cpp.o:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o
+.PHONY : src/RUPA_RS232.cpp.o
+
+src/RUPA_RS232.i: src/RUPA_RS232.cpp.i
+
+.PHONY : src/RUPA_RS232.i
+
+# target to preprocess a source file
+src/RUPA_RS232.cpp.i:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.i
+.PHONY : src/RUPA_RS232.cpp.i
+
+src/RUPA_RS232.s: src/RUPA_RS232.cpp.s
+
+.PHONY : src/RUPA_RS232.s
+
+# target to generate assembly for a file
+src/RUPA_RS232.cpp.s:
+	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.s
+.PHONY : src/RUPA_RS232.cpp.s
+
 src/RUPA_Semi_Automatic_Burst.o: src/RUPA_Semi_Automatic_Burst.cpp.o
 
 .PHONY : src/RUPA_Semi_Automatic_Burst.o
@@ -1082,6 +1109,9 @@ help:
 	@echo "... src/RUPA_New_Campaign.o"
 	@echo "... src/RUPA_New_Campaign.i"
 	@echo "... src/RUPA_New_Campaign.s"
+	@echo "... src/RUPA_RS232.o"
+	@echo "... src/RUPA_RS232.i"
+	@echo "... src/RUPA_RS232.s"
 	@echo "... src/RUPA_Semi_Automatic_Burst.o"
 	@echo "... src/RUPA_Semi_Automatic_Burst.i"
 	@echo "... src/RUPA_Semi_Automatic_Burst.s"

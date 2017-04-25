@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_New_Campaign.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o"
+  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_RS232.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Setup_Structure.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o"
@@ -51,9 +52,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src"
   "../."
   "/usr/include/cppconn"
+  "/usr/include/libftd2xx"
   "/usr/lib/x86_64-linux-gnu/wx/include/gtk2-unicode-3.0"
   "/usr/include/wx-3.0"
   "../src/tinyxml"
+  "/usr/local/lib/libftd2xx.so"
   )
 
 # Targets to which this target links.

@@ -1,0 +1,8 @@
+
+#[alert type="primary" display="inline"]
+ATTR{idVendor}="0403", ATTR{idProduct}="6001", RUN+="/bin/sh -c 'echo $kernel>sys/bus/usb/drivers/ftdi_sio/unbind'"
+#ATTR{idVendor}="0403", ATTR{idProduct}="6001", RUN+="/bin/sh -c echo $kernel>sys/bus/usb/drivers/ftdi_sio/unbind"
+#[/alert]
+#ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="usb", ATTRS{idVendor}="0403", ATTRS{idProduct}="6001", MODE="666", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTR{idVendor}="0403", ATTR{idProduct}="6001", GROUP="plugdev", MODE="0660"
+#SUBSYSTEM=="tty", ATTR{idVendor}="0403", ATTR{idProduct}="6001", SYMLINK="RUPA_USB"

@@ -1,0 +1,4 @@
+
+[alert type="primary" display="inline"]ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}="0403", ATTRS{idProduct}="6001", ATTRS{product}=="PRODUCT_NAME", MODE="660", GROUP="plugdev"
+ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="usb", ATTRS{idVendor}="0403", ATTRS{idProduct}="6001", MODE="666", GROUP="plugdev"
+ ATTRS{idVendor}="0403", ATTRS{idProduct}="6001", MODE="666", GROUP="users"

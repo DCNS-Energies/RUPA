@@ -59,6 +59,7 @@ class Campaign : public wxDialog
 		wxButton* Campaign_Delete_Button;
 		wxButton* Campaign_Manage_Button;
 		wxButton* Campaign_Close_Button;
+		wxButton* Chamge_Campaign_State_Button;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void On_Import( wxCommandEvent& event ) { event.Skip(); }
@@ -70,6 +71,7 @@ class Campaign : public wxDialog
 		virtual void On_Delete_Campaign( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Manage_Campaign( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Close( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Change_Campaign_State( wxCommandEvent& event ) { event.Skip(); }
 		
 	
 	public:

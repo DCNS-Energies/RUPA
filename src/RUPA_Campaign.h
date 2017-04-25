@@ -37,6 +37,7 @@ class RUPA_Campaign : public Campaign
 	//void On_Manage_Campaign( wxCommandEvent& event );
 	void On_Close( wxCommandEvent& event );
 	void Print_Campaigns_In_Table();
+	void On_Change_Campaign_State( wxCommandEvent& event );
 
 	RUPA_New_Campaign *t_New_Campaign;
 	RUPA_Manage_Campaign *t_Manage_Campaign;
@@ -46,6 +47,7 @@ class RUPA_Campaign : public Campaign
 	sql::Connection * con;
 	sql::Statement * stmt;
 	sql::ResultSet * res;
+	sql::ResultSet * res2;
 	sql::PreparedStatement *prep_stmt;
 	void Print_Campaigns_In_Table(wxListCtrl* Table, Phase cof);//cof = current of finished 
 	//virtual void Render(wdDC &dc, PlugIn_ViewPort &vp) {}

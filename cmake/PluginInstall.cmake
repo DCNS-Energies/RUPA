@@ -3,7 +3,15 @@
 ## Copyright:   
 ## License:     GPLv3+
 ##---------------------------------------------------------------------------
-TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} mysqlcppconn)
+#FIND_LIBRARY(FTD2XX_LOCATION libfdt2xx.so)
+TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} mysqlcppconn ftd2xx pthread dl rt)
+#TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} mysqlcppconn ${FTD2XX_LOCATION} pthread dl rt)
+#TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} "/usr/local/lib")
+#TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} ftd2xx)
+#TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} pthread)
+#TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} dl)
+#TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} rt)
+
 IF(NOT APPLE)
   TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} ${wxWidgets_LIBRARIES} ${EXTRA_LIBS} )
 ENDIF(NOT APPLE)
