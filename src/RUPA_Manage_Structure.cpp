@@ -107,9 +107,6 @@ void RUPA_Manage_Structure::On_Delete_Burst( wxCommandEvent& event )
     Refresh_Burst_Tables();
     t_Warning_Delete_Burst = new RUPA_Warning_Delete_Burst(this);
     RUPA_Utils_Pos(t_Warning_Delete_Burst);
-    /*long int Object_ID = Get_Selected_ID();
-    RUPA_Utils_Delete_Item("Burst", Object_ID);
-    Refresh_Structure_Tables();*/
 }
 
 
@@ -151,8 +148,6 @@ void RUPA_Manage_Structure::On_Edit_Burst_Deployment( wxCommandEvent& event )
     long Item_Index = -1;
     RUPA_SQL *c ;
     long int Object_ID = Get_Selected_Burst_ID();
-//New_Campaign_Id = 0;
-
     t_Burst_Editing = new RUPA_Burst_Editing(this, this, Object_ID);
     RUPA_Utils_Pos(t_Burst_Editing);
 }
@@ -191,8 +186,6 @@ void RUPA_Manage_Structure::On_Edit_Transponder(wxCommandEvent& event)
 
 void RUPA_Manage_Structure::On_Remove_Transponder(wxCommandEvent& event)
 {
-    /*t_Burst_Editing = new RUPA_Burst_Editing(this, this, 5);
-    RUPA_Utils_Pos(t_Burst_Editing);*/
     long int Object_ID = Get_Selected_Transponder_ID();
     RUPA_Utils_Delete_Item("Transponder", Object_ID);
     Refresh_Transponder_Tables();
@@ -235,7 +228,6 @@ void RUPA_Manage_Structure::Print_Transponder_Data_In_Table(wxListCtrl* Table, l
 	c->res = c->prep_stmt->executeQuery();
 	while(c->res->next())
 	{
-	    //res->next();
 	    long Item_Index = Table->InsertItem(c->res->getInt("id"), wxString::Format(wxT("%i"),c->res->getInt("address")));
 	    Table->SetItem(Item_Index, 1, wxString::Format(wxT("%i"),c->res->getInt("frequency")));
 	    if(dor)
@@ -252,9 +244,6 @@ void RUPA_Manage_Structure::Print_Transponder_Data_In_Table(wxListCtrl* Table, l
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
-
-	/*delete prep_stmt;
-	delete res;*/
 }
 
 
@@ -336,11 +325,6 @@ long int RUPA_Manage_Structure::Get_Selected_Burst_ID()
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
-    //int sel = Manage_Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
-    //std::cout<<"sel = "<<sel<<"\n";
-    //wxListCtrl* Table;
-    //Table = sel == 0 ? Manage_Campaign_Deployed_Table : Manage_Campaign_Recovered_Table;
-    //Table = Manage_Structure_Deployment_Table;
     std::stringstream Cond;
     Cond<< "WHERE operation = " << c->res->getInt("id");
     return RUPA_Utils_Get_Selected_ID("Burst", Table, Cond.str());
@@ -350,7 +334,6 @@ long int RUPA_Manage_Structure::Get_Selected_Burst_ID()
 long int RUPA_Manage_Structure::Get_Selected_Transponder_ID()
 {
     wxListCtrl* Table;
-    //Table = sel == 0 ? Manage_Campaign_Deployed_Table : Manage_Campaign_Recovered_Table;
     Table = Deployment_Transponder_Caracteristics;
     std::stringstream Cond;
     Cond<< "WHERE structure = " << id;
