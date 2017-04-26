@@ -20,10 +20,6 @@ class RUPA_Manage_Transponder : public Manage_Transponder
 	// Handlers for Manage_Transponder events.
 	void On_Accept_Transponder_Edit( wxCommandEvent& event );
 	void On_Cancel_Transponder_Edit( wxCommandEvent& event );
-	sql::Driver *driver;
-	sql::Connection *con;
-	sql::Statement *stmt;
-	sql::PreparedStatement *prep_stmt;
 	RUPA_Manage_Structure *l_Manage_Structure;//local variable to interact with window wich called that one
 	long int Id_Calling_Structure;
 

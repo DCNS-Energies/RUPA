@@ -44,7 +44,7 @@ RUPA_SQL::~RUPA_SQL()
 }
 
 
-long int RUPA_Utils_Get_Selected_ID( std::string DB_Table, bool finished, wxListCtrl* Table)
+long int RUPA_Utils_Get_Selected_ID( std::string DB_Table,  wxListCtrl* Table, std::string Additional_Condition)
 {
     long Item_Index = -1;
     RUPA_SQL *c ;
@@ -57,9 +57,9 @@ long int RUPA_Utils_Get_Selected_ID( std::string DB_Table, bool finished, wxList
 	    try
 	    {
 		c = new RUPA_SQL();
-		c->prep_stmt = c->con->prepareStatement("SELECT * FROM Campaign WHERE finished = ? LIMIT ?,1");
-		c->prep_stmt->setInt(1, finished);
-		c->prep_stmt->setInt(2, Item_Index);
+		c->prep_stmt = c->con->prepareStatement("SELECT * FROM " + DB_Table + " " + Additional_Condition + " LIMIT ?,1");
+		//c->prep_stmt->setInt(1, finished);
+		c->prep_stmt->setInt(1, Item_Index);
 		c->res = c->prep_stmt->executeQuery();
 		c->res->next();
 		Returned_Value = c->res->getInt("id");
@@ -70,4 +70,22 @@ long int RUPA_Utils_Get_Selected_ID( std::string DB_Table, bool finished, wxList
 	}
     }
     return Returned_Value;
+}
+
+void RUPA_Utils_Delete_Item(std::string DB_Table, long int Item_ID)
+{
+    RUPA_SQL *c ;
+    if (Item_ID>=0)
+    {
+	try
+	{
+	    c = new RUPA_SQL();
+	    c->prep_stmt = c->con->prepareStatement("DELETE FROM " + DB_Table + " WHERE id = ?");//Here is a security weakness to SQL injections, I have to create a whitelist
+	    c->prep_stmt->setInt(1, Item_ID);
+	    c->prep_stmt->execute();
+	}catch(sql::SQLException &e)
+	{
+	    RUPA_Utils_Print_SQL_Error(e);
+	}
+    }
 }

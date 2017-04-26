@@ -52,6 +52,8 @@ class RUPA_Manage_Structure : public Manage_Structure
 	void On_Transponder_Number_Leave_Window( wxMouseEvent& event ); 
 	void On_Transponder_Number_Text_Enter( wxCommandEvent& event ); 
 	void On_Structure_General_Settings_Button( wxCommandEvent& event);
+	long int Get_Selected_Burst_ID();
+	long int Get_Selected_Transponder_ID();
 
 	
 	void Insert_Data();
@@ -68,12 +70,12 @@ class RUPA_Manage_Structure : public Manage_Structure
 	RUPA_Setup_Structure * t_Setup_Structure;
 	wxWindow* parent;
 
-	sql::Driver *driver;
+	/*sql::Driver *driver;
 	sql::Connection *con;
 	sql::Statement *stmt;
 	sql::PreparedStatement *prep_stmt;
 	sql::ResultSet *res;
-	sql::ResultSet *res2;
+	sql::ResultSet *res2;*/
 
 	long int id;
     public:

@@ -9,20 +9,16 @@ RUPA_Manage_Transponder::RUPA_Manage_Transponder( wxWindow* parent, RUPA_Manage_
 
 void RUPA_Manage_Transponder::On_Accept_Transponder_Edit( wxCommandEvent& event )
 {
+    RUPA_SQL *c;
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-
-	prep_stmt = con->prepareStatement("INSERT INTO Transponder(address, frequency, serial_number, structure) VALUES(?, ?, ?, ?)");
-	prep_stmt->setInt(1, wxAtoi(Transponder_Address_Inbox->GetValue()));
-	prep_stmt->setInt(2, wxAtoi(Transponder_Frequency_Inbox->GetValue()));
-	prep_stmt->setString(3, (Transponder_Serial_Number_Inbox->GetValue()).ToStdString());
-	prep_stmt->setInt(4, Id_Calling_Structure);
-	prep_stmt->execute();
-	delete con;
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("INSERT INTO Transponder(address, frequency, serial_number, structure) VALUES(?, ?, ?, ?)");
+	c->prep_stmt->setInt(1, wxAtoi(Transponder_Address_Inbox->GetValue()));
+	c->prep_stmt->setInt(2, wxAtoi(Transponder_Frequency_Inbox->GetValue()));
+	c->prep_stmt->setString(3, (Transponder_Serial_Number_Inbox->GetValue()).ToStdString());
+	c->prep_stmt->setInt(4, Id_Calling_Structure);
+	c->prep_stmt->execute();
     }catch(sql::SQLException &e)
     {
 	RUPA_Utils_Print_SQL_Error(e);

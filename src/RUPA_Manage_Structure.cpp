@@ -102,8 +102,14 @@ void RUPA_Manage_Structure::On_Edit_Burst_Recovery( wxCommandEvent& event )
 void RUPA_Manage_Structure::On_Delete_Burst( wxCommandEvent& event )
 {
 // TODO: Implement On_Delete_Burst
+    long int Object_ID = Get_Selected_Burst_ID();
+    RUPA_Utils_Delete_Item("Burst", Object_ID);
+    Refresh_Burst_Tables();
     t_Warning_Delete_Burst = new RUPA_Warning_Delete_Burst(this);
     RUPA_Utils_Pos(t_Warning_Delete_Burst);
+    /*long int Object_ID = Get_Selected_ID();
+    RUPA_Utils_Delete_Item("Burst", Object_ID);
+    Refresh_Structure_Tables();*/
 }
 
 
@@ -143,47 +149,11 @@ void RUPA_Manage_Structure::On_Set_Position_Button( wxCommandEvent& event )
 void RUPA_Manage_Structure::On_Edit_Burst_Deployment( wxCommandEvent& event )
 {
     long Item_Index = -1;
-    std::cout<<"1"<<std::endl;
+    RUPA_SQL *c ;
+    long int Object_ID = Get_Selected_Burst_ID();
 //New_Campaign_Id = 0;
-     try
-    {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Operation WHERE structure=? AND deployment_or_recovery = ? ");
-	prep_stmt->setInt(1, id);
-	prep_stmt->setString(2, "D");
-	res = prep_stmt->executeQuery();
-	res->next();
-	if(1)
-	{
-	while((Item_Index = Manage_Structure_Deployment_Table->GetNextItem(Item_Index,
-			wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
-	{
-		prep_stmt = con->prepareStatement("SELECT * FROM Burst WHERE operation=? LIMIT ?,1");
-		prep_stmt->setInt(1, res->getInt("id"));
-		prep_stmt->setInt(2, Item_Index);
-		res2 = prep_stmt->executeQuery();
-		res2->next();
-	}
-	}
-	    }catch(sql::SQLException &e)
-	    {
-		RUPA_Utils_Print_SQL_Error(e);
-	    }
 
-	
-//	t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, res->getInt("id"));
-    t_Burst_Editing = new RUPA_Burst_Editing(this, this, res2->getInt("id"));
-    delete prep_stmt;
-    delete res;
-    delete res2;
-    /*else
-    {
-	t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, New_Campaign_Id);
-	New_Campaign_Id = 0;
-    }*/
+    t_Burst_Editing = new RUPA_Burst_Editing(this, this, Object_ID);
     RUPA_Utils_Pos(t_Burst_Editing);
 }
 
@@ -221,8 +191,11 @@ void RUPA_Manage_Structure::On_Edit_Transponder(wxCommandEvent& event)
 
 void RUPA_Manage_Structure::On_Remove_Transponder(wxCommandEvent& event)
 {
-    t_Burst_Editing = new RUPA_Burst_Editing(this, this, 5);
-    RUPA_Utils_Pos(t_Burst_Editing);
+    /*t_Burst_Editing = new RUPA_Burst_Editing(this, this, 5);
+    RUPA_Utils_Pos(t_Burst_Editing);*/
+    long int Object_ID = Get_Selected_Transponder_ID();
+    RUPA_Utils_Delete_Item("Transponder", Object_ID);
+    Refresh_Transponder_Tables();
 }
 
 
@@ -253,28 +226,26 @@ void RUPA_Manage_Structure::Print_Transponder_Data_In_Table(wxListCtrl* Table, l
     //-> Adding items in a multiple column list
 
     Table->DeleteAllItems();
+    RUPA_SQL *c ;
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Transponder WHERE structure=? ");
-	prep_stmt->setInt(1, id);
-	res = prep_stmt->executeQuery();
-	while(res->next())
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE structure=? ");
+	c->prep_stmt->setInt(1, id);
+	c->res = c->prep_stmt->executeQuery();
+	while(c->res->next())
 	{
 	    //res->next();
-	    long Item_Index = Table->InsertItem(res->getInt("id"), wxString::Format(wxT("%i"),res->getInt("address")));
-	    Table->SetItem(Item_Index, 1, wxString::Format(wxT("%i"),res->getInt("frequency")));
+	    long Item_Index = Table->InsertItem(c->res->getInt("id"), wxString::Format(wxT("%i"),c->res->getInt("address")));
+	    Table->SetItem(Item_Index, 1, wxString::Format(wxT("%i"),c->res->getInt("frequency")));
 	    if(dor)
 	    {
-		Table->SetItem(Item_Index, 2, wxString::Format(wxT("%f"),res->getInt("recovery_voltage")));
+		Table->SetItem(Item_Index, 2, wxString::Format(wxT("%f"),c->res->getInt("recovery_voltage")));
 	    }else
 	    {
-		Table->SetItem(Item_Index, 2, wxString::Format(wxT("%f"),res->getInt("deployment_voltage")));
+		Table->SetItem(Item_Index, 2, wxString::Format(wxT("%f"),c->res->getInt("deployment_voltage")));
 	    }
-	    wxString serial_number(res->getString("serial_number").c_str(), wxConvUTF8);
+	    wxString serial_number(c->res->getString("serial_number").c_str(), wxConvUTF8);
 	    Table->SetItem(Item_Index, 3, serial_number);
 	}
     }catch(sql::SQLException &e)
@@ -282,8 +253,8 @@ void RUPA_Manage_Structure::Print_Transponder_Data_In_Table(wxListCtrl* Table, l
 	RUPA_Utils_Print_SQL_Error(e);
     }
 
-	delete prep_stmt;
-	delete res;
+	/*delete prep_stmt;
+	delete res;*/
 }
 
 
@@ -303,30 +274,26 @@ void RUPA_Manage_Structure::Print_Burst_Data_In_Table(wxListCtrl* Table, long in
     //-> Adding items in a multiple column list
 
     Table->DeleteAllItems();
+    RUPA_SQL *c ;
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Operation WHERE structure=? AND deployment_or_recovery = ? ");
-	prep_stmt->setInt(1, id);
-	prep_stmt->setString(2, dor);
-	res = prep_stmt->executeQuery();
-	while(res->next())
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Operation WHERE structure=? AND deployment_or_recovery = ? ");
+	c->prep_stmt->setInt(1, id);
+	c->prep_stmt->setString(2, dor);
+	c->res = c->prep_stmt->executeQuery();
+	while(c->res->next())
 	{
-	    prep_stmt = con->prepareStatement("SELECT * FROM Burst WHERE operation=? ");
-	    prep_stmt->setInt(1, res->getInt("id"));
-	    res2 = prep_stmt->executeQuery();
-	    while(res2->next())
+	    c->prep_stmt = c->con->prepareStatement("SELECT * FROM Burst WHERE operation=? ");
+	    c->prep_stmt->setInt(1, c->res->getInt("id"));
+	    c->res2 = c->prep_stmt->executeQuery();
+	    while(c->res2->next())
 	    {
-		//res->next();
-		long Item_Index = Table->InsertItem(res->getInt("id"), wxString::Format(wxT("%i"),res->getInt("viewable")));
-		//Table->SetItem(Item_Index, 1, wxString::Format(wxT("%i"),res->getInt("viewable")));
-		wxString burst_mode(res2->getString("burst_mode").c_str(), wxConvUTF8);
+		long Item_Index = Table->InsertItem(c->res->getInt("id"), wxString::Format(wxT("%i"),c->res->getInt("viewable")));
+		wxString burst_mode(c->res2->getString("burst_mode").c_str(), wxConvUTF8);
 		Table->SetItem(Item_Index, 2, burst_mode);
-		int pings_emmited = res2->getInt("pings_emmited_count");
-		int pings_received = res2->getInt("pings_received_count");
+		int pings_emmited = c->res2->getInt("pings_emmited_count");
+		int pings_received = c->res2->getInt("pings_received_count");
 		float ratio = pings_emmited>0 ? pings_received/pings_emmited : -1;
 		Table->SetItem(Item_Index, 3, wxString::Format(wxT("%i"),pings_emmited));
 		Table->SetItem(Item_Index, 4, wxString::Format(wxT("%f"), ratio));
@@ -336,9 +303,6 @@ void RUPA_Manage_Structure::Print_Burst_Data_In_Table(wxListCtrl* Table, long in
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
-
-	delete prep_stmt;
-	delete res;
 }
 
 
@@ -348,4 +312,47 @@ void RUPA_Manage_Structure::Refresh_Burst_Tables()
 
     this->Print_Burst_Data_In_Table(Manage_Structure_Deployment_Table, 1, "D");
     this->Print_Burst_Data_In_Table(Manage_Structure_Recovery_Table, 1, "R");
+}
+
+
+
+long int RUPA_Manage_Structure::Get_Selected_Burst_ID()
+{
+    RUPA_SQL *c ;
+    int sel = Manage_Structure_Tabs_Layout->GetSelection();//to get what tab is selected
+    wxListCtrl* Table;
+    std::string State;
+    Table = sel == 0 ? Manage_Structure_Deployment_Table : Manage_Structure_Recovery_Table;
+    State = sel == 0 ? "D" : "R";
+    try
+    {
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Operation WHERE structure=? AND deployment_or_recovery = ? ");
+	c->prep_stmt->setInt(1, id);
+	c->prep_stmt->setString(2, State);
+	c->res = c->prep_stmt->executeQuery();
+	c->res->next();
+    }catch(sql::SQLException &e)
+    {
+	RUPA_Utils_Print_SQL_Error(e);
+    }
+    //int sel = Manage_Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
+    //std::cout<<"sel = "<<sel<<"\n";
+    //wxListCtrl* Table;
+    //Table = sel == 0 ? Manage_Campaign_Deployed_Table : Manage_Campaign_Recovered_Table;
+    //Table = Manage_Structure_Deployment_Table;
+    std::stringstream Cond;
+    Cond<< "WHERE operation = " << c->res->getInt("id");
+    return RUPA_Utils_Get_Selected_ID("Burst", Table, Cond.str());
+}
+
+
+long int RUPA_Manage_Structure::Get_Selected_Transponder_ID()
+{
+    wxListCtrl* Table;
+    //Table = sel == 0 ? Manage_Campaign_Deployed_Table : Manage_Campaign_Recovered_Table;
+    Table = Deployment_Transponder_Caracteristics;
+    std::stringstream Cond;
+    Cond<< "WHERE structure = " << id;
+    return RUPA_Utils_Get_Selected_ID("Transponder", Table, Cond.str());
 }

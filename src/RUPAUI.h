@@ -190,7 +190,7 @@ class Manage_Structure : public wxDialog
 	private:
 	
 	protected:
-		wxNotebook* Manage_Strucure_Tabs_Layout;
+		wxNotebook* Manage_Structure_Tabs_Layout;
 		wxPanel* Manage_Structure_Deployment_Tab;
 		wxButton* Deployment_General_Settings_Button;
 		wxListCtrl* Deployment_Transponder_Caracteristics;

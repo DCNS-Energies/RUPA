@@ -33,14 +33,10 @@ RUPA_Manage_Campaign::RUPA_Manage_Campaign( wxWindow* parent, RUPA_Campaign * C,
 :Manage_Campaign( parent ), l_Campaign(C), id(Campaign_Id)
 {
 
-    std::cout<<"In RUPA Manage Campaign \n";
     this->parent = parent;
-    std::cout<<"In RUPA Manage Campaign->Parent \n";
     Set_Col_Structures(Manage_Campaign_Deployed_Table);
     Set_Col_Structures(Manage_Campaign_Recovered_Table);
-    std::cout<<"In RUPA Manage Campaign->Col \n";
     Refresh_Structure_Tables();
-    std::cout<<"In RUPA Manage Campaign->Refresh \n";
 }
 
 void RUPA_Manage_Campaign::On_Import_Structure( wxCommandEvent& event )
@@ -80,106 +76,46 @@ void RUPA_Manage_Campaign::OnLeftDown( wxMouseEvent& event )
 
 void RUPA_Manage_Campaign::On_New_Structure( wxCommandEvent& event )
 {
-// TODO: Implement On_New_Structure
+    RUPA_SQL *c ;
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-
-	prep_stmt = con->prepareStatement("INSERT INTO Structure(campaign) VALUES(?)");
-    	prep_stmt->setInt(1,id);
-    	prep_stmt->execute();
-	delete prep_stmt;
-	prep_stmt = con->prepareStatement("SELECT LAST_INSERT_ID() AS last_id");
-	res = prep_stmt->executeQuery();
-	res->next();
-	prep_stmt = con->prepareStatement("INSERT INTO Operation( deployment_or_recovery, structure) VALUES(?,?)");/*;INSERT INTO Operation(deployment_or_recovery='R', structure) VALUES(,?)");deployment_or_recovery ='D',"*/
-    	prep_stmt->setInt(2,res->getInt("last_id"));
-    	prep_stmt->setString(1,"D");
-    	prep_stmt->execute();
-	prep_stmt = con->prepareStatement("INSERT INTO Operation(deployment_or_recovery, structure) VALUES(?,?)");/*;INSERT INTO Operation(deployment_or_recovery='R', structure) VALUES(,?)");deployment_or_recovery ='D',"*/
-    	prep_stmt->setInt(2,res->getInt("last_id"));
-    	prep_stmt->setString(1,"R");
-    	prep_stmt->execute();
-	t_Manage_Structure = new RUPA_Manage_Structure(this, this, res->getInt("last_id"));
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("INSERT INTO Structure(campaign) VALUES(?)");
+    	c->prep_stmt->setInt(1,id);
+    	c->prep_stmt->execute();
+	c->prep_stmt = c->con->prepareStatement("SELECT LAST_INSERT_ID() AS last_id");
+	c->res = c->prep_stmt->executeQuery();
+	c->res->next();
+	c->prep_stmt = c->con->prepareStatement("INSERT INTO Operation( deployment_or_recovery, structure) VALUES(?,?)");
+    	c->prep_stmt->setInt(2,c->res->getInt("last_id"));
+    	c->prep_stmt->setString(1,"D");
+    	c->prep_stmt->execute();
+    	c->prep_stmt->setString(1,"R");
+    	c->prep_stmt->execute();
+	t_Manage_Structure = new RUPA_Manage_Structure(this, this, c->res->getInt("last_id"));
 	this->Show(!this->IsShown());
 	RUPA_Utils_Pos(t_Manage_Structure);
     }catch(sql::SQLException &e)
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
-    //this->Destroy();
-    //l_Manage_Structure->Refresh_Transponder_Tables();
-	delete con;
-	delete prep_stmt;
-	delete res;
-
 }
 
 void RUPA_Manage_Campaign::On_Delete_Structure( wxCommandEvent& event )
 {
-// TODO: Implement On_Delete_Structure
-   /* this->Show(!this->IsShown());
-    t_Semi_Automatic_Burst = new RUPA_Semi_Automatic_Burst(this);
-    RUPA_Utils_Pos(t_Semi_Automatic_Burst);*/
-    long Item_Index = -1;
 
-    while((Item_Index = Manage_Campaign_Deployed_Table->GetNextItem(Item_Index,
-		    wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
-    {
-	try
-	{
-	    driver = get_driver_instance();
-	    con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	    con->setSchema(DB);
-	    stmt = con->createStatement();
-	    prep_stmt = con->prepareStatement("SELECT * FROM Structure WHERE campaign=? LIMIT ?,1");
-	    prep_stmt->setInt(1, id);
-	    prep_stmt->setInt(2, Item_Index);
-	    res = prep_stmt->executeQuery();
-	    res->next();
-	    delete prep_stmt;
-	    delete res;
-	}catch(sql::SQLException &e)
-	{
-	    RUPA_Utils_Print_SQL_Error(e);
-	}
-
-    }
+    long int Object_ID = Get_Selected_ID();
+    RUPA_Utils_Delete_Item("Structure", Object_ID);
+    Refresh_Structure_Tables();
 }
 
 void RUPA_Manage_Campaign::On_Manage_Structure( wxCommandEvent& event )
 {
 // TODO: Implement On_Manage_Structure
     this->Show(!this->IsShown());
-    long Item_Index = -1;
-
-    while((Item_Index = Manage_Campaign_Deployed_Table->GetNextItem(Item_Index,
-		    wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
-    {
-	try
-	{
-	    driver = get_driver_instance();
-	    con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	    con->setSchema(DB);
-	    stmt = con->createStatement();
-	    prep_stmt = con->prepareStatement("SELECT * FROM Structure WHERE campaign=? LIMIT ?,1");
-	    prep_stmt->setInt(1, id);
-	    prep_stmt->setInt(2, Item_Index);
-	    res = prep_stmt->executeQuery();
-	    res->next();
-	}catch(sql::SQLException &e)
-	{
-	    RUPA_Utils_Print_SQL_Error(e);
-	}
-
-    }
-    t_Manage_Structure = new RUPA_Manage_Structure(this, this, res->getInt("id"));
+    long int Object_ID = Get_Selected_ID();
+    t_Manage_Structure = new RUPA_Manage_Structure(this, this, Object_ID);
     RUPA_Utils_Pos(t_Manage_Structure);
-    delete prep_stmt;
-    delete res;
 }
 
 void RUPA_Manage_Campaign::On_Close_Manage_Campaign( wxCommandEvent& event )
@@ -195,49 +131,35 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
     //Inspired by https://wiki.wxwidgets.org/WxListCtrl 
     //-> Adding items in a multiple column list
     Table->DeleteAllItems();
+    RUPA_SQL *c ;
     int num;
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Structure WHERE campaign=? ");
-	prep_stmt->setInt(1, id);
-	res = prep_stmt->executeQuery();
-	std::cout<<"res = \n";
-	delete prep_stmt;
-	while(res->next())
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Structure WHERE campaign=? ");
+	c->prep_stmt->setInt(1, id);
+	c->res = c->prep_stmt->executeQuery();
+	while(c->res->next())
 	{
-	    wxString location_name(res->getString("location_name").c_str(), wxConvUTF8);
-	    //Table->SetItem(Item_Index, 1, location_name);
-	    long Item_Index = Table->InsertItem(res->getInt("id"), location_name);
-	    wxString devices(res->getString("devices").c_str(), wxConvUTF8);
+	    wxString location_name(c->res->getString("location_name").c_str(), wxConvUTF8);
+	    long Item_Index = Table->InsertItem(c->res->getInt("id"), location_name);
+	    wxString devices(c->res->getString("devices").c_str(), wxConvUTF8);
 	    Table->SetItem(Item_Index, 1, devices);
 	    //Structure
-	    Table->SetItem(Item_Index, 3, wxString::Format(wxT("%i"),res->getInt("structure_depth")));
-	    prep_stmt = con->prepareStatement("SELECT * FROM Transponder WHERE structure=? ");
-	    prep_stmt->setInt(1, res->getInt("id"));
-	    res2 = prep_stmt->executeQuery();
+	    Table->SetItem(Item_Index, 3, wxString::Format(wxT("%i"),c->res->getInt("structure_depth")));
+	    c->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE structure=? ");
+	    c->prep_stmt->setInt(1, c->res->getInt("id"));
+	    c->res2 = c->prep_stmt->executeQuery();
 	    std::string s="";
-	    while(res2->next())
+	    while(c->res2->next())
 	    {
-		s+= res2->getString("address")+":"+res2->getString("frequency")+"  ";
+		s+= c->res2->getString("address")+":"+c->res2->getString("frequency")+"  ";
 	    }
 	    wxString Transponders_Addresses(s.c_str(), wxConvUTF8);
 	    Table->SetItem(Item_Index, 2, Transponders_Addresses);
 
-	    /*if(dor)
-	    {
-		Transponder_Table->SetItem(Item_Index, 2, wxString::Format(wxT("%f"),res->getInt("recovery_voltage")));
-	    }else
-	    {
-		Transponder_Table->SetItem(Item_Index, 2, wxString::Format(wxT("%f"),res->getInt("deployment_voltage")));
-	    }
-	    wxString serial_number(res->getString("serial_number").c_str(), wxConvUTF8);
-	    Transponder_Table->SetItem(Item_Index, 3, serial_number);*/
+
 	}
-    delete res;
     }catch(sql::SQLException &e)
     {
 	RUPA_Utils_Print_SQL_Error(e);
@@ -249,52 +171,17 @@ void RUPA_Manage_Campaign::Refresh_Structure_Tables()
 
     this->Print_Structure_Data_In_Table(Manage_Campaign_Deployed_Table, 1, DEPLOYMENT);
     this->Print_Structure_Data_In_Table(Manage_Campaign_Recovered_Table, 1, RECOVERY);
-    std::cout<<"everything printed\n";
-    //this->Print_Transponder_Data_In_Table(Recovery_Transponder_Caracteristics, 1, RECOVERY);
 }
 
-/*
-void RUPA_Manage_Campaign::Print_Campaigns_In_Table(wxListCtrl* Table, Phase cof)//cof = current of finished 
+long int RUPA_Manage_Campaign::Get_Selected_ID()
 {
-    //Inspired by https://wiki.wxwidgets.org/WxListCtrl 
-    //-> Adding items in a multiple column list
-
-    Table->DeleteAllItems();
-    try
-    {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Structure WHERE campaign = ?"); //AND fished=?
-	//prep_stmt->setInt(1, cof);
-	res = prep_stmt->executeQuery();
-	while(res->next())
-	{
-	    //res->next();
-	    long Item_Index = Table->InsertItem(res->getInt("id"), wxString::Format(wxT("%i"),res->getInt("viewable")));
-	    wxString geographical_area(res->getString("geographical_area").c_str(), wxConvUTF8);
-	    Table->SetItem(Item_Index, 1, geographical_area);
-	    wxString campaign_name(res->getString("campaign_name").c_str(), wxConvUTF8);
-	    Table->SetItem(Item_Index, 2, campaign_name);
-	    //wxString serial_number(res->getString("serial_number").c_str(), wxConvUTF8);
-	    //Table->SetItem(Item_Index, 3, serial_number);
-	}
-    }catch(sql::SQLException &e)
-    {
-	RUPA_Utils_Print_SQL_Error(e);
-    }
-
-	delete prep_stmt;
-	delete res;
+    int sel = Manage_Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
+    std::cout<<"sel = "<<sel<<"\n";
+    wxListCtrl* Table;
+    Table = sel == 0 ? Manage_Campaign_Deployed_Table : Manage_Campaign_Recovered_Table;
+    
+    std::stringstream Cond;
+    Cond<< "WHERE campaign = " << id;
+    return RUPA_Utils_Get_Selected_ID("Structure", Table, Cond.str());
 }
 
-
-
-
-void RUPA_Manage_Campaign::Refresh_Campaigns_Tables()
-{
-
-    this->Print_Campaigns_In_Table(Campaign_Current_Table, CURRENT);
-    this->Print_Campaigns_In_Table(Campaign_Finished_Table, FINISHED);
-}*/

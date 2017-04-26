@@ -55,7 +55,8 @@ class watchdog_pi;
 void RUPA_Utils_Pos(wxWindow *w);
 void RUPA_Utils_Print_SQL_Error(sql::SQLException &e);
 
-long int RUPA_Utils_Get_Selected_ID(std::string DB_Table, bool finished, wxListCtrl* Table);
+long int RUPA_Utils_Get_Selected_ID(std::string DB_Table, wxListCtrl* Table, std::string Additional_Condition="");
+void RUPA_Utils_Delete_Item(std::string DB_Table, long int Item_ID);
 
 class RUPA_SQL
 {

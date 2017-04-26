@@ -32,14 +32,9 @@ class RUPA_Manage_Campaign : public Manage_Campaign
 	void On_Close_Manage_Campaign( wxCommandEvent& event );
 
 	void Print_Structure_Data_In_Table(wxListCtrl* Structure_Table, long int id_Structure, Phase dor);
+	long int Get_Selected_ID();
 
 
-	sql::Driver *driver;
-	sql::Connection *con;
-	sql::Statement *stmt;
-	sql::PreparedStatement *prep_stmt;
-	sql::ResultSet *res;
-	sql::ResultSet *res2;
 	RUPA_Campaign *l_Campaign;//local reference to calling campaign
 	RUPA_Setup_Structure * t_Setup_Structure;
 	long int id;

@@ -386,8 +386,8 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	wxBoxSizer* bSizer21;
 	bSizer21 = new wxBoxSizer( wxVERTICAL );
 	
-	Manage_Strucure_Tabs_Layout = new wxNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0 );
-	Manage_Structure_Deployment_Tab = new wxPanel( Manage_Strucure_Tabs_Layout, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	Manage_Structure_Tabs_Layout = new wxNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0 );
+	Manage_Structure_Deployment_Tab = new wxPanel( Manage_Structure_Tabs_Layout, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer* Manage_Structure_Installation_Layout;
 	Manage_Structure_Installation_Layout = new wxBoxSizer( wxVERTICAL );
 	
@@ -567,8 +567,8 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	Manage_Structure_Deployment_Tab->SetSizer( Manage_Structure_Installation_Layout );
 	Manage_Structure_Deployment_Tab->Layout();
 	Manage_Structure_Installation_Layout->Fit( Manage_Structure_Deployment_Tab );
-	Manage_Strucure_Tabs_Layout->AddPage( Manage_Structure_Deployment_Tab, _("Deployment"), true );
-	Manage_Structure_Recovery_Tab = new wxPanel( Manage_Strucure_Tabs_Layout, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	Manage_Structure_Tabs_Layout->AddPage( Manage_Structure_Deployment_Tab, _("Deployment"), true );
+	Manage_Structure_Recovery_Tab = new wxPanel( Manage_Structure_Tabs_Layout, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	Manage_Structure_Recovery_Tab->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOW ) );
 	
 	wxBoxSizer* Manage_Structure_Recovery_Layout;
@@ -728,9 +728,9 @@ Manage_Structure::Manage_Structure( wxWindow* parent, wxWindowID id, const wxStr
 	Manage_Structure_Recovery_Tab->SetSizer( Manage_Structure_Recovery_Layout );
 	Manage_Structure_Recovery_Tab->Layout();
 	Manage_Structure_Recovery_Layout->Fit( Manage_Structure_Recovery_Tab );
-	Manage_Strucure_Tabs_Layout->AddPage( Manage_Structure_Recovery_Tab, _("Recovery"), false );
+	Manage_Structure_Tabs_Layout->AddPage( Manage_Structure_Recovery_Tab, _("Recovery"), false );
 	
-	bSizer21->Add( Manage_Strucure_Tabs_Layout, 1, wxALL|wxEXPAND, 5 );
+	bSizer21->Add( Manage_Structure_Tabs_Layout, 1, wxALL|wxEXPAND, 5 );
 	
 	Close_Button = new wxButton( this, wxID_ANY, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer21->Add( Close_Button, 0, wxALIGN_RIGHT|wxALL, 5 );

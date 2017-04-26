@@ -177,7 +177,7 @@ void RUPA_Campaign::On_Delete_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_Delete_Campaign
     long int Object_ID = Get_Selected_ID();
-    RUPA_SQL *c ;
+    /*RUPA_SQL *c ;
     if (Object_ID>=0)
     {
 	t_Warning_Delete_Campaign = new RUPA_Warning_Delete_Campaign(this);
@@ -192,7 +192,8 @@ void RUPA_Campaign::On_Delete_Campaign( wxCommandEvent& event )
 	{
 	    RUPA_Utils_Print_SQL_Error(e);
 	}
-    }
+    }*/
+    RUPA_Utils_Delete_Item("Campaign", Object_ID);
     Refresh_Campaigns_Tables();
 }
 
@@ -318,8 +319,9 @@ long int RUPA_Campaign::Get_Selected_ID()
     int sel = Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
     wxListCtrl* Table;
     Table = sel == 0 ? Campaign_Current_Table : Campaign_Finished_Table;
-    
-    return RUPA_Utils_Get_Selected_ID("Campaign", sel, Table);
+    std::stringstream Cond;
+    Cond<< "WHERE finished = " << sel;
+    return RUPA_Utils_Get_Selected_ID("Campaign", Table, Cond.str());
 }
 
 
