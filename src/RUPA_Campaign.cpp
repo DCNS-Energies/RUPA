@@ -176,105 +176,50 @@ void RUPA_Campaign::On_New_Campaign( wxCommandEvent& event )
 void RUPA_Campaign::On_Delete_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_Delete_Campaign
-    long Item_Index = -1;
-    long item_index = -1;
-    int modif = 0;
-    bool finished = 0;
-    while((Item_Index = Campaign_Current_Table->GetNextItem(Item_Index,
-		    wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
-    {
-	modif =1;
-	finished =0;
-	item_index = Item_Index;
-    }
-    if( !modif)
-    {
-	Item_Index = -1;
-	while((Item_Index = Campaign_Finished_Table->GetNextItem(Item_Index,
-			wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
-	{
-	    modif =2;
-	    finished =1;
-	    item_index = Item_Index;
-	}
-    }
-    if(modif)
+    long int Object_ID = Get_Selected_ID();
+    RUPA_SQL *c ;
+    if (Object_ID>=0)
     {
 	t_Warning_Delete_Campaign = new RUPA_Warning_Delete_Campaign(this);
 	RUPA_Utils_Pos(t_Warning_Delete_Campaign);
 	try
 	{
-	    driver = get_driver_instance();
-	    con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	    con->setSchema(DB);
-	    stmt = con->createStatement();
-	    prep_stmt = con->prepareStatement("SELECT * FROM Campaign WHERE finished = ? LIMIT ?,1");
-	    prep_stmt->setInt(1, finished);
-	    prep_stmt->setInt(2, item_index);
-	    res = prep_stmt->executeQuery();
-	    res->next();
-	    prep_stmt = con->prepareStatement("DELETE FROM Campaign WHERE id = ?");
-	    prep_stmt->setInt(1, res->getInt("id"));
-	    prep_stmt->execute();
+	    c = new RUPA_SQL();
+	    c->prep_stmt = c->con->prepareStatement("DELETE FROM Campaign WHERE id = ?");
+	    c->prep_stmt->setInt(1, Object_ID);
+	    c->prep_stmt->execute();
 	}catch(sql::SQLException &e)
 	{
 	    RUPA_Utils_Print_SQL_Error(e);
 	}
     }
     Refresh_Campaigns_Tables();
-
 }
+
 
 void RUPA_Campaign::On_Manage_Campaign( wxCommandEvent& event  )
 {
-// TODO: Implement On_Manage_Campaign
-    this->Show(!this->IsShown());
-    long Item_Index = -1;
-    int sel = Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
-    wxListCtrl* Table;
-    Table = sel == 0 ? Campaign_Current_Table : Campaign_Finished_Table;
-    //New_Campaign_Id = 0;
     if(New_Campaign_Id==0)
     {
-	while((Item_Index = Table->GetNextItem(Item_Index,
-			wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
-	{	
-	    if(Item_Index>=0)
-	    {
-
-		try
-		{
-		    driver = get_driver_instance();
-		    con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-		    con->setSchema(DB);
-		    stmt = con->createStatement();
-		    prep_stmt = con->prepareStatement("SELECT * FROM Campaign LIMIT ?,1");
-		    prep_stmt->setInt(1, Item_Index);
-		    res = prep_stmt->executeQuery();
-		    res->next();
-		}catch(sql::SQLException &e)
-		{
-		    RUPA_Utils_Print_SQL_Error(e);
-		}
-
-	    
-		t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, res->getInt("id"));
-		delete prep_stmt;
-		delete res;
-	    }
+	long int Object_ID = Get_Selected_ID();
+	if (Object_ID>=0)
+	{
+	    this->Show(!this->IsShown());
+	    t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, Object_ID);
+	    RUPA_Utils_Pos(t_Manage_Campaign);
 	}
     }else
     {
+	this->Show(!this->IsShown());
 	t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, New_Campaign_Id);
 	New_Campaign_Id = 0;
+	RUPA_Utils_Pos(t_Manage_Campaign);
     }
-    RUPA_Utils_Pos(t_Manage_Campaign);
 }
 
 
 void RUPA_Campaign::On_Close( wxCommandEvent& event )
 {
-
     this->Show(!this->IsShown());
 }
 
@@ -287,34 +232,26 @@ void RUPA_Campaign::Print_Campaigns_In_Table(wxListCtrl* Table, Phase cof)//cof 
     //Inspired by https://wiki.wxwidgets.org/WxListCtrl 
     //-> Adding items in a multiple column list
 
+    RUPA_SQL *c ;
     Table->DeleteAllItems();
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Campaign WHERE finished = ?"); //AND fished=?
-	prep_stmt->setInt(1, cof);
-	res = prep_stmt->executeQuery();
-	while(res->next())
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Campaign WHERE finished = ?"); //AND fished=?
+	c->prep_stmt->setInt(1, cof);
+	c->res = c->prep_stmt->executeQuery();
+	while(c->res->next())
 	{
-	    //res->next();
-	    long Item_Index = Table->InsertItem(res->getInt("id"), wxString::Format(wxT("%i"),res->getInt("viewable")));
-	    wxString geographical_area(res->getString("geographical_area").c_str(), wxConvUTF8);
+	    long Item_Index = Table->InsertItem(c->res->getInt("id"), wxString::Format(wxT("%i"),c->res->getInt("viewable")));
+	    wxString geographical_area(c->res->getString("geographical_area").c_str(), wxConvUTF8);
 	    Table->SetItem(Item_Index, 1, geographical_area);
-	    wxString campaign_name(res->getString("campaign_name").c_str(), wxConvUTF8);
+	    wxString campaign_name(c->res->getString("campaign_name").c_str(), wxConvUTF8);
 	    Table->SetItem(Item_Index, 2, campaign_name);
-	    //wxString serial_number(res->getString("serial_number").c_str(), wxConvUTF8);
-	    //Table->SetItem(Item_Index, 3, serial_number);
 	}
     }catch(sql::SQLException &e)
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
-
-	delete prep_stmt;
-	delete res;
 }
 
 
@@ -330,78 +267,59 @@ void RUPA_Campaign::Refresh_Campaigns_Tables()
 void RUPA_Campaign::RenderAll(wdDC &dc, PlugIn_ViewPort &vp)
 {
     PlugIn_Position_Fix_Ex lastfix = g_watchdog_pi->LastFix();
- /*   for(unsigned int i=0; i<s_Alarms.size(); i++)
-        if(s_Alarms[i]->m_bgfxEnabled)
-            s_Alarms[i]->Render(dc, vp);*/
+    RUPA_SQL *c ;
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	prep_stmt = con->prepareStatement("SELECT * FROM Measurement WHERE message='Range' AND NOT value='Fail'");
-	res = prep_stmt->executeQuery();
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Measurement WHERE message='Range' AND NOT value='Fail'");
+	c->res = c->prep_stmt->executeQuery();
 	wxPoint center;
 	dc.SetPen(wxPen(*wxRED, 1));
 	dc.SetBrush(*wxTRANSPARENT_BRUSH);
-	//res->next();
-	while(res->next())
+	while(c->res->next())
 	{
-	    GetCanvasPixLL(&vp, &center, res->getDouble("latitude"), res->getDouble("longitude"));
-	    dc.DrawCircle( center.x, center.y, /*atoi(res->getString("value")*/res->getInt("value")*vp.view_scale_ppm*1060/704);//hard values come from testing and using OpenCPN measurement tool
+	    GetCanvasPixLL(&vp, &center, c->res->getDouble("latitude"), c->res->getDouble("longitude"));
+	    dc.DrawCircle( center.x, center.y, c->res->getInt("value")*vp.view_scale_ppm*1060/704);//hard values come from testing and using OpenCPN measurement tool
 
 	}
     }catch(sql::SQLException &e)
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
-    delete con;
-    delete stmt;
-    delete res;
 
 }
 
 void RUPA_Campaign::On_Change_Campaign_State( wxCommandEvent& event )
 {
-    long Item_Index = -1;
-    int sel = Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
-    wxListCtrl* Table;
-    Table = sel == 0 ? Campaign_Current_Table : Campaign_Finished_Table;
-    while((Item_Index = Table->GetNextItem(Item_Index,
-		    wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND)
+    RUPA_SQL *c ;
+
+    long int Object_ID = Get_Selected_ID();
+    if (Object_ID>=0)
     {
-	if(Item_Index>=0)
+	try
 	{
-	    try
-	    {
-		driver = get_driver_instance();
-		con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-		con->setSchema(DB);
-		stmt = con->createStatement();
-		prep_stmt = con->prepareStatement("SELECT * FROM Campaign WHERE finished = ? LIMIT ?,1");
-		prep_stmt->setInt(1, sel);
-		prep_stmt->setInt(2, Item_Index);
-		res = prep_stmt->executeQuery();
-		res->next();
-		prep_stmt = con->prepareStatement("UPDATE Campaign SET finished = 1-finished WHERE id =?");
-		prep_stmt->setInt(1, res->getInt("id"));
-		prep_stmt->execute();
-		delete prep_stmt;
-		delete res;
-	    }catch(sql::SQLException &e)
-	    {
-		RUPA_Utils_Print_SQL_Error(e);
-	    }
+	    c = new RUPA_SQL();
+	    c->prep_stmt = c->con->prepareStatement("UPDATE Campaign SET finished = 1-finished WHERE id =?");
+	    c->prep_stmt->setInt(1, Object_ID);
+	    c->prep_stmt->execute();
+	}catch(sql::SQLException &e)
+	{
+	    RUPA_Utils_Print_SQL_Error(e);
 	}
-	/*else
-	{
-	}*/
+	Refresh_Campaigns_Tables();
     }
-    Refresh_Campaigns_Tables();
 }
 
 
 
 
+long int RUPA_Campaign::Get_Selected_ID()
+{
+    int sel = Campaign_Tabs_Layout->GetSelection();//to get what tab is selected
+    wxListCtrl* Table;
+    Table = sel == 0 ? Campaign_Current_Table : Campaign_Finished_Table;
+    
+    return RUPA_Utils_Get_Selected_ID("Campaign", sel, Table);
+}
 
 

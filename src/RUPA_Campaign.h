@@ -38,19 +38,12 @@ class RUPA_Campaign : public Campaign
 	void On_Close( wxCommandEvent& event );
 	void Print_Campaigns_In_Table();
 	void On_Change_Campaign_State( wxCommandEvent& event );
+	long int Get_Selected_ID();
 
 	RUPA_New_Campaign *t_New_Campaign;
 	RUPA_Manage_Campaign *t_Manage_Campaign;
 	RUPA_Warning_Delete_Campaign *t_Warning_Delete_Campaign;
-	//bool t_b_New_Campaign_Shown;
-	sql::Driver * driver;
-	sql::Connection * con;
-	sql::Statement * stmt;
-	sql::ResultSet * res;
-	sql::ResultSet * res2;
-	sql::PreparedStatement *prep_stmt;
 	void Print_Campaigns_In_Table(wxListCtrl* Table, Phase cof);//cof = current of finished 
-	//virtual void Render(wdDC &dc, PlugIn_ViewPort &vp) {}
 
     public:
 	    /** Constructor */

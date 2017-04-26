@@ -7,6 +7,7 @@
 #ifndef __RUPA_UTILS_H__
 #define __RUPA_UTILS_H__
 
+#include "RUPAUI.h"
 #include <wx/artprov.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/intl.h>
@@ -54,7 +55,20 @@ class watchdog_pi;
 void RUPA_Utils_Pos(wxWindow *w);
 void RUPA_Utils_Print_SQL_Error(sql::SQLException &e);
 
+long int RUPA_Utils_Get_Selected_ID(std::string DB_Table, bool finished, wxListCtrl* Table);
 
+class RUPA_SQL
+{
+    public:
+	RUPA_SQL();
+	~RUPA_SQL();
+	sql::Driver * driver;
+	sql::Connection * con;
+	sql::Statement * stmt;
+	sql::ResultSet * res;
+	sql::ResultSet * res2;
+	sql::PreparedStatement *prep_stmt;
+};
 
 
 #endif

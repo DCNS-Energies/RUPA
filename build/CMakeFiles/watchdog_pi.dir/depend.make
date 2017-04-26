@@ -4179,6 +4179,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o: /usr/include/wx-3.0/w
 CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o: /usr/include/wx-3.0/wx/xtitypes.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o: /usr/lib/x86_64-linux-gnu/wx/include/gtk2-unicode-3.0/wx/setup.h
 
+CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o: ../src/RUPAUI.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o: ../src/RUPA_Utility.cpp
 CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o: ../src/RUPA_Utility.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o: ../src/wxWTranslateCatalog.h
