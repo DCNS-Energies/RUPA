@@ -271,6 +271,9 @@ void RUPA_Manage_Structure::Print_Burst_Data_In_Table(wxListCtrl* Table, long in
 	c->prep_stmt->setInt(1, id);
 	c->prep_stmt->setString(2, dor);
 	c->res = c->prep_stmt->executeQuery();
+	RUPA_SQL *c2 ;
+	c2 = new RUPA_SQL();
+	int Burst_Count = 0;
 	while(c->res->next())
 	{
 	    c->prep_stmt = c->con->prepareStatement("SELECT * FROM Burst WHERE operation=? ");
@@ -278,14 +281,23 @@ void RUPA_Manage_Structure::Print_Burst_Data_In_Table(wxListCtrl* Table, long in
 	    c->res2 = c->prep_stmt->executeQuery();
 	    while(c->res2->next())
 	    {
+		Burst_Count++;
 		long Item_Index = Table->InsertItem(c->res->getInt("id"), wxString::Format(wxT("%i"),c->res->getInt("viewable")));
+		Table->SetItem(Item_Index, 1, ToString(Burst_Count));
 		wxString burst_mode(c->res2->getString("burst_mode").c_str(), wxConvUTF8);
-		Table->SetItem(Item_Index, 2, burst_mode);
+		Table->SetItem(Item_Index, 2, ToString(c->res2->getString("burst_mode"))/*burst_mode*/);
 		int pings_emmited = c->res2->getInt("pings_emmited_count");
 		int pings_received = c->res2->getInt("pings_received_count");
-		float ratio = pings_emmited>0 ? pings_received/pings_emmited : -1;
+		float ratio = pings_emmited>0 ? float(pings_received)/float(pings_emmited)*100 : -1;
 		Table->SetItem(Item_Index, 3, wxString::Format(wxT("%i"),pings_emmited));
-		Table->SetItem(Item_Index, 4, wxString::Format(wxT("%f"), ratio));
+		Table->SetItem(Item_Index, 4, ToString(ratio));
+		c2->prep_stmt = c2->con->prepareStatement("SELECT min(emission_date) AS mini, TIMEDIFF(max(receipt_date), min(emission_date)) AS duration FROM Measurement WHERE burst=? ");
+		c2->prep_stmt->setInt(1, c->res2->getInt("id"));
+		std::cout<<c->res2->getInt("id")<<"\n";
+		c2->res = c2->prep_stmt->executeQuery();
+		c2->res->next();
+		Table->SetItem(Item_Index, 5, ToString(c2->res->getString("mini")));
+		Table->SetItem(Item_Index, 6, ToString(c2->res->getString("duration")));
 	    }
 	}
     }catch(sql::SQLException &e)
