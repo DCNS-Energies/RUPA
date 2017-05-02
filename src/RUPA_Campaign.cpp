@@ -253,6 +253,7 @@ void RUPA_Campaign::Print_Campaigns_In_Table(wxListCtrl* Table, Phase cof)//cof 
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
+    delete c;
 }
 
 
@@ -268,7 +269,7 @@ void RUPA_Campaign::Refresh_Campaigns_Tables()
 void RUPA_Campaign::RenderAll(wdDC &dc, PlugIn_ViewPort &vp)
 {
     PlugIn_Position_Fix_Ex lastfix = g_watchdog_pi->LastFix();
-    RUPA_SQL *c ;
+    RUPA_SQL *c  = NULL;
     try
     {
 	c = new RUPA_SQL();
@@ -287,6 +288,7 @@ void RUPA_Campaign::RenderAll(wdDC &dc, PlugIn_ViewPort &vp)
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
+    delete c;
 
 }
 
@@ -309,6 +311,7 @@ void RUPA_Campaign::On_Change_Campaign_State( wxCommandEvent& event )
 	}
 	Refresh_Campaigns_Tables();
     }
+    delete c;
 }
 
 

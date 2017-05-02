@@ -55,11 +55,16 @@ void RUPA_Semi_Automatic_Burst::On_Range_Button( wxCommandEvent& event )
 	//unsigned char 	cBufWrite[BUF_SIZE];
 	unsigned char 	msg[]="$t111:1%";
 	printf("%s\n",msg);
-	/*unsigned*/ char * pcBufRead = NULL;
+	unsigned char * pcBufRead = NULL;
 	std::string *Buf_Read;
 	char * 	pcBufLD[MAX_DEVICES + 1];
 	char 	cBufLD[MAX_DEVICES][64];
 	DWORD	dwRxSize = 0;
+	DWORD	EventDWord;
+	DWORD	RxBytes;
+	DWORD	TxBytes;
+	DWORD	BytesReceived;
+	char	RxBuffer[256];
 	DWORD 	dwBytesWritten, dwBytesRead;
 	FT_STATUS	ftStatus;
 	FT_HANDLE	ftHandle[MAX_DEVICES];
@@ -110,7 +115,7 @@ void RUPA_Semi_Automatic_Burst::On_Range_Button( wxCommandEvent& event )
 
 		//printf("Calling FT_Write with this write-buffer:\n");
 		
-		sleep(3);
+		sleep(1);
 		/* Write */
 		//ftStatus = FT_Write(ftHandle[i], cBufWrite, BUF_SIZE, &dwBytesWritten);
 		ftStatus = FT_Write(ftHandle[i], msg, 8, &dwBytesWritten);
@@ -132,83 +137,85 @@ void RUPA_Semi_Automatic_Burst::On_Range_Button( wxCommandEvent& event )
 		
 		/* Read */
 		dwRxSize = 0;			
-		//while ((dwRxSize < BUF_SIZE) && (ftStatus == FT_OK)) {
-		while ((dwRxSize < 15) && (ftStatus == FT_OK)) {
-			ftStatus = FT_GetQueueStatus(ftHandle[i], &dwRxSize);
-		}
+		FT_GetStatus(ftHandle[i], &RxBytes, &TxBytes, &EventDWord);
+		/*FT_GetQueueStatus(ftHandle, &RxBytes);*/
+		std::cout<<"RxBytes = "<<RxBytes<<"\n";
+		if(RxBytes > 0)
+		{
+		    ftStatus = FT_Read(ftHandle[i], RxBuffer, RxBytes, &BytesReceived);
+		    std::cout<<"FT_Status = "<<ftStatus<<"\n";
+
 		if(ftStatus == FT_OK) {
-			pcBufRead = (/*unsigned*/ char*)realloc(pcBufRead, dwRxSize);
+		    std::cout<<"poil = 1\n";
+			pcBufRead = (unsigned char*)realloc(pcBufRead, dwRxSize);
 			memset(pcBufRead, 0xFF, dwRxSize);
-			ftStatus = FT_Read(ftHandle[i], pcBufRead, dwRxSize, &dwBytesRead);
-			//ftStatus = FT_Read(ftHandle[i], Buf_Read, dwRxSize, &dwBytesRead);
 			if (ftStatus != FT_OK) 
 			{
 				printf("Error FT_Read(%d)\n", (int)ftStatus);
 				break;
 			}
-			if (dwBytesRead != dwRxSize) 
+			if (RxBytes != BytesReceived) 
 			{
 				printf("FT_Read only read %d (of %d) bytes\n",
 				       (int)dwBytesRead, (int)dwRxSize);
 				break;
 			}
-			//printf("FT_Read read %d bytes.  Read-buffer is now:\n",
-			printf("FT_Read read %d bytes.\n",
-			       (int)dwBytesRead);
-			//printf("and it means %s\n", pcBufRead);
-			printf("%s\n", pcBufRead);
-			std::string Buf_Read(pcBufRead);
-			//std::vector<std::string> Vect_Buf_Read;
+			printf("FT_Read read %d bytes.\n",(int)BytesReceived);
+			std::string Buf_Read((char *)RxBuffer);
 			std::istringstream iss(Buf_Read);
 			std::string word;
-			int i = 0;
 			std::string ProperMessage = "";
 			std::vector<std::string> Vec_Buf_Read;
-			while(iss>>word && i<5)
+			for(int i=0; iss>>word && i<5; i++)
 			{
 			    ProperMessage+=word+" ";
 			    Vec_Buf_Read.push_back(word);
-			    //std::cout<<word<<std::endl;
-			    i++;
+			    printf("%d\n", i);
 			}
-			//copy(istream_iterator<std::string>(iss), istream_iterator<std::string>(), back_inserter(Vec_Buf_Read);
-			messages_received_count ++;
-			Semi_Auto_Message_Received_Count->SetValue(wxString::Format(wxT("%i"),messages_received_count));
-			Semi_Automatic_Last_Value_Box->SetValue(wxString(ProperMessage.c_str(), wxConvUTF8));
 			try
-		    {
-			Prepare_SQL();
-			prep_stmt = con->prepareStatement("INSERT INTO Measurement(message, rs232_command, latitude, longitude, burst, value) VALUES(?,?,?,?,?,?)");
-			prep_stmt->setString(1, "Range");
-			prep_stmt->setString(2, "$t123:4\%");
-			prep_stmt->setDouble(3, g_watchdog_pi->LastFix().Lat);
-			prep_stmt->setDouble(4, g_watchdog_pi->LastFix().Lon);
-			prep_stmt->setInt(5, Burst_Id);
-			std::cout<<Vec_Buf_Read.at(2)<<std::endl;
-			if(Vec_Buf_Read.at(2).compare("Range") ==0)
 			{
-			    std::string m = Vec_Buf_Read.at(4);
-			    prep_stmt->setString(6, m.substr(0,m.length()-1));
-			}
-			else
+			    Semi_Automatic_Last_Value_Box->SetValue(wxString(ProperMessage.c_str(), wxConvUTF8));
+			    Prepare_SQL();
+			    prep_stmt = con->prepareStatement("INSERT INTO Measurement(message, rs232_command, latitude, longitude, burst, value) VALUES(?,?,?,?,?,?)");
+			    prep_stmt->setString(1, "Range");
+			    prep_stmt->setString(2, "$t123:4\%");
+			    prep_stmt->setDouble(3, g_watchdog_pi->LastFix().Lat);
+			    prep_stmt->setDouble(4, g_watchdog_pi->LastFix().Lon);
+			    prep_stmt->setInt(5, Burst_Id);
+			    printf("11\n");
+			    if(!Vec_Buf_Read.empty())
+			    {
+				if(Vec_Buf_Read.size()>2)
+				{
+				    if(Vec_Buf_Read.at(2).compare("Range") ==0)
+				    {
+					std::string m = Vec_Buf_Read.at(4);
+					prep_stmt->setString(6, m.substr(0,m.length()-1));
+					messages_received_count ++;
+					Semi_Auto_Message_Received_Count->SetValue(wxString::Format(wxT("%i"),messages_received_count));
+				    }
+				}
+				else
+				{
+				    prep_stmt->setString(6, "Fail");
+				}
+				prep_stmt->execute();
+				prep_stmt = con->prepareStatement("UPDATE Burst SET pings_emmited_count=pings_emmited_count+1 WHERE id=?");
+				prep_stmt->setInt(1, Burst_Id);
+				prep_stmt->execute();
+				delete con;
+			    }else
+			    {
+				Semi_Automatic_Last_Value_Box->SetValue(wxString::Format(wxT("Deck unit was sleeping, try again")));
+			    }
+			}catch(sql::SQLException &e)
 			{
-			    prep_stmt->setString(6, "Fail");
+			    RUPA_Utils_Print_SQL_Error(e);
 			}
-			prep_stmt->execute();
-			prep_stmt = con->prepareStatement("UPDATE Burst SET pings_emmited_count=pings_emmited_count+1 WHERE id=?");
-			prep_stmt->setInt(1, Burst_Id);
-			prep_stmt->execute();
-			delete con;
-		    }catch(sql::SQLException &e)
-		    {
-			RUPA_Utils_Print_SQL_Error(e);
-		    }
-			//dumpBuffer(pcBufRead, (int)dwBytesRead);
-		//	printf("%s test passed.\n", cBufLD[i]);
 		}
 		else {
 			printf("Error FT_GetQueueStatus(%d)\n", (int)ftStatus);	
-		}
+		}}
 
 	}
 

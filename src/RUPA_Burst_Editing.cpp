@@ -56,50 +56,38 @@ void RUPA_Burst_Editing::Print_Measurement_Data_In_Table(wxListCtrl* Table, long
     //-> Adding items in a multiple column list
 
     Table->DeleteAllItems();
+    RUPA_SQL *c ;
     try
     {
-	driver = get_driver_instance();
-	con = driver->connect(HOST, USER, PASS);//HOST, USER and PASS are defined in RUPA_Utility.h
-	con->setSchema(DB);
-	stmt = con->createStatement();
-	//prep_stmt = con->prepareStatement("SELECT * FROM Operation WHERE structure=? AND deployment_or_recovery = ? ");
-	//prep_stmt->setInt(1, id);
-	//prep_stmt->setString(2, dor);
-	//res = prep_stmt->executeQuery();
-	//while(res->next())
-	//{
-	    prep_stmt = con->prepareStatement("SELECT * FROM Measurement WHERE burst=? ");
-	    prep_stmt->setInt(1, Id);
-	    res = prep_stmt->executeQuery();
-	    while(res->next())
-	    {
-		//res->next();
-		long Item_Index = Table->InsertItem(res->getInt("id"), wxString::Format(wxT("%i"),res->getInt("viewable")));
-		Table->SetItem(Item_Index, 1, wxString::Format(wxT("%f"), res->getDouble("latitude")));
-		Table->SetItem(Item_Index, 2, wxString::Format(wxT("%f"), res->getDouble("longitude")));
-		//Table->SetItem(Item_Index, 3, wxString::Format(wxT("%i"),pings_emmited));
-		//Table->SetItem(Item_Index, 4, wxString::Format(wxT("%i"),pings_emmited));
-		wxString message(res->getString("message").c_str(), wxConvUTF8);
-		Table->SetItem(Item_Index, 5, message);
-		wxString value(res->getString("value").c_str(), wxConvUTF8);
-		Table->SetItem(Item_Index, 8, value);
-		//Table->SetItem(Item_Index, 1, wxString::Format(wxT("%i"),res->getInt("viewable")));
-		//wxString burst_mode(res->getString("burst_mode").c_str(), wxConvUTF8);
-		//Table->SetItem(Item_Index, 2, burst_mode);
-		//int pings_emmited = res->getInt("pings_emmited_count");
-		//int pings_received = res->getInt("pings_received_count");
-		//float ratio = pings_emmited>0 ? pings_received/pings_emmited : -1;
-		//Table->SetItem(Item_Index, 3, wxString::Format(wxT("%i"),pings_emmited));
-		//Table->SetItem(Item_Index, 4, wxString::Format(wxT("%f"), ratio));
-	//    }
-	}
+	c = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Measurement WHERE burst=? ");
+	c->prep_stmt->setInt(1, Id);
+	c->res = c->prep_stmt->executeQuery();
+	RUPA_SQL *c2 ;
+	c2 = new RUPA_SQL();
+	while(c->res->next())
+	{
+	    //res->next();
+	    long Item_Index = Table->InsertItem(c->res->getInt("id"), wxString::Format(wxT("%i"),c->res->getInt("viewable")));
+	    Table->SetItem(Item_Index, 1, ToString(c->res->getDouble("latitude")));
+	    Table->SetItem(Item_Index, 2, ToString(c->res->getDouble("longitude")));
+	    c2->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE id = ? ");
+	    c2->prep_stmt->setInt(1, c->res->getInt("id_transponder"));
+	    c2->res = c2->prep_stmt->executeQuery();
+	    c2->res->next();
+	    Table->SetItem(Item_Index, 3, ToString(c2->res->getInt("address")));
+	    Table->SetItem(Item_Index, 4, ToString(c2->res->getInt("frequency")));
+	    Table->SetItem(Item_Index, 5, ToString(c->res->getString("message")));
+	    Table->SetItem(Item_Index, 6, ToString(c->res->getString("emission_date")));
+	    Table->SetItem(Item_Index, 7, ToString(c->res->getString("receipt_date")));
+	    Table->SetItem(Item_Index, 8, ToString(c->res->getString("value")));
+    }
     }catch(sql::SQLException &e)
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
+    delete c;
 
-	delete prep_stmt;
-	delete res;
 }
 
 
@@ -108,5 +96,4 @@ void RUPA_Burst_Editing::Refresh_Burst_Tables()
 {
 
     this->Print_Measurement_Data_In_Table(Burst_Editing_Table, 1, 0);
-    //this->Print_Burst_Data_In_Table(Manage_Structure_Recovery_Table, 1, "R");
 }

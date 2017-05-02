@@ -70,12 +70,7 @@ class RUPA_Manage_Structure : public Manage_Structure
 	RUPA_Setup_Structure * t_Setup_Structure;
 	wxWindow* parent;
 
-	/*sql::Driver *driver;
-	sql::Connection *con;
-	sql::Statement *stmt;
-	sql::PreparedStatement *prep_stmt;
-	sql::ResultSet *res;
-	sql::ResultSet *res2;*/
+
 
 	long int id;
     public:

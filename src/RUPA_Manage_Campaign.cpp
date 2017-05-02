@@ -99,6 +99,7 @@ void RUPA_Manage_Campaign::On_New_Structure( wxCommandEvent& event )
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
+    delete c;
 }
 
 void RUPA_Manage_Campaign::On_Delete_Structure( wxCommandEvent& event )
@@ -164,6 +165,7 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
+    delete c;
 }
 
 void RUPA_Manage_Campaign::Refresh_Structure_Tables()

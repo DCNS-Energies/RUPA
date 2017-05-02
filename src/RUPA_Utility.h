@@ -57,6 +57,13 @@ void RUPA_Utils_Print_SQL_Error(sql::SQLException &e);
 
 long int RUPA_Utils_Get_Selected_ID(std::string DB_Table, wxListCtrl* Table, std::string Additional_Condition="");
 void RUPA_Utils_Delete_Item(std::string DB_Table, long int Item_ID);
+template <typename T>
+std::string ToString(T val)
+{
+    std::stringstream stream;
+    stream << val;
+    return stream.str();
+}
 
 class RUPA_SQL
 {
@@ -66,8 +73,8 @@ class RUPA_SQL
 	sql::Driver * driver;
 	sql::Connection * con;
 	sql::Statement * stmt;
-	sql::ResultSet * res;
-	sql::ResultSet * res2;
+	sql::ResultSet * res = NULL;
+	sql::ResultSet * res2 = NULL;
 	sql::PreparedStatement *prep_stmt;
 };
 
