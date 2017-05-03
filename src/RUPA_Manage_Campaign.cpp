@@ -133,6 +133,7 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
     //-> Adding items in a multiple column list
     Table->DeleteAllItems();
     RUPA_SQL *c ;
+    RUPA_SQL *c2 ;
     int num;
     try
     {
@@ -140,24 +141,35 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
 	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Structure WHERE campaign=? ");
 	c->prep_stmt->setInt(1, id);
 	c->res = c->prep_stmt->executeQuery();
+	c2 = new RUPA_SQL();
 	while(c->res->next())
 	{
 	    wxString location_name(c->res->getString("location_name").c_str(), wxConvUTF8);
 	    long Item_Index = Table->InsertItem(c->res->getInt("id"), location_name);
-	    wxString devices(c->res->getString("devices").c_str(), wxConvUTF8);
-	    Table->SetItem(Item_Index, 1, devices);
+	    //wxString devices(c->res->getString("devices").c_str(), wxConvUTF8);
+	    Table->SetItem(Item_Index, 1, /*devices*/ToString(c->res->getString("devices")));
 	    //Structure
-	    Table->SetItem(Item_Index, 3, wxString::Format(wxT("%i"),c->res->getInt("structure_depth")));
+	    Table->SetItem(Item_Index, 3, /*wxString::Format(wxT("%i"),*/ToString(c->res->getInt("structure_depth")));
 	    c->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE structure=? ");
 	    c->prep_stmt->setInt(1, c->res->getInt("id"));
 	    c->res2 = c->prep_stmt->executeQuery();
-	    std::string s="";
+	    std::string Transponders_Addresses="";
 	    while(c->res2->next())
 	    {
-		s+= c->res2->getString("address")+":"+c->res2->getString("frequency")+"  ";
+		Transponders_Addresses += c->res2->getString("address")+":"+c->res2->getString("frequency")+"  ";
 	    }
-	    wxString Transponders_Addresses(s.c_str(), wxConvUTF8);
-	    Table->SetItem(Item_Index, 2, Transponders_Addresses);
+	    Table->SetItem(Item_Index, 2, ToString(Transponders_Addresses));
+	    c2->prep_stmt = c2->con->prepareStatement("SELECT * FROM Operation WHERE structure=? ");
+	    c2->prep_stmt->setInt(1, c->res->getInt("id"));
+	    c2->res = c2->prep_stmt->executeQuery();
+	    c2->res->next();
+	    Table->SetItem(Item_Index, 4, ToString(c2->res->getDouble("latitude")));
+	    Table->SetItem(Item_Index, 5, ToString(c2->res->getDouble("longitude")));
+	    Table->SetItem(Item_Index, 6, ToString(c2->res->getString("operation_date")));
+	    c2->res->next();
+	    Table->SetItem(Item_Index, 7, ToString(c2->res->getString("operation_date")));
+	    Table->SetItem(Item_Index, 8, ToString(c2->res->getDouble("latitude")));
+	    Table->SetItem(Item_Index, 9, ToString(c2->res->getDouble("longitude")));
 
 
 	}
@@ -166,6 +178,7 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
 	RUPA_Utils_Print_SQL_Error(e);
     }
     delete c;
+    delete c2;
 }
 
 void RUPA_Manage_Campaign::Refresh_Structure_Tables()
