@@ -41,8 +41,14 @@
 #include <cppconn/statement.h>
 #include <cppconn/prepared_statement.h>
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <string>
 #include <sstream>
+
+#include <unistd.h>
+#include <ftd2xx.h>
+#include <vector>
 
 class watchdog_pi;
 //#include "RUPA_Campaign.h"
@@ -78,6 +84,7 @@ class RUPA_SQL
 	sql::PreparedStatement *prep_stmt;
 };
 
+std::string RUPA_RS232(unsigned char msg[]);
 
 #endif
 

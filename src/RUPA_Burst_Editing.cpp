@@ -72,7 +72,7 @@ void RUPA_Burst_Editing::Print_Measurement_Data_In_Table(wxListCtrl* Table, long
 	    Table->SetItem(Item_Index, 1, ToString(c->res->getDouble("latitude")));
 	    Table->SetItem(Item_Index, 2, ToString(c->res->getDouble("longitude")));
 	    c2->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE id = ? ");
-	    c2->prep_stmt->setInt(1, c->res->getInt("id_transponder"));
+	    c2->prep_stmt->setInt(0, c->res->getInt("id_transponder"));
 	    c2->res = c2->prep_stmt->executeQuery();
 	    c2->res->next();
 	    Table->SetItem(Item_Index, 3, ToString(c2->res->getInt("address")));

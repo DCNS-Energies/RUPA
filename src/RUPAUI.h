@@ -310,10 +310,15 @@ class Manage_Transponder : public wxDialog
 		wxTextCtrl* Transponder_Frequency_Inbox;
 		wxStaticText* m_staticText332;
 		wxTextCtrl* Transponder_Serial_Number_Inbox;
+		wxStaticText* m_staticText3321;
+		wxTextCtrl* Transponder_Voltage_Inbox;
+		wxStaticText* m_staticText39;
+		wxButton* Auto_Battery_Check;
 		wxButton* Ok_Transponder_Edition;
 		wxButton* m_button56;
 		
 		// Virtual event handlers, overide them in your derived class
+		virtual void On_Auto_Battery_Check( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Accept_Transponder_Edit( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Cancel_Transponder_Edit( wxCommandEvent& event ) { event.Skip(); }
 		
@@ -368,14 +373,14 @@ class Semi_Automatic_Burst : public wxDialog
 		wxStaticLine* m_staticline2;
 		wxStaticText* m_staticText73;
 		wxButton* Semi_Automatic_Range_Button;
-		wxButton* Semi_Automatic_Battery_Check_Button;
-		wxButton* Semi_Automatic_Release_Button;
+		wxButton* Semi_Automatic_Next_Transponder_Button;
+		wxButton* Semi_Automatic_Previous_Transponder_Button;
 		wxButton* Semi_Automatic_Finish_Burst_Button;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void On_Range_Button( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Battery_Check_Button( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Release_Nut_Button( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Next_Transponder_Button( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Previous_Transponder_Button( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Finish_Burst_Button( wxCommandEvent& event ) { event.Skip(); }
 		
 	

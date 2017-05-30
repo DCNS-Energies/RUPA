@@ -935,6 +935,28 @@ Manage_Transponder::Manage_Transponder( wxWindow* parent, wxWindowID id, const w
 	
 	bSizer25->Add( fgSizer322, 1, wxALIGN_RIGHT, 5 );
 	
+	wxFlexGridSizer* fgSizer3221;
+	fgSizer3221 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer3221->SetFlexibleDirection( wxBOTH );
+	fgSizer3221->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText3321 = new wxStaticText( this, wxID_ANY, _("Battery Voltage (V) :"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText3321->Wrap( -1 );
+	fgSizer3221->Add( m_staticText3321, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	Transponder_Voltage_Inbox = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer3221->Add( Transponder_Voltage_Inbox, 0, wxALIGN_RIGHT|wxALL, 5 );
+	
+	
+	bSizer25->Add( fgSizer3221, 1, wxALIGN_RIGHT, 5 );
+	
+	m_staticText39 = new wxStaticText( this, wxID_ANY, _("Please, connect the programming\n loop to the Deck Unit and to the\n transponder before using the \nfollowing button (if you want to)"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText39->Wrap( -1 );
+	bSizer25->Add( m_staticText39, 0, wxALIGN_CENTER|wxALL, 5 );
+	
+	Auto_Battery_Check = new wxButton( this, wxID_ANY, _("Check Battery Automatically"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer25->Add( Auto_Battery_Check, 0, wxALL|wxEXPAND, 5 );
+	
 	wxFlexGridSizer* fgSizer38;
 	fgSizer38 = new wxFlexGridSizer( 0, 2, 0, 0 );
 	fgSizer38->SetFlexibleDirection( wxBOTH );
@@ -957,6 +979,7 @@ Manage_Transponder::Manage_Transponder( wxWindow* parent, wxWindowID id, const w
 	this->Centre( wxBOTH );
 	
 	// Connect Events
+	Auto_Battery_Check->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Transponder::On_Auto_Battery_Check ), NULL, this );
 	Ok_Transponder_Edition->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Transponder::On_Accept_Transponder_Edit ), NULL, this );
 	m_button56->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Transponder::On_Cancel_Transponder_Edit ), NULL, this );
 }
@@ -964,6 +987,7 @@ Manage_Transponder::Manage_Transponder( wxWindow* parent, wxWindowID id, const w
 Manage_Transponder::~Manage_Transponder()
 {
 	// Disconnect Events
+	Auto_Battery_Check->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Transponder::On_Auto_Battery_Check ), NULL, this );
 	Ok_Transponder_Edition->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Transponder::On_Accept_Transponder_Edit ), NULL, this );
 	m_button56->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Transponder::On_Cancel_Transponder_Edit ), NULL, this );
 	
@@ -1085,11 +1109,11 @@ Semi_Automatic_Burst::Semi_Automatic_Burst( wxWindow* parent, wxWindowID id, con
 	Semi_Automatic_Range_Button = new wxButton( this, wxID_ANY, _("Range"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer20->Add( Semi_Automatic_Range_Button, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 5 );
 	
-	Semi_Automatic_Battery_Check_Button = new wxButton( this, wxID_ANY, _("Battery Check"), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer20->Add( Semi_Automatic_Battery_Check_Button, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 5 );
+	Semi_Automatic_Next_Transponder_Button = new wxButton( this, wxID_ANY, _("Next Transponder"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer20->Add( Semi_Automatic_Next_Transponder_Button, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 5 );
 	
-	Semi_Automatic_Release_Button = new wxButton( this, wxID_ANY, _("Release Nut"), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer20->Add( Semi_Automatic_Release_Button, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 5 );
+	Semi_Automatic_Previous_Transponder_Button = new wxButton( this, wxID_ANY, _("Previous Transponder"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer20->Add( Semi_Automatic_Previous_Transponder_Button, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 5 );
 	
 	Semi_Automatic_Finish_Burst_Button = new wxButton( this, wxID_ANY, _("Finish Burst"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer20->Add( Semi_Automatic_Finish_Burst_Button, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 5 );
@@ -1103,8 +1127,8 @@ Semi_Automatic_Burst::Semi_Automatic_Burst( wxWindow* parent, wxWindowID id, con
 	
 	// Connect Events
 	Semi_Automatic_Range_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Range_Button ), NULL, this );
-	Semi_Automatic_Battery_Check_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Battery_Check_Button ), NULL, this );
-	Semi_Automatic_Release_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Release_Nut_Button ), NULL, this );
+	Semi_Automatic_Next_Transponder_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Next_Transponder_Button ), NULL, this );
+	Semi_Automatic_Previous_Transponder_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Previous_Transponder_Button ), NULL, this );
 	Semi_Automatic_Finish_Burst_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Finish_Burst_Button ), NULL, this );
 }
 
@@ -1112,8 +1136,8 @@ Semi_Automatic_Burst::~Semi_Automatic_Burst()
 {
 	// Disconnect Events
 	Semi_Automatic_Range_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Range_Button ), NULL, this );
-	Semi_Automatic_Battery_Check_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Battery_Check_Button ), NULL, this );
-	Semi_Automatic_Release_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Release_Nut_Button ), NULL, this );
+	Semi_Automatic_Next_Transponder_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Next_Transponder_Button ), NULL, this );
+	Semi_Automatic_Previous_Transponder_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Previous_Transponder_Button ), NULL, this );
 	Semi_Automatic_Finish_Burst_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Semi_Automatic_Burst::On_Finish_Burst_Button ), NULL, this );
 	
 }

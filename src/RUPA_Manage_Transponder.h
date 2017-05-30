@@ -22,6 +22,8 @@ class RUPA_Manage_Transponder : public Manage_Transponder
 	void On_Cancel_Transponder_Edit( wxCommandEvent& event );
 	RUPA_Manage_Structure *l_Manage_Structure;//local variable to interact with window wich called that one
 	long int Id_Calling_Structure;
+	void On_Auto_Battery_Check( wxCommandEvent& event );
+
 
 
     public:

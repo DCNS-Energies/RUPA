@@ -241,114 +241,6 @@ watchdog-pot-update/fast:
 	$(MAKE) -f CMakeFiles/watchdog-pot-update.dir/build.make CMakeFiles/watchdog-pot-update.dir/build
 .PHONY : watchdog-pot-update/fast
 
-src/Alarm.o: src/Alarm.cpp.o
-
-.PHONY : src/Alarm.o
-
-# target to build an object file
-src/Alarm.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o
-.PHONY : src/Alarm.cpp.o
-
-src/Alarm.i: src/Alarm.cpp.i
-
-.PHONY : src/Alarm.i
-
-# target to preprocess a source file
-src/Alarm.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.i
-.PHONY : src/Alarm.cpp.i
-
-src/Alarm.s: src/Alarm.cpp.s
-
-.PHONY : src/Alarm.s
-
-# target to generate assembly for a file
-src/Alarm.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.s
-.PHONY : src/Alarm.cpp.s
-
-src/ConfigurationDialog.o: src/ConfigurationDialog.cpp.o
-
-.PHONY : src/ConfigurationDialog.o
-
-# target to build an object file
-src/ConfigurationDialog.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o
-.PHONY : src/ConfigurationDialog.cpp.o
-
-src/ConfigurationDialog.i: src/ConfigurationDialog.cpp.i
-
-.PHONY : src/ConfigurationDialog.i
-
-# target to preprocess a source file
-src/ConfigurationDialog.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.i
-.PHONY : src/ConfigurationDialog.cpp.i
-
-src/ConfigurationDialog.s: src/ConfigurationDialog.cpp.s
-
-.PHONY : src/ConfigurationDialog.s
-
-# target to generate assembly for a file
-src/ConfigurationDialog.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.s
-.PHONY : src/ConfigurationDialog.cpp.s
-
-src/EditAlarmDialog.o: src/EditAlarmDialog.cpp.o
-
-.PHONY : src/EditAlarmDialog.o
-
-# target to build an object file
-src/EditAlarmDialog.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o
-.PHONY : src/EditAlarmDialog.cpp.o
-
-src/EditAlarmDialog.i: src/EditAlarmDialog.cpp.i
-
-.PHONY : src/EditAlarmDialog.i
-
-# target to preprocess a source file
-src/EditAlarmDialog.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.i
-.PHONY : src/EditAlarmDialog.cpp.i
-
-src/EditAlarmDialog.s: src/EditAlarmDialog.cpp.s
-
-.PHONY : src/EditAlarmDialog.s
-
-# target to generate assembly for a file
-src/EditAlarmDialog.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.s
-.PHONY : src/EditAlarmDialog.cpp.s
-
-src/NewAlarmDialog.o: src/NewAlarmDialog.cpp.o
-
-.PHONY : src/NewAlarmDialog.o
-
-# target to build an object file
-src/NewAlarmDialog.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o
-.PHONY : src/NewAlarmDialog.cpp.o
-
-src/NewAlarmDialog.i: src/NewAlarmDialog.cpp.i
-
-.PHONY : src/NewAlarmDialog.i
-
-# target to preprocess a source file
-src/NewAlarmDialog.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.i
-.PHONY : src/NewAlarmDialog.cpp.i
-
-src/NewAlarmDialog.s: src/NewAlarmDialog.cpp.s
-
-.PHONY : src/NewAlarmDialog.s
-
-# target to generate assembly for a file
-src/NewAlarmDialog.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.s
-.PHONY : src/NewAlarmDialog.cpp.s
-
 src/RUPAUI.o: src/RUPAUI.cpp.o
 
 .PHONY : src/RUPAUI.o
@@ -808,87 +700,6 @@ src/TexFont.cpp.s:
 	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.s
 .PHONY : src/TexFont.cpp.s
 
-src/WatchdogDialog.o: src/WatchdogDialog.cpp.o
-
-.PHONY : src/WatchdogDialog.o
-
-# target to build an object file
-src/WatchdogDialog.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o
-.PHONY : src/WatchdogDialog.cpp.o
-
-src/WatchdogDialog.i: src/WatchdogDialog.cpp.i
-
-.PHONY : src/WatchdogDialog.i
-
-# target to preprocess a source file
-src/WatchdogDialog.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.i
-.PHONY : src/WatchdogDialog.cpp.i
-
-src/WatchdogDialog.s: src/WatchdogDialog.cpp.s
-
-.PHONY : src/WatchdogDialog.s
-
-# target to generate assembly for a file
-src/WatchdogDialog.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.s
-.PHONY : src/WatchdogDialog.cpp.s
-
-src/WatchdogPropertiesDialog.o: src/WatchdogPropertiesDialog.cpp.o
-
-.PHONY : src/WatchdogPropertiesDialog.o
-
-# target to build an object file
-src/WatchdogPropertiesDialog.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o
-.PHONY : src/WatchdogPropertiesDialog.cpp.o
-
-src/WatchdogPropertiesDialog.i: src/WatchdogPropertiesDialog.cpp.i
-
-.PHONY : src/WatchdogPropertiesDialog.i
-
-# target to preprocess a source file
-src/WatchdogPropertiesDialog.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.i
-.PHONY : src/WatchdogPropertiesDialog.cpp.i
-
-src/WatchdogPropertiesDialog.s: src/WatchdogPropertiesDialog.cpp.s
-
-.PHONY : src/WatchdogPropertiesDialog.s
-
-# target to generate assembly for a file
-src/WatchdogPropertiesDialog.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.s
-.PHONY : src/WatchdogPropertiesDialog.cpp.s
-
-src/WatchdogUI.o: src/WatchdogUI.cpp.o
-
-.PHONY : src/WatchdogUI.o
-
-# target to build an object file
-src/WatchdogUI.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o
-.PHONY : src/WatchdogUI.cpp.o
-
-src/WatchdogUI.i: src/WatchdogUI.cpp.i
-
-.PHONY : src/WatchdogUI.i
-
-# target to preprocess a source file
-src/WatchdogUI.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.i
-.PHONY : src/WatchdogUI.cpp.i
-
-src/WatchdogUI.s: src/WatchdogUI.cpp.s
-
-.PHONY : src/WatchdogUI.s
-
-# target to generate assembly for a file
-src/WatchdogUI.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.s
-.PHONY : src/WatchdogUI.cpp.s
-
 src/icons.o: src/icons.cpp.o
 
 .PHONY : src/icons.o
@@ -1070,18 +881,6 @@ help:
 	@echo "... install"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... src/Alarm.o"
-	@echo "... src/Alarm.i"
-	@echo "... src/Alarm.s"
-	@echo "... src/ConfigurationDialog.o"
-	@echo "... src/ConfigurationDialog.i"
-	@echo "... src/ConfigurationDialog.s"
-	@echo "... src/EditAlarmDialog.o"
-	@echo "... src/EditAlarmDialog.i"
-	@echo "... src/EditAlarmDialog.s"
-	@echo "... src/NewAlarmDialog.o"
-	@echo "... src/NewAlarmDialog.i"
-	@echo "... src/NewAlarmDialog.s"
 	@echo "... src/RUPAUI.o"
 	@echo "... src/RUPAUI.i"
 	@echo "... src/RUPAUI.s"
@@ -1133,15 +932,6 @@ help:
 	@echo "... src/TexFont.o"
 	@echo "... src/TexFont.i"
 	@echo "... src/TexFont.s"
-	@echo "... src/WatchdogDialog.o"
-	@echo "... src/WatchdogDialog.i"
-	@echo "... src/WatchdogDialog.s"
-	@echo "... src/WatchdogPropertiesDialog.o"
-	@echo "... src/WatchdogPropertiesDialog.i"
-	@echo "... src/WatchdogPropertiesDialog.s"
-	@echo "... src/WatchdogUI.o"
-	@echo "... src/WatchdogUI.i"
-	@echo "... src/WatchdogUI.s"
 	@echo "... src/icons.o"
 	@echo "... src/icons.i"
 	@echo "... src/icons.s"

@@ -39,13 +39,14 @@ class RUPA_Manage_Campaign : public Manage_Campaign
 	RUPA_Setup_Structure * t_Setup_Structure;
 	long int id;
 
-	wxWindow* parent;
+	//wxWindow* parent;
 	RUPA_Manage_Structure * t_Manage_Structure;
     public:
 	/** Constructor */
 	RUPA_Manage_Campaign( wxWindow* parent, RUPA_Campaign * C, long int Campaign_Id );
 	void Refresh_Structure_Tables();
 	long int get_Id(){return id;}
+	wxWindow* parent;
     //// end generated class members
 
 

@@ -28,6 +28,11 @@ class RUPA_Semi_Automatic_Burst : public Semi_Automatic_Burst
     protected:
 	// Handlers for Semi_Automatic_Burst events.
 	void On_Range_Button( wxCommandEvent& event );
+	//void On_Next_Transponder_Button( wxCommandEvent& event );
+	//void On_Previous_Transponder_Button( wxCommandEvent& event );
+	
+	void On_Previous_Transponder_Button( wxCommandEvent& event );
+	void On_Next_Transponder_Button( wxCommandEvent& event );
 	void On_Battery_Check_Button( wxCommandEvent& event );
 	void On_Release_Nut_Button( wxCommandEvent& event );
 	void On_Finish_Burst_Button( wxCommandEvent& event );
@@ -44,6 +49,13 @@ class RUPA_Semi_Automatic_Burst : public Semi_Automatic_Burst
 	long int Burst_Id;
 	int messages_sent_count;
 	int messages_received_count;
+	std::vector<std::string> Transponders;
+	int Transponders_Count;//total number of Transponders
+	int Transponder_Number;//Actual Transponder
+
+	std::string Current_Transponder;
+	//std::string RUPA_RS232(unsigned char msg[]);
+	
     public:
 	/** Constructor */
 	RUPA_Semi_Automatic_Burst( wxWindow* parent, RUPA_Manage_Structure * MS, bool Recovery );

@@ -33,7 +33,11 @@ RUPA_Manage_Campaign::RUPA_Manage_Campaign( wxWindow* parent, RUPA_Campaign * C,
 :Manage_Campaign( parent ), l_Campaign(C), id(Campaign_Id)
 {
 
+    /*l_Campaign->Show(!l_Campaign->IsShown());*/
+    l_Campaign->Show(0);
     this->parent = parent;
+    this->GetSizer()->Fit( this );
+    this->Layout();
     Set_Col_Structures(Manage_Campaign_Deployed_Table);
     Set_Col_Structures(Manage_Campaign_Recovered_Table);
     Refresh_Structure_Tables();
@@ -92,7 +96,7 @@ void RUPA_Manage_Campaign::On_New_Structure( wxCommandEvent& event )
     	c->prep_stmt->execute();
     	c->prep_stmt->setString(1,"R");
     	c->prep_stmt->execute();
-	t_Manage_Structure = new RUPA_Manage_Structure(this, this, c->res->getInt("last_id"));
+	t_Manage_Structure = new RUPA_Manage_Structure(this->parent, this, c->res->getInt("last_id"));
 	this->Show(!this->IsShown());
 	RUPA_Utils_Pos(t_Manage_Structure);
     }catch(sql::SQLException &e)
@@ -115,7 +119,7 @@ void RUPA_Manage_Campaign::On_Manage_Structure( wxCommandEvent& event )
 // TODO: Implement On_Manage_Structure
     this->Show(!this->IsShown());
     long int Object_ID = Get_Selected_ID();
-    t_Manage_Structure = new RUPA_Manage_Structure(this, this, Object_ID);
+    t_Manage_Structure = new RUPA_Manage_Structure(this->parent, this, Object_ID);
     RUPA_Utils_Pos(t_Manage_Structure);
 }
 
@@ -123,7 +127,9 @@ void RUPA_Manage_Campaign::On_Close_Manage_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_Close_Manage_Campaign
     l_Campaign->Refresh_Campaigns_Tables();
-    parent->Show(!parent->IsShown());
+    //parent->Show(!parent->IsShown());
+    //l_Campaign->Show(!parent->IsShown());
+    l_Campaign->Show(1);
     this->Destroy();
 }
 

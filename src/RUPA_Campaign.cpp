@@ -94,6 +94,7 @@ RUPA_Campaign::RUPA_Campaign( watchdog_pi &_watchdog_pi, wxWindow* parent ):
 Campaign( parent ), m_watchdog_pi(_watchdog_pi)
 {
 
+    this->parent=parent;
     wxFileConfig *pConf = GetOCPNConfigObject();
     pConf->SetPath ( _T( "/Settings/Watchdog" ) );
     int enabled = pConf->Read ( _T ( "Enabled" ), 1L );
@@ -168,7 +169,7 @@ void RUPA_Campaign::OnLeftDown( wxMouseEvent& event )
 void RUPA_Campaign::On_New_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_New_Campaign
-    t_New_Campaign = new RUPA_New_Campaign(this, this);
+    t_New_Campaign = new RUPA_New_Campaign(this->parent, this);
     RUPA_Utils_Pos(t_New_Campaign);
 
 }
@@ -206,13 +207,13 @@ void RUPA_Campaign::On_Manage_Campaign( wxCommandEvent& event  )
 	if (Object_ID>=0)
 	{
 	    this->Show(!this->IsShown());
-	    t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, Object_ID);
+	    t_Manage_Campaign = new RUPA_Manage_Campaign(this->parent, this, Object_ID);
 	    RUPA_Utils_Pos(t_Manage_Campaign);
 	}
     }else
     {
 	this->Show(!this->IsShown());
-	t_Manage_Campaign = new RUPA_Manage_Campaign(this, this, New_Campaign_Id);
+	t_Manage_Campaign = new RUPA_Manage_Campaign(this->parent, this, New_Campaign_Id);
 	New_Campaign_Id = 0;
 	RUPA_Utils_Pos(t_Manage_Campaign);
     }
@@ -234,11 +235,13 @@ void RUPA_Campaign::Print_Campaigns_In_Table(wxListCtrl* Table, Phase cof)//cof 
     //-> Adding items in a multiple column list
 
     RUPA_SQL *c ;
+    RUPA_SQL *c2 ;
     Table->DeleteAllItems();
     try
     {
 	c = new RUPA_SQL();
-	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Campaign WHERE finished = ?"); //AND fished=?
+	c2 = new RUPA_SQL();
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Campaign WHERE finished = ?"); 
 	c->prep_stmt->setInt(1, cof);
 	c->res = c->prep_stmt->executeQuery();
 	while(c->res->next())
@@ -248,6 +251,19 @@ void RUPA_Campaign::Print_Campaigns_In_Table(wxListCtrl* Table, Phase cof)//cof 
 	    Table->SetItem(Item_Index, 1, geographical_area);
 	    wxString campaign_name(c->res->getString("campaign_name").c_str(), wxConvUTF8);
 	    Table->SetItem(Item_Index, 2, campaign_name);
+	    c2->prep_stmt = c2->con->prepareStatement("SELECT * FROM Structure WHERE campaign = ?"); 
+	    c2->prep_stmt->setInt(1, c->res->getInt("id"));
+	    c2->res = c2->prep_stmt->executeQuery();
+	    /*c2->prep_stmt = c2->con->prepareStatement("SELECT * FROM Structure WHERE campaign = ?"); 
+	    c2->prep_stmt->setInt(1, c->res->getInt("id"));
+	    c2->res = c2->prep_stmt->executeQuery();*/
+	    std::string Structures="";
+	    while(c2->res->next())
+	    {
+		Structures += c2->res->getString("location_name") + " ";
+	    }
+	    Table->SetItem(Item_Index, 3, Structures);
+
 	}
     }catch(sql::SQLException &e)
     {

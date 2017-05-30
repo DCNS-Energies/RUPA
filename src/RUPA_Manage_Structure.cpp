@@ -62,14 +62,14 @@ void RUPA_Manage_Structure::On_Launch_Semi_Auto_Burst_Deployment( wxCommandEvent
 {
 // TODO: Implement On_Launch_Semi_Auto_Burst
     this->Show(!this->IsShown());
-    t_Semi_Automatic_Burst = new RUPA_Semi_Automatic_Burst(this, this, 0);
+    t_Semi_Automatic_Burst = new RUPA_Semi_Automatic_Burst(this->parent, this, 0);
     RUPA_Utils_Pos(t_Semi_Automatic_Burst);
 }
 
 void RUPA_Manage_Structure::On_Launch_Semi_Auto_Burst_Recovery( wxCommandEvent& event )
 {
     this->Show(!this->IsShown());
-    t_Semi_Automatic_Burst = new RUPA_Semi_Automatic_Burst(this, this, 1);
+    t_Semi_Automatic_Burst = new RUPA_Semi_Automatic_Burst(this->parent, this, 1);
     RUPA_Utils_Pos(t_Semi_Automatic_Burst);
 }
 
@@ -92,7 +92,7 @@ void RUPA_Manage_Structure::On_Enter_Burst_Manually( wxCommandEvent& event )
 void RUPA_Manage_Structure::On_Edit_Burst_Recovery( wxCommandEvent& event )
 {
 // TODO: Implement On_Edit_burst
-    t_Burst_Editing = new RUPA_Burst_Editing(this, this, 5);
+    t_Burst_Editing = new RUPA_Burst_Editing(this->parent, this, 5);
     RUPA_Utils_Pos(t_Burst_Editing);
 }
 
@@ -148,7 +148,7 @@ void RUPA_Manage_Structure::On_Edit_Burst_Deployment( wxCommandEvent& event )
     long Item_Index = -1;
     RUPA_SQL *c ;
     long int Object_ID = Get_Selected_Burst_ID();
-    t_Burst_Editing = new RUPA_Burst_Editing(this, this, Object_ID);
+    t_Burst_Editing = new RUPA_Burst_Editing(this->parent, this, Object_ID);
     RUPA_Utils_Pos(t_Burst_Editing);
 }
 
@@ -158,7 +158,7 @@ void RUPA_Manage_Structure::On_Edit_Burst_Deployment( wxCommandEvent& event )
 void RUPA_Manage_Structure::On_Close( wxCommandEvent& event )
 {
 // TODO: Implement On_Close
-    parent->Show(!parent->IsShown());
+    l_Manage_Campaign->Show(1);
     l_Manage_Campaign->Refresh_Structure_Tables();
     this->Destroy();
 }
@@ -168,7 +168,7 @@ void RUPA_Manage_Structure::On_Close( wxCommandEvent& event )
 
 void RUPA_Manage_Structure::On_Add_Transponder(wxCommandEvent& event)
 {
-    t_Manage_Transponder = new RUPA_Manage_Transponder(this, this);
+    t_Manage_Transponder = new RUPA_Manage_Transponder(this->parent, this);
     RUPA_Utils_Pos(t_Manage_Transponder);
 }
 
@@ -177,7 +177,7 @@ void RUPA_Manage_Structure::On_Add_Transponder(wxCommandEvent& event)
 
 void RUPA_Manage_Structure::On_Edit_Transponder(wxCommandEvent& event)
 {
-    t_Burst_Editing = new RUPA_Burst_Editing(this, this, 5);
+    t_Burst_Editing = new RUPA_Burst_Editing(this->parent, this, 5);
     RUPA_Utils_Pos(t_Burst_Editing);
 }
 
@@ -197,7 +197,7 @@ void RUPA_Manage_Structure::On_Remove_Transponder(wxCommandEvent& event)
 
 void RUPA_Manage_Structure:: On_Structure_General_Settings_Button( wxCommandEvent& event)
 {
-    t_Setup_Structure = new RUPA_Setup_Structure(this, this);
+    t_Setup_Structure = new RUPA_Setup_Structure(this->parent, this);
     RUPA_Utils_Pos(t_Setup_Structure);
     
 }

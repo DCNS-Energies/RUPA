@@ -64,6 +64,8 @@ class RUPA_Campaign : public Campaign
 	    cout << res->getString(1) << endl;
 
 */
+    public:
+	wxWindow* parent;
 };
 
 #endif // __RUPA_Campaign__

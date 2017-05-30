@@ -53,6 +53,6 @@ void RUPA_New_Campaign::On_Install_Now( wxCommandEvent& event )
 
 void RUPA_New_Campaign::On_Cancel( wxCommandEvent& event )
 {
-    delete con;
+    //delete con;
     this->Destroy();
 }

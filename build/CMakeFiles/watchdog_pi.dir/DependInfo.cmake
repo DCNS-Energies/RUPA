@@ -4,10 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/Alarm.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o"
-  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/ConfigurationDialog.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o"
-  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/EditAlarmDialog.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o"
-  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/NewAlarmDialog.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Automatic_Burst.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Burst_Editing.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o"
@@ -25,9 +21,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Measurement.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o"
-  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogDialog.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o"
-  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogPropertiesDialog.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o"
-  "/home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/icons.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/icons.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxml.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o"
   "/home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxmlerror.cpp" "/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"

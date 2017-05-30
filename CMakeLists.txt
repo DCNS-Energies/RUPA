@@ -31,13 +31,13 @@ INCLUDE("cmake/PluginConfigure.cmake")
 SET(SRC_WATCHDOG
             src/watchdog_pi.cpp
 	    #src/watchdog_pi.cpp
-	    src/WatchdogDialog.cpp
-            src/WatchdogPropertiesDialog.cpp
-            src/ConfigurationDialog.cpp
-            src/NewAlarmDialog.cpp
-            src/EditAlarmDialog.cpp
-            src/Alarm.cpp
-            src/WatchdogUI.cpp
+	    #src/WatchdogDialog.cpp
+	    #src/WatchdogPropertiesDialog.cpp
+	    #src/ConfigurationDialog.cpp
+	    #src/NewAlarmDialog.cpp
+	    #src/EditAlarmDialog.cpp
+	    #src/Alarm.cpp
+	    #src/WatchdogUI.cpp
             src/icons.cpp
             src/ODAPI.h
             src/wddc.cpp

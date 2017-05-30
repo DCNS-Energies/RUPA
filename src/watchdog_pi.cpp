@@ -32,10 +32,10 @@
 #include "wddc.h"
 
 #include "watchdog_pi.h"
-#include "WatchdogDialog.h"
+//#include "WatchdogDialog.h"
 //#include "RUPA_Campaign.h"
 //#include "ConfigurationDialog.h"
-#include "WatchdogPropertiesDialog.h"
+//#include "WatchdogPropertiesDialog.h"
 #include "icons.h"
 #include "AIS_Target_Info.h"
 
@@ -140,17 +140,17 @@ int watchdog_pi::Init(void)
 {
     AddLocaleCatalog( PLUGIN_CATALOG_NAME );
 
-    Alarm::LoadConfigAll();
+    //Alarm::LoadConfigAll();
     
     m_leftclick_tool_id  = InsertPlugInTool
         (_T(""), _img_watchdog, _img_watchdog, wxITEM_NORMAL,
          _("Watchdog"), _T(""), NULL, WATCHDOG_TOOL_POSITION, 0, this);
     
-    m_WatchdogDialog 		= NULL;
+    //m_WatchdogDialog 		= NULL;
     t_Campaign 			= NULL;
-    m_ConfigurationDialog 	= NULL;
+    //m_ConfigurationDialog 	= NULL;
     //m_AnchorAlarm 		  = NULL;
-    m_PropertiesDialog 		= NULL;
+    //m_PropertiesDialog 		= NULL;
     m_Timer.Connect(wxEVT_TIMER, wxTimerEventHandler
                     ( watchdog_pi::OnTimer ), NULL, this);
     m_Timer.Start(3000);
@@ -194,21 +194,21 @@ int watchdog_pi::Init(void)
 
 bool watchdog_pi::DeInit(void)
 {
-    Alarm::SaveConfigAll();
-    Alarm::DeleteAll();
-    Alarm::s_Alarms.clear();
+    //Alarm::SaveConfigAll();
+    //Alarm::DeleteAll();
+    //Alarm::s_Alarms.clear();
 
     //    Record the dialog position
-    if (m_WatchdogDialog)
+    /*if (m_WatchdogDialog)
     {
         if(m_ConfigurationDialog) {
-            delete m_ConfigurationDialog;
+            //delete m_ConfigurationDialog;
         }
-        m_WatchdogDialog->Close();
-        delete m_WatchdogDialog;
-        m_WatchdogDialog = NULL;
+        //m_WatchdogDialog->Close();
+        //delete m_WatchdogDialog;
+        //m_WatchdogDialog = NULL;
         m_ConfigurationDialog = NULL;
-    }
+    }*/
     
     m_Timer.Stop();
     m_Timer.Disconnect(wxEVT_TIMER, wxTimerEventHandler( watchdog_pi::OnTimer ), NULL, this);
@@ -267,32 +267,32 @@ int watchdog_pi::GetToolbarToolCount(void)
 void watchdog_pi::ShowPreferencesDialog( wxWindow* parent )
 {
     //dlgShow = false;
-    if( NULL == m_PropertiesDialog )
-        m_PropertiesDialog = new WatchdogPropertiesDialog( parent );
+    //if( NULL == m_PropertiesDialog )
+        //m_PropertiesDialog = new WatchdogPropertiesDialog( parent );
     
-    m_PropertiesDialog->ShowModal();
+    //m_PropertiesDialog->ShowModal();
     
-    delete m_PropertiesDialog;
-    m_PropertiesDialog = NULL;
+    //delete m_PropertiesDialog;
+    //m_PropertiesDialog = NULL;
     
 }
 
 void watchdog_pi::SetColorScheme(PI_ColorScheme cs)
 {
-    if (NULL == m_WatchdogDialog)
-        return;
+    //if (NULL == m_WatchdogDialog)
+    //    return;
 
-    DimeWindow(m_WatchdogDialog);
+    //DimeWindow(m_WatchdogDialog);
 }
 
 void watchdog_pi::RearrangeWindow()
 {
-    if (NULL == m_WatchdogDialog)
-        return;
+    //if (NULL == m_WatchdogDialog)
+    //    return;
 
     SetColorScheme(PI_ColorScheme());
     
-    m_WatchdogDialog->Fit();
+    //m_WatchdogDialog->Fit();
 }
 
 void watchdog_pi::OnToolbarToolCallback(int id)
@@ -418,7 +418,7 @@ void watchdog_pi::SetCursorLatLon(double lat, double lon)
 
 void watchdog_pi::SetNMEASentence(wxString &sentence)
 {
-    Alarm::NMEAStringAll(sentence);
+    //Alarm::NMEAStringAll(sentence);
 }
 
 void watchdog_pi::SetPositionFixEx(PlugIn_Position_Fix_Ex &pfix)
@@ -621,12 +621,12 @@ void watchdog_pi::SetPluginMessage(wxString &message_id, wxString &message_body)
                 else
                     g_AISTarget.m_bOwnship = false;
             }
-            for(unsigned int i=0; i<Alarm::s_Alarms.size(); i++) {
+            /*for(unsigned int i=0; i<Alarm::s_Alarms.size(); i++) {
                 Alarm *p_Alarm = Alarm::s_Alarms[i];
                 if(p_Alarm->Type() == _("Guard Zone")) {
                     p_Alarm->OnAISMessage(i);
                 }
-            }
+            }*/
         }
     }
 }
@@ -634,7 +634,7 @@ void watchdog_pi::SetPluginMessage(wxString &message_id, wxString &message_body)
 
 void watchdog_pi::ShowConfigurationDialog( wxWindow* )
 {
-    m_ConfigurationDialog->Show();
+    //m_ConfigurationDialog->Show();
     //m_ConfigurationDialog->OnNewAlarm( /*event*/ )
 }
 

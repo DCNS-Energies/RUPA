@@ -93,15 +93,15 @@ double heading_resolve(double degrees);
 
 #define WATCHDOG_TOOL_POSITION    -1          // Request default positioning of toolbar tool
 
-#include "Alarm.h"
-#include "ConfigurationDialog.h"
+//#include "Alarm.h"
+//#include "ConfigurationDialog.h"
 #include "RUPA_Campaign.h"
 #include "RUPA_Utility.h"
 
 class wdDC;
-class WatchdogDialog;
-class ConfigurationDialog;
-class WatchdogPropertiesDialog;
+//class WatchdogDialog;
+//class ConfigurationDialog;
+//class WatchdogPropertiesDialog;
 class RUPA_Campaign;
 
 enum {
@@ -157,7 +157,7 @@ public:
 
       wxDateTime m_LastFixTime;
       wxDateTime m_cursor_time;
-      WatchdogDialog   *m_WatchdogDialog;
+      //WatchdogDialog   *m_WatchdogDialog;
 
 
       RUPA_Campaign   *t_Campaign;//t like Tristan because it's my name and I don't undersatand why it should be a 'm'
@@ -165,7 +165,7 @@ public:
       
       int       m_iEnableType;
       bool      m_bWatchdogDialogShown;
-      ConfigurationDialog *m_ConfigurationDialog;
+      //ConfigurationDialog *m_ConfigurationDialog;
       
 protected:
       wxPoint m_cursor_position;
@@ -180,7 +180,7 @@ private:
 
       //ConfigurationDialog *m_ConfigurationDialog;
       //AnchorAlarm *m_AnchorAlarm;
-      WatchdogPropertiesDialog *m_PropertiesDialog;
+      //WatchdogPropertiesDialog *m_PropertiesDialog;
       int               m_leftclick_tool_id;
 
       void              RearrangeWindow();

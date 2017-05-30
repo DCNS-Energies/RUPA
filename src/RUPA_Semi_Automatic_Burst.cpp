@@ -5,6 +5,25 @@ RUPA_Semi_Automatic_Burst::RUPA_Semi_Automatic_Burst( wxWindow* parent, RUPA_Man
 {
     this->parent = parent;
     std::string dor = Recovery < 1 ? "D" : "R";
+    RUPA_SQL *c;
+    Transponders_Count = 0;
+    try
+    {
+	c = new RUPA_SQL;
+	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE structure=? ");
+	c->prep_stmt->setInt(1, Id_Calling_Structure);
+	c->res=c->prep_stmt->executeQuery();
+	while(c->res->next())
+	{
+	    Transponders_Count++;
+	    std::string s = ToString(c->res->getString("address"))+":"+ToString(c->res->getString("frequency"));
+	    std::cout<<s<<"\n";
+	    Transponders.push_back(s);
+	}
+    }catch(sql::SQLException &e)
+    {
+	RUPA_Utils_Print_SQL_Error(e);
+    }
     try
     {
 	Prepare_SQL();
@@ -27,213 +46,101 @@ RUPA_Semi_Automatic_Burst::RUPA_Semi_Automatic_Burst( wxWindow* parent, RUPA_Man
     }
     messages_sent_count = 0;
     messages_received_count = 0;
+    delete c;
+    Transponder_Number = 0;//Actual Transponder
+    Current_Transponder = Transponders.at(Transponder_Number);
 }
 
-
-#define BUF_SIZE 0x10
-
-#define MAX_DEVICES 1
-
-static void dumpBuffer(unsigned char *buffer, int elements)
-{
-	int j;
-
-	printf(" [");
-	for (j = 0; j < elements; j++)
-	{
-		if (j > 0)
-			printf(", ");
-		printf("0x%02X", (unsigned int)buffer[j]);
-	}
-	printf("]\n");
-}
 
 
 void RUPA_Semi_Automatic_Burst::On_Range_Button( wxCommandEvent& event )
 {
 // TODO: Implement On_Range_Button
 	//unsigned char 	cBufWrite[BUF_SIZE];
-	unsigned char 	msg[]="$t111:1%";
-	printf("%s\n",msg);
-	unsigned char * pcBufRead = NULL;
-	std::string *Buf_Read;
-	char * 	pcBufLD[MAX_DEVICES + 1];
-	char 	cBufLD[MAX_DEVICES][64];
-	DWORD	dwRxSize = 0;
-	DWORD	EventDWord;
-	DWORD	RxBytes;
-	DWORD	TxBytes;
-	DWORD	BytesReceived;
-	char	RxBuffer[256];
-	DWORD 	dwBytesWritten, dwBytesRead;
-	FT_STATUS	ftStatus;
-	FT_HANDLE	ftHandle[MAX_DEVICES];
-	int	iNumDevs = 0;
-	int	i;//, j;
-	int	iDevicesOpen;	
 	
-	for(i = 0; i < MAX_DEVICES; i++) {
-		pcBufLD[i] = cBufLD[i];
-	}
-	pcBufLD[MAX_DEVICES] = NULL;
-	
-	ftStatus = FT_ListDevices(pcBufLD, &iNumDevs, FT_LIST_ALL | FT_OPEN_BY_SERIAL_NUMBER);
-	
-	if(ftStatus != FT_OK) {
-		printf("Error: FT_ListDevices(%d)\n", (int)ftStatus);
-	}
-
-	for(i = 0; ( (i <MAX_DEVICES) && (i < iNumDevs) ); i++) {
-		printf("Device %d Serial Number - %s\n", i, cBufLD[i]);
-	}
-
-	//for(j = 0; j < BUF_SIZE; j++) {
-	//	cBufWrite[j] = j;
-	//}
-	
-	for(i = 0; ( (i <MAX_DEVICES) && (i < iNumDevs) ) ; i++) {
-		/* Setup */
-		if((ftStatus = FT_OpenEx(cBufLD[i], FT_OPEN_BY_SERIAL_NUMBER, &ftHandle[i])) != FT_OK){
-			/* 
-				This can fail if the ftdi_sio driver is loaded
-		 		use lsmod to check this and rmmod ftdi_sio to remove
-				also rmmod usbserial
-		 	*/
-			printf("Error FT_OpenEx(%d), device %d\n", (int)ftStatus, i);
-			printf("Use lsmod to check if ftdi_sio (and usbserial) are present.\n");
-			printf("If so, unload them using rmmod, as they conflict with ftd2xx.\n");
-			printf("Or check if 99-RUPA.rules is in /etc/udev/rules.d. \n");
-		}
-	
-		printf("Opened device %s\n", cBufLD[i]);
-
-		iDevicesOpen++;
-		if((ftStatus = FT_SetBaudRate(ftHandle[i], 4800)) != FT_OK) {//Tristan
-			printf("Error FT_SetBaudRate(%d), cBufLD[i] = %s\n", (int)ftStatus, cBufLD[i]);
-			break;
-		}
-
-		//printf("Calling FT_Write with this write-buffer:\n");
-		
-		sleep(1);
-		/* Write */
-		//ftStatus = FT_Write(ftHandle[i], cBufWrite, BUF_SIZE, &dwBytesWritten);
-		ftStatus = FT_Write(ftHandle[i], msg, 8, &dwBytesWritten);
-		if (ftStatus != FT_OK) {
-			printf("Error FT_Write(%d)\n", (int)ftStatus);
-			break;
-		}
-		//if (dwBytesWritten != (DWORD)BUF_SIZE) {
-		if (dwBytesWritten != (DWORD)8) {//Tristan
-			printf("FT_Write only wrote %d (of %d) bytes\n", 
-			       (int)dwBytesWritten, 
-			       //BUF_SIZE);
-			       8);//Tristan
-			break;
-		}
-		messages_sent_count ++;
-		Semi_Auto_Message_Sent_Count->SetValue(wxString::Format(wxT("%i"),messages_sent_count));
-		sleep(1);
-		
-		/* Read */
-		dwRxSize = 0;			
-		FT_GetStatus(ftHandle[i], &RxBytes, &TxBytes, &EventDWord);
-		/*FT_GetQueueStatus(ftHandle, &RxBytes);*/
-		std::cout<<"RxBytes = "<<RxBytes<<"\n";
-		if(RxBytes > 0)
+    //unsigned char 	msg[]="$t111:1%";
+    std::string msg ="$t" + Current_Transponder + "%";
+    unsigned char *msgc = new unsigned char[msg.size()+1];
+    std::copy(msg.begin(), msg.end(), msgc);
+    msgc[msg.size()] = '\0';
+    messages_sent_count ++;
+    Semi_Auto_Message_Sent_Count->SetValue(wxString::Format(wxT("%i"),messages_sent_count));
+    std::string Buf_Read = RUPA_RS232(msgc);
+    //*Buf_Read = RUPA_RS232();
+    std::cout<<"RS232 OK\n"<<Buf_Read<<"\n";
+    std::istringstream iss(Buf_Read);
+    std::string word;
+    std::string ProperMessage = "";
+    std::vector<std::string> Vec_Buf_Read;
+    for(int i=0; iss>>word && i<5; i++)
+    {
+	ProperMessage+=word+" ";
+	Vec_Buf_Read.push_back(word);
+	printf("%d\n", i);
+    }
+    try
+    {
+	Semi_Automatic_Last_Value_Box->SetValue(wxString(ProperMessage.c_str(), wxConvUTF8));
+	Prepare_SQL();
+	prep_stmt = con->prepareStatement("INSERT INTO Measurement(message, rs232_command, latitude, longitude, burst, value) VALUES(?,?,?,?,?,?)");
+	prep_stmt->setString(1, "Range");
+	prep_stmt->setString(2, "$t123:4\%");
+	prep_stmt->setDouble(3, g_watchdog_pi->LastFix().Lat);
+	prep_stmt->setDouble(4, g_watchdog_pi->LastFix().Lon);
+	prep_stmt->setInt(5, Burst_Id);
+	printf("11\n");
+	if(!Vec_Buf_Read.empty())
+	{
+	    if(Vec_Buf_Read.size()>2)
+	    {
+		if(Vec_Buf_Read.at(2).compare("Range") ==0)
 		{
-		    ftStatus = FT_Read(ftHandle[i], RxBuffer, RxBytes, &BytesReceived);
-		    std::cout<<"FT_Status = "<<ftStatus<<"\n";
-
-		if(ftStatus == FT_OK) {
-		    std::cout<<"poil = 1\n";
-			pcBufRead = (unsigned char*)realloc(pcBufRead, dwRxSize);
-			memset(pcBufRead, 0xFF, dwRxSize);
-			if (ftStatus != FT_OK) 
-			{
-				printf("Error FT_Read(%d)\n", (int)ftStatus);
-				break;
-			}
-			if (RxBytes != BytesReceived) 
-			{
-				printf("FT_Read only read %d (of %d) bytes\n",
-				       (int)dwBytesRead, (int)dwRxSize);
-				break;
-			}
-			printf("FT_Read read %d bytes.\n",(int)BytesReceived);
-			std::string Buf_Read((char *)RxBuffer);
-			std::istringstream iss(Buf_Read);
-			std::string word;
-			std::string ProperMessage = "";
-			std::vector<std::string> Vec_Buf_Read;
-			for(int i=0; iss>>word && i<5; i++)
-			{
-			    ProperMessage+=word+" ";
-			    Vec_Buf_Read.push_back(word);
-			    printf("%d\n", i);
-			}
-			try
-			{
-			    Semi_Automatic_Last_Value_Box->SetValue(wxString(ProperMessage.c_str(), wxConvUTF8));
-			    Prepare_SQL();
-			    prep_stmt = con->prepareStatement("INSERT INTO Measurement(message, rs232_command, latitude, longitude, burst, value) VALUES(?,?,?,?,?,?)");
-			    prep_stmt->setString(1, "Range");
-			    prep_stmt->setString(2, "$t123:4\%");
-			    prep_stmt->setDouble(3, g_watchdog_pi->LastFix().Lat);
-			    prep_stmt->setDouble(4, g_watchdog_pi->LastFix().Lon);
-			    prep_stmt->setInt(5, Burst_Id);
-			    printf("11\n");
-			    if(!Vec_Buf_Read.empty())
-			    {
-				if(Vec_Buf_Read.size()>2)
-				{
-				    if(Vec_Buf_Read.at(2).compare("Range") ==0)
-				    {
-					std::string m = Vec_Buf_Read.at(4);
-					prep_stmt->setString(6, m.substr(0,m.length()-1));
-					messages_received_count ++;
-					Semi_Auto_Message_Received_Count->SetValue(wxString::Format(wxT("%i"),messages_received_count));
-				    }
-				}
-				else
-				{
-				    prep_stmt->setString(6, "Fail");
-				}
-				prep_stmt->execute();
-				prep_stmt = con->prepareStatement("UPDATE Burst SET pings_emmited_count=pings_emmited_count+1 WHERE id=?");
-				prep_stmt->setInt(1, Burst_Id);
-				prep_stmt->execute();
-				delete con;
-			    }else
-			    {
-				Semi_Automatic_Last_Value_Box->SetValue(wxString::Format(wxT("Deck unit was sleeping, try again")));
-			    }
-			}catch(sql::SQLException &e)
-			{
-			    RUPA_Utils_Print_SQL_Error(e);
-			}
+		    std::string m = Vec_Buf_Read.at(4);
+		    prep_stmt->setString(6, m.substr(0,m.length()-1));
+		    messages_received_count ++;
+		    Semi_Auto_Message_Received_Count->SetValue(wxString::Format(wxT("%i"),messages_received_count));
 		}
-		else {
-			printf("Error FT_GetQueueStatus(%d)\n", (int)ftStatus);	
-		}}
-
+		else
+		{
+		    prep_stmt->setString(6, "Fail");
+		}
+	    }
+	    else
+	    {
+		prep_stmt->setString(6, "Fail");
+	    }
+	    prep_stmt->execute();
+	    prep_stmt = con->prepareStatement("UPDATE Burst SET pings_emmited_count=pings_emmited_count+1 WHERE id=?");
+	    prep_stmt->setInt(1, Burst_Id);
+	    prep_stmt->execute();
+	    delete con;
+	}else
+	{
+	    Semi_Automatic_Last_Value_Box->SetValue(wxString::Format(wxT("Deck unit was sleeping, try again")));
 	}
-
-	iDevicesOpen = i;
-	/* Cleanup */
-	for(i = 0; i < iDevicesOpen; i++) {
-		FT_Close(ftHandle[i]);
-		printf("Closed device %s\n", cBufLD[i]);
-	}
-
-	if(pcBufRead)
-		free(pcBufRead);
-
+    }catch(sql::SQLException &e)
+    {
+	RUPA_Utils_Print_SQL_Error(e);
+    }
+	
 
 
 }
 
-void RUPA_Semi_Automatic_Burst::On_Battery_Check_Button( wxCommandEvent& event )
+void RUPA_Semi_Automatic_Burst::On_Next_Transponder_Button( wxCommandEvent& event )
+{
+    Transponder_Number = (Transponder_Number + 1) % (Transponders_Count );
+    Current_Transponder = Transponders.at(Transponder_Number);
+}
+
+void RUPA_Semi_Automatic_Burst::On_Previous_Transponder_Button( wxCommandEvent& event )
+{
+    Transponder_Number = (Transponder_Number +Transponders_Count - 1) % Transponders_Count;
+    Current_Transponder = Transponders.at(Transponder_Number);
+}
+
+
+/*void RUPA_Semi_Automatic_Burst::On_Battery_Check_Button( wxCommandEvent& event )
 {
 // TODO: Implement On_Battery_Check_Button
     try
@@ -248,18 +155,18 @@ void RUPA_Semi_Automatic_Burst::On_Battery_Check_Button( wxCommandEvent& event )
     {
 	RUPA_Utils_Print_SQL_Error(e);
     }
-}
+}*/
 
-void RUPA_Semi_Automatic_Burst::On_Release_Nut_Button( wxCommandEvent& event )
+/*void RUPA_Semi_Automatic_Burst::On_Release_Nut_Button( wxCommandEvent& event )
 {
 // TODO: Implement On_Release_Nut_Button
-}
+}*/
 
 void RUPA_Semi_Automatic_Burst::On_Finish_Burst_Button( wxCommandEvent& event )
 {
 // TODO: Implement On_Finish_Burst_Button
     l_Manage_Structure->Refresh_Burst_Tables();
-    parent->Show(!parent->IsShown());
+    l_Manage_Structure->Show(1);
     this->Destroy();
 }
 

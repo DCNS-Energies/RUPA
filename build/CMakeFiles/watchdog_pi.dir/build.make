@@ -81,177 +81,9 @@ CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.o.provides: CMakeFiles/watchdog_p
 CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.o
 
 
-CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
-CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o: ../src/WatchdogDialog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogDialog.cpp
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogDialog.cpp > CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.i
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogDialog.cpp -o CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.s
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.requires:
-
-.PHONY : CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.requires
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.requires
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.provides.build
-.PHONY : CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.provides
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o
-
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
-CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o: ../src/WatchdogPropertiesDialog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogPropertiesDialog.cpp
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogPropertiesDialog.cpp > CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.i
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogPropertiesDialog.cpp -o CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.s
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.requires:
-
-.PHONY : CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.requires
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.requires
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.provides.build
-.PHONY : CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.provides
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o
-
-
-CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
-CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o: ../src/ConfigurationDialog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/ConfigurationDialog.cpp
-
-CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/ConfigurationDialog.cpp > CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.i
-
-CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/ConfigurationDialog.cpp -o CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.s
-
-CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.requires:
-
-.PHONY : CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.requires
-
-CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.requires
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.provides.build
-.PHONY : CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.provides
-
-CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o
-
-
-CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
-CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o: ../src/NewAlarmDialog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/NewAlarmDialog.cpp
-
-CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/NewAlarmDialog.cpp > CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.i
-
-CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/NewAlarmDialog.cpp -o CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.s
-
-CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.requires:
-
-.PHONY : CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.requires
-
-CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.requires
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.provides.build
-.PHONY : CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.provides
-
-CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o
-
-
-CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
-CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o: ../src/EditAlarmDialog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/EditAlarmDialog.cpp
-
-CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/EditAlarmDialog.cpp > CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.i
-
-CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/EditAlarmDialog.cpp -o CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.s
-
-CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.requires:
-
-.PHONY : CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.requires
-
-CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.requires
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.provides.build
-.PHONY : CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.provides
-
-CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o
-
-
-CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
-CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o: ../src/Alarm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/Alarm.cpp
-
-CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/Alarm.cpp > CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.i
-
-CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/Alarm.cpp -o CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.s
-
-CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.requires:
-
-.PHONY : CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.requires
-
-CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.requires
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.provides.build
-.PHONY : CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.provides
-
-CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o
-
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
-CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o: ../src/WatchdogUI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.cpp
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.cpp > CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.i
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jack/Tristan/sandbox/watchdog_pi-master/src/WatchdogUI.cpp -o CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.s
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.requires:
-
-.PHONY : CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.requires
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.provides: CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.requires
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.provides.build
-.PHONY : CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.provides
-
-CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.provides.build: CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o
-
-
 CMakeFiles/watchdog_pi.dir/src/icons.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/icons.cpp.o: ../src/icons.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/watchdog_pi.dir/src/icons.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/watchdog_pi.dir/src/icons.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/icons.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/icons.cpp
 
 CMakeFiles/watchdog_pi.dir/src/icons.cpp.i: cmake_force
@@ -275,7 +107,7 @@ CMakeFiles/watchdog_pi.dir/src/icons.cpp.o.provides.build: CMakeFiles/watchdog_p
 
 CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o: ../src/wddc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/wddc.cpp
 
 CMakeFiles/watchdog_pi.dir/src/wddc.cpp.i: cmake_force
@@ -299,7 +131,7 @@ CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o.provides.build: CMakeFiles/watchdog_pi
 
 CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o: ../src/TexFont.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/TexFont.cpp
 
 CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.i: cmake_force
@@ -323,7 +155,7 @@ CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o.provides.build: CMakeFiles/watchdog
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o: ../src/RUPA_Automatic_Burst.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Automatic_Burst.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.i: cmake_force
@@ -347,7 +179,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o.provides.build: CMakeF
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o: ../src/RUPA_Burst_Editing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Burst_Editing.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.i: cmake_force
@@ -371,7 +203,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o: ../src/RUPA_Campaign.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Campaign.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.i: cmake_force
@@ -395,7 +227,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o.provides.build: CMakeFiles/wa
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: ../src/RUPA_Change_Validation_State.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Change_Validation_State.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.i: cmake_force
@@ -419,7 +251,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o.provides.build
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o: ../src/RUPA_Manage_Campaign.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Campaign.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.i: cmake_force
@@ -443,7 +275,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o.provides.build: CMakeF
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o: ../src/RUPA_New_Campaign.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_New_Campaign.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.i: cmake_force
@@ -467,7 +299,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o: ../src/RUPA_Semi_Automatic_Burst.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Semi_Automatic_Burst.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.i: cmake_force
@@ -491,7 +323,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o.provides.build: C
 
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: ../src/RUPAUI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPAUI.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.i: cmake_force
@@ -515,7 +347,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o.provides.build: CMakeFiles/watchdog_
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: ../src/RUPA_Warning_Delete_Burst.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Burst.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.i: cmake_force
@@ -539,7 +371,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o.provides.build: C
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: ../src/RUPA_Warning_Delete_Campaign.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Campaign.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.i: cmake_force
@@ -563,7 +395,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o.provides.build
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: ../src/RUPA_Warning_Delete_Measurement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Warning_Delete_Measurement.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.i: cmake_force
@@ -587,7 +419,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o.provides.bu
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o: ../src/RUPA_Utility.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Utility.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.i: cmake_force
@@ -611,7 +443,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o.provides.build: CMakeFiles/wat
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o: ../src/RUPA_Manage_Structure.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Structure.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.i: cmake_force
@@ -635,7 +467,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o.provides.build: CMake
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o: ../src/RUPA_Manage_Transponder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Manage_Transponder.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.i: cmake_force
@@ -659,7 +491,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o.provides.build: CMa
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o: ../src/RUPA_Setup_Structure.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_Setup_Structure.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.i: cmake_force
@@ -683,7 +515,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o.provides.build: CMakeF
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o: ../src/RUPA_RS232.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/RUPA_RS232.cpp
 
 CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.i: cmake_force
@@ -707,7 +539,7 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o.provides.build: CMakeFiles/watch
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o: ../src/tinyxml/tinyxml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxml.cpp
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.i: cmake_force
@@ -731,7 +563,7 @@ CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o: ../src/tinyxml/tinyxmlparser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxmlparser.cpp
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.i: cmake_force
@@ -755,7 +587,7 @@ CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o.provides.build: CMake
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o: CMakeFiles/watchdog_pi.dir/flags.make
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o: ../src/tinyxml/tinyxmlerror.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o -c /home/jack/Tristan/sandbox/watchdog_pi-master/src/tinyxml/tinyxmlerror.cpp
 
 CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.i: cmake_force
@@ -780,13 +612,6 @@ CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o.provides.build: CMakeF
 # Object files for target watchdog_pi
 watchdog_pi_OBJECTS = \
 "CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.o" \
-"CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o" \
-"CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o" \
-"CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o" \
-"CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o" \
-"CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o" \
-"CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o" \
-"CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/icons.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o" \
 "CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o" \
@@ -814,13 +639,6 @@ watchdog_pi_OBJECTS = \
 watchdog_pi_EXTERNAL_OBJECTS =
 
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.o
-libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o
-libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o
-libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o
-libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o
-libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o
-libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o
-libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/icons.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o
@@ -847,7 +665,7 @@ libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/build.make
 libwatchdog_pi.so: /usr/lib/x86_64-linux-gnu/libbz2.so
 libwatchdog_pi.so: /usr/lib/x86_64-linux-gnu/libz.so
 libwatchdog_pi.so: CMakeFiles/watchdog_pi.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX shared library libwatchdog_pi.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX shared library libwatchdog_pi.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/watchdog_pi.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -856,13 +674,6 @@ CMakeFiles/watchdog_pi.dir/build: libwatchdog_pi.so
 .PHONY : CMakeFiles/watchdog_pi.dir/build
 
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.o.requires
-CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/WatchdogDialog.cpp.o.requires
-CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/WatchdogPropertiesDialog.cpp.o.requires
-CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/ConfigurationDialog.cpp.o.requires
-CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/NewAlarmDialog.cpp.o.requires
-CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/EditAlarmDialog.cpp.o.requires
-CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/Alarm.cpp.o.requires
-CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/WatchdogUI.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/icons.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o.requires
 CMakeFiles/watchdog_pi.dir/requires: CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o.requires
