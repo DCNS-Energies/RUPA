@@ -31,7 +31,7 @@
 
 \title{Recover Underwater Position by Acoustic \\ RUPA}
 \author{Tristan Dewalle \\ Intern in DCNS Energies}
-\date{Du 06/03/2017\\Au 20/07/2017}
+\date{From 06/03/2017\\To 20/07/2017}
 
 %Corps du document :
 \begin{document}
@@ -45,9 +45,87 @@
 	 have a friendly user HMI to locate underwater structures. To make that tool more efficient, I extended it 
 	 to the management of the life of campaigns of measurement. In that manual, I will describe you how to use it
 	 (quite simple, don't worry) and if someone want to use it to improve it, in the "Developper part" I will 
-	 developp on what my logic was.
+	 explicit what my logic was.
+
+	 Ho, by the way, I'm french, so sorry if sometimes my english is too bad (don't hesitate to contact me in this case).
 	\chapter{User part}
+	    I hope this tool is quite easy to use, but here are some instructions, just in case.
+
+	    Please, refer to the glossary if you're not sur what I'm talking about.
+	    \section{About the devices }
+		About software, RUPA was developped with:
+		\begin{itemize}
+		    \item Linux Mint 18.1 Serena
+		    \item OpenCPN 4.4.0
+		\end{itemize}
+
+		 About the hardware: 
+		\begin{itemize}
+		    \item A deck unit from Sonardyne
+		    \item A Transponder from Sonardyne
+		    \item A FTDI (to connect computer and deck unit via USB)
+		    \item A GPS from trimble (just for information)
+		\end{itemize}
+	    \section{Installation}
+	    \section{Usage}
+		\subsection{Campaign}
+		    It is supposed you have clicked on the "RUPA" button, while you're in OpenCPN.
+		    Here, you have 2 tabs and 5 buttons. The "Current Campaign" tab list what campaigns are not finished
+		    and "Finished Campaign" list what campaigns are finished.
+		    \paragraph{The "New Campaign" button} allow you to enter the minimal information you use find usefull to describe
+		    a campaign (the geographical area, the name of th campaign). Be careful, at this time, it's not possible 
+		    to edit that simply.
+		    \paragraph{The "Delete Campaign" button} remove all the datas you had got: what you entered thank's to the "New 
+		    Campaign" button, but every measurement you should have done. Be really carefull, there is no way to 
+		    recover what you erased (really, there is absolutely no tricks to do that).
+		    \paragraph{The "Manage Campaign" button} open a new window : "Manage Campaign" in wich you can see each structure.
+		    \paragraph{The "Close" button} close the window (yep, really ;-) ).
+		    \paragraph{The "(Un)Finish Campaign" button} set a Campaign as finished or current, and move it to the corresponding table.
+
+		\subsection{New Campaign}
+		    \paragraph{The "Campaign's Name" field} let you name the campaign as you want.
+		    \paragraph{The "Geographical Area" field} let you indicate where the campaign takes place.
+		    \paragraph{The "Install Later" button} will save what you typed and show you the "Campaign" window.
+		    \paragraph{The "Install Now" button} will save what you types too, but here, it redirect you to the "Manage Campaign" window.
+
+		\subsection{Manage Campaign}
+
 	\chapter{Developper part}
+
+	\chapter{How to improve RUPA}
+	    \section{Customization panel}
+		There can be several customization panels. One of the most important is the possibility to change circles
+		colors (could be done by adding a column into the database, for the measurement, then, adapt a little bit the code.
+	    
+	    \section{Auto detection of the structure position}
+		That operation is named \emph{trilateration}, I will let a code doing that. I didn't integrate it to the plugin, because 
+		it implies to make calculation on earth, and I can't spend to much time on it (it's not at all a "must have" for my project)
+		I took the code frome someone else, using Eigen, the code is really small, so I let you have an eye on it. I'll put it in
+		th "improvement" directory. Feel free to do what you want with that.
+
+	    \section{Modify Campaign parameters window}
+		As underlined in the user guide, there is no possibility to modifiy the parameters of a campaign (even if there is realy 
+		little chance that it change, it could be nice to have the possibility to do so.
+
+	    \section{Temporary Measurement}
+		Make it possible to have a temporary measurement, probably linked to a shortcut, to make it lighter to use for who don't 
+		care about campaigns (for example for divers who just have to recover something).
+
+	    \section{RS232}
+		Make it possible to configure the RS232 bus differently, and to choose what message to sent (if using other device).
+		More, making instead of scanning for a message, making an interrupt-callback system. I didn't do that, because, actually, 
+		I don't know how to do that (I tried a little bit with the boost library but I failed to catch a value changement), but 
+		I think the current way to detect reception (by scanning) is a really dirty way to do that.
+
+
+	\chapter{Glossary}
+	    \paragraph{Campaign :} it regroups every single structure in one Geographical area, for a type of survey (feel free to 
+	    interprate it as you want of course).
+	    \paragraph{Structure :} it's an object on wich is fixed at least one transponder, and one sensor.
+	    \paragraph{Burst :} a collection of measurements.
+	    \paragraph{Measurement :} The distance between the transponder and the deck unit.
+	    \paragraph{Deck Unit :} Human-machine interface to communicate with the transponder
+
 \iffalse		
 \chapter{chap}
 	\section{sect}

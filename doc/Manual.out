@@ -1,3 +1,16 @@
 \BOOKMARK [0][-]{chapter.1}{Introduduction}{}% 1
 \BOOKMARK [0][-]{chapter.2}{User part}{}% 2
-\BOOKMARK [0][-]{chapter.3}{Developper part}{}% 3
+\BOOKMARK [1][-]{section.2.1}{About the devices }{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Installation}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Usage}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.3.1}{Campaign}{section.2.3}% 6
+\BOOKMARK [2][-]{subsection.2.3.2}{New Campaign}{section.2.3}% 7
+\BOOKMARK [2][-]{subsection.2.3.3}{Manage Campaign}{section.2.3}% 8
+\BOOKMARK [0][-]{chapter.3}{Developper part}{}% 9
+\BOOKMARK [0][-]{chapter.4}{How to improve RUPA}{}% 10
+\BOOKMARK [1][-]{section.4.1}{Customization panel}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.2}{Auto detection of the structure position}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.3}{Modify Campaign parameters window}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.4}{Temporary Measurement}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.5}{RS232}{chapter.4}% 15
+\BOOKMARK [0][-]{chapter.5}{Glossary}{}% 16
