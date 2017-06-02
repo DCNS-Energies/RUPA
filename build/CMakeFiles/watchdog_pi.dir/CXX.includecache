@@ -109,8 +109,6 @@ wx/stattext.h
 -
 wx/textctrl.h
 -
-wx/gauge.h
--
 wx/statline.h
 -
 wxWTranslateCatalog.h

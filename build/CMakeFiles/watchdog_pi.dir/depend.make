@@ -49,7 +49,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/filesys.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/flags.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/font.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/fontenc.h
-CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gdicmn.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gdiobj.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/generic/accel.h
@@ -72,7 +71,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/control.
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/cursor.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/dialog.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/font.h
-CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/notebook.h
 CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o: /usr/include/wx-3.0/wx/gtk/region.h
@@ -986,7 +984,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/flags.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/font.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/fontenc.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gdicmn.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gdiobj.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/generic/accel.h
@@ -1009,7 +1006,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gtk/cursor.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gtk/dialog.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gtk/font.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gtk/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gtk/notebook.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o: /usr/include/wx-3.0/wx/gtk/region.h
@@ -3075,7 +3071,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/flags.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/font.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/fontenc.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gdicmn.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gdiobj.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/generic/accel.h
@@ -3098,7 +3093,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gtk/cursor.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gtk/dialog.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gtk/font.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gtk/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gtk/notebook.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o: /usr/include/wx-3.0/wx/gtk/region.h
@@ -3255,7 +3249,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/flags.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/font.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/fontenc.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gdicmn.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gdiobj.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/generic/accel.h
@@ -3278,7 +3271,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gtk/cursor.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gtk/dialog.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gtk/font.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gtk/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gtk/notebook.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o: /usr/include/wx-3.0/wx/gtk/region.h
@@ -3435,7 +3427,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/inclu
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/flags.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/font.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/fontenc.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gdicmn.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gdiobj.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/generic/accel.h
@@ -3458,7 +3449,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/inclu
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gtk/cursor.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gtk/dialog.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gtk/font.h
-CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gtk/gauge.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gtk/notebook.h
 CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o: /usr/include/wx-3.0/wx/gtk/region.h

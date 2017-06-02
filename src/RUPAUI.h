@@ -28,7 +28,6 @@
 #include <wx/dialog.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/gauge.h>
 #include <wx/statline.h>
 
 #include "wxWTranslateCatalog.h"
@@ -159,8 +158,6 @@ class New_Campaign : public wxDialog
 	private:
 	
 	protected:
-		wxStaticText* New_Compaign_Beacon_Name_Label;
-		wxTextCtrl* New_Campaign_Beacon_Name_Inbox;
 		wxStaticText* New_Campaign_Name_Inbox_Label;
 		wxTextCtrl* New_Campaign_Name_Inbox;
 		wxStaticText* New_Compaign_Geographical_Area_Label;
@@ -177,7 +174,7 @@ class New_Campaign : public wxDialog
 	
 	public:
 		
-		New_Campaign( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("New Campaign"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 260,264 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+		New_Campaign( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("New Campaign"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
 		~New_Campaign();
 	
 };
@@ -203,19 +200,6 @@ class Manage_Structure : public wxDialog
 		wxButton* Manage_Structure_Deployment_Enter_Burst_Manually_Button1;
 		wxButton* Manage_Structure_Deployment_Edit_Burst_Button1;
 		wxButton* Manage_Structure_Deployment_Delete_Burst_Button1;
-		wxGauge* Manage_Structure_Deployment_Gauge_LED_Validation;
-		wxStaticText* Manage_Structure_Deployment_Validation_Text;
-		wxButton* Manage_Structure_Deployment_Validation_Force_Validation_Buttons;
-		wxButton* Manage_Structure_Deployment_Validation_Force_Invalidation_Buttons;
-		wxStaticText* m_staticText761;
-		wxStaticText* m_staticText791;
-		wxTextCtrl* Deployment_Lat_Box;
-		wxStaticText* m_staticText781;
-		wxTextCtrl* Deployment_Lon_Box;
-		wxStaticText* m_staticText771;
-		wxTextCtrl* Deployment_Approximation_Radius_Box;
-		wxStaticText* m_staticText801;
-		wxButton* Manage_Structure_Deployment_Set_Position_Manually_Button;
 		wxPanel* Manage_Structure_Recovery_Tab;
 		wxButton* Recovery_General_Settings_Button;
 		wxListCtrl* Recovery_Transponder_Caracteristics;
@@ -225,19 +209,6 @@ class Manage_Structure : public wxDialog
 		wxButton* Manage_Structure_Recovery_Enter_Burst_Manually_Button;
 		wxButton* Manage_Structure_Recovery_Edit_Burst_Button;
 		wxButton* Manage_Structure_Recovery_Delete_Burst_Button;
-		wxGauge* Manage_Structure_Recovery_Gauge_LED_Validation;
-		wxStaticText* m_staticText70;
-		wxButton* Manage_Structure_Recovery_Validation_Force_Validation_Buttons;
-		wxButton* Manage_Structure_Recovery_Invalidation_Force_Validation_Buttons;
-		wxStaticText* m_staticText76;
-		wxStaticText* m_staticText79;
-		wxTextCtrl* Recovery_Lat_Box;
-		wxStaticText* m_staticText78;
-		wxTextCtrl* Recovery_Lon_Box;
-		wxStaticText* m_staticText77;
-		wxTextCtrl* Recovery_Approximation_Radius_Box;
-		wxStaticText* m_staticText80;
-		wxButton* Manage_Structure_Recovery_Set_Position_Manually_Button;
 		wxButton* Close_Button;
 		
 		// Virtual event handlers, overide them in your derived class
@@ -250,9 +221,6 @@ class Manage_Structure : public wxDialog
 		virtual void On_Enter_Burst_Manually( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Edit_Burst_Deployment( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Delete_Burst( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Force_Validation( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Force_Invalidation( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Set_Position_Button( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Structure_General_Settings( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Launch_Auto_Burst_Recovery( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Launch_Semi_Auto_Burst_Recovery( wxCommandEvent& event ) { event.Skip(); }
@@ -262,7 +230,7 @@ class Manage_Structure : public wxDialog
 	
 	public:
 		
-		Manage_Structure( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Structure"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 560,674 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
+		Manage_Structure( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Manage Structure"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL ); 
 		~Manage_Structure();
 	
 };

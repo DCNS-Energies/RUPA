@@ -50,7 +50,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o
  /usr/include/wx-3.0/wx/flags.h
  /usr/include/wx-3.0/wx/font.h
  /usr/include/wx-3.0/wx/fontenc.h
- /usr/include/wx-3.0/wx/gauge.h
  /usr/include/wx-3.0/wx/gdicmn.h
  /usr/include/wx-3.0/wx/gdiobj.h
  /usr/include/wx-3.0/wx/generic/accel.h
@@ -73,7 +72,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o
  /usr/include/wx-3.0/wx/gtk/cursor.h
  /usr/include/wx-3.0/wx/gtk/dialog.h
  /usr/include/wx-3.0/wx/gtk/font.h
- /usr/include/wx-3.0/wx/gtk/gauge.h
  /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
  /usr/include/wx-3.0/wx/gtk/notebook.h
  /usr/include/wx-3.0/wx/gtk/region.h
@@ -987,7 +985,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o
  /usr/include/wx-3.0/wx/flags.h
  /usr/include/wx-3.0/wx/font.h
  /usr/include/wx-3.0/wx/fontenc.h
- /usr/include/wx-3.0/wx/gauge.h
  /usr/include/wx-3.0/wx/gdicmn.h
  /usr/include/wx-3.0/wx/gdiobj.h
  /usr/include/wx-3.0/wx/generic/accel.h
@@ -1010,7 +1007,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o
  /usr/include/wx-3.0/wx/gtk/cursor.h
  /usr/include/wx-3.0/wx/gtk/dialog.h
  /usr/include/wx-3.0/wx/gtk/font.h
- /usr/include/wx-3.0/wx/gtk/gauge.h
  /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
  /usr/include/wx-3.0/wx/gtk/notebook.h
  /usr/include/wx-3.0/wx/gtk/region.h
@@ -3076,7 +3072,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o
  /usr/include/wx-3.0/wx/flags.h
  /usr/include/wx-3.0/wx/font.h
  /usr/include/wx-3.0/wx/fontenc.h
- /usr/include/wx-3.0/wx/gauge.h
  /usr/include/wx-3.0/wx/gdicmn.h
  /usr/include/wx-3.0/wx/gdiobj.h
  /usr/include/wx-3.0/wx/generic/accel.h
@@ -3099,7 +3094,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o
  /usr/include/wx-3.0/wx/gtk/cursor.h
  /usr/include/wx-3.0/wx/gtk/dialog.h
  /usr/include/wx-3.0/wx/gtk/font.h
- /usr/include/wx-3.0/wx/gtk/gauge.h
  /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
  /usr/include/wx-3.0/wx/gtk/notebook.h
  /usr/include/wx-3.0/wx/gtk/region.h
@@ -3256,7 +3250,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o
  /usr/include/wx-3.0/wx/flags.h
  /usr/include/wx-3.0/wx/font.h
  /usr/include/wx-3.0/wx/fontenc.h
- /usr/include/wx-3.0/wx/gauge.h
  /usr/include/wx-3.0/wx/gdicmn.h
  /usr/include/wx-3.0/wx/gdiobj.h
  /usr/include/wx-3.0/wx/generic/accel.h
@@ -3279,7 +3272,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o
  /usr/include/wx-3.0/wx/gtk/cursor.h
  /usr/include/wx-3.0/wx/gtk/dialog.h
  /usr/include/wx-3.0/wx/gtk/font.h
- /usr/include/wx-3.0/wx/gtk/gauge.h
  /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
  /usr/include/wx-3.0/wx/gtk/notebook.h
  /usr/include/wx-3.0/wx/gtk/region.h
@@ -3436,7 +3428,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o
  /usr/include/wx-3.0/wx/flags.h
  /usr/include/wx-3.0/wx/font.h
  /usr/include/wx-3.0/wx/fontenc.h
- /usr/include/wx-3.0/wx/gauge.h
  /usr/include/wx-3.0/wx/gdicmn.h
  /usr/include/wx-3.0/wx/gdiobj.h
  /usr/include/wx-3.0/wx/generic/accel.h
@@ -3459,7 +3450,6 @@ CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o
  /usr/include/wx-3.0/wx/gtk/cursor.h
  /usr/include/wx-3.0/wx/gtk/dialog.h
  /usr/include/wx-3.0/wx/gtk/font.h
- /usr/include/wx-3.0/wx/gtk/gauge.h
  /usr/include/wx-3.0/wx/gtk/nonownedwnd.h
  /usr/include/wx-3.0/wx/gtk/notebook.h
  /usr/include/wx-3.0/wx/gtk/region.h
