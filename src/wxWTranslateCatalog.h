@@ -32,7 +32,7 @@
 #ifdef _
 #undef _
 #endif // _
-#define _(s) wxGetTranslation((s), wxS("opencpn-watchdog_pi"))
+#define _(s) wxGetTranslation((s), wxS("opencpn-rupa_pi"))
 #endif // WXINTL_NO_GETTEXT_MACRO
 
 #endif

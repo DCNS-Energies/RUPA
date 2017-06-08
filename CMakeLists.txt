@@ -7,11 +7,11 @@
 # define minimum cmake version
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.2)
 
-PROJECT(watchdog_pi)
-SET(PACKAGE_NAME watchdog_pi)
-SET(VERBOSE_NAME Watchdog)
-SET(TITLE_NAME WATCHDOG)
-SET(CPACK_PACKAGE_CONTACT "Sean D'Epagnier ")
+PROJECT(rupa_pi)
+SET(PACKAGE_NAME rupa_pi)
+SET(VERBOSE_NAME RUPA)
+SET(TITLE_NAME RUPA)
+SET(CPACK_PACKAGE_CONTACT "Tristan Dewalle ")
 
 SET(BUNDLE_DATA FALSE)
 
@@ -28,7 +28,7 @@ INCLUDE("cmake/PluginConfigure.cmake")
 #LINK_DIRECTORIES("/usr/lib/" "mysqlcppconn")
 #TARGET_LINK_LIBRARIES(watchdog_pi mysqlcppconn)
 
-SET(SRC_WATCHDOG
+SET(SRC_RUPA
             src/watchdog_pi.cpp
 	    #src/watchdog_pi.cpp
 	    #src/WatchdogDialog.cpp
@@ -76,7 +76,7 @@ ENDIF(UNIX)
 IF(TINYXML_FOUND)
  message (STATUS "Building with system tinyxml")
  INCLUDE_DIRECTORIES(${TINYXML_INCLUDE_DIR})
- ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_WATCHDOG} ${SRC_JSON})
+ ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_RUPA} ${SRC_JSON})
  TARGET_LINK_LIBRARIES(${PACKAGE_NAME} ${TINYXML_LIBRARIES})
 ELSE(TINYXML_FOUND)
  message (STATUS "Building with embedded tinyxml")
@@ -87,7 +87,7 @@ ELSE(TINYXML_FOUND)
             src/tinyxml/tinyxmlerror.cpp
  )
  INCLUDE_DIRECTORIES(/usr/local/lib/libftd2xx.so)
- ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_WATCHDOG} ${SRC_JSON} ${SRC_LTINYXML} )
+ ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_RUPA} ${SRC_JSON} ${SRC_LTINYXML} )
  #LINK_DIRECTORIES(/usr/local/lib/libftd2xx.so)
 ENDIF(TINYXML_FOUND)
 ADD_DEFINITIONS(-DTIXML_USE_STL)

@@ -48,29 +48,18 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jack/Tristan/sandbox/watchdog_pi-master
+CMAKE_SOURCE_DIR = /home/jack/Tristan/sandbox/rupa_pi
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jack/Tristan/sandbox/watchdog_pi-master/build
+CMAKE_BINARY_DIR = /home/jack/Tristan/sandbox/rupa_pi/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/jack/Tristan/sandbox/watchdog_pi-master/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/jack/Tristan/sandbox/rupa_pi/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -89,16 +78,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : install/local/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target package
 package: preinstall
@@ -110,6 +99,17 @@ package: preinstall
 package/fast: package
 
 .PHONY : package/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
@@ -146,9 +146,9 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles /home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles /home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jack/Tristan/sandbox/watchdog_pi-master/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,69 +177,69 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named watchdog-po-update
+# Target rules for targets named rupa-i18n
 
 # Build rule for target.
-watchdog-po-update: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 watchdog-po-update
-.PHONY : watchdog-po-update
+rupa-i18n: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rupa-i18n
+.PHONY : rupa-i18n
 
 # fast build rule for target.
-watchdog-po-update/fast:
-	$(MAKE) -f CMakeFiles/watchdog-po-update.dir/build.make CMakeFiles/watchdog-po-update.dir/build
-.PHONY : watchdog-po-update/fast
+rupa-i18n/fast:
+	$(MAKE) -f CMakeFiles/rupa-i18n.dir/build.make CMakeFiles/rupa-i18n.dir/build
+.PHONY : rupa-i18n/fast
 
 #=============================================================================
-# Target rules for targets named watchdog_pi_Languages.zip
+# Target rules for targets named rupa-po-update
 
 # Build rule for target.
-watchdog_pi_Languages.zip: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 watchdog_pi_Languages.zip
-.PHONY : watchdog_pi_Languages.zip
+rupa-po-update: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rupa-po-update
+.PHONY : rupa-po-update
 
 # fast build rule for target.
-watchdog_pi_Languages.zip/fast:
-	$(MAKE) -f CMakeFiles/watchdog_pi_Languages.zip.dir/build.make CMakeFiles/watchdog_pi_Languages.zip.dir/build
-.PHONY : watchdog_pi_Languages.zip/fast
+rupa-po-update/fast:
+	$(MAKE) -f CMakeFiles/rupa-po-update.dir/build.make CMakeFiles/rupa-po-update.dir/build
+.PHONY : rupa-po-update/fast
 
 #=============================================================================
-# Target rules for targets named watchdog-i18n
+# Target rules for targets named rupa-pot-update
 
 # Build rule for target.
-watchdog-i18n: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 watchdog-i18n
-.PHONY : watchdog-i18n
+rupa-pot-update: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rupa-pot-update
+.PHONY : rupa-pot-update
 
 # fast build rule for target.
-watchdog-i18n/fast:
-	$(MAKE) -f CMakeFiles/watchdog-i18n.dir/build.make CMakeFiles/watchdog-i18n.dir/build
-.PHONY : watchdog-i18n/fast
+rupa-pot-update/fast:
+	$(MAKE) -f CMakeFiles/rupa-pot-update.dir/build.make CMakeFiles/rupa-pot-update.dir/build
+.PHONY : rupa-pot-update/fast
 
 #=============================================================================
-# Target rules for targets named watchdog_pi
+# Target rules for targets named rupa_pi_Languages.zip
 
 # Build rule for target.
-watchdog_pi: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 watchdog_pi
-.PHONY : watchdog_pi
+rupa_pi_Languages.zip: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rupa_pi_Languages.zip
+.PHONY : rupa_pi_Languages.zip
 
 # fast build rule for target.
-watchdog_pi/fast:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/build
-.PHONY : watchdog_pi/fast
+rupa_pi_Languages.zip/fast:
+	$(MAKE) -f CMakeFiles/rupa_pi_Languages.zip.dir/build.make CMakeFiles/rupa_pi_Languages.zip.dir/build
+.PHONY : rupa_pi_Languages.zip/fast
 
 #=============================================================================
-# Target rules for targets named watchdog-pot-update
+# Target rules for targets named rupa_pi
 
 # Build rule for target.
-watchdog-pot-update: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 watchdog-pot-update
-.PHONY : watchdog-pot-update
+rupa_pi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rupa_pi
+.PHONY : rupa_pi
 
 # fast build rule for target.
-watchdog-pot-update/fast:
-	$(MAKE) -f CMakeFiles/watchdog-pot-update.dir/build.make CMakeFiles/watchdog-pot-update.dir/build
-.PHONY : watchdog-pot-update/fast
+rupa_pi/fast:
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/build
+.PHONY : rupa_pi/fast
 
 src/RUPAUI.o: src/RUPAUI.cpp.o
 
@@ -247,7 +247,7 @@ src/RUPAUI.o: src/RUPAUI.cpp.o
 
 # target to build an object file
 src/RUPAUI.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPAUI.cpp.o
 .PHONY : src/RUPAUI.cpp.o
 
 src/RUPAUI.i: src/RUPAUI.cpp.i
@@ -256,7 +256,7 @@ src/RUPAUI.i: src/RUPAUI.cpp.i
 
 # target to preprocess a source file
 src/RUPAUI.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPAUI.cpp.i
 .PHONY : src/RUPAUI.cpp.i
 
 src/RUPAUI.s: src/RUPAUI.cpp.s
@@ -265,7 +265,7 @@ src/RUPAUI.s: src/RUPAUI.cpp.s
 
 # target to generate assembly for a file
 src/RUPAUI.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPAUI.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPAUI.cpp.s
 .PHONY : src/RUPAUI.cpp.s
 
 src/RUPA_Automatic_Burst.o: src/RUPA_Automatic_Burst.cpp.o
@@ -274,7 +274,7 @@ src/RUPA_Automatic_Burst.o: src/RUPA_Automatic_Burst.cpp.o
 
 # target to build an object file
 src/RUPA_Automatic_Burst.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Automatic_Burst.cpp.o
 .PHONY : src/RUPA_Automatic_Burst.cpp.o
 
 src/RUPA_Automatic_Burst.i: src/RUPA_Automatic_Burst.cpp.i
@@ -283,7 +283,7 @@ src/RUPA_Automatic_Burst.i: src/RUPA_Automatic_Burst.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Automatic_Burst.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Automatic_Burst.cpp.i
 .PHONY : src/RUPA_Automatic_Burst.cpp.i
 
 src/RUPA_Automatic_Burst.s: src/RUPA_Automatic_Burst.cpp.s
@@ -292,7 +292,7 @@ src/RUPA_Automatic_Burst.s: src/RUPA_Automatic_Burst.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Automatic_Burst.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Automatic_Burst.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Automatic_Burst.cpp.s
 .PHONY : src/RUPA_Automatic_Burst.cpp.s
 
 src/RUPA_Burst_Editing.o: src/RUPA_Burst_Editing.cpp.o
@@ -301,7 +301,7 @@ src/RUPA_Burst_Editing.o: src/RUPA_Burst_Editing.cpp.o
 
 # target to build an object file
 src/RUPA_Burst_Editing.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Burst_Editing.cpp.o
 .PHONY : src/RUPA_Burst_Editing.cpp.o
 
 src/RUPA_Burst_Editing.i: src/RUPA_Burst_Editing.cpp.i
@@ -310,7 +310,7 @@ src/RUPA_Burst_Editing.i: src/RUPA_Burst_Editing.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Burst_Editing.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Burst_Editing.cpp.i
 .PHONY : src/RUPA_Burst_Editing.cpp.i
 
 src/RUPA_Burst_Editing.s: src/RUPA_Burst_Editing.cpp.s
@@ -319,7 +319,7 @@ src/RUPA_Burst_Editing.s: src/RUPA_Burst_Editing.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Burst_Editing.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Burst_Editing.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Burst_Editing.cpp.s
 .PHONY : src/RUPA_Burst_Editing.cpp.s
 
 src/RUPA_Campaign.o: src/RUPA_Campaign.cpp.o
@@ -328,7 +328,7 @@ src/RUPA_Campaign.o: src/RUPA_Campaign.cpp.o
 
 # target to build an object file
 src/RUPA_Campaign.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Campaign.cpp.o
 .PHONY : src/RUPA_Campaign.cpp.o
 
 src/RUPA_Campaign.i: src/RUPA_Campaign.cpp.i
@@ -337,7 +337,7 @@ src/RUPA_Campaign.i: src/RUPA_Campaign.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Campaign.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Campaign.cpp.i
 .PHONY : src/RUPA_Campaign.cpp.i
 
 src/RUPA_Campaign.s: src/RUPA_Campaign.cpp.s
@@ -346,7 +346,7 @@ src/RUPA_Campaign.s: src/RUPA_Campaign.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Campaign.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Campaign.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Campaign.cpp.s
 .PHONY : src/RUPA_Campaign.cpp.s
 
 src/RUPA_Change_Validation_State.o: src/RUPA_Change_Validation_State.cpp.o
@@ -355,7 +355,7 @@ src/RUPA_Change_Validation_State.o: src/RUPA_Change_Validation_State.cpp.o
 
 # target to build an object file
 src/RUPA_Change_Validation_State.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Change_Validation_State.cpp.o
 .PHONY : src/RUPA_Change_Validation_State.cpp.o
 
 src/RUPA_Change_Validation_State.i: src/RUPA_Change_Validation_State.cpp.i
@@ -364,7 +364,7 @@ src/RUPA_Change_Validation_State.i: src/RUPA_Change_Validation_State.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Change_Validation_State.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Change_Validation_State.cpp.i
 .PHONY : src/RUPA_Change_Validation_State.cpp.i
 
 src/RUPA_Change_Validation_State.s: src/RUPA_Change_Validation_State.cpp.s
@@ -373,7 +373,7 @@ src/RUPA_Change_Validation_State.s: src/RUPA_Change_Validation_State.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Change_Validation_State.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Change_Validation_State.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Change_Validation_State.cpp.s
 .PHONY : src/RUPA_Change_Validation_State.cpp.s
 
 src/RUPA_Manage_Campaign.o: src/RUPA_Manage_Campaign.cpp.o
@@ -382,7 +382,7 @@ src/RUPA_Manage_Campaign.o: src/RUPA_Manage_Campaign.cpp.o
 
 # target to build an object file
 src/RUPA_Manage_Campaign.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Campaign.cpp.o
 .PHONY : src/RUPA_Manage_Campaign.cpp.o
 
 src/RUPA_Manage_Campaign.i: src/RUPA_Manage_Campaign.cpp.i
@@ -391,7 +391,7 @@ src/RUPA_Manage_Campaign.i: src/RUPA_Manage_Campaign.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Manage_Campaign.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Campaign.cpp.i
 .PHONY : src/RUPA_Manage_Campaign.cpp.i
 
 src/RUPA_Manage_Campaign.s: src/RUPA_Manage_Campaign.cpp.s
@@ -400,7 +400,7 @@ src/RUPA_Manage_Campaign.s: src/RUPA_Manage_Campaign.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Manage_Campaign.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Campaign.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Campaign.cpp.s
 .PHONY : src/RUPA_Manage_Campaign.cpp.s
 
 src/RUPA_Manage_Structure.o: src/RUPA_Manage_Structure.cpp.o
@@ -409,7 +409,7 @@ src/RUPA_Manage_Structure.o: src/RUPA_Manage_Structure.cpp.o
 
 # target to build an object file
 src/RUPA_Manage_Structure.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Structure.cpp.o
 .PHONY : src/RUPA_Manage_Structure.cpp.o
 
 src/RUPA_Manage_Structure.i: src/RUPA_Manage_Structure.cpp.i
@@ -418,7 +418,7 @@ src/RUPA_Manage_Structure.i: src/RUPA_Manage_Structure.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Manage_Structure.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Structure.cpp.i
 .PHONY : src/RUPA_Manage_Structure.cpp.i
 
 src/RUPA_Manage_Structure.s: src/RUPA_Manage_Structure.cpp.s
@@ -427,7 +427,7 @@ src/RUPA_Manage_Structure.s: src/RUPA_Manage_Structure.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Manage_Structure.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Structure.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Structure.cpp.s
 .PHONY : src/RUPA_Manage_Structure.cpp.s
 
 src/RUPA_Manage_Transponder.o: src/RUPA_Manage_Transponder.cpp.o
@@ -436,7 +436,7 @@ src/RUPA_Manage_Transponder.o: src/RUPA_Manage_Transponder.cpp.o
 
 # target to build an object file
 src/RUPA_Manage_Transponder.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Transponder.cpp.o
 .PHONY : src/RUPA_Manage_Transponder.cpp.o
 
 src/RUPA_Manage_Transponder.i: src/RUPA_Manage_Transponder.cpp.i
@@ -445,7 +445,7 @@ src/RUPA_Manage_Transponder.i: src/RUPA_Manage_Transponder.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Manage_Transponder.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Transponder.cpp.i
 .PHONY : src/RUPA_Manage_Transponder.cpp.i
 
 src/RUPA_Manage_Transponder.s: src/RUPA_Manage_Transponder.cpp.s
@@ -454,7 +454,7 @@ src/RUPA_Manage_Transponder.s: src/RUPA_Manage_Transponder.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Manage_Transponder.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Manage_Transponder.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Manage_Transponder.cpp.s
 .PHONY : src/RUPA_Manage_Transponder.cpp.s
 
 src/RUPA_New_Campaign.o: src/RUPA_New_Campaign.cpp.o
@@ -463,7 +463,7 @@ src/RUPA_New_Campaign.o: src/RUPA_New_Campaign.cpp.o
 
 # target to build an object file
 src/RUPA_New_Campaign.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_New_Campaign.cpp.o
 .PHONY : src/RUPA_New_Campaign.cpp.o
 
 src/RUPA_New_Campaign.i: src/RUPA_New_Campaign.cpp.i
@@ -472,7 +472,7 @@ src/RUPA_New_Campaign.i: src/RUPA_New_Campaign.cpp.i
 
 # target to preprocess a source file
 src/RUPA_New_Campaign.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_New_Campaign.cpp.i
 .PHONY : src/RUPA_New_Campaign.cpp.i
 
 src/RUPA_New_Campaign.s: src/RUPA_New_Campaign.cpp.s
@@ -481,7 +481,7 @@ src/RUPA_New_Campaign.s: src/RUPA_New_Campaign.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_New_Campaign.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_New_Campaign.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_New_Campaign.cpp.s
 .PHONY : src/RUPA_New_Campaign.cpp.s
 
 src/RUPA_RS232.o: src/RUPA_RS232.cpp.o
@@ -490,7 +490,7 @@ src/RUPA_RS232.o: src/RUPA_RS232.cpp.o
 
 # target to build an object file
 src/RUPA_RS232.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_RS232.cpp.o
 .PHONY : src/RUPA_RS232.cpp.o
 
 src/RUPA_RS232.i: src/RUPA_RS232.cpp.i
@@ -499,7 +499,7 @@ src/RUPA_RS232.i: src/RUPA_RS232.cpp.i
 
 # target to preprocess a source file
 src/RUPA_RS232.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_RS232.cpp.i
 .PHONY : src/RUPA_RS232.cpp.i
 
 src/RUPA_RS232.s: src/RUPA_RS232.cpp.s
@@ -508,7 +508,7 @@ src/RUPA_RS232.s: src/RUPA_RS232.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_RS232.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_RS232.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_RS232.cpp.s
 .PHONY : src/RUPA_RS232.cpp.s
 
 src/RUPA_Semi_Automatic_Burst.o: src/RUPA_Semi_Automatic_Burst.cpp.o
@@ -517,7 +517,7 @@ src/RUPA_Semi_Automatic_Burst.o: src/RUPA_Semi_Automatic_Burst.cpp.o
 
 # target to build an object file
 src/RUPA_Semi_Automatic_Burst.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.o
 .PHONY : src/RUPA_Semi_Automatic_Burst.cpp.o
 
 src/RUPA_Semi_Automatic_Burst.i: src/RUPA_Semi_Automatic_Burst.cpp.i
@@ -526,7 +526,7 @@ src/RUPA_Semi_Automatic_Burst.i: src/RUPA_Semi_Automatic_Burst.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Semi_Automatic_Burst.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.i
 .PHONY : src/RUPA_Semi_Automatic_Burst.cpp.i
 
 src/RUPA_Semi_Automatic_Burst.s: src/RUPA_Semi_Automatic_Burst.cpp.s
@@ -535,7 +535,7 @@ src/RUPA_Semi_Automatic_Burst.s: src/RUPA_Semi_Automatic_Burst.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Semi_Automatic_Burst.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Semi_Automatic_Burst.cpp.s
 .PHONY : src/RUPA_Semi_Automatic_Burst.cpp.s
 
 src/RUPA_Setup_Structure.o: src/RUPA_Setup_Structure.cpp.o
@@ -544,7 +544,7 @@ src/RUPA_Setup_Structure.o: src/RUPA_Setup_Structure.cpp.o
 
 # target to build an object file
 src/RUPA_Setup_Structure.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Setup_Structure.cpp.o
 .PHONY : src/RUPA_Setup_Structure.cpp.o
 
 src/RUPA_Setup_Structure.i: src/RUPA_Setup_Structure.cpp.i
@@ -553,7 +553,7 @@ src/RUPA_Setup_Structure.i: src/RUPA_Setup_Structure.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Setup_Structure.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Setup_Structure.cpp.i
 .PHONY : src/RUPA_Setup_Structure.cpp.i
 
 src/RUPA_Setup_Structure.s: src/RUPA_Setup_Structure.cpp.s
@@ -562,7 +562,7 @@ src/RUPA_Setup_Structure.s: src/RUPA_Setup_Structure.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Setup_Structure.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Setup_Structure.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Setup_Structure.cpp.s
 .PHONY : src/RUPA_Setup_Structure.cpp.s
 
 src/RUPA_Utility.o: src/RUPA_Utility.cpp.o
@@ -571,7 +571,7 @@ src/RUPA_Utility.o: src/RUPA_Utility.cpp.o
 
 # target to build an object file
 src/RUPA_Utility.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Utility.cpp.o
 .PHONY : src/RUPA_Utility.cpp.o
 
 src/RUPA_Utility.i: src/RUPA_Utility.cpp.i
@@ -580,7 +580,7 @@ src/RUPA_Utility.i: src/RUPA_Utility.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Utility.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Utility.cpp.i
 .PHONY : src/RUPA_Utility.cpp.i
 
 src/RUPA_Utility.s: src/RUPA_Utility.cpp.s
@@ -589,7 +589,7 @@ src/RUPA_Utility.s: src/RUPA_Utility.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Utility.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Utility.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Utility.cpp.s
 .PHONY : src/RUPA_Utility.cpp.s
 
 src/RUPA_Warning_Delete_Burst.o: src/RUPA_Warning_Delete_Burst.cpp.o
@@ -598,7 +598,7 @@ src/RUPA_Warning_Delete_Burst.o: src/RUPA_Warning_Delete_Burst.cpp.o
 
 # target to build an object file
 src/RUPA_Warning_Delete_Burst.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.o
 .PHONY : src/RUPA_Warning_Delete_Burst.cpp.o
 
 src/RUPA_Warning_Delete_Burst.i: src/RUPA_Warning_Delete_Burst.cpp.i
@@ -607,7 +607,7 @@ src/RUPA_Warning_Delete_Burst.i: src/RUPA_Warning_Delete_Burst.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Warning_Delete_Burst.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.i
 .PHONY : src/RUPA_Warning_Delete_Burst.cpp.i
 
 src/RUPA_Warning_Delete_Burst.s: src/RUPA_Warning_Delete_Burst.cpp.s
@@ -616,7 +616,7 @@ src/RUPA_Warning_Delete_Burst.s: src/RUPA_Warning_Delete_Burst.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Warning_Delete_Burst.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Burst.cpp.s
 .PHONY : src/RUPA_Warning_Delete_Burst.cpp.s
 
 src/RUPA_Warning_Delete_Campaign.o: src/RUPA_Warning_Delete_Campaign.cpp.o
@@ -625,7 +625,7 @@ src/RUPA_Warning_Delete_Campaign.o: src/RUPA_Warning_Delete_Campaign.cpp.o
 
 # target to build an object file
 src/RUPA_Warning_Delete_Campaign.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.o
 .PHONY : src/RUPA_Warning_Delete_Campaign.cpp.o
 
 src/RUPA_Warning_Delete_Campaign.i: src/RUPA_Warning_Delete_Campaign.cpp.i
@@ -634,7 +634,7 @@ src/RUPA_Warning_Delete_Campaign.i: src/RUPA_Warning_Delete_Campaign.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Warning_Delete_Campaign.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.i
 .PHONY : src/RUPA_Warning_Delete_Campaign.cpp.i
 
 src/RUPA_Warning_Delete_Campaign.s: src/RUPA_Warning_Delete_Campaign.cpp.s
@@ -643,7 +643,7 @@ src/RUPA_Warning_Delete_Campaign.s: src/RUPA_Warning_Delete_Campaign.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Warning_Delete_Campaign.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Campaign.cpp.s
 .PHONY : src/RUPA_Warning_Delete_Campaign.cpp.s
 
 src/RUPA_Warning_Delete_Measurement.o: src/RUPA_Warning_Delete_Measurement.cpp.o
@@ -652,7 +652,7 @@ src/RUPA_Warning_Delete_Measurement.o: src/RUPA_Warning_Delete_Measurement.cpp.o
 
 # target to build an object file
 src/RUPA_Warning_Delete_Measurement.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.o
 .PHONY : src/RUPA_Warning_Delete_Measurement.cpp.o
 
 src/RUPA_Warning_Delete_Measurement.i: src/RUPA_Warning_Delete_Measurement.cpp.i
@@ -661,7 +661,7 @@ src/RUPA_Warning_Delete_Measurement.i: src/RUPA_Warning_Delete_Measurement.cpp.i
 
 # target to preprocess a source file
 src/RUPA_Warning_Delete_Measurement.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.i
 .PHONY : src/RUPA_Warning_Delete_Measurement.cpp.i
 
 src/RUPA_Warning_Delete_Measurement.s: src/RUPA_Warning_Delete_Measurement.cpp.s
@@ -670,7 +670,7 @@ src/RUPA_Warning_Delete_Measurement.s: src/RUPA_Warning_Delete_Measurement.cpp.s
 
 # target to generate assembly for a file
 src/RUPA_Warning_Delete_Measurement.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/RUPA_Warning_Delete_Measurement.cpp.s
 .PHONY : src/RUPA_Warning_Delete_Measurement.cpp.s
 
 src/TexFont.o: src/TexFont.cpp.o
@@ -679,7 +679,7 @@ src/TexFont.o: src/TexFont.cpp.o
 
 # target to build an object file
 src/TexFont.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/TexFont.cpp.o
 .PHONY : src/TexFont.cpp.o
 
 src/TexFont.i: src/TexFont.cpp.i
@@ -688,7 +688,7 @@ src/TexFont.i: src/TexFont.cpp.i
 
 # target to preprocess a source file
 src/TexFont.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/TexFont.cpp.i
 .PHONY : src/TexFont.cpp.i
 
 src/TexFont.s: src/TexFont.cpp.s
@@ -697,7 +697,7 @@ src/TexFont.s: src/TexFont.cpp.s
 
 # target to generate assembly for a file
 src/TexFont.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/TexFont.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/TexFont.cpp.s
 .PHONY : src/TexFont.cpp.s
 
 src/icons.o: src/icons.cpp.o
@@ -706,7 +706,7 @@ src/icons.o: src/icons.cpp.o
 
 # target to build an object file
 src/icons.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/icons.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/icons.cpp.o
 .PHONY : src/icons.cpp.o
 
 src/icons.i: src/icons.cpp.i
@@ -715,7 +715,7 @@ src/icons.i: src/icons.cpp.i
 
 # target to preprocess a source file
 src/icons.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/icons.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/icons.cpp.i
 .PHONY : src/icons.cpp.i
 
 src/icons.s: src/icons.cpp.s
@@ -724,7 +724,7 @@ src/icons.s: src/icons.cpp.s
 
 # target to generate assembly for a file
 src/icons.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/icons.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/icons.cpp.s
 .PHONY : src/icons.cpp.s
 
 src/tinyxml/tinyxml.o: src/tinyxml/tinyxml.cpp.o
@@ -733,7 +733,7 @@ src/tinyxml/tinyxml.o: src/tinyxml/tinyxml.cpp.o
 
 # target to build an object file
 src/tinyxml/tinyxml.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxml.cpp.o
 .PHONY : src/tinyxml/tinyxml.cpp.o
 
 src/tinyxml/tinyxml.i: src/tinyxml/tinyxml.cpp.i
@@ -742,7 +742,7 @@ src/tinyxml/tinyxml.i: src/tinyxml/tinyxml.cpp.i
 
 # target to preprocess a source file
 src/tinyxml/tinyxml.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxml.cpp.i
 .PHONY : src/tinyxml/tinyxml.cpp.i
 
 src/tinyxml/tinyxml.s: src/tinyxml/tinyxml.cpp.s
@@ -751,7 +751,7 @@ src/tinyxml/tinyxml.s: src/tinyxml/tinyxml.cpp.s
 
 # target to generate assembly for a file
 src/tinyxml/tinyxml.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxml.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxml.cpp.s
 .PHONY : src/tinyxml/tinyxml.cpp.s
 
 src/tinyxml/tinyxmlerror.o: src/tinyxml/tinyxmlerror.cpp.o
@@ -760,7 +760,7 @@ src/tinyxml/tinyxmlerror.o: src/tinyxml/tinyxmlerror.cpp.o
 
 # target to build an object file
 src/tinyxml/tinyxmlerror.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlerror.cpp.o
 .PHONY : src/tinyxml/tinyxmlerror.cpp.o
 
 src/tinyxml/tinyxmlerror.i: src/tinyxml/tinyxmlerror.cpp.i
@@ -769,7 +769,7 @@ src/tinyxml/tinyxmlerror.i: src/tinyxml/tinyxmlerror.cpp.i
 
 # target to preprocess a source file
 src/tinyxml/tinyxmlerror.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlerror.cpp.i
 .PHONY : src/tinyxml/tinyxmlerror.cpp.i
 
 src/tinyxml/tinyxmlerror.s: src/tinyxml/tinyxmlerror.cpp.s
@@ -778,7 +778,7 @@ src/tinyxml/tinyxmlerror.s: src/tinyxml/tinyxmlerror.cpp.s
 
 # target to generate assembly for a file
 src/tinyxml/tinyxmlerror.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlerror.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlerror.cpp.s
 .PHONY : src/tinyxml/tinyxmlerror.cpp.s
 
 src/tinyxml/tinyxmlparser.o: src/tinyxml/tinyxmlparser.cpp.o
@@ -787,7 +787,7 @@ src/tinyxml/tinyxmlparser.o: src/tinyxml/tinyxmlparser.cpp.o
 
 # target to build an object file
 src/tinyxml/tinyxmlparser.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlparser.cpp.o
 .PHONY : src/tinyxml/tinyxmlparser.cpp.o
 
 src/tinyxml/tinyxmlparser.i: src/tinyxml/tinyxmlparser.cpp.i
@@ -796,7 +796,7 @@ src/tinyxml/tinyxmlparser.i: src/tinyxml/tinyxmlparser.cpp.i
 
 # target to preprocess a source file
 src/tinyxml/tinyxmlparser.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlparser.cpp.i
 .PHONY : src/tinyxml/tinyxmlparser.cpp.i
 
 src/tinyxml/tinyxmlparser.s: src/tinyxml/tinyxmlparser.cpp.s
@@ -805,7 +805,7 @@ src/tinyxml/tinyxmlparser.s: src/tinyxml/tinyxmlparser.cpp.s
 
 # target to generate assembly for a file
 src/tinyxml/tinyxmlparser.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/tinyxml/tinyxmlparser.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlparser.cpp.s
 .PHONY : src/tinyxml/tinyxmlparser.cpp.s
 
 src/watchdog_pi.o: src/watchdog_pi.cpp.o
@@ -814,7 +814,7 @@ src/watchdog_pi.o: src/watchdog_pi.cpp.o
 
 # target to build an object file
 src/watchdog_pi.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/watchdog_pi.cpp.o
 .PHONY : src/watchdog_pi.cpp.o
 
 src/watchdog_pi.i: src/watchdog_pi.cpp.i
@@ -823,7 +823,7 @@ src/watchdog_pi.i: src/watchdog_pi.cpp.i
 
 # target to preprocess a source file
 src/watchdog_pi.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/watchdog_pi.cpp.i
 .PHONY : src/watchdog_pi.cpp.i
 
 src/watchdog_pi.s: src/watchdog_pi.cpp.s
@@ -832,7 +832,7 @@ src/watchdog_pi.s: src/watchdog_pi.cpp.s
 
 # target to generate assembly for a file
 src/watchdog_pi.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/watchdog_pi.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/watchdog_pi.cpp.s
 .PHONY : src/watchdog_pi.cpp.s
 
 src/wddc.o: src/wddc.cpp.o
@@ -841,7 +841,7 @@ src/wddc.o: src/wddc.cpp.o
 
 # target to build an object file
 src/wddc.cpp.o:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/wddc.cpp.o
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/wddc.cpp.o
 .PHONY : src/wddc.cpp.o
 
 src/wddc.i: src/wddc.cpp.i
@@ -850,7 +850,7 @@ src/wddc.i: src/wddc.cpp.i
 
 # target to preprocess a source file
 src/wddc.cpp.i:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/wddc.cpp.i
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/wddc.cpp.i
 .PHONY : src/wddc.cpp.i
 
 src/wddc.s: src/wddc.cpp.s
@@ -859,7 +859,7 @@ src/wddc.s: src/wddc.cpp.s
 
 # target to generate assembly for a file
 src/wddc.cpp.s:
-	$(MAKE) -f CMakeFiles/watchdog_pi.dir/build.make CMakeFiles/watchdog_pi.dir/src/wddc.cpp.s
+	$(MAKE) -f CMakeFiles/rupa_pi.dir/build.make CMakeFiles/rupa_pi.dir/src/wddc.cpp.s
 .PHONY : src/wddc.cpp.s
 
 # Help Target
@@ -868,16 +868,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... watchdog-po-update"
-	@echo "... install/local"
-	@echo "... watchdog_pi_Languages.zip"
+	@echo "... rupa-i18n"
+	@echo "... edit_cache"
+	@echo "... rupa-po-update"
+	@echo "... rupa-pot-update"
+	@echo "... rupa_pi_Languages.zip"
 	@echo "... package"
-	@echo "... watchdog-i18n"
-	@echo "... watchdog_pi"
-	@echo "... watchdog-pot-update"
+	@echo "... rupa_pi"
+	@echo "... install/local"
 	@echo "... install"
 	@echo "... install/strip"
 	@echo "... list_install_components"

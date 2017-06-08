@@ -292,12 +292,25 @@ void RUPA_Campaign::RenderAll(wdDC &dc, PlugIn_ViewPort &vp)
 	c->prep_stmt = c->con->prepareStatement("SELECT * FROM Measurement WHERE message='Range' AND NOT value='Fail'");
 	c->res = c->prep_stmt->executeQuery();
 	wxPoint center;
-	dc.SetPen(wxPen(*wxRED, 1));
 	dc.SetBrush(*wxTRANSPARENT_BRUSH);
 	while(c->res->next())
 	{
+	    c->prep_stmt = c->con->prepareStatement("SELECT deployment_or_recovery FROM Operation JOIN Burst JOIN Measurement ON(Burst.id=Measurement.Burst AND Operation.id=Burst.operation AND Measurement.id=?)");
+	    c->prep_stmt->setInt(1, 372);
+	    c->res2 = c->prep_stmt->executeQuery();
+	    c->res2->next();
+	    std::string dor = c->res2->getString("deployment_or_recovery");
+	    std::cout<<"dor = "<<dor<<std::endl;
+	    std::string TD = dor.compare("D")==0? "R":"V";
+	    std::cout<<"colo de cercle :"<<TD<<std::endl;
+	    //const wxColour *col = dor.compare("D")==0? wxGREEN:wxRED;
+	    //dc.SetPen(wxPen(*wxRED, 1));
+	    //dc.SetPen(wxPen(*col, 1));
+	    //dc.SetPen(wxPen(dor.compare("D")==0? *wxYELLOW:*wxRED, 1));
+	    dc.SetPen(wxPen(dor.compare("D")==0? *wxRED:wxColour(58,2,13), 1));
 	    GetCanvasPixLL(&vp, &center, c->res->getDouble("latitude"), c->res->getDouble("longitude"));
-	    dc.DrawCircle( center.x, center.y, c->res->getInt("value")*vp.view_scale_ppm*1060/704);//hard values come from testing and using OpenCPN measurement tool
+	    dc.DrawCircle( center.x, center.y, c->res->getInt("value")*vp.view_scale_ppm/cos(c->res->getDouble("latitude")*3.1415/180));//view_scale value is for zoom, dividing by cos(...) to apply simple mercator coefficient
+																	//if you need more precision search for "Simpson rule"
 
 	}
     }catch(sql::SQLException &e)
