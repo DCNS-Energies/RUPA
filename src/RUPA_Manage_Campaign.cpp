@@ -96,9 +96,11 @@ void RUPA_Manage_Campaign::On_New_Structure( wxCommandEvent& event )
     	c->prep_stmt->execute();
     	c->prep_stmt->setString(1,"R");
     	c->prep_stmt->execute();
-	t_Manage_Structure = new RUPA_Manage_Structure(this->parent, this, c->res->getInt("last_id"));
+	t_Manage_Structure = new RUPA_Manage_Structure(this->parent, this, c->res->getInt("last_id"), true);
 	this->Show(!this->IsShown());
 	RUPA_Utils_Pos(t_Manage_Structure);
+	RUPA_Utils_Pos(t_Manage_Structure ->t_Setup_Structure);
+	//t_Manage_Structure->Pos_Setup_Window();
     }catch(sql::SQLException &e)
     {
 	RUPA_Utils_Print_SQL_Error(e);
@@ -119,7 +121,7 @@ void RUPA_Manage_Campaign::On_Manage_Structure( wxCommandEvent& event )
 // TODO: Implement On_Manage_Structure
     this->Show(!this->IsShown());
     long int Object_ID = Get_Selected_ID();
-    t_Manage_Structure = new RUPA_Manage_Structure(this->parent, this, Object_ID);
+    t_Manage_Structure = new RUPA_Manage_Structure(this->parent, this, Object_ID, false);
     RUPA_Utils_Pos(t_Manage_Structure);
 }
 

@@ -251,8 +251,6 @@ RUPA_Semi_Automatic_Burst.h
 /home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Semi_Automatic_Burst.h
 RUPAUI.h
 /home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
-RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
 watchdog_pi.h
 /home/jack/Tristan/sandbox/rupa_pi/src/watchdog_pi.h
 stdio.h
@@ -350,6 +348,8 @@ stdlib.h
 string
 -
 sstream
+-
+cmath
 -
 unistd.h
 -

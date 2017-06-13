@@ -65,7 +65,7 @@ void RUPA_Semi_Automatic_Burst::On_Range_Button( wxCommandEvent& event )
     msgc[msg.size()] = '\0';
     messages_sent_count ++;
     Semi_Auto_Message_Sent_Count->SetValue(wxString::Format(wxT("%i"),messages_sent_count));
-    std::string Buf_Read = RUPA_RS232(msgc);
+    std::string Buf_Read = RUPA_RS232(msgc, RANGE);
     //*Buf_Read = RUPA_RS232();
     std::cout<<"RS232 OK\n"<<Buf_Read<<"\n";
     std::istringstream iss(Buf_Read);

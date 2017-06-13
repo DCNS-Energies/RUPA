@@ -29,7 +29,6 @@ RUPA_Burst_Editing::RUPA_Burst_Editing( wxWindow* parent, RUPA_Manage_Structure 
 :Burst_Editing( parent ), l_Manage_Structure(MS), Id(Burst_Id)
 {
     Set_Col_Measurement(Burst_Editing_Table);
-    std::cout<<"Burst Editing Creating\n";
     Refresh_Burst_Tables();
 }
 
@@ -71,7 +70,7 @@ void RUPA_Burst_Editing::Print_Measurement_Data_In_Table(wxListCtrl* Table, long
 	    long Item_Index = Table->InsertItem(c->res->getInt("id"), wxString::Format(wxT("%i"),c->res->getInt("viewable")));
 	    Table->SetItem(Item_Index, 1, ToString(c->res->getDouble("latitude")));
 	    Table->SetItem(Item_Index, 2, ToString(c->res->getDouble("longitude")));
-	    c2->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE id = ? ");
+	    c2->prep_stmt = c2->con->prepareStatement("SELECT * FROM Transponder WHERE id = ? ");
 	    c2->prep_stmt->setInt(0, c->res->getInt("id_transponder"));
 	    c2->res = c2->prep_stmt->executeQuery();
 	    c2->res->next();

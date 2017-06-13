@@ -108,7 +108,7 @@ static void dumpBuffer(unsigned char *buffer, int elements)
 	printf("]\n");
 }
 
-std::string RUPA_RS232(unsigned char msg[])
+std::string RUPA_RS232(unsigned char msg[], int command)
 {
 	//unsigned char 	msg[]="$t111:1%";
 	printf("%s\n",msg);
@@ -163,7 +163,13 @@ std::string RUPA_RS232(unsigned char msg[])
 		    break;
 	    }
 
-	    sleep(1);
+	    if (command == BATTERY)
+	    {
+		sleep(1);
+	    }else if (command == RANGE)
+	    {
+		sleep(1);
+	    }
 	    /* Write */
 	    ftStatus = FT_Write(ftHandle[i], msg, 8, &dwBytesWritten);
 	    if (ftStatus != FT_OK) {
@@ -176,12 +182,25 @@ std::string RUPA_RS232(unsigned char msg[])
 			   8);
 		    break;
 	    }
-	    sleep(2);
+	    if (command == BATTERY)
+	    {
+		sleep(2);
+	    }else if (command == RANGE)
+	    {
+		sleep(1);
+	    }
 	    
 	    /* Read */
 	    dwRxSize = 0;			
+	    DWORD Previous_Size;
 	    FT_GetStatus(ftHandle[i], &RxBytes, &TxBytes, &EventDWord);
-	    sleep(1);
+	    if (command == BATTERY)
+	    {
+		sleep(1);
+	    }else if (command == RANGE)
+	    {
+		sleep(1);
+	    }
 	    std::cout<<"RxBytes = "<<RxBytes<<"\n";
 	    if(RxBytes > 0)
 	    {
@@ -190,7 +209,6 @@ std::string RUPA_RS232(unsigned char msg[])
 
 		if(ftStatus == FT_OK) 
 		{
-		    std::cout<<"poil = 1\n";
 		    pcBufRead = (unsigned char*)realloc(pcBufRead, dwRxSize);
 		    memset(pcBufRead, 0xFF, dwRxSize);
 		    if (ftStatus != FT_OK) 
@@ -204,7 +222,13 @@ std::string RUPA_RS232(unsigned char msg[])
 				   (int)dwBytesRead, (int)dwRxSize);
 			    break;
 		    }
-		    sleep(1);
+		    if (command == BATTERY)
+		    {
+			sleep(1);
+		    }else if (command == RANGE)
+		    {
+			sleep(1);
+		    }
 		    printf("FT_Read read %d bytes.\n",(int)BytesReceived);
 		     //*Buf_Read = ((char *)RxBuffer);
 		    std::string s(RxBuffer);

@@ -38,7 +38,7 @@ void RUPA_Manage_Transponder::On_Auto_Battery_Check( wxCommandEvent& event )
 {
 
     unsigned char 	msg[]="$B%";
-    std::string Buf_Read = RUPA_RS232(msg);
+    std::string Buf_Read = RUPA_RS232(msg, BATTERY);
     std::cout<<Buf_Read<<"\n";
     std::istringstream iss(Buf_Read);
     std::string word;

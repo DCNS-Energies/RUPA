@@ -45,6 +45,7 @@
 #include <stdlib.h>
 #include <string>
 #include <sstream>
+#include <cmath>
 
 #include <unistd.h>
 #include <ftd2xx.h>
@@ -53,6 +54,8 @@
 class watchdog_pi;
 //#include "RUPA_Campaign.h"
 
+#define BATTERY 1
+#define RANGE 0
 
 #define HOST "localhost"
 #define USER ""
@@ -84,7 +87,7 @@ class RUPA_SQL
 	sql::PreparedStatement *prep_stmt;
 };
 
-std::string RUPA_RS232(unsigned char msg[]);
+std::string RUPA_RS232(unsigned char msg[], int command);
 
 #endif
 

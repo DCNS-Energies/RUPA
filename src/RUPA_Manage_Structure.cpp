@@ -32,7 +32,7 @@ void Set_Col_Burst(wxListCtrl * l)
 }
 
 
-RUPA_Manage_Structure::RUPA_Manage_Structure( wxWindow* parent, RUPA_Manage_Campaign * MC, long int Structure_ID )
+RUPA_Manage_Structure::RUPA_Manage_Structure( wxWindow* parent, RUPA_Manage_Campaign * MC, long int Structure_ID, bool new_structure )
 :Manage_Structure( parent ), l_Manage_Campaign(MC), id(Structure_ID)
 {
     this->parent = parent;
@@ -42,6 +42,10 @@ RUPA_Manage_Structure::RUPA_Manage_Structure( wxWindow* parent, RUPA_Manage_Camp
     Set_Col_Burst(Manage_Structure_Recovery_Table);
     Refresh_Transponder_Tables();
     Refresh_Burst_Tables();
+    if(new_structure)
+    {
+	t_Setup_Structure = new RUPA_Setup_Structure(this->parent, this);
+    }
 }
 
 void RUPA_Manage_Structure::On_Launch_Auto_Burst_Deployment( wxCommandEvent& event )

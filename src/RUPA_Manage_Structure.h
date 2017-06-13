@@ -67,18 +67,19 @@ class RUPA_Manage_Structure : public Manage_Structure
 	RUPA_Change_Validation_State * t_Change_Validation_State;
 	RUPA_Manage_Transponder * t_Manage_Transponder;
 	RUPA_Manage_Campaign * l_Manage_Campaign;
-	RUPA_Setup_Structure * t_Setup_Structure;
 
 
 
 	long int id;
     public:
 	/** Constructor */
-	RUPA_Manage_Structure( wxWindow* parent, RUPA_Manage_Campaign * MC, long int Structure_Id );
+	RUPA_Manage_Structure( wxWindow* parent, RUPA_Manage_Campaign * MC, long int Structure_Id, bool new_structure );
 	void Refresh_Transponder_Tables();
+	RUPA_Setup_Structure * t_Setup_Structure;
 	void Refresh_Burst_Tables();
 	wxWindow* parent;
 	long int calling_id;
+	//void Pos_Setup_Window(){RUPA_Utils_Pos(t_Setup_Structure);};
 	long int get_Id(){return id;}
 	//// end generated class members
 	
