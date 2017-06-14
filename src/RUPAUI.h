@@ -59,6 +59,7 @@ class Campaign : public wxDialog
 		wxButton* Campaign_Manage_Button;
 		wxButton* Campaign_Close_Button;
 		wxButton* Chamge_Campaign_State_Button;
+		wxButton* Campaign_Backup;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void On_Import( wxCommandEvent& event ) { event.Skip(); }
@@ -71,6 +72,7 @@ class Campaign : public wxDialog
 		virtual void On_Manage_Campaign( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Close( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Change_Campaign_State( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Backup( wxCommandEvent& event ) { event.Skip(); }
 		
 	
 	public:
@@ -102,8 +104,8 @@ class Manage_Campaign : public wxDialog
 		wxButton* Manage_Campaign_New_Button;
 		wxButton* Manage_Campaign_Delete_Button;
 		wxButton* Manage_Campaign_Manage_Button;
+		wxButton* Manage_Campaign_Recover_Button;
 		wxButton* Manage_Campaign_Close_Button;
-		wxButton* Manage_Campaign_Finish_Button;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void On_Import_Structure( wxCommandEvent& event ) { event.Skip(); }
@@ -114,8 +116,8 @@ class Manage_Campaign : public wxDialog
 		virtual void On_New_Structure( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Delete_Structure( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Manage_Structure( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Un_Recover( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Close_Manage_Campaign( wxCommandEvent& event ) { event.Skip(); }
-		virtual void On_Finish_Campaign( wxCommandEvent& event ) { event.Skip(); }
 		
 	
 	public:
@@ -420,11 +422,13 @@ class Burst_Editing : public wxDialog
 		wxListCtrl* Burst_Editing_Table;
 		wxButton* Burst_Editing_Add;
 		wxButton* Burst_Editing_Delete;
+		wxButton* Burst_Editing_Date;
 		wxButton* Close_Button;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void On_Add_Measure( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Delete_Measure( wxCommandEvent& event ) { event.Skip(); }
+		virtual void On_Add_Date( wxCommandEvent& event ) { event.Skip(); }
 		virtual void On_Close( wxCommandEvent& event ) { event.Skip(); }
 		
 	
@@ -457,6 +461,50 @@ class Warning_Delete_Measurement : public wxDialog
 		
 		Warning_Delete_Measurement( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("WARNING! Delete Measurement"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE ); 
 		~Warning_Delete_Measurement();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class Burst_Editing_Add_Measurement
+///////////////////////////////////////////////////////////////////////////////
+class Burst_Editing_Add_Measurement : public wxDialog 
+{
+	private:
+	
+	protected:
+		wxStaticText* m_staticText26;
+		wxTextCtrl* Latitude_Box;
+		wxStaticText* m_staticText27;
+		wxTextCtrl* Longitude_Box;
+		wxStaticText* m_staticText28;
+		wxTextCtrl* Value_Box;
+		wxButton* m_button51;
+		wxButton* m_button52;
+	
+	public:
+		
+		Burst_Editing_Add_Measurement( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Add Measurement"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE ); 
+		~Burst_Editing_Add_Measurement();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class Burst_Editing_Add_Date
+///////////////////////////////////////////////////////////////////////////////
+class Burst_Editing_Add_Date : public wxDialog 
+{
+	private:
+	
+	protected:
+		wxStaticText* m_staticText29;
+		wxStaticText* m_staticText31;
+		wxTextCtrl* m_textCtrl18;
+		wxStaticText* m_staticText30;
+	
+	public:
+		
+		Burst_Editing_Add_Date( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Add Date"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE ); 
+		~Burst_Editing_Add_Date();
 	
 };
 

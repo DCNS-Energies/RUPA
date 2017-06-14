@@ -12,12 +12,12 @@ void Set_Col_Structures(wxListCtrl * l)
     l->InsertColumn(2, ("Devices"));
     l->InsertColumn(3, ("Transponder's\nAdresses used"));
     l->InsertColumn(4, ("Depth"));
-    l->InsertColumn(5, ("Latitude"));
-    l->InsertColumn(6, ("Longitude"));
-    l->InsertColumn(7, ("Installation\nDate UTC"));
-    l->InsertColumn(8, ("Recovery\nDate UTC"));
-    l->InsertColumn(9, ("Latitude"));
-    l->InsertColumn(10, ("Longitude"));
+    //l->InsertColumn(5, ("Latitude"));// TODO_Trilateration
+    //l->InsertColumn(6, ("Longitude"));// TODO_Trilateration
+    l->InsertColumn(5, ("Installation\nDate UTC"));
+    l->InsertColumn(6, ("Recovery\nDate UTC"));
+    //l->InsertColumn(9, ("Latitude"));// TODO_Trilateration
+    //l->InsertColumn(10, ("Longitude"));// TODO_Trilateration
 
 
     for(int i=0; i<11; i++)
@@ -125,6 +125,28 @@ void RUPA_Manage_Campaign::On_Manage_Structure( wxCommandEvent& event )
     RUPA_Utils_Pos(t_Manage_Structure);
 }
 
+void RUPA_Manage_Campaign::On_Un_Recover( wxCommandEvent& event )
+{
+    RUPA_SQL *c ;
+
+    long int Object_ID = Get_Selected_ID();
+    if (Object_ID>=0)
+    {
+	try
+	{
+	    c = new RUPA_SQL();
+	    c->prep_stmt = c->con->prepareStatement("UPDATE Structure SET recovered = 1-recovered WHERE id =?");
+	    c->prep_stmt->setInt(1, Object_ID);
+	    c->prep_stmt->execute();
+	}catch(sql::SQLException &e)
+	{
+	    RUPA_Utils_Print_SQL_Error(e);
+	}
+	Refresh_Structure_Tables();
+    }
+}
+
+
 void RUPA_Manage_Campaign::On_Close_Manage_Campaign( wxCommandEvent& event )
 {
 // TODO: Implement On_Close_Manage_Campaign
@@ -135,14 +157,17 @@ void RUPA_Manage_Campaign::On_Close_Manage_Campaign( wxCommandEvent& event )
     this->Destroy();
 }
 
-void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long int id_Structure, Phase dor)//dor = deployment or recovery
+void RUPA_Manage_Campaign::Print_Structure_Data_In_Table( wxListCtrl* Table_d, //deployment
+							  wxListCtrl* Table_r, //recovery
+							  long int id_Structure)
 {
     //Inspired by https://wiki.wxwidgets.org/WxListCtrl 
     //-> Adding items in a multiple column list
-    Table->DeleteAllItems();
+    Table_d->DeleteAllItems();
+    Table_r->DeleteAllItems();
+    wxListCtrl* Table;
     RUPA_SQL *c ;
     RUPA_SQL *c2 ;
-    int num;
     try
     {
 	c = new RUPA_SQL();
@@ -152,12 +177,12 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
 	c2 = new RUPA_SQL();
 	while(c->res->next())
 	{
+	    Table = c->res->getInt("recovered") == 0 ? Table_d : Table_r;
 	    wxString location_name(c->res->getString("location_name").c_str(), wxConvUTF8);
 	    long Item_Index = Table->InsertItem(c->res->getInt("id"), location_name);
-	    //wxString devices(c->res->getString("devices").c_str(), wxConvUTF8);
-	    Table->SetItem(Item_Index, 1, /*devices*/ToString(c->res->getString("devices")));
+	    Table->SetItem(Item_Index, 1, ToString(c->res->getString("devices")));
 	    //Structure
-	    Table->SetItem(Item_Index, 3, /*wxString::Format(wxT("%i"),*/ToString(c->res->getInt("structure_depth")));
+	    Table->SetItem(Item_Index, 3, ToString(c->res->getInt("structure_depth")));
 	    c->prep_stmt = c->con->prepareStatement("SELECT * FROM Transponder WHERE structure=? ");
 	    c->prep_stmt->setInt(1, c->res->getInt("id"));
 	    c->res2 = c->prep_stmt->executeQuery();
@@ -170,14 +195,15 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
 	    c2->prep_stmt = c2->con->prepareStatement("SELECT * FROM Operation WHERE structure=? ");
 	    c2->prep_stmt->setInt(1, c->res->getInt("id"));
 	    c2->res = c2->prep_stmt->executeQuery();
-	    c2->res->next();
-	    Table->SetItem(Item_Index, 4, ToString(c2->res->getDouble("latitude")));
-	    Table->SetItem(Item_Index, 5, ToString(c2->res->getDouble("longitude")));
-	    Table->SetItem(Item_Index, 6, ToString(c2->res->getString("operation_date")));
-	    c2->res->next();
-	    Table->SetItem(Item_Index, 7, ToString(c2->res->getString("operation_date")));
-	    Table->SetItem(Item_Index, 8, ToString(c2->res->getDouble("latitude")));
-	    Table->SetItem(Item_Index, 9, ToString(c2->res->getDouble("longitude")));
+	    for(int i=0; i<2;i++)
+	    {
+		//first time for deployed structures, second for recovered
+		c2->res->next();
+		//Table->SetItem(Item_Index, 4+3*i, ToString(c2->res->getDouble("latitude")));// TODO_Trilateration
+		//Table->SetItem(Item_Index, 5+3*i, ToString(c2->res->getDouble("longitude")));// TODO_Trilateration
+		//Table->SetItem(Item_Index, 6+3*i, ToString(c2->res->getString("operation_date")));
+		Table->SetItem(Item_Index, 4+i, ToString(c2->res->getString("operation_date")));
+	    }
 
 
 	}
@@ -192,8 +218,10 @@ void RUPA_Manage_Campaign::Print_Structure_Data_In_Table(wxListCtrl* Table, long
 void RUPA_Manage_Campaign::Refresh_Structure_Tables()
 {
 
-    this->Print_Structure_Data_In_Table(Manage_Campaign_Deployed_Table, 1, DEPLOYMENT);
-    this->Print_Structure_Data_In_Table(Manage_Campaign_Recovered_Table, 1, RECOVERY);
+    this->Print_Structure_Data_In_Table(Manage_Campaign_Deployed_Table, 
+					Manage_Campaign_Recovered_Table,
+					1);
+    //this->Print_Structure_Data_In_Table(Manage_Campaign_Recovered_Table, 1, RECOVERY);
 }
 
 long int RUPA_Manage_Campaign::Get_Selected_ID()

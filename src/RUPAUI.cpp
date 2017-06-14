@@ -94,6 +94,9 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	
 	Campaign_Layout->Add( Campaign_Buttons_Layout, 0, wxALIGN_BOTTOM|wxSHAPED, 5 );
 	
+	Campaign_Backup = new wxButton( this, wxID_ANY, _("Make a Backup of all datas, recursively"), wxDefaultPosition, wxDefaultSize, 0 );
+	Campaign_Layout->Add( Campaign_Backup, 0, wxALL|wxEXPAND, 5 );
+	
 	
 	this->SetSizer( Campaign_Layout );
 	this->Layout();
@@ -111,6 +114,7 @@ Campaign::Campaign( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	Campaign_Manage_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Manage_Campaign ), NULL, this );
 	Campaign_Close_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Close ), NULL, this );
 	Chamge_Campaign_State_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Change_Campaign_State ), NULL, this );
+	Campaign_Backup->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Backup ), NULL, this );
 }
 
 Campaign::~Campaign()
@@ -126,6 +130,7 @@ Campaign::~Campaign()
 	Campaign_Manage_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Manage_Campaign ), NULL, this );
 	Campaign_Close_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Close ), NULL, this );
 	Chamge_Campaign_State_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Change_Campaign_State ), NULL, this );
+	Campaign_Backup->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Campaign::On_Backup ), NULL, this );
 	
 }
 
@@ -205,11 +210,11 @@ Manage_Campaign::Manage_Campaign( wxWindow* parent, wxWindowID id, const wxStrin
 	Manage_Campaign_Manage_Button = new wxButton( this, wxID_ANY, _("Manage Structure"), wxDefaultPosition, wxDefaultSize, 0 );
 	Manage_Campaign_Buttons_Layout->Add( Manage_Campaign_Manage_Button, 0, wxALL, 5 );
 	
+	Manage_Campaign_Recover_Button = new wxButton( this, wxID_ANY, _("(Un)Recovered"), wxDefaultPosition, wxDefaultSize, 0 );
+	Manage_Campaign_Buttons_Layout->Add( Manage_Campaign_Recover_Button, 0, wxALL, 5 );
+	
 	Manage_Campaign_Close_Button = new wxButton( this, wxID_ANY, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
 	Manage_Campaign_Buttons_Layout->Add( Manage_Campaign_Close_Button, 0, wxALL, 5 );
-	
-	Manage_Campaign_Finish_Button = new wxButton( this, wxID_ANY, _("Finish Campaign"), wxDefaultPosition, wxDefaultSize, 0 );
-	Manage_Campaign_Buttons_Layout->Add( Manage_Campaign_Finish_Button, 0, wxALL, 5 );
 	
 	
 	Manage_Campaign_Layout->Add( Manage_Campaign_Buttons_Layout, 0, wxEXPAND, 5 );
@@ -230,8 +235,8 @@ Manage_Campaign::Manage_Campaign( wxWindow* parent, wxWindowID id, const wxStrin
 	Manage_Campaign_New_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_New_Structure ), NULL, this );
 	Manage_Campaign_Delete_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Delete_Structure ), NULL, this );
 	Manage_Campaign_Manage_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Manage_Structure ), NULL, this );
+	Manage_Campaign_Recover_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Un_Recover ), NULL, this );
 	Manage_Campaign_Close_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Close_Manage_Campaign ), NULL, this );
-	Manage_Campaign_Finish_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Finish_Campaign ), NULL, this );
 }
 
 Manage_Campaign::~Manage_Campaign()
@@ -245,8 +250,8 @@ Manage_Campaign::~Manage_Campaign()
 	Manage_Campaign_New_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_New_Structure ), NULL, this );
 	Manage_Campaign_Delete_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Delete_Structure ), NULL, this );
 	Manage_Campaign_Manage_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Manage_Structure ), NULL, this );
+	Manage_Campaign_Recover_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Un_Recover ), NULL, this );
 	Manage_Campaign_Close_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Close_Manage_Campaign ), NULL, this );
-	Manage_Campaign_Finish_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Manage_Campaign::On_Finish_Campaign ), NULL, this );
 	
 }
 
@@ -1032,7 +1037,7 @@ Burst_Editing::Burst_Editing( wxWindow* parent, wxWindowID id, const wxString& t
 	Burst_Editing_Layout->Add( Burst_Editing_Table, 0, wxALL|wxEXPAND, 5 );
 	
 	wxFlexGridSizer* Burst_Editing_Buttons;
-	Burst_Editing_Buttons = new wxFlexGridSizer( 0, 3, 0, 0 );
+	Burst_Editing_Buttons = new wxFlexGridSizer( 0, 4, 0, 0 );
 	Burst_Editing_Buttons->SetFlexibleDirection( wxBOTH );
 	Burst_Editing_Buttons->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
@@ -1041,6 +1046,9 @@ Burst_Editing::Burst_Editing( wxWindow* parent, wxWindowID id, const wxString& t
 	
 	Burst_Editing_Delete = new wxButton( this, wxID_ANY, _("Delete Measurement"), wxDefaultPosition, wxDefaultSize, 0 );
 	Burst_Editing_Buttons->Add( Burst_Editing_Delete, 0, wxALL, 5 );
+	
+	Burst_Editing_Date = new wxButton( this, wxID_ANY, _("Add Date"), wxDefaultPosition, wxDefaultSize, 0 );
+	Burst_Editing_Buttons->Add( Burst_Editing_Date, 0, wxALL, 5 );
 	
 	Close_Button = new wxButton( this, wxID_ANY, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
 	Burst_Editing_Buttons->Add( Close_Button, 0, wxALL, 5 );
@@ -1057,6 +1065,7 @@ Burst_Editing::Burst_Editing( wxWindow* parent, wxWindowID id, const wxString& t
 	// Connect Events
 	Burst_Editing_Add->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Add_Measure ), NULL, this );
 	Burst_Editing_Delete->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Delete_Measure ), NULL, this );
+	Burst_Editing_Date->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Add_Date ), NULL, this );
 	Close_Button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Close ), NULL, this );
 }
 
@@ -1065,6 +1074,7 @@ Burst_Editing::~Burst_Editing()
 	// Disconnect Events
 	Burst_Editing_Add->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Add_Measure ), NULL, this );
 	Burst_Editing_Delete->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Delete_Measure ), NULL, this );
+	Burst_Editing_Date->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Add_Date ), NULL, this );
 	Close_Button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Burst_Editing::On_Close ), NULL, this );
 	
 }
@@ -1116,4 +1126,88 @@ Warning_Delete_Measurement::~Warning_Delete_Measurement()
 	m_button37->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Warning_Delete_Measurement::On_Delete ), NULL, this );
 	m_button38->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Warning_Delete_Measurement::On_Cancel ), NULL, this );
 	
+}
+
+Burst_Editing_Add_Measurement::Burst_Editing_Add_Measurement( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+	
+	wxFlexGridSizer* fgSizer31;
+	fgSizer31 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer31->SetFlexibleDirection( wxBOTH );
+	fgSizer31->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText26 = new wxStaticText( this, wxID_ANY, _("Latitude"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText26->Wrap( -1 );
+	fgSizer31->Add( m_staticText26, 0, wxALL, 5 );
+	
+	Latitude_Box = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer31->Add( Latitude_Box, 0, wxALL, 5 );
+	
+	m_staticText27 = new wxStaticText( this, wxID_ANY, _("Longitude"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText27->Wrap( -1 );
+	fgSizer31->Add( m_staticText27, 0, wxALL, 5 );
+	
+	Longitude_Box = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer31->Add( Longitude_Box, 0, wxALL, 5 );
+	
+	m_staticText28 = new wxStaticText( this, wxID_ANY, _("Value"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText28->Wrap( -1 );
+	fgSizer31->Add( m_staticText28, 0, wxALL, 5 );
+	
+	Value_Box = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer31->Add( Value_Box, 0, wxALL, 5 );
+	
+	m_button51 = new wxButton( this, wxID_ANY, _("Add"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer31->Add( m_button51, 0, wxALL, 5 );
+	
+	m_button52 = new wxButton( this, wxID_ANY, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer31->Add( m_button52, 0, wxALL, 5 );
+	
+	
+	this->SetSizer( fgSizer31 );
+	this->Layout();
+	fgSizer31->Fit( this );
+	
+	this->Centre( wxBOTH );
+}
+
+Burst_Editing_Add_Measurement::~Burst_Editing_Add_Measurement()
+{
+}
+
+Burst_Editing_Add_Date::Burst_Editing_Add_Date( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+	
+	wxFlexGridSizer* fgSizer32;
+	fgSizer32 = new wxFlexGridSizer( 0, 1, 0, 0 );
+	fgSizer32->SetFlexibleDirection( wxBOTH );
+	fgSizer32->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText29 = new wxStaticText( this, wxID_ANY, _("Format : yyyy-mm-dd hh:mm:ss"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText29->Wrap( -1 );
+	fgSizer32->Add( m_staticText29, 0, wxALL, 5 );
+	
+	m_staticText31 = new wxStaticText( this, wxID_ANY, _("Please, keep '-' and ':'"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText31->Wrap( -1 );
+	fgSizer32->Add( m_staticText31, 0, wxALL, 5 );
+	
+	m_textCtrl18 = new wxTextCtrl( this, wxID_ANY, _("yyyy-mm-dd hh:mm:ss"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer32->Add( m_textCtrl18, 0, wxALL|wxEXPAND, 5 );
+	
+	m_staticText30 = new wxStaticText( this, wxID_ANY, _("hh:mm:ss can be ignored"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText30->Wrap( -1 );
+	fgSizer32->Add( m_staticText30, 0, wxALL, 5 );
+	
+	
+	this->SetSizer( fgSizer32 );
+	this->Layout();
+	fgSizer32->Fit( this );
+	
+	this->Centre( wxBOTH );
+}
+
+Burst_Editing_Add_Date::~Burst_Editing_Add_Date()
+{
 }

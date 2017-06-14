@@ -30,8 +30,12 @@ class RUPA_Manage_Campaign : public Manage_Campaign
 	void On_Delete_Structure( wxCommandEvent& event );
 	void On_Manage_Structure( wxCommandEvent& event );
 	void On_Close_Manage_Campaign( wxCommandEvent& event );
+	void On_Un_Recover( wxCommandEvent& event );
 
-	void Print_Structure_Data_In_Table(wxListCtrl* Structure_Table, long int id_Structure, Phase dor);
+
+	void Print_Structure_Data_In_Table( wxListCtrl* Structure_Table_r,//deployment
+					    wxListCtrl* Structure_Table_d,//recovery
+					    long int id_Structure);
 	long int Get_Selected_ID();
 
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jack/Tristan/sandbox/rupa_pi
+CMAKE_SOURCE_DIR = /home/jack/rupa_pi
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jack/Tristan/sandbox/rupa_pi/build
+CMAKE_BINARY_DIR = /home/jack/rupa_pi/build
 
 # Utility rule file for rupa-po-update.
 
@@ -76,117 +76,117 @@ CMakeFiles/rupa-po-update: ../po/pl.po.dummy
 CMakeFiles/rupa-po-update: ../po/pt.po.dummy
 CMakeFiles/rupa-po-update: ../po/ca.po.dummy
 CMakeFiles/rupa-po-update: ../po/da.po.dummy
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[rupa_pi]-po-update: Done."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[rupa_pi]-po-update: Done."
 
 ../po/ja.po.dummy: ../po/rupa_pi.pot
 ../po/ja.po.dummy: ../po/ja.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "rupa-po-update [ja]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/ja.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "rupa-po-update [ja]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/ja.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/hu.po.dummy: ../po/rupa_pi.pot
 ../po/hu.po.dummy: ../po/hu.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "rupa-po-update [hu]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/hu.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "rupa-po-update [hu]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/hu.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/de.po.dummy: ../po/rupa_pi.pot
 ../po/de.po.dummy: ../po/de.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "rupa-po-update [de]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/de.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "rupa-po-update [de]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/de.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/fi.po.dummy: ../po/rupa_pi.pot
 ../po/fi.po.dummy: ../po/fi.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "rupa-po-update [fi]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/fi.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "rupa-po-update [fi]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/fi.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/et.po.dummy: ../po/rupa_pi.pot
 ../po/et.po.dummy: ../po/et.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "rupa-po-update [et]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/et.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "rupa-po-update [et]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/et.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/tr.po.dummy: ../po/rupa_pi.pot
 ../po/tr.po.dummy: ../po/tr.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "rupa-po-update [tr]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/tr.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "rupa-po-update [tr]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/tr.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/el.po.dummy: ../po/rupa_pi.pot
 ../po/el.po.dummy: ../po/el.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "rupa-po-update [el]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/el.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "rupa-po-update [el]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/el.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/it.po.dummy: ../po/rupa_pi.pot
 ../po/it.po.dummy: ../po/it.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "rupa-po-update [it]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/it.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "rupa-po-update [it]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/it.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/sv.po.dummy: ../po/rupa_pi.pot
 ../po/sv.po.dummy: ../po/sv.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "rupa-po-update [sv]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/sv.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "rupa-po-update [sv]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/sv.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/vi.po.dummy: ../po/rupa_pi.pot
 ../po/vi.po.dummy: ../po/vi.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "rupa-po-update [vi]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/vi.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "rupa-po-update [vi]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/vi.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/nl.po.dummy: ../po/rupa_pi.pot
 ../po/nl.po.dummy: ../po/nl.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "rupa-po-update [nl]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/nl.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "rupa-po-update [nl]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/nl.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/nb.po.dummy: ../po/rupa_pi.pot
 ../po/nb.po.dummy: ../po/nb.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "rupa-po-update [nb]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/nb.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "rupa-po-update [nb]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/nb.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/ru.po.dummy: ../po/rupa_pi.pot
 ../po/ru.po.dummy: ../po/ru.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "rupa-po-update [ru]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/ru.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "rupa-po-update [ru]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/ru.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/fr.po.dummy: ../po/rupa_pi.pot
 ../po/fr.po.dummy: ../po/fr.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "rupa-po-update [fr]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/fr.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "rupa-po-update [fr]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/fr.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/cs.po.dummy: ../po/rupa_pi.pot
 ../po/cs.po.dummy: ../po/cs.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "rupa-po-update [cs]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/cs.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "rupa-po-update [cs]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/cs.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/es.po.dummy: ../po/rupa_pi.pot
 ../po/es.po.dummy: ../po/es.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "rupa-po-update [es]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/es.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "rupa-po-update [es]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/es.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/gl.po.dummy: ../po/rupa_pi.pot
 ../po/gl.po.dummy: ../po/gl.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "rupa-po-update [gl]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/gl.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "rupa-po-update [gl]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/gl.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/zh.po.dummy: ../po/rupa_pi.pot
 ../po/zh.po.dummy: ../po/zh.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "rupa-po-update [zh]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/zh.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "rupa-po-update [zh]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/zh.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/pl.po.dummy: ../po/rupa_pi.pot
 ../po/pl.po.dummy: ../po/pl.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "rupa-po-update [pl]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/pl.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "rupa-po-update [pl]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/pl.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/pt.po.dummy: ../po/rupa_pi.pot
 ../po/pt.po.dummy: ../po/pt.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "rupa-po-update [pt]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/pt.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "rupa-po-update [pt]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/pt.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/ca.po.dummy: ../po/rupa_pi.pot
 ../po/ca.po.dummy: ../po/ca.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "rupa-po-update [ca]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/ca.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "rupa-po-update [ca]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/ca.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 ../po/da.po.dummy: ../po/rupa_pi.pot
 ../po/da.po.dummy: ../po/da.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "rupa-po-update [da]: Updated po file."
-	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/Tristan/sandbox/rupa_pi/po/da.po /home/jack/Tristan/sandbox/rupa_pi/po/rupa_pi.pot
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "rupa-po-update [da]: Updated po file."
+	/usr/bin/msgmerge --width=80 --strict --quiet --update --backup=none --no-location -s /home/jack/rupa_pi/po/da.po /home/jack/rupa_pi/po/rupa_pi.pot
 
 rupa-po-update: CMakeFiles/rupa-po-update
 rupa-po-update: ../po/ja.po.dummy
@@ -225,6 +225,6 @@ CMakeFiles/rupa-po-update.dir/clean:
 .PHONY : CMakeFiles/rupa-po-update.dir/clean
 
 CMakeFiles/rupa-po-update.dir/depend:
-	cd /home/jack/Tristan/sandbox/rupa_pi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jack/Tristan/sandbox/rupa_pi /home/jack/Tristan/sandbox/rupa_pi /home/jack/Tristan/sandbox/rupa_pi/build /home/jack/Tristan/sandbox/rupa_pi/build /home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles/rupa-po-update.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jack/rupa_pi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jack/rupa_pi /home/jack/rupa_pi /home/jack/rupa_pi/build /home/jack/rupa_pi/build /home/jack/rupa_pi/build/CMakeFiles/rupa-po-update.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rupa-po-update.dir/depend
 

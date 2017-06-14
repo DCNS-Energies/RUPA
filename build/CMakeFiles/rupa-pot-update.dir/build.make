@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jack/Tristan/sandbox/rupa_pi
+CMAKE_SOURCE_DIR = /home/jack/rupa_pi
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jack/Tristan/sandbox/rupa_pi/build
+CMAKE_BINARY_DIR = /home/jack/rupa_pi/build
 
 # Utility rule file for rupa-pot-update.
 
@@ -54,12 +54,12 @@ CMAKE_BINARY_DIR = /home/jack/Tristan/sandbox/rupa_pi/build
 include CMakeFiles/rupa-pot-update.dir/progress.make
 
 CMakeFiles/rupa-pot-update: po/rupa_pi.pot.dummy
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[rupa_pi]-pot-update: Done."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[rupa_pi]-pot-update: Done."
 
 po/rupa_pi.pot.dummy: ../po/POTFILES.in
 po/rupa_pi.pot.dummy: ../po/rupa_pi.pot
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "rupa-pot-update [rupa_pi]: Generated pot file."
-	cd /home/jack/Tristan/sandbox/rupa_pi && /usr/bin/xgettext --force-po --package-name=rupa_pi --package-version="1.9.055" --output=po/rupa_pi.pot --keyword=_ --width=80 --files-from=/home/jack/Tristan/sandbox/rupa_pi/po/POTFILES.in
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "rupa-pot-update [rupa_pi]: Generated pot file."
+	cd /home/jack/rupa_pi && /usr/bin/xgettext --force-po --package-name=rupa_pi --package-version="1.9.055" --output=po/rupa_pi.pot --keyword=_ --width=80 --files-from=/home/jack/rupa_pi/po/POTFILES.in
 
 rupa-pot-update: CMakeFiles/rupa-pot-update
 rupa-pot-update: po/rupa_pi.pot.dummy
@@ -77,6 +77,6 @@ CMakeFiles/rupa-pot-update.dir/clean:
 .PHONY : CMakeFiles/rupa-pot-update.dir/clean
 
 CMakeFiles/rupa-pot-update.dir/depend:
-	cd /home/jack/Tristan/sandbox/rupa_pi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jack/Tristan/sandbox/rupa_pi /home/jack/Tristan/sandbox/rupa_pi /home/jack/Tristan/sandbox/rupa_pi/build /home/jack/Tristan/sandbox/rupa_pi/build /home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles/rupa-pot-update.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jack/rupa_pi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jack/rupa_pi /home/jack/rupa_pi /home/jack/rupa_pi/build /home/jack/rupa_pi/build /home/jack/rupa_pi/build/CMakeFiles/rupa-pot-update.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rupa-pot-update.dir/depend
 

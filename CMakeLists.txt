@@ -30,14 +30,6 @@ INCLUDE("cmake/PluginConfigure.cmake")
 
 SET(SRC_RUPA
             src/watchdog_pi.cpp
-	    #src/watchdog_pi.cpp
-	    #src/WatchdogDialog.cpp
-	    #src/WatchdogPropertiesDialog.cpp
-	    #src/ConfigurationDialog.cpp
-	    #src/NewAlarmDialog.cpp
-	    #src/EditAlarmDialog.cpp
-	    #src/Alarm.cpp
-	    #src/WatchdogUI.cpp
             src/icons.cpp
             src/ODAPI.h
             src/wddc.cpp
@@ -58,6 +50,8 @@ SET(SRC_RUPA
 	    src/RUPA_Manage_Transponder.cpp
 	    src/RUPA_Setup_Structure.cpp
 	    src/RUPA_RS232.cpp
+	    src/RUPA_Burst_Editing_Add_Date.cpp
+	    src/RUPA_Burst_Editing_Add_Measurement.cpp
 
 	)
 

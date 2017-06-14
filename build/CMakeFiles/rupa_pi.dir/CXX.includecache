@@ -52,11 +52,11 @@ GL/gl.h
 pthread.h
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/AIS_Target_Info.h
+/home/jack/rupa_pi/src/AIS_Target_Info.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/GL/gl.h
+/home/jack/rupa_pi/src/GL/gl.h
 gl_mangle.h
-/home/jack/Tristan/sandbox/rupa_pi/src/GL/gl_mangle.h
+/home/jack/rupa_pi/src/GL/gl_mangle.h
 stdlib.h
 -
 windows.h
@@ -64,11 +64,11 @@ windows.h
 GL/glext.h
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.cpp
+/home/jack/rupa_pi/src/RUPAUI.cpp
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 wx/artprov.h
 -
 wx/xrc/xmlres.h
@@ -112,127 +112,143 @@ wx/textctrl.h
 wx/statline.h
 -
 wxWTranslateCatalog.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxWTranslateCatalog.h
+/home/jack/rupa_pi/src/wxWTranslateCatalog.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Automatic_Burst.cpp
+/home/jack/rupa_pi/src/RUPA_Automatic_Burst.cpp
 RUPA_Automatic_Burst.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Automatic_Burst.h
+/home/jack/rupa_pi/src/RUPA_Automatic_Burst.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Automatic_Burst.h
+/home/jack/rupa_pi/src/RUPA_Automatic_Burst.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Burst_Editing.cpp
+/home/jack/rupa_pi/src/RUPA_Burst_Editing.cpp
 RUPA_Burst_Editing.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Burst_Editing.h
+/home/jack/rupa_pi/src/RUPA_Burst_Editing.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Burst_Editing.h
+/home/jack/rupa_pi/src/RUPA_Burst_Editing.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 RUPA_Manage_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.h
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Campaign.cpp
-RUPA_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Campaign.h
-watchdog_pi.h
-/home/jack/Tristan/sandbox/rupa_pi/src/watchdog_pi.h
+/home/jack/rupa_pi/src/RUPA_Burst_Editing_Add_Date.cpp
+RUPA_Burst_Editing_Add_Date.h
+/home/jack/rupa_pi/src/RUPA_Burst_Editing_Add_Date.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Burst_Editing_Add_Date.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
+
+/home/jack/rupa_pi/src/RUPA_Burst_Editing_Add_Measurement.cpp
+RUPA_Burst_Editing_Add_Measurement.h
+/home/jack/rupa_pi/src/RUPA_Burst_Editing_Add_Measurement.h
+
+/home/jack/rupa_pi/src/RUPA_Burst_Editing_Add_Measurement.h
+RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
+
+/home/jack/rupa_pi/src/RUPA_Campaign.cpp
+RUPA_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Campaign.h
+watchdog_pi.h
+/home/jack/rupa_pi/src/watchdog_pi.h
+
+/home/jack/rupa_pi/src/RUPA_Campaign.h
+RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Manage_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Manage_Campaign.h
 RUPA_New_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_New_Campaign.h
+/home/jack/rupa_pi/src/RUPA_New_Campaign.h
 RUPA_Warning_Delete_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Campaign.h
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 wddc.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wddc.h
+/home/jack/rupa_pi/src/wddc.h
 stdlib.h
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Change_Validation_State.cpp
+/home/jack/rupa_pi/src/RUPA_Change_Validation_State.cpp
 RUPA_Change_Validation_State.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Change_Validation_State.h
+/home/jack/rupa_pi/src/RUPA_Change_Validation_State.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Change_Validation_State.h
+/home/jack/rupa_pi/src/RUPA_Change_Validation_State.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Campaign.cpp
+/home/jack/rupa_pi/src/RUPA_Manage_Campaign.cpp
 RUPA_Manage_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Manage_Campaign.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Manage_Campaign.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Manage_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.h
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.h
 RUPA_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Campaign.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.cpp
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.cpp
 RUPA_Manage_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.h
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.h
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Automatic_Burst.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Automatic_Burst.h
+/home/jack/rupa_pi/src/RUPA_Automatic_Burst.h
 RUPA_Semi_Automatic_Burst.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Semi_Automatic_Burst.h
+/home/jack/rupa_pi/src/RUPA_Semi_Automatic_Burst.h
 RUPA_Burst_Editing.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Burst_Editing.h
+/home/jack/rupa_pi/src/RUPA_Burst_Editing.h
 RUPA_Change_Validation_State.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Change_Validation_State.h
+/home/jack/rupa_pi/src/RUPA_Change_Validation_State.h
 RUPA_Warning_Delete_Burst.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Burst.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Burst.h
 RUPA_Manage_Transponder.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Transponder.h
+/home/jack/rupa_pi/src/RUPA_Manage_Transponder.h
 RUPA_Manage_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Manage_Campaign.h
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 RUPA_Setup_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Setup_Structure.h
+/home/jack/rupa_pi/src/RUPA_Setup_Structure.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Transponder.cpp
+/home/jack/rupa_pi/src/RUPA_Manage_Transponder.cpp
 RUPA_Manage_Transponder.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Transponder.h
+/home/jack/rupa_pi/src/RUPA_Manage_Transponder.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Transponder.h
+/home/jack/rupa_pi/src/RUPA_Manage_Transponder.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 RUPA_Manage_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.h
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_New_Campaign.cpp
+/home/jack/rupa_pi/src/RUPA_New_Campaign.cpp
 RUPA_New_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_New_Campaign.h
+/home/jack/rupa_pi/src/RUPA_New_Campaign.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_New_Campaign.h
+/home/jack/rupa_pi/src/RUPA_New_Campaign.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Campaign.h
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_RS232.cpp
+/home/jack/rupa_pi/src/RUPA_RS232.cpp
 RUPA_RS232.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_RS232.h
+/home/jack/rupa_pi/src/RUPA_RS232.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_RS232.h
+/home/jack/rupa_pi/src/RUPA_RS232.h
 stdio.h
 -
 stdlib.h
@@ -244,15 +260,15 @@ unistd.h
 ftd2xx.h
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Semi_Automatic_Burst.cpp
+/home/jack/rupa_pi/src/RUPA_Semi_Automatic_Burst.cpp
 RUPA_Semi_Automatic_Burst.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Semi_Automatic_Burst.h
+/home/jack/rupa_pi/src/RUPA_Semi_Automatic_Burst.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Semi_Automatic_Burst.h
+/home/jack/rupa_pi/src/RUPA_Semi_Automatic_Burst.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 watchdog_pi.h
-/home/jack/Tristan/sandbox/rupa_pi/src/watchdog_pi.h
+/home/jack/rupa_pi/src/watchdog_pi.h
 stdio.h
 -
 stdlib.h
@@ -264,25 +280,25 @@ unistd.h
 ftd2xx.h
 -
 RUPA_Manage_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.h
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Setup_Structure.cpp
+/home/jack/rupa_pi/src/RUPA_Setup_Structure.cpp
 RUPA_Setup_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Setup_Structure.h
+/home/jack/rupa_pi/src/RUPA_Setup_Structure.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Setup_Structure.h
+/home/jack/rupa_pi/src/RUPA_Setup_Structure.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 RUPA_Manage_Structure.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Manage_Structure.h
+/home/jack/rupa_pi/src/RUPA_Manage_Structure.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.cpp
+/home/jack/rupa_pi/src/RUPA_Utility.cpp
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 wx/artprov.h
 -
 wx/xrc/xmlres.h
@@ -328,9 +344,9 @@ wx/gauge.h
 wx/statline.h
 -
 wxWTranslateCatalog.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxWTranslateCatalog.h
+/home/jack/rupa_pi/src/wxWTranslateCatalog.h
 mysql_connection.h
-/home/jack/Tristan/sandbox/rupa_pi/src/mysql_connection.h
+/home/jack/rupa_pi/src/mysql_connection.h
 cppconn/driver.h
 -
 cppconn/exception.h
@@ -358,31 +374,31 @@ ftd2xx.h
 vector
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Burst.cpp
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Burst.cpp
 RUPA_Warning_Delete_Burst.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Burst.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Burst.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Burst.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Burst.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Campaign.cpp
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Campaign.cpp
 RUPA_Warning_Delete_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Campaign.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Campaign.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Measurement.cpp
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Measurement.cpp
 RUPA_Warning_Delete_Measurement.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Measurement.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Measurement.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Warning_Delete_Measurement.h
+/home/jack/rupa_pi/src/RUPA_Warning_Delete_Measurement.h
 RUPAUI.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPAUI.h
+/home/jack/rupa_pi/src/RUPAUI.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/TexFont.cpp
+/home/jack/rupa_pi/src/TexFont.cpp
 wx/wx.h
 -
 GL/gl.h
@@ -390,11 +406,11 @@ GL/gl.h
 GL/glu.h
 -
 TexFont.h
-/home/jack/Tristan/sandbox/rupa_pi/src/TexFont.h
+/home/jack/rupa_pi/src/TexFont.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/TexFont.h
+/home/jack/rupa_pi/src/TexFont.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/icons.cpp
+/home/jack/rupa_pi/src/icons.cpp
 wx/wxprec.h
 -
 wx/wx.h
@@ -402,15 +418,15 @@ wx/wx.h
 wx/mstream.h
 -
 icons.h
-/home/jack/Tristan/sandbox/rupa_pi/src/icons.h
+/home/jack/rupa_pi/src/icons.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/icons.h
+/home/jack/rupa_pi/src/icons.h
 wx/wxprec.h
 -
 wx/wx.h
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/msvcdefs.h
+/home/jack/rupa_pi/src/msvcdefs.h
 float.h
 -
 iostream
@@ -418,13 +434,13 @@ iostream
 limits
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/ocpn_plugin.h
+/home/jack/rupa_pi/src/ocpn_plugin.h
 wx/xml/xml.h
 -
 wx/glcanvas.h
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxml.cpp
+/home/jack/rupa_pi/src/tinyxml/tinyxml.cpp
 ctype.h
 -
 sstream
@@ -432,9 +448,9 @@ sstream
 iostream
 -
 tinyxml.h
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxml.h
+/home/jack/rupa_pi/src/tinyxml/tinyxml.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxml.h
+/home/jack/rupa_pi/src/tinyxml/tinyxml.h
 ctype.h
 -
 stdio.h
@@ -452,69 +468,69 @@ iostream
 sstream
 -
 tinyxml/tinystr.h
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxml/tinystr.h
+/home/jack/rupa_pi/src/tinyxml/tinyxml/tinystr.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxmlerror.cpp
+/home/jack/rupa_pi/src/tinyxml/tinyxmlerror.cpp
 tinyxml.h
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxml.h
+/home/jack/rupa_pi/src/tinyxml/tinyxml.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxmlparser.cpp
+/home/jack/rupa_pi/src/tinyxml/tinyxmlparser.cpp
 ctype.h
 -
 stddef.h
 -
 tinyxml.h
-/home/jack/Tristan/sandbox/rupa_pi/src/tinyxml/tinyxml.h
+/home/jack/rupa_pi/src/tinyxml/tinyxml.h
 windows.h
 -
 
-/home/jack/Tristan/sandbox/rupa_pi/src/version.h
+/home/jack/rupa_pi/src/version.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/watchdog_pi.cpp
+/home/jack/rupa_pi/src/watchdog_pi.cpp
 wx/wx.h
 -
 wx/stdpaths.h
 -
 wxJSON/jsonreader.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/jsonreader.h
+/home/jack/rupa_pi/src/wxJSON/jsonreader.h
 wddc.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wddc.h
+/home/jack/rupa_pi/src/wddc.h
 watchdog_pi.h
-/home/jack/Tristan/sandbox/rupa_pi/src/watchdog_pi.h
+/home/jack/rupa_pi/src/watchdog_pi.h
 icons.h
-/home/jack/Tristan/sandbox/rupa_pi/src/icons.h
+/home/jack/rupa_pi/src/icons.h
 AIS_Target_Info.h
-/home/jack/Tristan/sandbox/rupa_pi/src/AIS_Target_Info.h
+/home/jack/rupa_pi/src/AIS_Target_Info.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/watchdog_pi.h
+/home/jack/rupa_pi/src/watchdog_pi.h
 wx/wx.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wx/wx.h
+/home/jack/rupa_pi/src/wx/wx.h
 wx/fileconf.h
 -
 version.h
-/home/jack/Tristan/sandbox/rupa_pi/src/version.h
+/home/jack/rupa_pi/src/version.h
 wxWTranslateCatalog.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxWTranslateCatalog.h
+/home/jack/rupa_pi/src/wxWTranslateCatalog.h
 ocpn_plugin.h
-/home/jack/Tristan/sandbox/rupa_pi/src/ocpn_plugin.h
+/home/jack/rupa_pi/src/ocpn_plugin.h
 msvcdefs.h
-/home/jack/Tristan/sandbox/rupa_pi/src/msvcdefs.h
+/home/jack/rupa_pi/src/msvcdefs.h
 RUPA_Campaign.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Campaign.h
+/home/jack/rupa_pi/src/RUPA_Campaign.h
 RUPA_Utility.h
-/home/jack/Tristan/sandbox/rupa_pi/src/RUPA_Utility.h
+/home/jack/rupa_pi/src/RUPA_Utility.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/wddc.cpp
+/home/jack/rupa_pi/src/wddc.cpp
 wx/wxprec.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wx/wxprec.h
+/home/jack/rupa_pi/src/wx/wxprec.h
 wx/wx.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wx/wx.h
+/home/jack/rupa_pi/src/wx/wx.h
 wx28compat.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wx28compat.h
+/home/jack/rupa_pi/src/wx28compat.h
 windows.h
 -
 GL/gl.h
-/home/jack/Tristan/sandbox/rupa_pi/src/GL/gl.h
+/home/jack/rupa_pi/src/GL/gl.h
 GL/glu.h
 -
 GL/gl.h
@@ -522,9 +538,9 @@ GL/gl.h
 GL/glu.h
 -
 qopengl.h
-/home/jack/Tristan/sandbox/rupa_pi/src/qopengl.h
+/home/jack/rupa_pi/src/qopengl.h
 GL/gl_private.h
-/home/jack/Tristan/sandbox/rupa_pi/src/GL/gl_private.h
+/home/jack/rupa_pi/src/GL/gl_private.h
 wx/glcanvas.h
 -
 wx/graphics.h
@@ -534,21 +550,21 @@ wx/dcclient.h
 vector
 -
 wddc.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wddc.h
+/home/jack/rupa_pi/src/wddc.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/wddc.h
+/home/jack/rupa_pi/src/wddc.h
 vector
 -
 TexFont.h
-/home/jack/Tristan/sandbox/rupa_pi/src/TexFont.h
+/home/jack/rupa_pi/src/TexFont.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/wx28compat.h
+/home/jack/rupa_pi/src/wx28compat.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/json_defs.h
+/home/jack/rupa_pi/src/wxJSON/json_defs.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/jsonreader.h
+/home/jack/rupa_pi/src/wxJSON/jsonreader.h
 wx/wxprec.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/wx/wxprec.h
+/home/jack/rupa_pi/src/wxJSON/wx/wxprec.h
 wx/stream.h
 -
 wx/string.h
@@ -556,13 +572,13 @@ wx/string.h
 wx/arrstr.h
 -
 json_defs.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/json_defs.h
+/home/jack/rupa_pi/src/wxJSON/json_defs.h
 jsonval.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/jsonval.h
+/home/jack/rupa_pi/src/wxJSON/jsonval.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/jsonval.h
+/home/jack/rupa_pi/src/wxJSON/jsonval.h
 wx/wxprec.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/wx/wxprec.h
+/home/jack/rupa_pi/src/wxJSON/wx/wxprec.h
 wx/object.h
 -
 wx/hashmap.h
@@ -572,9 +588,9 @@ wx/dynarray.h
 wx/arrstr.h
 -
 json_defs.h
-/home/jack/Tristan/sandbox/rupa_pi/src/wxJSON/json_defs.h
+/home/jack/rupa_pi/src/wxJSON/json_defs.h
 
-/home/jack/Tristan/sandbox/rupa_pi/src/wxWTranslateCatalog.h
+/home/jack/rupa_pi/src/wxWTranslateCatalog.h
 
 /usr/include/wx-3.0/wx/accel.h
 wx/defs.h

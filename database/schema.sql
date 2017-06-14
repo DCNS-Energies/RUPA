@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS Structure (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     campaign INT UNSIGNED NOT NULL,
     viewable BOOLEAN NOT NULL DEFAULT 1,
+    recovered BOOLEAN NOT NULL DEFAULT 0,
     location_name TEXT,
     devices LONGTEXT,
     transponders INT,

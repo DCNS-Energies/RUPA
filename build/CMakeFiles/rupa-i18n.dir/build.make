@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jack/Tristan/sandbox/rupa_pi
+CMAKE_SOURCE_DIR = /home/jack/rupa_pi
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jack/Tristan/sandbox/rupa_pi/build
+CMAKE_BINARY_DIR = /home/jack/rupa_pi/build
 
 # Utility rule file for rupa-i18n.
 
@@ -75,117 +75,117 @@ CMakeFiles/rupa-i18n: pl.mo
 CMakeFiles/rupa-i18n: pt.mo
 CMakeFiles/rupa-i18n: ca.mo
 CMakeFiles/rupa-i18n: da.mo
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "rupa_pi-i18n: Done."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "rupa_pi-i18n: Done."
 
 ja.mo: ../po/ja.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "rupa-i18n [ja]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/ja.mo /home/jack/Tristan/sandbox/rupa_pi/po/ja.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/ja.mo Resources/ja/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "rupa-i18n [ja]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/ja.mo /home/jack/rupa_pi/po/ja.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/ja.mo Resources/ja/LC_MESSAGES/opencpn-rupa_pi.mo
 
 hu.mo: ../po/hu.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "rupa-i18n [hu]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/hu.mo /home/jack/Tristan/sandbox/rupa_pi/po/hu.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/hu.mo Resources/hu/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "rupa-i18n [hu]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/hu.mo /home/jack/rupa_pi/po/hu.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/hu.mo Resources/hu/LC_MESSAGES/opencpn-rupa_pi.mo
 
 de.mo: ../po/de.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "rupa-i18n [de]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/de.mo /home/jack/Tristan/sandbox/rupa_pi/po/de.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/de.mo Resources/de/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "rupa-i18n [de]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/de.mo /home/jack/rupa_pi/po/de.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/de.mo Resources/de/LC_MESSAGES/opencpn-rupa_pi.mo
 
 fi.mo: ../po/fi.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "rupa-i18n [fi]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/fi.mo /home/jack/Tristan/sandbox/rupa_pi/po/fi.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/fi.mo Resources/fi/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "rupa-i18n [fi]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/fi.mo /home/jack/rupa_pi/po/fi.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/fi.mo Resources/fi/LC_MESSAGES/opencpn-rupa_pi.mo
 
 et.mo: ../po/et.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "rupa-i18n [et]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/et.mo /home/jack/Tristan/sandbox/rupa_pi/po/et.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/et.mo Resources/et/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "rupa-i18n [et]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/et.mo /home/jack/rupa_pi/po/et.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/et.mo Resources/et/LC_MESSAGES/opencpn-rupa_pi.mo
 
 tr.mo: ../po/tr.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "rupa-i18n [tr]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/tr.mo /home/jack/Tristan/sandbox/rupa_pi/po/tr.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/tr.mo Resources/tr/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "rupa-i18n [tr]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/tr.mo /home/jack/rupa_pi/po/tr.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/tr.mo Resources/tr/LC_MESSAGES/opencpn-rupa_pi.mo
 
 el.mo: ../po/el.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "rupa-i18n [el]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/el.mo /home/jack/Tristan/sandbox/rupa_pi/po/el.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/el.mo Resources/el/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "rupa-i18n [el]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/el.mo /home/jack/rupa_pi/po/el.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/el.mo Resources/el/LC_MESSAGES/opencpn-rupa_pi.mo
 
 it.mo: ../po/it.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "rupa-i18n [it]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/it.mo /home/jack/Tristan/sandbox/rupa_pi/po/it.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/it.mo Resources/it/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "rupa-i18n [it]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/it.mo /home/jack/rupa_pi/po/it.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/it.mo Resources/it/LC_MESSAGES/opencpn-rupa_pi.mo
 
 sv.mo: ../po/sv.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "rupa-i18n [sv]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/sv.mo /home/jack/Tristan/sandbox/rupa_pi/po/sv.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/sv.mo Resources/sv/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "rupa-i18n [sv]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/sv.mo /home/jack/rupa_pi/po/sv.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/sv.mo Resources/sv/LC_MESSAGES/opencpn-rupa_pi.mo
 
 vi.mo: ../po/vi.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "rupa-i18n [vi]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/vi.mo /home/jack/Tristan/sandbox/rupa_pi/po/vi.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/vi.mo Resources/vi/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "rupa-i18n [vi]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/vi.mo /home/jack/rupa_pi/po/vi.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/vi.mo Resources/vi/LC_MESSAGES/opencpn-rupa_pi.mo
 
 nl.mo: ../po/nl.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "rupa-i18n [nl]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/nl.mo /home/jack/Tristan/sandbox/rupa_pi/po/nl.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/nl.mo Resources/nl/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "rupa-i18n [nl]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/nl.mo /home/jack/rupa_pi/po/nl.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/nl.mo Resources/nl/LC_MESSAGES/opencpn-rupa_pi.mo
 
 nb.mo: ../po/nb.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "rupa-i18n [nb]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/nb.mo /home/jack/Tristan/sandbox/rupa_pi/po/nb.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/nb.mo Resources/nb/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "rupa-i18n [nb]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/nb.mo /home/jack/rupa_pi/po/nb.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/nb.mo Resources/nb/LC_MESSAGES/opencpn-rupa_pi.mo
 
 ru.mo: ../po/ru.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "rupa-i18n [ru]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/ru.mo /home/jack/Tristan/sandbox/rupa_pi/po/ru.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/ru.mo Resources/ru/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "rupa-i18n [ru]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/ru.mo /home/jack/rupa_pi/po/ru.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/ru.mo Resources/ru/LC_MESSAGES/opencpn-rupa_pi.mo
 
 fr.mo: ../po/fr.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "rupa-i18n [fr]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/fr.mo /home/jack/Tristan/sandbox/rupa_pi/po/fr.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/fr.mo Resources/fr/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "rupa-i18n [fr]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/fr.mo /home/jack/rupa_pi/po/fr.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/fr.mo Resources/fr/LC_MESSAGES/opencpn-rupa_pi.mo
 
 cs.mo: ../po/cs.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "rupa-i18n [cs]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/cs.mo /home/jack/Tristan/sandbox/rupa_pi/po/cs.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/cs.mo Resources/cs/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "rupa-i18n [cs]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/cs.mo /home/jack/rupa_pi/po/cs.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/cs.mo Resources/cs/LC_MESSAGES/opencpn-rupa_pi.mo
 
 es.mo: ../po/es.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "rupa-i18n [es]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/es.mo /home/jack/Tristan/sandbox/rupa_pi/po/es.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/es.mo Resources/es/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "rupa-i18n [es]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/es.mo /home/jack/rupa_pi/po/es.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/es.mo Resources/es/LC_MESSAGES/opencpn-rupa_pi.mo
 
 gl.mo: ../po/gl.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "rupa-i18n [gl]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/gl.mo /home/jack/Tristan/sandbox/rupa_pi/po/gl.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/gl.mo Resources/gl/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "rupa-i18n [gl]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/gl.mo /home/jack/rupa_pi/po/gl.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/gl.mo Resources/gl/LC_MESSAGES/opencpn-rupa_pi.mo
 
 zh.mo: ../po/zh.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "rupa-i18n [zh]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/zh.mo /home/jack/Tristan/sandbox/rupa_pi/po/zh.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/zh.mo Resources/zh/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "rupa-i18n [zh]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/zh.mo /home/jack/rupa_pi/po/zh.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/zh.mo Resources/zh/LC_MESSAGES/opencpn-rupa_pi.mo
 
 pl.mo: ../po/pl.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "rupa-i18n [pl]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/pl.mo /home/jack/Tristan/sandbox/rupa_pi/po/pl.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/pl.mo Resources/pl/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "rupa-i18n [pl]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/pl.mo /home/jack/rupa_pi/po/pl.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/pl.mo Resources/pl/LC_MESSAGES/opencpn-rupa_pi.mo
 
 pt.mo: ../po/pt.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "rupa-i18n [pt]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/pt.mo /home/jack/Tristan/sandbox/rupa_pi/po/pt.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/pt.mo Resources/pt/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "rupa-i18n [pt]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/pt.mo /home/jack/rupa_pi/po/pt.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/pt.mo Resources/pt/LC_MESSAGES/opencpn-rupa_pi.mo
 
 ca.mo: ../po/ca.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "rupa-i18n [ca]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/ca.mo /home/jack/Tristan/sandbox/rupa_pi/po/ca.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/ca.mo Resources/ca/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "rupa-i18n [ca]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/ca.mo /home/jack/rupa_pi/po/ca.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/ca.mo Resources/ca/LC_MESSAGES/opencpn-rupa_pi.mo
 
 da.mo: ../po/da.po
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "rupa-i18n [da]: Created mo file."
-	/usr/bin/msgfmt --check -o /home/jack/Tristan/sandbox/rupa_pi/build/da.mo /home/jack/Tristan/sandbox/rupa_pi/po/da.po
-	/usr/bin/cmake -E copy /home/jack/Tristan/sandbox/rupa_pi/build/da.mo Resources/da/LC_MESSAGES/opencpn-rupa_pi.mo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jack/rupa_pi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "rupa-i18n [da]: Created mo file."
+	/usr/bin/msgfmt --check -o /home/jack/rupa_pi/build/da.mo /home/jack/rupa_pi/po/da.po
+	/usr/bin/cmake -E copy /home/jack/rupa_pi/build/da.mo Resources/da/LC_MESSAGES/opencpn-rupa_pi.mo
 
 rupa-i18n: CMakeFiles/rupa-i18n
 rupa-i18n: ja.mo
@@ -224,6 +224,6 @@ CMakeFiles/rupa-i18n.dir/clean:
 .PHONY : CMakeFiles/rupa-i18n.dir/clean
 
 CMakeFiles/rupa-i18n.dir/depend:
-	cd /home/jack/Tristan/sandbox/rupa_pi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jack/Tristan/sandbox/rupa_pi /home/jack/Tristan/sandbox/rupa_pi /home/jack/Tristan/sandbox/rupa_pi/build /home/jack/Tristan/sandbox/rupa_pi/build /home/jack/Tristan/sandbox/rupa_pi/build/CMakeFiles/rupa-i18n.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jack/rupa_pi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jack/rupa_pi /home/jack/rupa_pi /home/jack/rupa_pi/build /home/jack/rupa_pi/build /home/jack/rupa_pi/build/CMakeFiles/rupa-i18n.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rupa-i18n.dir/depend
 
