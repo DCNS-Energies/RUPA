@@ -51,7 +51,7 @@
 	\chapter{User part}
 	    I hope this tool is quite easy to use, but here are some instructions, just in case.
 
-	    Please, refer to the glossary if you're not sur what I'm talking about.
+	    Please, refer to the glossary if you're not sure what I'm talking about.
 	    \section{About the devices }
 		About software, RUPA was developped with:
 		\begin{itemize}
@@ -67,6 +67,70 @@
 		    \item A GPS from trimble (just for information)
 		\end{itemize}
 	    \section{Installation}
+            You have to install:
+            \begin{itemize}
+                \item opencpn (not needed for compilation, but as it's a plugin for it...)
+                \item gcc-multilib
+                \item g++
+                \item autotools-dev
+                \item cmake
+                \item wx3.0-headers
+                \item liwxgtk3.0-dev
+                \item libghc-zlib-dev
+                \item gettext
+                \item libbz2-dev
+                \item libmysqlcppconn-dev 
+                \item mysql-client
+                \item mysql-server
+            \end{itemize}
+            You have to install ftd2xx too. To do that:
+            \begin{itemize}
+                \item go to \url{http://www.ftdichip.com/Drivers/D2XX.htm}
+                \item download the good version (actually in the linux row, and for me the third or fourth column)
+                \item go where you downloaded it
+                \item extract it
+                \item open a terminal where the folder is extracted
+                \item sudo cp ./releases/build/lib* /usr/local/lib
+                \item cd /usr/local/lib
+                \item sudo ln -s libftd2xx.so.1.1.12 libftd2xx.so
+                \item sudo chmod 0755 libftd2xx.so.1.1.12
+            \end{itemize}
+            If you want more explanation, please, look at the "FTDI Drivers Installation Guide for Linux".
+            %If you cannot download mysqlcppconn, you can:
+            %\begin{numerize}
+            %    \item git clone https://github.com/mysql/mysql-connector-cpp.git
+            %    \item cd path/to/mysql-connector-cpp
+            %    \item cmake .
+            %    \item make
+            %    \item sudo make install
+            %\end{numerize}
+            %From \url{https://dev.mysql.com/doc/connector-cpp/en/connector-cpp-installation-source-unix.html} 
+
+            Before launching it, you have to use the database:
+            \begin{itemize}
+                \item mysql -u root -p
+                \item type the password you entered during installation
+                \item GRANT ALL PRIVILEGES ON rupa.* TO 'youruser'@'localhost' IDENTIFIED BY 'password' 
+                \item SET PASSWORD FOR 'youruser'@'localhost' = PASSWORD('')(this step is deleting the password but if you want to keep one, skip that step and set it in RUPA/src/RUPA\_Utility.h, l.62)
+                \item quit
+                \item mysql
+                \item create database rupa
+                \item quit
+            \end{itemize}
+
+            Then build RUPA:
+            \begin{itemize}
+                \item cd /path/where/you/want/to/download/rupa
+                \item git clone https://github.com/DCNS-Energies/RUPA.git (if not already done)
+                \item cd RUPA/build
+                \item rm -rf * (to correct something that have to be fix no need for sudo)
+                \item cmake .. .
+                \item make
+                \item sudo cp librupas\_pi.so /usr/lib/opencpn
+                \item cd ../database
+                \item mysql rupa<schema.sql
+            \end {itemize}
+            
 	    \section{Usage}
 		\subsection{Campaign}
 		    It is supposed you have clicked on the "RUPA" button, while you're in OpenCPN.
@@ -102,7 +166,6 @@
 		it implies to make calculation on earth, and I can't spend to much time on it (it's not at all a "must have" for my project)
 		I took the code frome someone else, using Eigen, the code is really small, so I let you have an eye on it. I'll put it in
 		th "improvement" directory. Feel free to do what you want with that.
-
 	    \section{Modify Campaign parameters window}
 		As underlined in the user guide, there is no possibility to modifiy the parameters of a campaign (even if there is realy 
 		little chance that it change, it could be nice to have the possibility to do so.

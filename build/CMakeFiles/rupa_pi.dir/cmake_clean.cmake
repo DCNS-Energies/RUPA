@@ -21,9 +21,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/rupa_pi.dir/src/RUPA_RS232.cpp.o"
   "CMakeFiles/rupa_pi.dir/src/RUPA_Burst_Editing_Add_Date.cpp.o"
   "CMakeFiles/rupa_pi.dir/src/RUPA_Burst_Editing_Add_Measurement.cpp.o"
-  "CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxml.cpp.o"
-  "CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlparser.cpp.o"
-  "CMakeFiles/rupa_pi.dir/src/tinyxml/tinyxmlerror.cpp.o"
   "librupa_pi.pdb"
   "librupa_pi.so"
 )

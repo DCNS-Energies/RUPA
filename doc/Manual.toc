@@ -3,29 +3,29 @@
 \contentsline {chapter}{\numberline {}User part}{3}{chapter.2}
 \contentsline {section}{\numberline {}About the devices }{3}{section.2.1}
 \contentsline {section}{\numberline {}Installation}{3}{section.2.2}
-\contentsline {section}{\numberline {}Usage}{3}{section.2.3}
-\contentsline {subsection}{\numberline {}Campaign}{3}{subsection.2.3.1}
-\contentsline {paragraph}{The "New Campaign" button}{3}{subsection.2.3.1}
-\contentsline {paragraph}{The "Delete Campaign" button}{4}{subsection.2.3.1}
-\contentsline {paragraph}{The "Manage Campaign" button}{4}{subsection.2.3.1}
-\contentsline {paragraph}{The "Close" button}{4}{subsection.2.3.1}
-\contentsline {paragraph}{The "(Un)Finish Campaign" button}{4}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {}New Campaign}{4}{subsection.2.3.2}
-\contentsline {paragraph}{The "Campaign's Name" field}{4}{subsection.2.3.2}
-\contentsline {paragraph}{The "Geographical Area" field}{4}{subsection.2.3.2}
-\contentsline {paragraph}{The "Install Later" button}{4}{subsection.2.3.2}
-\contentsline {paragraph}{The "Install Now" button}{4}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {}Manage Campaign}{4}{subsection.2.3.3}
-\contentsline {chapter}{\numberline {}Developper part}{5}{chapter.3}
-\contentsline {chapter}{\numberline {}How to improve RUPA}{6}{chapter.4}
-\contentsline {section}{\numberline {}Customization panel}{6}{section.4.1}
-\contentsline {section}{\numberline {}Auto detection of the structure position}{6}{section.4.2}
-\contentsline {section}{\numberline {}Modify Campaign parameters window}{6}{section.4.3}
-\contentsline {section}{\numberline {}Temporary Measurement}{6}{section.4.4}
-\contentsline {section}{\numberline {}RS232}{7}{section.4.5}
-\contentsline {chapter}{\numberline {}Glossary}{8}{chapter.5}
-\contentsline {paragraph}{Campaign :}{8}{chapter.5}
-\contentsline {paragraph}{Structure :}{8}{chapter.5}
-\contentsline {paragraph}{Burst :}{8}{chapter.5}
-\contentsline {paragraph}{Measurement :}{8}{chapter.5}
-\contentsline {paragraph}{Deck Unit :}{8}{chapter.5}
+\contentsline {section}{\numberline {}Usage}{5}{section.2.3}
+\contentsline {subsection}{\numberline {}Campaign}{5}{subsection.2.3.1}
+\contentsline {paragraph}{The "New Campaign" button}{5}{subsection.2.3.1}
+\contentsline {paragraph}{The "Delete Campaign" button}{5}{subsection.2.3.1}
+\contentsline {paragraph}{The "Manage Campaign" button}{5}{subsection.2.3.1}
+\contentsline {paragraph}{The "Close" button}{5}{subsection.2.3.1}
+\contentsline {paragraph}{The "(Un)Finish Campaign" button}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {}New Campaign}{5}{subsection.2.3.2}
+\contentsline {paragraph}{The "Campaign's Name" field}{5}{subsection.2.3.2}
+\contentsline {paragraph}{The "Geographical Area" field}{5}{subsection.2.3.2}
+\contentsline {paragraph}{The "Install Later" button}{5}{subsection.2.3.2}
+\contentsline {paragraph}{The "Install Now" button}{5}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {}Manage Campaign}{6}{subsection.2.3.3}
+\contentsline {chapter}{\numberline {}Developper part}{7}{chapter.3}
+\contentsline {chapter}{\numberline {}How to improve RUPA}{8}{chapter.4}
+\contentsline {section}{\numberline {}Customization panel}{8}{section.4.1}
+\contentsline {section}{\numberline {}Auto detection of the structure position}{8}{section.4.2}
+\contentsline {section}{\numberline {}Modify Campaign parameters window}{8}{section.4.3}
+\contentsline {section}{\numberline {}Temporary Measurement}{8}{section.4.4}
+\contentsline {section}{\numberline {}RS232}{9}{section.4.5}
+\contentsline {chapter}{\numberline {}Glossary}{10}{chapter.5}
+\contentsline {paragraph}{Campaign :}{10}{chapter.5}
+\contentsline {paragraph}{Structure :}{10}{chapter.5}
+\contentsline {paragraph}{Burst :}{10}{chapter.5}
+\contentsline {paragraph}{Measurement :}{10}{chapter.5}
+\contentsline {paragraph}{Deck Unit :}{10}{chapter.5}
