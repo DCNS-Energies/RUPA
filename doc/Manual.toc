@@ -2,30 +2,51 @@
 \contentsline {chapter}{\numberline {}Introduduction}{2}{chapter.1}
 \contentsline {chapter}{\numberline {}User part}{3}{chapter.2}
 \contentsline {section}{\numberline {}About the devices }{3}{section.2.1}
-\contentsline {section}{\numberline {}Installation}{3}{section.2.2}
-\contentsline {section}{\numberline {}Usage}{5}{section.2.3}
-\contentsline {subsection}{\numberline {}Campaign}{5}{subsection.2.3.1}
-\contentsline {paragraph}{The "New Campaign" button}{5}{subsection.2.3.1}
-\contentsline {paragraph}{The "Delete Campaign" button}{5}{subsection.2.3.1}
-\contentsline {paragraph}{The "Manage Campaign" button}{5}{subsection.2.3.1}
-\contentsline {paragraph}{The "Close" button}{5}{subsection.2.3.1}
-\contentsline {paragraph}{The "(Un)Finish Campaign" button}{5}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {}New Campaign}{5}{subsection.2.3.2}
-\contentsline {paragraph}{The "Campaign's Name" field}{5}{subsection.2.3.2}
-\contentsline {paragraph}{The "Geographical Area" field}{5}{subsection.2.3.2}
-\contentsline {paragraph}{The "Install Later" button}{5}{subsection.2.3.2}
-\contentsline {paragraph}{The "Install Now" button}{5}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {}Manage Campaign}{6}{subsection.2.3.3}
-\contentsline {chapter}{\numberline {}Developper part}{7}{chapter.3}
-\contentsline {chapter}{\numberline {}How to improve RUPA}{8}{chapter.4}
-\contentsline {section}{\numberline {}Customization panel}{8}{section.4.1}
-\contentsline {section}{\numberline {}Auto detection of the structure position}{8}{section.4.2}
-\contentsline {section}{\numberline {}Modify Campaign parameters window}{8}{section.4.3}
-\contentsline {section}{\numberline {}Temporary Measurement}{8}{section.4.4}
-\contentsline {section}{\numberline {}RS232}{9}{section.4.5}
-\contentsline {chapter}{\numberline {}Glossary}{10}{chapter.5}
-\contentsline {paragraph}{Campaign :}{10}{chapter.5}
-\contentsline {paragraph}{Structure :}{10}{chapter.5}
-\contentsline {paragraph}{Burst :}{10}{chapter.5}
-\contentsline {paragraph}{Measurement :}{10}{chapter.5}
-\contentsline {paragraph}{Deck Unit :}{10}{chapter.5}
+\contentsline {chapter}{\numberline {}Installation}{4}{chapter.3}
+\contentsline {chapter}{\numberline {}Usage}{6}{chapter.4}
+\contentsline {section}{\numberline {}Quick guide}{6}{section.4.1}
+\contentsline {section}{\numberline {}Detailed guide}{8}{section.4.2}
+\contentsline {subsection}{\numberline {}Campaign}{8}{subsection.4.2.1}
+\contentsline {paragraph}{The "New Campaign" button}{8}{subsection.4.2.1}
+\contentsline {paragraph}{The "Delete Campaign" button}{8}{subsection.4.2.1}
+\contentsline {paragraph}{The "Manage Campaign" button}{8}{subsection.4.2.1}
+\contentsline {paragraph}{The "(Un)Finish Campaign" button}{8}{subsection.4.2.1}
+\contentsline {paragraph}{Make a backup of all datas, recursively}{8}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {}New Campaign}{8}{subsection.4.2.2}
+\contentsline {paragraph}{The "Campaign's Name" field}{8}{subsection.4.2.2}
+\contentsline {paragraph}{The "Geographical Area" field}{8}{subsection.4.2.2}
+\contentsline {paragraph}{The "Install Later" button}{8}{subsection.4.2.2}
+\contentsline {paragraph}{The "Install Now" button}{9}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {}Manage Campaign}{9}{subsection.4.2.3}
+\contentsline {paragraph}{The "New Structure" button}{9}{subsection.4.2.3}
+\contentsline {paragraph}{The "Delete Structure" button}{9}{subsection.4.2.3}
+\contentsline {paragraph}{The "Manage Structure" button}{9}{subsection.4.2.3}
+\contentsline {paragraph}{The "(Un)Recovered" button}{9}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {}Set up Structure}{9}{subsection.4.2.4}
+\contentsline {paragraph}{The "Location Name" field}{9}{subsection.4.2.4}
+\contentsline {paragraph}{The "Devices" field}{9}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {}Manage Structure}{9}{subsection.4.2.5}
+\contentsline {paragraph}{The "Set Up General Settings Of Structure" button}{9}{subsection.4.2.5}
+\contentsline {paragraph}{The "Add Transponder" button}{9}{subsection.4.2.5}
+\contentsline {paragraph}{The "Remove Transponder" button}{10}{subsection.4.2.5}
+\contentsline {paragraph}{The "Launch Auto Burst" button}{10}{subsection.4.2.5}
+\contentsline {paragraph}{The "Launch Semi Auto Burst" button}{10}{subsection.4.2.5}
+\contentsline {paragraph}{The "Enter a burst manually" button}{10}{subsection.4.2.5}
+\contentsline {paragraph}{The "Edit Burst" button}{10}{subsection.4.2.5}
+\contentsline {paragraph}{The "Delete Burst" button}{10}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {}Manage Transponder}{10}{subsection.4.2.6}
+\contentsline {paragraph}{The "Address" and "Frequency" fields}{10}{subsection.4.2.6}
+\contentsline {paragraph}{The "Serial Number" field}{10}{subsection.4.2.6}
+\contentsline {paragraph}{The "Battery Voltage (V)" field}{10}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {}Semi Automatic Burst}{10}{subsection.4.2.7}
+\contentsline {paragraph}{The "Message Sent" field}{10}{subsection.4.2.7}
+\contentsline {paragraph}{The "Message Received" field}{10}{subsection.4.2.7}
+\contentsline {paragraph}{The "Last value of received message"" field}{11}{subsection.4.2.7}
+\contentsline {paragraph}{The "Range" button}{11}{subsection.4.2.7}
+\contentsline {paragraph}{The "Next Transponder" button}{11}{subsection.4.2.7}
+\contentsline {paragraph}{The "Previous Transponder" button}{11}{subsection.4.2.7}
+\contentsline {paragraph}{The "Finish Burst" button}{11}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {}Burst Editing}{11}{subsection.4.2.8}
+\contentsline {paragraph}{The "Add Measurement" button}{11}{subsection.4.2.8}
+\contentsline {paragraph}{The "Delete Measurement" button}{11}{subsection.4.2.8}
+\contentsline {paragraph}{The "Add Date" button}{11}{subsection.4.2.8}

@@ -47,7 +47,6 @@
 	 (quite simple, don't worry) and if someone want to use it to improve it, in the "Developper part" I will 
 	 explicit what my logic was.
 
-	 Ho, by the way, I'm french, so sorry if sometimes my english is too bad (don't hesitate to contact me in this case).
 	\chapter{User part}
 	    I hope this tool is quite easy to use, but here are some instructions, just in case.
 
@@ -66,7 +65,7 @@
 		    \item A FTDI (to connect computer and deck unit via USB)
 		    \item A GPS from trimble (just for information)
 		\end{itemize}
-	    \section{Installation}
+	    \chapter{Installation}
             You have to install:
             \begin{itemize}
                 \item opencpn (not needed for compilation, but as it's a plugin for it...)
@@ -83,6 +82,7 @@
                 \item mysql-client
                 \item mysql-server
             \end{itemize}
+        \vspace{3cm}
             You have to install ftd2xx too. To do that:
             \begin{itemize}
                 \item go to \url{http://www.ftdichip.com/Drivers/D2XX.htm}
@@ -97,15 +97,16 @@
             \end{itemize}
             If you want more explanation, please, look at the "FTDI Drivers Installation Guide for Linux".
             %If you cannot download mysqlcppconn, you can:
-            %\begin{numerize}
+            %\begin{enumerate}
             %    \item git clone https://github.com/mysql/mysql-connector-cpp.git
             %    \item cd path/to/mysql-connector-cpp
             %    \item cmake .
             %    \item make
             %    \item sudo make install
-            %\end{numerize}
+            %\end{enumerate}
             %From \url{https://dev.mysql.com/doc/connector-cpp/en/connector-cpp-installation-source-unix.html} 
 
+        \vspace{3cm}
             Before launching it, you have to use the database:
             \begin{itemize}
                 \item mysql -u root -p
@@ -118,6 +119,7 @@
                 \item quit
             \end{itemize}
 
+        \vspace{3cm}
             Then build RUPA:
             \begin{itemize}
                 \item cd /path/where/you/want/to/download/rupa
@@ -131,7 +133,41 @@
                 \item mysql rupa<schema.sql
             \end {itemize}
             
-	    \section{Usage}
+	    \chapter{Usage}
+        \section{Quick guide}
+        Supposing you've already instlled rupa, you will basically do that:
+        \begin{enumerate}
+
+            \item Enable RUPA in OpenCPN 
+            \item click on the RUPA logo (even if actually it's the dog from watchdog)
+            \item click on "New Campaign"
+            \item fill the fields
+            \item click on "Install Now"
+            \item click on "New Structure"
+            \item fill the fields
+            \item click on "Add Transponder"
+            \item fill the fields
+            \item redo the 8th step as many time as needed to list each transponder on the structure you want to locate
+            \item click on "Launch Semi-Auto Burst" in the "Manage Structure" window
+            \item click on the "Range" button as many time as wanted
+            \item redo the previous step as many time as wanted
+        \end{enumerate}
+        \vspace{1cm}
+        If you want to recover a Structure:
+        \begin{enumerate}
+            \item click on the RUPA logo (even if actually it's the dog from watchdog)
+            \item select the Campaign where the structure is and click on "manage" button
+            \item select the Structure you want to recover, click on manage
+            \item select the "Recovery" tab
+            \item launch the Semi Auto Burst
+        \end{enumerate}
+        \vspace{1cm}
+        \begin{itemize}
+            \item if you want to mark a Campaign or a Structure as recovered, select it and click on the (Un)Revover button
+            \item if you try to delete something, there will be no confirmation message, and no way to recover it
+        \end{itemize}
+\newpage
+        \section{Detailed guide}
 		\subsection{Campaign}
 		    It is supposed you have clicked on the "RUPA" button, while you're in OpenCPN.
 		    Here, you have 2 tabs and 5 buttons. The "Current Campaign" tab list what campaigns are not finished
@@ -143,51 +179,65 @@
 		    Campaign" button, but every measurement you should have done. Be really carefull, there is no way to 
 		    recover what you erased (really, there is absolutely no tricks to do that).
 		    \paragraph{The "Manage Campaign" button} open a new window : "Manage Campaign" in wich you can see each structure.
-		    \paragraph{The "Close" button} close the window (yep, really ;-) ).
 		    \paragraph{The "(Un)Finish Campaign" button} set a Campaign as finished or current, and move it to the corresponding table.
+            \paragraph{Make a backup of all datas, recursively} not working yet
 
+        \vspace{1cm}
 		\subsection{New Campaign}
 		    \paragraph{The "Campaign's Name" field} let you name the campaign as you want.
 		    \paragraph{The "Geographical Area" field} let you indicate where the campaign takes place.
 		    \paragraph{The "Install Later" button} will save what you typed and show you the "Campaign" window.
 		    \paragraph{The "Install Now" button} will save what you types too, but here, it redirect you to the "Manage Campaign" window.
 
+        \vspace{1cm}
 		\subsection{Manage Campaign}
+            \paragraph{The "New Structure" button} Open the "Manage Structure" and "Set Up Structure" windows. It creates a nex Structure by the way.
+            \paragraph{The "Delete Structure" button} Delete the Structure selected and all of its Measurement, Transponder, etc. Be carefull, there is no confirmation window.
+            \paragraph{The "Manage Structure" button}Open th "Manage Structure" window for the Structure you selected
+            \paragraph{The "(Un)Recovered" button}Set a Structure as current or recovered, and move it to the corresponding table.
+            
+        \vspace{1cm}
+        \subsection{Set up Structure}
+            \paragraph{The "Location Name" field}Allow you to give a specific name to the structure
+            \paragraph{The "Devices" field} you can list the devices (sensors or other) you put on the structure
 
-	\chapter{Developper part}
+        \vspace{1cm}
+        \subsection{Manage Structure}
+            \paragraph{The "Set Up General Settings Of Structure" button} Open the "Set Up Structure" window for the current Structure.
+            \paragraph{The "Add Transponder" button} Open the "Manage Transponder" Window and add a transponder to the list.
+            \paragraph{The "Remove Transponder" button}Remove the selected transponder, without confirmation window.
+            \paragraph{The "Launch Auto Burst" button} Not working yet.
+            \paragraph{The "Launch Semi Auto Burst" button} Open the "Semi Automatic Burst" window wich allow to make distance measurement. You need to add at least a 
+            transponder before clickingon that, else, OpenCPN will crash.
+            \paragraph{The "Enter a burst manually" button} Not working yet.
+            \paragraph{The "Edit Burst" button}Open Burst Editing window.
+            \paragraph{The "Delete Burst" button} Delete a burst without asking you to confirm (the confirmation window wich pop is actually useless).
 
-	\chapter{How to improve RUPA}
-	    \section{Customization panel}
-		There can be several customization panels. One of the most important is the possibility to change circles
-		colors (could be done by adding a column into the database, for the measurement, then, adapt a little bit the code.
-	    
-	    \section{Auto detection of the structure position}
-		That operation is named \emph{trilateration}, I will let a code doing that. I didn't integrate it to the plugin, because 
-		it implies to make calculation on earth, and I can't spend to much time on it (it's not at all a "must have" for my project)
-		I took the code frome someone else, using Eigen, the code is really small, so I let you have an eye on it. I'll put it in
-		th "improvement" directory. Feel free to do what you want with that.
-	    \section{Modify Campaign parameters window}
-		As underlined in the user guide, there is no possibility to modifiy the parameters of a campaign (even if there is realy 
-		little chance that it change, it could be nice to have the possibility to do so.
+        \vspace{1cm}
+        \subsection{Manage Transponder}
+            \paragraph{The "Address" and "Frequency" fields} Used by Sonardyne to send message as : address:frequency.
+            \paragraph{The "Serial Number" field} Serial number of the transponder, fill it if you want.
+            \paragraph{The "Battery Voltage (V)" field} You can fill it (or not) manually or by clicking on "Check Battery Automatically"
 
-	    \section{Temporary Measurement}
-		Make it possible to have a temporary measurement, probably linked to a shortcut, to make it lighter to use for who don't 
-		care about campaigns (for example for divers who just have to recover something).
+        \vspace{1cm}
+        \subsection{Semi Automatic Burst}
+            \paragraph{The "Message Sent" field}Count how many time you clicked on the "Range" button.
+            \paragraph{The "Message Received" field}Count how many time you received a useful answer.
+            \paragraph{The "Last value of received message"" field} print the value received by the computer (or an error message).
+            \paragraph{The "Range" button} the button to get the distance between the probe and the transponder.
+            \paragraph{The "Next Transponder" button} switch to th next transponder, according the table where transponders are listed.
+            \paragraph{The "Previous Transponder" button} switch to th next transponder, according the table where transponders are listed.
+            \paragraph{The "Finish Burst" button} Close the window, all the Measurement are saved when they are acquired.
 
-	    \section{RS232}
-		Make it possible to configure the RS232 bus differently, and to choose what message to sent (if using other device).
-		More, making instead of scanning for a message, making an interrupt-callback system. I didn't do that, because, actually, 
-		I don't know how to do that (I tried a little bit with the boost library but I failed to catch a value changement), but 
-		I think the current way to detect reception (by scanning) is a really dirty way to do that.
+        \vspace{1cm}
+        \subsection{Burst Editing}
+            \paragraph{The "Add Measurement" button}not working yet
+            \paragraph{The "Delete Measurement" button}Delete the selected Measurement
+            \paragraph{The "Add Date" button}Not working yet.
+
+%	\chapter{Developper part}
 
 
-	\chapter{Glossary}
-	    \paragraph{Campaign :} it regroups every single structure in one Geographical area, for a type of survey (feel free to 
-	    interprate it as you want of course).
-	    \paragraph{Structure :} it's an object on wich is fixed at least one transponder, and one sensor.
-	    \paragraph{Burst :} a collection of measurements.
-	    \paragraph{Measurement :} The distance between the transponder and the deck unit.
-	    \paragraph{Deck Unit :} Human-machine interface to communicate with the transponder
 
 \iffalse		
 \chapter{chap}
